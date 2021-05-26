@@ -15,6 +15,20 @@ using namespace std;
 
 const int b=4;
 
+TEST(RMMTreeTest, GET_INT){
+    int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+    RMMTree t(v,b);
+    t.buildingTree();
+
+    int index[] = {9,17,30,36};
+    int len = 1;
+    int expected[] = {3,0,2,1};
+
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ(t.bitsread(index[i],index[i]+len),expected[i]);
+    } 
+}
+
 TEST(LeafTest, KthLeafInTree){
     int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
 
@@ -64,8 +78,8 @@ TEST(FWDSearchTest, FwdSearchGeneral){
     t.buildingTree();
 
     int index[] = {9,17,22,12,21,0,15,19,23,25,0};
-    int d[] = {-2,-1,-1,-1,-1,4,1,1,2,0,0};
-    int expected[] = {21,18,35,17,36,10,26,24,27,29,28};
+    int d[] = {-2,-1,-1,-1,-1,2,-3,1,2,0,0};
+    int expected[] = {21,18,35,17,36,2,18,24,27,29,6};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t.fwdSearch(index[i],d[i]),expected[i]);
@@ -86,8 +100,10 @@ TEST(FWDSearchTest, FwdSearch_AnswerNotFound){
     } 
 }
 
+
+
 int main(int argc, char **argv){
     testing::InitGoogleTest(&argc, argv);
-    testing::GTEST_FLAG(filter) = "FWDSearchTest.FwdSearch_AnswerNotFound";
+    testing::GTEST_FLAG(filter) = "FWDSearchTest.FWDSearch_FindClose";
     return RUN_ALL_TESTS();
 }

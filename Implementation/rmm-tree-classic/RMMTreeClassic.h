@@ -25,6 +25,7 @@ class RMMTree{
 
         RMMTree(int_vector<1> &bv, int sizeBlock);
 		//~RMMTree();
+		int bitsread(int s,int e);
 		int leafInTree(int k);
 		int numLeaf(int v);
 		void buildingTree();
@@ -40,8 +41,6 @@ class RMMTree{
 		int height;
 		vector<Node> tree;
 		vector<Node> tableC;
-
-		int bitsread(int s,int e);
 
 		/*
 			@breif: Pecorre cada subbloco de tamanho "w" do bloco pertencente à "i" em busca do excesso d

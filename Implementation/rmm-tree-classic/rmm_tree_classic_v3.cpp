@@ -24,16 +24,9 @@ RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock){
 }
 
 int RMMTree::bitsread(int s,int e){
-	int pos=0;
 	int value=0;
-	for(int i=e;i>=s;i--){
-		if(bv[i]==1){
-			value+=1*pow(2,pos);
-		}
-		pos++;
-	}
-	return value;
-     
+	for(int j=s;j<=e;j++)value = (value << 1) + bv[j] ;
+	return value; 
 }
 
 int RMMTree::leafInTree(int k){
