@@ -63,17 +63,31 @@ TEST(FWDSearchTest, FwdSearchGeneral){
     RMMTree t(v,b);
     t.buildingTree();
 
-    int index[] = {3,9,15,17,22};
-    int d[] = {-1,-2,-2,-1,-1};
-    int expected[] = {6,21,17,18,35};
+    int index[] = {9,17,22,12,21,0,15,19,23,25,0};
+    int d[] = {-2,-1,-1,-1,-1,4,1,1,2,0,0};
+    int expected[] = {21,18,35,17,36,10,26,24,27,29,28};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t.fwdSearch(index[i],d[i]),expected[i]);
     } 
 }
 
+TEST(FWDSearchTest, FwdSearch_AnswerNotFound){
+    int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+
+    RMMTree t(v,b);
+    t.buildingTree();
+
+    int index[] = {9,17,22};
+    int d[] = {10,-8,57};
+
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ(t.fwdSearch(index[i],d[i]),-1);
+    } 
+}
+
 int main(int argc, char **argv){
     testing::InitGoogleTest(&argc, argv);
-    testing::GTEST_FLAG(filter) = "FWDSearchTest.FwdSearchGeneral";
+    testing::GTEST_FLAG(filter) = "FWDSearchTest.FwdSearch_AnswerNotFound";
     return RUN_ALL_TESTS();
 }
