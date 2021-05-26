@@ -1,0 +1,150 @@
+==17618== Memcheck, a memory error detector
+==17618== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==17618== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==17618== Command: ./rmm_tree_classic_v2
+==17618== Parent PID: 16455
+==17618== 
+--17618-- 
+--17618-- Valgrind options:
+--17618--    --leak-check=full
+--17618--    --verbose
+--17618--    --log-file=valgrind-out.txt
+--17618-- Contents of /proc/version:
+--17618--   Linux version 5.4.0-58-generic (buildd@lcy01-amd64-004) (gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04)) #64-Ubuntu SMP Wed Dec 9 08:16:25 UTC 2020
+--17618-- 
+--17618-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-bmi
+--17618-- Page sizes: currently 4096, max supported 4096
+--17618-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--17618-- Reading syms from /media/danyelle/Data/IFB/TCC/Implementation/rmm-tree-classic/rmm_tree_classic_v2
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--17618--   Considering /usr/lib/x86_64-linux-gnu/ld-2.31.so ..
+--17618--   .. CRC mismatch (computed 6cded93a wanted 1af57820)
+--17618--   Considering /lib/x86_64-linux-gnu/ld-2.31.so ..
+--17618--   .. CRC mismatch (computed 6cded93a wanted 1af57820)
+--17618--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.31.so ..
+--17618--   .. CRC is valid
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--17618--    object doesn't have a symbol table
+--17618--    object doesn't have a dynamic symbol table
+--17618-- Scheduler: using generic scheduler lock implementation.
+--17618-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==17618== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-17618-by-danyelle-on-???
+==17618== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-17618-by-danyelle-on-???
+==17618== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-17618-by-danyelle-on-???
+==17618== 
+==17618== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==17618== don't want to do, unless you know exactly what you're doing,
+==17618== or are doing some strange experiment):
+==17618==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=17618 ...command...
+==17618== 
+==17618== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==17618==   /path/to/gdb ./rmm_tree_classic_v2
+==17618== and then give GDB the following command
+==17618==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=17618
+==17618== --pid is optional if only one valgrind process is running
+==17618== 
+--17618-- REDIR: 0x4022d80 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--17618-- REDIR: 0x4022b50 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--17618--    object doesn't have a symbol table
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--17618--    object doesn't have a symbol table
+==17618== WARNING: new redirection conflicts with existing -- ignoring it
+--17618--     old: 0x04022d80 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--17618--     new: 0x04022d80 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--17618-- REDIR: 0x401f560 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--17618-- REDIR: 0x40232e0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--17618--    object doesn't have a symbol table
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--17618--   Considering /usr/lib/x86_64-linux-gnu/libm-2.31.so ..
+--17618--   .. CRC mismatch (computed b88da5c9 wanted 1658d783)
+--17618--   Considering /lib/x86_64-linux-gnu/libm-2.31.so ..
+--17618--   .. CRC mismatch (computed b88da5c9 wanted 1658d783)
+--17618--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.31.so ..
+--17618--   .. CRC is valid
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--17618--    object doesn't have a symbol table
+--17618-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--17618--   Considering /usr/lib/x86_64-linux-gnu/libc-2.31.so ..
+--17618--   .. CRC mismatch (computed cd1655d1 wanted 09373696)
+--17618--   Considering /lib/x86_64-linux-gnu/libc-2.31.so ..
+--17618--   .. CRC mismatch (computed cd1655d1 wanted 09373696)
+--17618--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.31.so ..
+--17618--   .. CRC is valid
+--17618-- REDIR: 0x4c4e600 (libc.so.6:memmove) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d900 (libc.so.6:strncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e930 (libc.so.6:strcasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d220 (libc.so.6:strcat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d960 (libc.so.6:rindex) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4fdd0 (libc.so.6:rawmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6ae60 (libc.so.6:wmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6a9a0 (libc.so.6:wcscmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e760 (libc.so.6:mempcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e590 (libc.so.6:bcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d890 (libc.so.6:strncmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d2d0 (libc.so.6:strcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e6c0 (libc.so.6:memset) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6a960 (libc.so.6:wcschr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d7f0 (libc.so.6:strnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d3b0 (libc.so.6:strcspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e980 (libc.so.6:strncasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d350 (libc.so.6:strcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4ead0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6c0d0 (libc.so.6:wcsnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6a9e0 (libc.so.6:wcscpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d9a0 (libc.so.6:strpbrk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d280 (libc.so.6:index) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4d7b0 (libc.so.6:strlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c56d20 (libc.so.6:memrchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e9d0 (libc.so.6:strcasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e550 (libc.so.6:memchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c6aab0 (libc.so.6:wcslen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4dc60 (libc.so.6:strspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e8d0 (libc.so.6:stpncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4e870 (libc.so.6:stpcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4fe10 (libc.so.6:strchrnul) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c4ea20 (libc.so.6:strncasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--17618-- REDIR: 0x4c5fa30 (libc.so.6:__strrchr_sse2) redirected to 0x483ea70 (__strrchr_sse2)
+--17618-- REDIR: 0x4c48260 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--17618-- REDIR: 0x4c5fd30 (libc.so.6:__strlen_sse2) redirected to 0x483efa0 (__strlen_sse2)
+--17618-- REDIR: 0x4d3b4e0 (libc.so.6:__memcmp_sse4_1) redirected to 0x4842150 (__memcmp_sse4_1)
+--17618-- REDIR: 0x4c58520 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x483fed0 (strcmp)
+--17618-- REDIR: 0x4c49000 (libc.so.6:realloc) redirected to 0x483df30 (realloc)
+--17618-- REDIR: 0x490ac10 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x483bdf0 (operator new(unsigned long))
+--17618-- REDIR: 0x4c69c40 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4840100 (memcpy@GLIBC_2.2.5)
+--17618-- REDIR: 0x4c48850 (libc.so.6:free) redirected to 0x483c9d0 (free)
+--17618-- REDIR: 0x4908e60 (libstdc++.so.6:operator delete(void*)) redirected to 0x483cf50 (operator delete(void*))
+--17618-- REDIR: 0x4c662b0 (libc.so.6:__stpcpy_sse2_unaligned) redirected to 0x4842570 (__stpcpy_sse2_unaligned)
+--17618-- REDIR: 0x4c69c20 (libc.so.6:__mempcpy_sse2_unaligned) redirected to 0x4843660 (mempcpy)
+--17618-- REDIR: 0x4c5f820 (libc.so.6:__strchrnul_sse2) redirected to 0x4843540 (strchrnul)
+--17618-- REDIR: 0x4c6a070 (libc.so.6:__memset_sse2_unaligned) redirected to 0x48428e0 (memset)
+--17618-- REDIR: 0x4c64c70 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x483f090 (strcpy)
+==17618== 
+==17618== Process terminating with default action of signal 6 (SIGABRT)
+==17618==    at 0x4BF118B: raise (raise.c:51)
+==17618==    by 0x4BD0858: abort (abort.c:79)
+==17618==    by 0x4BD0728: __assert_fail_base.cold (assert.c:92)
+==17618==    by 0x4BE1F35: __assert_fail (assert.c:101)
+==17618==    by 0x110E80: sdsl::int_vector<(unsigned char)1>::operator[](unsigned long const&) (in /media/danyelle/Data/IFB/TCC/Implementation/rmm-tree-classic/rmm_tree_classic_v2)
+==17618==    by 0x10F3ED: RMMTree::fwdBlock(int, int, int*) (in /media/danyelle/Data/IFB/TCC/Implementation/rmm-tree-classic/rmm_tree_classic_v2)
+==17618==    by 0x10F73A: RMMTree::fwdSearch(int, int) (in /media/danyelle/Data/IFB/TCC/Implementation/rmm-tree-classic/rmm_tree_classic_v2)
+==17618==    by 0x10D92C: main (in /media/danyelle/Data/IFB/TCC/Implementation/rmm-tree-classic/rmm_tree_classic_v2)
+==17618== 
+==17618== HEAP SUMMARY:
+==17618==     in use at exit: 976 bytes in 7 blocks
+==17618==   total heap usage: 18 allocs, 11 frees, 75,264 bytes allocated
+==17618== 
+==17618== Searching for pointers to 7 not-freed blocks
+==17618== Checked 121,200 bytes
+==17618== 
+==17618== LEAK SUMMARY:
+==17618==    definitely lost: 0 bytes in 0 blocks
+==17618==    indirectly lost: 0 bytes in 0 blocks
+==17618==      possibly lost: 0 bytes in 0 blocks
+==17618==    still reachable: 976 bytes in 7 blocks
+==17618==         suppressed: 0 bytes in 0 blocks
+==17618== Reachable blocks (those to which a pointer was found) are not shown.
+==17618== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==17618== 
+==17618== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
