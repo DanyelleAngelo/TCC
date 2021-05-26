@@ -195,7 +195,7 @@ int RMMTree::fwdBlock(int i,int d,int *dr){
 	for(p=f+1; p<=t;p++){
 		int x = bitsread(p*w, (p*w)+1);//se alterar a função bitsread, passar apenas w, q é a quantidade de bits q devo ler
 
-		if(*dr + tableC[x].excessMin <= d){
+		if(*dr + tableC[x].excessMin <= d && *dr + tableC[x].excessMax >= d){
 			break;
 		}
 		*dr += tableC[x].excess;
@@ -224,7 +224,7 @@ int RMMTree::fwdSearch(int i,int d){
 	propriamente dito o nó a direita obre o excesso mínimo "d"?
 	Para isso fazemos um processo de subida na árvore.
 	*/
-	while( ((v+1)&(v+2))!=0 && (dr+tree[v+1].excessMin > d)){
+	while( ((v+1)&(v+2))!=0 && (dr+tree[v+1].excessMin > d && dr+tree[v+1].excessMax > d)){
 		if(v%2 !=0)dr += tree[v+1].excess;
 		v = floor((double)(v-1)/2);
 	}
@@ -238,7 +238,7 @@ int RMMTree::fwdSearch(int i,int d){
 	*/
 	v++;
 	while(v < numberLeaves-1){/*lembre que o nosso vetor inicia em zero*/
-		if(dr + tree[(2*v)+1].excessMin <= d) v = (2*v)+1;
+		if((dr + tree[(2*v)+1].excessMin <= d)&&(dr + tree[(2*v)+1].excessMax >= d)) v = (2*v)+1;
 		else{
 			dr += tree[(2*v)+1].excess;
 			v = (2*v)+2;
