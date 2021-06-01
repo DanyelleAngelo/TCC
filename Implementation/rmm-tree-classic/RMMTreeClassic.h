@@ -25,6 +25,8 @@ class RMMTree{
 
         RMMTree(int_vector<1> &bv, int sizeBlock);
 		//~RMMTree();
+		uint64_t getInt(const uint8_t  idx, const uint8_t len);
+		uint64_t readInt(const uint64_t* word, uint8_t offset, const uint8_t len);
 		int bitsread(int s,int e);
 		int leafInTree(int k);
 		int numLeaf(int v);
@@ -34,6 +36,7 @@ class RMMTree{
 		void printTableC();
 		void printInfoTree();
 		int fwdSearch(int i,int d);
+		int bwdSearch(int i,int d);
 		
 	private:
 		int numberLeaves;
@@ -50,6 +53,7 @@ class RMMTree{
 			@return: a posição em que ocorre o excesso ou -1 caso o excesso não se encontre neste bloco
 		*/
 		int fwdBlock(int i,int d,int *dr);
+		int bwdBlock(int i,int d,int *dr);
 		void buildingTableC();
 		void buildingLeaves(int s, int e, int k);
 		void buildingInternalNodesRoot();
