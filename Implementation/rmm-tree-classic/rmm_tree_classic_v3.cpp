@@ -68,8 +68,8 @@ int RMMTree::leafInTree(int k){
 int RMMTree::numLeaf(int v){
 	int t = pow(2,ceil((double)log2(numberLeaves)));
 	v+=1;//ajuste do índice do vetor
-	if(v >= t )return v - t +1;
-	else return v - t +1 + numberLeaves;
+	if(v >= t )return v - t;
+	else return v - t  + numberLeaves;
 }
 
 void RMMTree::buildingTableC(){
@@ -202,32 +202,30 @@ void RMMTree::printInfoTree(){
 
 int RMMTree::fwdBlock(int i,int d,int *dr){
 	int p;
-	int f = ceil((double)(i+1)/w)-1;
-	int t = (ceil((double)(i+2)/sizeBlock) * (sizeBlock/w))-1;
+	int f = ceil((double)(i)/w);
+	int t = (ceil((double)(i+1)/sizeBlock) * (sizeBlock/w));
 
 	*dr=0;
-	
-	//varre a partir do próximo elemento, chegando ao limite
+
+	//varre o sub-bloco a qual i+1 pertebce
 	for(int j=i+1;j<=(f*w)+1;j++){
 		*dr += (bv[j] == 1)? 1 : -1;
 		if(*dr == d)return j;
 	}
 
-	//Verifica se "d" está no bloco de tamanho "b" ao qual "i" pertence
-	//A ideia é verificar o excesso local dos próximos bloquinhos
-	for(p=f+1; p<=t;p++){
-		int x = bitsread(p*w, (p*w)+1);//se alterar a função bitsread, passar apenas w, q é a quantidade de bits q devo ler
-
+	//Verifica se "d" está contido no bloco subsequente ao anterior
+	for(p=f; p<=t;p++){
+		int x = bitsread((p+1)*w, ((p+1)*w)+1);
 		if(*dr + tableC[x].excessMin <= d && *dr + tableC[x].excessMax >= d){
 			break;
 		}
 		*dr += tableC[x].excess;
 	}
 
-	if(p > t)return -1;
-	
-	//Varre outro subbloco, onde provavelmente está "d"
-	for(int j= p*w; j <= (p*w)+1;j++){
+	if(p > t)return -1;//d não está no bloco subsequente
+
+	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
+	for(int j= (p+1)*w; j <= ((p+1)*w)+1;j++){
 		*dr += (bv[j] ==1)? 1:-1;
 		if(*dr == d)return j;
 	}
@@ -270,36 +268,34 @@ int RMMTree::fwdSearch(int i,int d){
 	j= fwdBlock(i,d,&dr);
     if(dr == d) return j;
 
-	k = ceil((double)(i+2)/sizeBlock);
-	v = leafInTree(k)-1;
-	
-	/*O primeiro teste verifica se o nó é o último do seu nível, o segundo é o que que queremos
-	propriamente dito o nó a direita obre o excesso mínimo "d"?
-	Para isso fazemos um processo de subida na árvore.
-	*/
+	k = ceil((double)(i+1)/sizeBlock);//calcula a k-th folha em que se encontra i+1
+	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
+
+	/* -----Subindo a RMM-tree ------
+	O primeiro teste verifica se o nó é o último do seu nível, o segundo verifica se 'd' está
+	no bloco à direita (encurtando passos).*/
 	while( ((v+1)&(v+2))!=0 && (dr+tree[v+1].excessMin > d && dr+tree[v+1].excessMax > d)){
 		if(v%2 !=0)dr += tree[v+1].excess;
 		v = floor((double)(v-1)/2);
 	}
-
+	
 	if(((v+1)&(v+2)) ==0)return -1;//verifica se o nó a que chegamos é a última do seu nível
+	
+	v++;/*o excesso procurado está no nó a direita do último verificado*/
 
-	/*
-		Aqui iniciamos a descida na árvore.
-		A ideia é verificar se o excesso mínimo se encontra no filho mais a esquerda ou a direita, 
-		e seguir por esse filho em busca do excesso relativo desejado.
-	*/
-	v++;
-	while(v < numberLeaves-1){/*lembre que o nosso vetor inicia em zero*/
-		if((dr + tree[(2*v)+1].excessMin <= d)&&(dr + tree[(2*v)+1].excessMax >= d)) v = (2*v)+1;
+	/* ----- Descendo a RMM-tree ------*/
+	while(v < numberLeaves-1){
+		if((dr + tree[(2*v)+1].excessMin <= d) && (dr + tree[(2*v)+1].excessMax >= d)){
+			v = (2*v)+1;
+		}
 		else{
 			dr += tree[(2*v)+1].excess;
 			v = (2*v)+2;
 		}
 	}
-	k = numLeaf(v);
-	j = fwdBlock(((k-1)*sizeBlock)-1,d-dr,&dr);
-	return j;
+
+	k = numLeaf(v); /*Obtém o número da folha referente ao elemento "v" da RMM-tree*/
+	return fwdBlock((k*sizeBlock)-1,d-dr,&dr);/*Varre o boclo da folha anterior*/
 }
 
 int RMMTree::bwdSearch(int i,int d){
@@ -309,7 +305,7 @@ int RMMTree::bwdSearch(int i,int d){
     if(dr == d) return j;
 
 	k = ceil((double)(i+1)/sizeBlock);
-	v = leafInTree(k)-1;
+	v = leafInTree(k);
 
 	//inicia a subida na árvore
 	while( ((v+1)&v) !=0  &&  (dr - tree[v-1].excess + tree[v-1].excessMin > d) ){
@@ -337,8 +333,8 @@ int RMMTree::bwdSearch(int i,int d){
 
 	//varre o bloco bit à bit afim de encontrar a posição "j" exata.
 	k = numLeaf(v)-1;
-	cout << "v " << v << "\n";
-	cout << "i " << ((k+1)*sizeBlock)-1 << "\n";
+	//cout << "v " << v << "\n";
+	//cout << "i " << ((k+1)*sizeBlock)-1 << "\n";
 	j = bwdBlock(((k+1)*sizeBlock)-1,d-dr,&dr);
 	return j;
 }
