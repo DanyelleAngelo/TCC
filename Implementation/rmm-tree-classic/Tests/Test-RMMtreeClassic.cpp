@@ -61,8 +61,8 @@ TEST_F(RMMTreeFixtureTest, NumberLeaf){
 }
  
 TEST_F(RMMTreeFixtureTest, FWDSearch_FindClose){
-    int index[] = {2,4,24,30,32,13,27,0,1,8,11,15,19,22,26,27,7,9,10,23};
-    //int index[] = {18};
+    int index[] = {0,1,4,7,8,9,10,11,15,13,19,22,23,24,26,27,30,32};
+
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->fwdSearch(index[i],-1),bps->find_close(index[i])) << "Ocorreu um erro ao calcular o find_close de i=" << index[i];
     } 
@@ -72,6 +72,7 @@ TEST_F(RMMTreeFixtureTest, FwdSearchGeneral){
     int index[] = {9,10,17,22,12,21,0,15,19,23,25,0,0,0,36};
     int d[] = {-2,1,-1,-1,-1,-1,2,-3,1,2,0,0,3,5,-1};//profundidade calculada em relação à index
     int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,39};//posição em que ocorre a profundidade esperada
+    
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um FwdSearch genérico, para i=" << index[i];
     } 
@@ -106,6 +107,6 @@ TEST_F(RMMTreeFixtureTest, BwdSearch_Enclose){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    //testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.FWDSearch_FindClose";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.FwdSearchGeneral";
     return RUN_ALL_TESTS();
 }
