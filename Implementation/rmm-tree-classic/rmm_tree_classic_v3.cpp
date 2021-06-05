@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <assert.h>
 #include "RMMTreeClassic.h"
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bit_vectors.hpp>
@@ -18,10 +18,11 @@ using namespace sdsl;
 
 
 
-RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock){
+RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock,int w){
 	this->bv = bv;
 	this->b_rank = rank_support_v<1>(&bv);
 	this->sizeBlock = sizeBlock;
+	this->w =  w;
 	this->numberLeaves = ceil((double)(bv.size()/sizeBlock));
 	this->numberNodes = (2*this->numberLeaves) -1;//árvore binária completa
 	this->height = ceil(log2(this->numberLeaves));
@@ -61,15 +62,16 @@ int RMMTree::bitsread(int s,int e){
 
 int RMMTree::leafInTree(int k){
 	int t = pow(2,ceil((double)log2(numberLeaves)));
-	if(k <= (2*numberLeaves) - t)return t-1+k;
+	if(k < (2*numberLeaves) - t)return t-1+k;
 	else return t-1-numberLeaves+k;
 }
 
 int RMMTree::numLeaf(int v){
-	int t = pow(2,ceil((double)log2(numberLeaves)));
-	v+=1;//ajuste do índice do vetor
-	if(v >= t )return v - t;
-	else return v - t  + numberLeaves;
+	/*Considere-se a numeração das folhas de 0 até r-1*/
+	int t = pow(2,ceil((double)log2(numberLeaves))) - 1;
+
+	if(v >= t )return v - t + 1;
+	else return v - t  + numberLeaves + 1;
 }
 
 void RMMTree::buildingTableC(){
@@ -99,6 +101,8 @@ void RMMTree::buildingTableC(){
 }
 
 void RMMTree::buildingTree(){
+	assert(sizeBlock%w ==0);
+	
     /*pré-computa tabela C, para acelerar a cosntruçã da RMM-tree*/
 	buildingTableC();
 
@@ -222,44 +226,44 @@ int RMMTree::fwdBlock(int i,int d,int *dr){
 		*dr += tableC[x].excess;
 	}
 
-	if(p > t)return -1;//d não está no bloco subsequente
+	if(p > t)return bv.size();//d não está no bloco subsequente
 
 	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
 	for(int j= (p+1)*w; j <= ((p+1)*w)+1;j++){
 		*dr += (bv[j] ==1)? 1:-1;
 		if(*dr == d)return j;
 	}
-    return -1;
+    return bv.size();
 }
 
 int RMMTree::bwdBlock(int i,int d,int *dr){
 	int p,x,j;
-	int f = ceil((double)(i+1)/w)-1;//marca o início do grande bloco
-	int t = (ceil((double)(i+2)/sizeBlock) * (sizeBlock/w))-1;//término do primeiro sub-bloco
-
+	int f = floor((double)i/w);
+	int t = (floor((double)i/sizeBlock) * (sizeBlock/w));
+	
 	*dr=0;
 	
+
 	for(j=i;j>=f*w;j--){
 		*dr += (bv[j] == 1)? -1 : 1;
 		if(*dr == d)return j;
 	}
-	
-	//TODO cálculo de p e t estão errados: vê
-	//lê os b bits (em grupo), fazendo uso da tabela C. para verificar se o excesso está no bloco de i
-	for(p=f;p>=t;p--){
-		x = bitsread((p*w)-2,(p*w)-1);
-		if( (*dr - tableC[x].excess + tableC[x].excessMin <= d)&& (*dr + tableC[x].excessMax >= d) ){
+
+	for(p=f-1;p>=t;p--){
+		x = bitsread((p*w),(p*w)+1);
+		if( (*dr - tableC[x].excess + tableC[x].excessMin <= d)&& (*dr - tableC[x].excess + tableC[x].excessMax >= d) ){
 			break;
 		}
 		*dr -= tableC[x].excess;
 	}
 
-	if(p < t)return -1;
-	for(j=(p*w)-1; j>=(p*w)-2;j--){
+	if(p < t)return bv.size();
+
+	for(j=(p*w)+1; j>=(p*w);j--){
 		*dr += (bv[j] == 1)? -1 : 1;
 		if(*dr == d)return j;
 	}
-	return -1;
+	return bv.size();
 }
 
 int RMMTree::fwdSearch(int i,int d){
@@ -279,9 +283,9 @@ int RMMTree::fwdSearch(int i,int d){
 		v = floor((double)(v-1)/2);
 	}
 	
-	if(((v+1)&(v+2)) ==0)return -1;//verifica se o nó a que chegamos é a última do seu nível
+	if(((v+1)&(v+2)) ==0)return bv.size();//verifica se o nó a que chegamos é a última do seu nível
 	
-	v++;/*o excesso procurado está no nó a direita do último verificado*/
+	v++;/*o excesso procurado está no nó à direita do último verificado*/
 
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberLeaves-1){
@@ -295,8 +299,9 @@ int RMMTree::fwdSearch(int i,int d){
 	}
 
 	k = numLeaf(v); /*Obtém o número da folha referente ao elemento "v" da RMM-tree*/
-	return fwdBlock((k*sizeBlock)-1,d-dr,&dr);/*Varre o boclo da folha anterior*/
+	return fwdBlock(((k-1)*sizeBlock)-1,d-dr,&dr);/*Varre o boclo da folha anterior*/
 }
+
 
 int RMMTree::bwdSearch(int i,int d){
 	int j,k,v, dr=0;
@@ -304,37 +309,53 @@ int RMMTree::bwdSearch(int i,int d){
 	j= bwdBlock(i,d,&dr);
     if(dr == d) return j;
 
-	k = ceil((double)(i+1)/sizeBlock);
+	k = floor((double)i/sizeBlock);
 	v = leafInTree(k);
 
-	//inicia a subida na árvore
+
+	/* -----Subindo a RMM-tree ------*/
 	while( ((v+1)&v) !=0  &&  (dr - tree[v-1].excess + tree[v-1].excessMin > d) ){
-		//eu preciso excluir o excesso global da folha anterior, e considerar apenas o mínimo deste
 		if(v%2 == 0){
 			dr-=tree[v-1].excess;
 		}
 		v = floor((double)(v-1)/2);
 	}
 	
-	if( ((v+1)&v) ==0  && v!=0)return -1;/*estamos nos nós mais a esquerda da árvore, e estes ainda não contém o excesso desejado*/
+	if( ((v+1)&v) ==0 )return bv.size();/*estamos nos nós mais a esquerda da árvore, e estes ainda não contém o excesso desejado*/
 
-	v--;
-	//inicia a descida na árvore
+	v--;/*o excesso procurado está no nó à esquerda do último verificado*/
+	
+	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberLeaves-1){
 		if((dr - tree[(2*v)+2].excess +tree[(2*v)+2].excessMin) <= d){
-			//descendo pelo filho à direita
 			v = (2*v) + 2;
 		}else{
-			//descendo pelo filho à esquerda
 			dr -= tree[(2*v)+2].excess;
 			v = (2*v) +1;
 		}
 	}
-
-	//varre o bloco bit à bit afim de encontrar a posição "j" exata.
-	k = numLeaf(v)-1;
-	//cout << "v " << v << "\n";
-	//cout << "i " << ((k+1)*sizeBlock)-1 << "\n";
-	j = bwdBlock(((k+1)*sizeBlock)-1,d-dr,&dr);
+	
+	k = numLeaf(v);/*Obtém o número da folha referente ao elemento "v" da RMM-tree*/
+	/*A ideia aqui é descobrir quem é a próxima folha, e então varrer a partir do bit anterior ao início 
+	desta, para assim fazer a varredura de trás para a frente*/
+	j = bwdBlock((k*sizeBlock)-1,d-dr,&dr);
 	return j;
+}
+
+int RMMTree::findclose(int i){
+	if((i == 0) && bv[i]==1)return bv.size() -1;
+	return (bv[i] == 0) ? i : fwdSearch(i,-1);
+}
+
+int RMMTree::findopen(int i){
+	/***************************************************************************************************
+	*TODO: No livro ele fala que o resultado é somado de 1, porque ele não incuí a posição i na conta
+	****************************************************************************************************
+	*/
+	if((i == bv.size()-1) && bv[i]==0)return 0;//TODO: não funciona se tivermos uma floresta com mais de uma árvore
+	return (bv[i] == 1) ?  i : bwdSearch(i,0);
+}
+
+int RMMTree::enclose(int i){
+	return (bv[i]==0) ? findopen(i) : bwdSearch(i,-2);
 }
