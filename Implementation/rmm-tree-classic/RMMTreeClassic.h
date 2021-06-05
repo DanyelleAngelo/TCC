@@ -8,7 +8,6 @@
 using namespace sdsl;
 using std::vector;
 
-const int w=2; //o tamanho do bloco deve ser múltiplo de w
 
 typedef struct Node{
 	int excess;
@@ -21,9 +20,8 @@ class RMMTree{
     public:
 		bit_vector bv;
 		rank_support_v<> b_rank;
-		int sizeBlock;
 
-        RMMTree(int_vector<1> &bv, int sizeBlock);
+        RMMTree(int_vector<1> &bv, int sizeBlock, int w);
 		//~RMMTree();
 		uint64_t getInt(const uint8_t  idx, const uint8_t len);
 		uint64_t readInt(const uint64_t* word, uint8_t offset, const uint8_t len);
@@ -31,17 +29,21 @@ class RMMTree{
 		int leafInTree(int k);
 		int numLeaf(int v);
 		void buildingTree();
-		void printNode(vector<Node> v, int i);
 		void printTree();
 		void printTableC();
 		void printInfoTree();
 		int fwdSearch(int i,int d);
 		int bwdSearch(int i,int d);
+		int findclose(int i);
+		int findopen(int i);
+		int enclose(int i);
 		
 	private:
+		int sizeBlock;
 		int numberLeaves;
 		int numberNodes;
 		int height;
+		int w;
 		vector<Node> tree;
 		vector<Node> tableC;
 
@@ -57,6 +59,7 @@ class RMMTree{
 		void buildingTableC();
 		void buildingLeaves(int s, int e, int k);
 		void buildingInternalNodesRoot();
+		void printNode(vector<Node> v, int i);
 };
 
 #endif
