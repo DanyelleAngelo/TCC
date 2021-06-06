@@ -266,6 +266,36 @@ int RMMTree::bwdBlock(int i,int d,int *dr){
 	return bv.size();
 }
 
+int RMMTree::minBlock(int i,int j, int *d){
+	int p,x, m=w;
+	int fb = ceil((double)i/w)+1;//para calcular o limite do primeiro bloquinho
+	int lb = ceil((double)j/w);//limite do último bloco
+	int lim = (j<(fb)*w) ? j+1 : fb*w;
+	*d = 0;
+
+	for(p=i; p < lim;p++){
+		*d += (bv[p] == 1)? 1 : -1;
+		if(*d < m)m=*d;
+	}
+
+	if(j<=fb*w)return m;//j está no mesmo bloco de i, e o excesso mínimo foi encontrado
+
+	//varre os próximos blocos de tamanho w.
+	for(p=fb+1; p <=lb;p++){
+		x = bitsread((p-1)*w, (p*w)-1);
+		if(*d + tableC[x].excessMin < m)m = *d + tableC[x].excessMin;
+		*d += tableC[x].excess;
+	}
+
+	//varremos os blocos anteriores à j, mas ainda não passamos por j
+	for(p=(lb*w)+1;p<j;p++){
+		*d += (bv[p] == 1)? 1 : -1;
+		if(*d < m)m=*d;
+	}
+
+	return m;
+}
+
 int RMMTree::fwdSearch(int i,int d){
 	int j,k,v, dr=0;
 
@@ -278,7 +308,7 @@ int RMMTree::fwdSearch(int i,int d){
 	/* -----Subindo a RMM-tree ------
 	O primeiro teste verifica se o nó é o último do seu nível, o segundo verifica se 'd' está
 	no bloco à direita (encurtando passos).*/
-	while( ((v+1)&(v+2))!=0 && (dr+tree[v+1].excessMin > d && dr+tree[v+1].excessMax > d)){
+	while( ((v+1)&(v+2))!=0 && ( (dr+tree[v+1].excessMin > d) && (dr+tree[v+1].excessMax > d) )){
 		if(v%2 !=0)dr += tree[v+1].excess;
 		v = floor((double)(v-1)/2);
 	}
@@ -302,7 +332,9 @@ int RMMTree::fwdSearch(int i,int d){
 	return fwdBlock(((k-1)*sizeBlock)-1,d-dr,&dr);/*Varre o boclo da folha anterior*/
 }
 
-
+/********
+TODO: a definição dos artigos é a que melhor explica bwdsearch.
+*/
 int RMMTree::bwdSearch(int i,int d){
 	int j,k,v, dr=0;
 
@@ -314,7 +346,7 @@ int RMMTree::bwdSearch(int i,int d){
 
 
 	/* -----Subindo a RMM-tree ------*/
-	while( ((v+1)&v) !=0  &&  (dr - tree[v-1].excess + tree[v-1].excessMin > d) ){
+	while( ((v+1)&v) !=0  &&  ((dr - tree[v-1].excess + tree[v-1].excessMin > d) && (dr - tree[v-1].excess + tree[v-1].excessMax > d)) ){
 		if(v%2 == 0){
 			dr-=tree[v-1].excess;
 		}
@@ -327,7 +359,7 @@ int RMMTree::bwdSearch(int i,int d){
 	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberLeaves-1){
-		if((dr - tree[(2*v)+2].excess +tree[(2*v)+2].excessMin) <= d){
+		if( (dr - tree[(2*v)+2].excess +tree[(2*v)+2].excessMin <= d)&&(dr - tree[(2*v)+2].excess +tree[(2*v)+2].excessMax >= d)){
 			v = (2*v) + 2;
 		}else{
 			dr -= tree[(2*v)+2].excess;
@@ -340,6 +372,20 @@ int RMMTree::bwdSearch(int i,int d){
 	desta, para assim fazer a varredura de trás para a frente*/
 	j = bwdBlock((k*sizeBlock)-1,d-dr,&dr);
 	return j;
+}
+
+int RMMTree::minExcess(int i,int j){
+	int d;
+	int k = ceil((double)(i+1)/sizeBlock)*sizeBlock;//onde termina a folha que cobre i 
+	int m = minBlock(i,j,&d);
+
+	if(j<=k)return m;
+	return bv.size();
+}
+
+int RMMTree::rmq(int i,int j){
+	int m = min(i,j);
+	return fwdSearch(i-1,m);
 }
 
 int RMMTree::findclose(int i){

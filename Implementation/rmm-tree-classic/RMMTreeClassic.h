@@ -34,6 +34,8 @@ class RMMTree{
 		void printInfoTree();
 		int fwdSearch(int i,int d);
 		int bwdSearch(int i,int d);
+		int minExcess(int i,int j);
+		int rmq(int i,int j);
 		int findclose(int i);
 		int findopen(int i);
 		int enclose(int i);
@@ -48,7 +50,7 @@ class RMMTree{
 		vector<Node> tableC;
 
 		/*
-			@breif: Pecorre cada subbloco de tamanho "w" do bloco pertencente à "i" em busca do excesso d
+			@breif Pecorre cada subbloco de tamanho "w" do bloco pertencente à "i" em busca do excesso d
 			@param i: Posição a partir da qual devo buscar o excesso
 			@param d: Excesso desejado
 			@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
@@ -56,6 +58,7 @@ class RMMTree{
 		*/
 		int fwdBlock(int i,int d,int *dr);
 		int bwdBlock(int i,int d,int *dr);
+		int minBlock(int i,int j,int *d);
 		void buildingTableC();
 		void buildingLeaves(int s, int e, int k);
 		void buildingInternalNodesRoot();

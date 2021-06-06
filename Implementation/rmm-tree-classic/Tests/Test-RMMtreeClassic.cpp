@@ -45,7 +45,7 @@ TEST_F(RMMTreeFixtureTest, GET_INT){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, Kth_LeafInTree){
+TEST_F(RMMTreeFixtureTest, leaf_index_on_tree){
     /*Dado um índice i no vetor de parênteses, retorna a posição de seu nó na RMM-Tree*/
     
     int index[] = {2,7,10,14,19,23,26,30,35,37};
@@ -57,34 +57,34 @@ TEST_F(RMMTreeFixtureTest, Kth_LeafInTree){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, NumberLeaf){
+TEST_F(RMMTreeFixtureTest, number_leaf){
     int index[] = {15,16,17,18,9,10,11,12,13,14};
     int expected[] = {1,2,3,4,5,6,7,8,9,10};
-    
+
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->numLeaf(index[i]),expected[i]) << "Ocorreu um erro ao tentar descobrir a qual folha i=" << index[i] << " pertence";
     }
 
 }
  
-TEST_F(RMMTreeFixtureTest, FWDSearch_FindClose){
+TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
     int index[] = {0,1,3,4,7,8,9,10,11,15,13,18,19,20,22,23,24,26,27,30,32};
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->findclose(index[i]),bps->find_close(index[i])) << "Ocorreu um erro ao calcular o find_close de i=" << index[i];
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, FwdSearchGeneral){
+TEST_F(RMMTreeFixtureTest, fwdSearch_general){
     int index[] = {9,10,17,22,12,21,0,15,19,23,25,0,0,0,36,18};
-    int d[] = {-2,1,-1,-1,-1,-1,2,-3,1,2,0,0,3,5,-1,-1};//profundidade calculada em relação à index
-    int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,39,21};//posição em que ocorre a profundidade esperada
+    int d[] = {-2,1,-1,-1,-1,-1,2,-3,1,2,0,0,3,5,-1,-1};
+    int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,39,21};
     
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um FwdSearch genérico, para i=" << index[i];
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, FwdSearch_AnswerNotFound){
+TEST_F(RMMTreeFixtureTest, fwdSearch_answer_not_found){
     int index[] = {9,17,22};
     int d[] = {10,-8,57};
     int size = t->bv.size();
@@ -94,7 +94,7 @@ TEST_F(RMMTreeFixtureTest, FwdSearch_AnswerNotFound){
     } 
 } 
 
-TEST_F(RMMTreeFixtureTest, BwdSearch_FindOpen){ 
+TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
     int index[] = {3,5,6,12,14,16,17,18,20,25,28,29,31,33,34,35,36,38,39};
 
     //int index[] = {21}; // TODO:  errado até no teste de mesa
@@ -104,7 +104,7 @@ TEST_F(RMMTreeFixtureTest, BwdSearch_FindOpen){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, BwdSearch_Enclose){
+TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
     int index[] = {0,2,5,9,10,12,15,17,18,22,23,25,30,32,36};
     //int index[] = {19,21};// TODO: erros ao debugar na mão
 
@@ -121,9 +121,39 @@ TEST_F(RMMTreeFixtureTest, BwdSearch_Enclose){
     } 
 }
 
+TEST_F(RMMTreeFixtureTest, bwdSearch__general){ 
+    int index[] = {9,17,22,12,15,19,23,36,37,39,18};
+    int d[] = {-2,-1,-1,-4,0,2,0,5,3,2,-1};
+    int expected[] = {8,9,22,7,14,16,20,28,33,38,8};
+    
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ(t->bwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um BwdSearch genérico, para i=" << index[i];
+    } 
+}
+
+TEST_F(RMMTreeFixtureTest, bwdSearch_answer_not_found){ 
+    int index[] = {9,17,22};
+    int d[] = {5,10,-4};
+    int size = t->bv.size();
+    
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ(t->bwdSearch(index[i],d[i]),size) << "Ocorreu um erro ao tentar obter 'answer not found' para BwdSearch  com  i=" << index[i];
+    } 
+}
+
+TEST_F(RMMTreeFixtureTest, minExcess_j_and_i_in_the_same_block){ 
+    int i[] = {0,0,8,13,16,20,22,24,25,29,33,36}; 
+    int j[] = {3,2,11,15,19,22,23,27,26,30,34,39};
+    int expected[] = {1,1,1,0,-3,-2,1,0,-1,-1,-2,-2};
+
+    for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
+        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
+    }
+}
+
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    //testing::GTEST_FLAG(filter) = "~RMMTreeFixtureTest.GET_INT";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.minExcess_j_and_i_in_the_same_block";
     return RUN_ALL_TESTS();
 }
