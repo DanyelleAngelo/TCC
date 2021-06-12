@@ -161,6 +161,6 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwdSearch_*";
     return RUN_ALL_TESTS();
 }
