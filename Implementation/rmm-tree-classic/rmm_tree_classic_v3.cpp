@@ -213,8 +213,6 @@ int RMMTree::fwdBlock(int i,int d,int *dr){
 	int f = ceil((double)(i)/w);
 	int t = (ceil((double)(i+1)/sizeBlock) * (sizeBlock/w));
 
-	*dr=0;
-
 	//varre o sub-bloco a qual i+1 pertebce
 	for(int j=i+1;j<=(f*w)+1;j++){
 		*dr += (bv[j] == 1)? 1 : -1;
@@ -329,8 +327,8 @@ int RMMTree::fwdSearch(int i,int d){
 	}
 
 	k = numLeaf(v); 
-
-	return fwdBlock(((k-1)*sizeBlock)-1,d-dr,&dr);/*Varre o boclo da folha anterior*/
+	j = fwdBlock(((k-1)*sizeBlock)-1,d,&dr);
+	return (dr == d)? j : bv.size();/*Varre o boclo da folha anterior*/
 }
 
 int RMMTree::bwdSearch(int i,int d){
