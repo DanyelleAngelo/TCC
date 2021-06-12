@@ -11,8 +11,7 @@ a ausência desse mesmo elemento "-", torna o teste o único a ser executado.
 */
 
 
-/*
-TODO: adicionar leitura de arquivos. Aumentar nossa capacidade de testes
+/**TODO: adicionar leitura de arquivos. Aumentar nossa capacidade de testes
 */
 using namespace sdsl;
 using namespace std;
@@ -95,9 +94,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_answer_not_found){
 } 
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
-    int index[] = {3,5,6,12,14,16,17,18,20,25,28,29,31,33,34,35,36,38,39};
-
-    //int index[] = {21}; // TODO:  errado até no teste de mesa
+   int index[] = {3,5,6,12,14,16,17,18,20,21,25,28,29,31,33,34,35,36,38,39};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->findopen(index[i]),bps->find_open(index[i])) << "Ocorreu um erro ao calcular o find_open de i=" << index[i];
@@ -105,26 +102,17 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
-    int index[] = {0,2,5,9,10,12,15,17,18,22,23,25,30,32,36};
-    //int index[] = {19,21};// TODO: erros ao debugar na mão
-
-    /***************************************************************************************************
-    *TODO: Parênteses de fechamneto, a definição de enclose em bps->enclose segue a definição
-    *do livro de Navarro (p. 182). Pra um parênteses de fechamento, sua resposta é findopen.
-    *Entretanto está, contraria a definição de Navarro e Arroyuelo (2010) (enclose é o nó pai).
-    *Enclose de ')' contraria até mesmo bwdsearch, que diz que a resposata de enclose estará a uma profundidade
-    *d = -2, do parênteses i. O que fazer então?
-    *Existe uma diferença quando i = ) e i = (. Isso está diretamente ligado à definição de enclose.*/
-    
+    int index[] = {2,5,9,10,12,15,17,18,19,21,22,23,25,30,31,32,36};
+  
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->enclose(index[i]),bps->enclose(index[i])) << "Ocorreu um erro ao calcular o enclose de i=" << index[i];
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch__general){ 
-    int index[] = {9,17,22,12,15,19,23,36,37,39,18};
-    int d[] = {-2,-1,-1,-4,0,2,0,5,3,2,-1};
-    int expected[] = {8,9,22,7,14,16,20,28,33,38,8};
+TEST_F(RMMTreeFixtureTest, bwdSearch_general){ 
+    int index[] = {9,17,22,12,15,19,36,37,39,18};
+    int d[] = {-2,-1,-1,-4,0,2,0,3,2,-1};
+    int expected[] = {7,8,21,6,13,15,6,32,37,7};
     
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->bwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um BwdSearch genérico, para i=" << index[i];
@@ -141,7 +129,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_answer_not_found){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, minExcess_j_and_i_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_same_block){ 
     int i[] = {0,0,8,13,16,20,22,24,25,29,33,36}; 
     int j[] = {3,2,11,15,19,22,23,27,26,30,34,39};
     int expected[] = {1,1,1,0,-3,-2,1,0,-1,-1,-2,-2};
@@ -151,9 +139,18 @@ TEST_F(RMMTreeFixtureTest, minExcess_j_and_i_in_the_same_block){
     }
 }
 
+TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_different_block){ 
+    int i[] = {10}; 
+    int j[] = {31};
+    int expected[] = {-1};
+
+    for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
+        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
+    }
+}
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.minExcess_j_and_i_in_the_same_block";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.bwdSearch_*";
     return RUN_ALL_TESTS();
 }
