@@ -12,7 +12,7 @@
             * Se não, seguimos pelo filho esquerdo. 
             * Caso contrário, analisamos se o excesso mínimo coberto até essa área é menor do que o 
               excesso desejado, e atualizamos  m de acordo com a resposta. Seguindo pelo filho direito
-        * Independente da resposta atualizamos o valor de d, com base no excesso logal do filho esquerdo. 
+        * Independente da resposta atualizamos o valor de d, com base no excesso local do filho esquerdo. 
 
 * O percurso na árvore, para quando chegamos ao nó folha que contém a posição j+1 (o nó não está no intervalo B[i,j]).
     * Varremos o bloco anterior (B[(k-1)*b,j]) a essa folha, procurando pelo excesso mínimo.
