@@ -143,14 +143,25 @@ TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_different_block){
     int i[] = {9,1,12,15,17,33,38,39,0}; 
     int j[] = {30,6,26,29,32,39,39,39,39};
     int expected[] = {-1,0,-4,-3,-3,-5,-2,-1,1};
-    
+
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
         EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
     }
 }
+
+TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){ 
+    int i[] = {9,1,12,15,17,33,38,39,0}; 
+    int j[] = {30,6,26,29,32,39,39,39,39};
+    int expected[] = {21,0,-4,-3,-3,-5,-2,-1,1};
+    
+    for(int k=0;k<1;k++){
+        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao encontrar a posição do excecsso mínimo em [" << i[k] << "," << j[k] << "]";
+    }
+}
+
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.minExcess_i_and_j_in_the_different_block";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.minExcess_i_and_j_in_the_same_block";
     return RUN_ALL_TESTS();
 }
