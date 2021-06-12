@@ -1,0 +1,21 @@
+* Se j> e, pecorremos a rmM, procurando o valor mínimo em B[e+1,j].
+
+* Agora descobrimos se v é o filho da direita de seu pai.
+    *Nesse caso, simplesmente avançamos para o pai.
+    *Caso contrário,  verificamos se a área coberta por R[v+1] está contida em B [i,j]:
+        * Em caso afirmativo processamos R [v + 1] em tempo constante: 
+            O excesso mínimo alcançado dentro do nó v + 1 é d+R[v + 1].m, portanto, 
+            se d+R[v + 1].m < m alteramos o valor de m para d+R [v + 1].m.
+        * Independente da resposta (em relação a cobertura) atualizamos d←d+R[v + 1].e e movemos para o pai de v, v←v/2.
+    * Quando o nó v+1  não estiver contido em B[i,j], iniciamos a descida na rmM, a partir de v ← v + 1. 
+        * Verificamos se o filho esquerdo de v, 2v, está contido em B[i, j]. 
+            * Se não, seguimos pelo filho esquerdo. 
+            * Caso contrário, analisamos se o excesso mínimo coberto até essa área é menor do que o 
+              excesso desejado, e atualizamos  m de acordo com a resposta. Seguindo pelo filho direito
+        * Independente da resposta atualizamos o valor de d, com base no excesso logal do filho esquerdo. 
+
+* O percurso na árvore, para quando chegamos ao nó folha que contém a posição j+1 (o nó não está no intervalo B[i,j]).
+    * Varremos o bloco anterior (B[(k-1)*b,j]) a essa folha, procurando pelo excesso mínimo.
+        * Aumentando d em 1, sempre que encontrarmos um "(" e diminuindo em 1 c.c.
+    * Quando chegarmos a posição j, encontramos o excesso mínimo.
+

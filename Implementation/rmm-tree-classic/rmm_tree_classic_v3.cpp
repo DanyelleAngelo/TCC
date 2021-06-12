@@ -16,7 +16,9 @@
 using namespace std;
 using namespace sdsl;
 
-
+int min(int a , int b){
+	return (a < b )? a:b;
+}
 
 RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock,int w){
 	this->bv = bv;
@@ -67,7 +69,7 @@ int RMMTree::leafInTree(int k){
 }
 
 int RMMTree::numLeaf(int v){
-	/*Considere-se a numeração das folhas de 0 até r-1*/
+	/*Considere-se a numeração das folhas de 1 até r*/
 	int t = pow(2,ceil((double)log2(numberLeaves))) - 1;
 
 	if(v >= t )return v - t + 1;
@@ -268,12 +270,12 @@ int RMMTree::bwdBlock(int i,int d,int *dr){
 
 int RMMTree::minBlock(int i,int j, int *d){
 	int p,x, m=w;
-	int fb = ceil((double)i/w)+1;//para calcular o limite do primeiro bloquinho
-	int lb = ceil((double)j/w);//limite do último bloco
-	int lim = (j<(fb)*w) ? j+1 : fb*w;
+	int fb = floor((double)i/w)+1;//para calcular o limite do primeiro bloquinho
+	int lb = floor((double)j/w);//limite do último bloco
+	int lim = min(j,fb*w);
 	*d = 0;
 
-	for(p=i; p < lim;p++){
+	for(p=i; p <= lim;p++){
 		*d += (bv[p] == 1)? 1 : -1;
 		if(*d < m)m=*d;
 	}
@@ -288,7 +290,7 @@ int RMMTree::minBlock(int i,int j, int *d){
 	}
 
 	//varremos os blocos anteriores à j, mas ainda não passamos por j
-	for(p=(lb*w)+1;p<j;p++){
+	for(p=(lb*w)+1;p<=j;p++){
 		*d += (bv[p] == 1)? 1 : -1;
 		if(*d < m)m=*d;
 	}
@@ -376,15 +378,47 @@ int RMMTree::bwdSearch(int i,int d){
 
 int RMMTree::minExcess(int i,int j){
 	int d;
-	int k = ceil((double)(i+1)/sizeBlock)*sizeBlock;//onde termina a folha que cobre i 
-	int m = minBlock(i,j,&d);
+	int k_i = ceil((double)(i+1)/sizeBlock)*sizeBlock;//onde termina a folha que cobre i.
+	int k_j = ceil((double)(j+1)/sizeBlock)*sizeBlock;
+	int m   = minBlock(i,min(k_i*sizeBlock,j),&d);
+	
+	if(j <= k_i)return m;
+	
+	int v   = leafInTree(k_i);//número da folha 	que cobre a área de i
+	int v_j = numLeaf(k_j);//número da folha que cobre a área de j+1
+	int pot = pow(2,floor((double)log2(v_j)));
 
-	if(j<=k)return m;
-	return bv.size();
+	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
+	while(v+1 > v_j || ){
+		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
+			if(d+tree[v+1].excessMin < m)m = d+tree[v+1].excessMin;
+			d+= tree[v+1].excess; 
+		}
+		v = floor((double)(v-1)/2);
+	}
+
+	v++;
+
+	//iniciamos a descida na árvore
+	while(v < numberLeaves-1){
+		if(d+tree[v].excessMin >=m)return m;
+		if(  ){//o filho esquerdo não está no intervalo de v_j.
+			if(d+tree[(2*v)+1].excessMin < m)m= d+tree[(2*v)+1].excessMin;
+			d+= tree[(2*v)+1].excess;
+			v = (2*v)+2;
+		}
+		else v = (2*v)+1;
+	}
+
+	if(d+tree[v].excessMin >=m)return m;
+
+	int dr;
+	int mr = minBlock((k_j-1)*sizeBlock,j,&dr);
+	return (d + mr < m) ? (d + mr) : m;
 }
 
 int RMMTree::rmq(int i,int j){
-	int m = min(i,j);
+	int m = minExcess(i,j);
 	return fwdSearch(i-1,m);
 }
 
