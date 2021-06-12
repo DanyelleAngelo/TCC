@@ -38,6 +38,10 @@ class RMMTree{
 		int rmq(int i,int j);
 		int findclose(int i);
 		int findopen(int i);
+
+		/*!
+		*	@brief 
+		*/
 		int enclose(int i);
 		
 	private:
@@ -48,21 +52,63 @@ class RMMTree{
 		int w;
 		vector<Node> tree;
 		vector<Node> tableC;
+		
+		/*!
+		*	@return retorna a se a < b e b se b <=a. 
+		*/
+		int min(int a , int b);
 
-		/*
-			@breif Pecorre cada subbloco de tamanho "w" do bloco pertencente à "i" em busca do excesso d
-			@param i: Posição a partir da qual devo buscar o excesso
-			@param d: Excesso desejado
-			@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
-			@return: a posição em que ocorre o excesso ou -1 caso o excesso não se encontre neste bloco
+		/*!
+		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
+		*	@param i: Posição a partir da qual devo buscar o excesso (i é adicionado de 1)
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
 		int fwdBlock(int i,int d,int *dr);
+
+		/*!
+		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
+		*	@param i: Posição a partir da qual devo iniciar a busca para trás do excesso
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição em que ocorre o excesso d ou ou bv.size() caso o excesso não se encontre neste bloco.
+		*/
 		int bwdBlock(int i,int d,int *dr);
+
+		/*!
+		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i", em busca do menor excesso na área.
+		*	@param i: Posição a partir da qual devo iniciar a busca.
+		*	@param j: Intervalo superior da busca. Varremos até "j" ou até chegarmos ao limite do bloco de i, o que vier primeiro.
+		*	@param d: Excesso relativo.
+		*	@return o excesso mínimo no intervalo definido.
+		*/
 		int minBlock(int i,int j,int *d);
+
+		/*!
+		*	@brief Pré-computa uma tabela de excessos C, para agilizar a construção e as operações da RMM-tree.
+		*/
 		void buildingTableC();
+
+		/*!
+		*	@brief Constroí as folhas de cada nível da RmM-tree.
+		*	@param s: Posição onde começa a primeira folha do nível
+		*	@param e: Posição da última folha do nível.
+		*	@param k: Marca a posição ordinal das folhas na árvore.
+		*/
 		void buildingLeaves(int s, int e, int k);
+
+		/*!
+		*	@brief Constroí os nós internos e a raíz da RmM-tree
+		*/
 		void buildingInternalNodesRoot();
-		void printNode(vector<Node> v, int i);
+
+		/*!
+		*	@brief Imprime as informações de excesso de um nó
+		*	@param vector: estrutura (árvore ou tabela) que terá seu nó impresso
+		*	@param i: índice do elemento da estrutura.
+		*/
+		void printNode(vector<Node> vector, int i);
 };
 
 #endif
