@@ -35,7 +35,9 @@ class RMMTree{
 		int fwdSearch(int i,int d);
 		int bwdSearch(int i,int d);
 		int minExcess(int i,int j);
+		int maxExcess(int i,int j);
 		int rmq(int i,int j);
+		int rMq(int i,int j);
 		int findclose(int i);
 		int findopen(int i);
 
@@ -84,6 +86,15 @@ class RMMTree{
 		*	@return o excesso mínimo no intervalo definido.
 		*/
 		int minBlock(int i,int j,int *d);
+
+		/*!
+		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i", em busca do maior excesso na área.
+		*	@param i: Posição a partir da qual devo iniciar a busca.
+		*	@param j: Intervalo superior da busca. Varremos até "j" ou até chegarmos ao limite do bloco de i, o que vier primeiro.
+		*	@param d: Excesso relativo.
+		*	@return o excesso máximo no intervalo definido.
+		*/
+		int maxBlock(int i,int j,int *d);
 
 		/*!
 		*	@brief Pré-computa uma tabela de excessos C, para agilizar a construção e as operações da RMM-tree.
