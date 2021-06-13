@@ -32,6 +32,7 @@ class RMMTree{
 		void printTree();
 		void printTableC();
 		void printInfoTree();
+
 		int fwdSearch(int i,int d);
 		int bwdSearch(int i,int d);
 		int minExcess(int i,int j);
@@ -45,7 +46,75 @@ class RMMTree{
 		*	@brief 
 		*/
 		int enclose(int i);
-		
+
+		/** TODO: devo criar funções como inspect??*/
+
+		/*!
+		*	@brief : verifica se bv[x] é um bit 1 e se o elemento que o sucede é um bit 0 para decidir se este é um nó folha.
+		*	@param x: índice do parêntes que codifica o nó analisado.
+		*	@return: true se x codificar um nó folha, false caso contrário.
+		*/
+		bool isLeaf(int x);
+
+		/*!
+		*	@brief : verifica se o nó x é ancestral do nó y, checando se o primeiro contém o segundo.
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó
+		*	@param y: índice do vetor de parêntese balanceados que codifica o nó
+		*	@return: true se x é ancestral de y, false caso contrário.
+		*/
+		bool isAncestor(int x, int y);
+
+		/*!
+		*	@brief : contabiliza o excesso de 1 no intervalo bv[0,x] para saber a profundidade do nó.
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: profundidade do nó x
+		*/
+		int depth(int x);
+
+		/*!
+		*	@brief : Busca o nó que contém o x, mais à esquerda de x.
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: índice do nó pai de x
+		*/
+		int parent(int x);
+
+		/*!
+		*	@brief : busca o irmão à direita de x
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: retorna o índice do irmão à direita de x
+		*/
+		int nextSibling(int x);
+
+
+		/*!
+		*	@brief : busca o irmão à esquerda de x
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: retorna o índice do irmão à esquerda de x
+		*/
+		int prevSibling(int x);
+
+		/*!
+		*	@brief : busca o i-esimo filho de x
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@param i: i-th filho de x a ser buscado
+		*	@return: retorna o índice do i-th filho de x (se houver)
+		*/
+		int child(int x,int i);
+
+		/*!
+		*	@brief : Chama a função child, passando como parâmetro x e 1
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: Primeiro filho do nó x
+		*/
+		int firstChild(int x);
+
+		/*!
+		*	@brief : Calcula a quantidade de nós contidos em x (incluindo x)
+		*	@param x: índice do vetor de parêntese balanceados que codifica o nó 
+		*	@return: tamanho da subárvore enraízada em x
+		*/
+		int subtreeSize(int x);
+
 	private:
 		int sizeBlock;
 		int numberLeaves;

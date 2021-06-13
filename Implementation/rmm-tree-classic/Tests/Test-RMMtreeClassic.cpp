@@ -40,7 +40,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_GET_INT){
     int len = 2;
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(bits::read_int(t->bv.data() + (index[i]>>6), index[i] & 0x3F, len),t->bitsread(index[i],index[i]+len-1))<< "Ocorreu um erro ao tentar devolver o interiro correspondente aos bits [" << index[i] << ","<<(index[i]+len-1)<<"]";
+        EXPECT_EQ(bits::read_int(t->bv.data() + (index[i]>>6), index[i] & 0x3F, len),t->bitsread(index[i],index[i]+len-1))<< "Resposta errada ao tentar devolver o interiro correspondente aos bits [" << index[i] << ","<<(index[i]+len-1)<<"]";
     }
 }
 
@@ -52,7 +52,7 @@ TEST_F(RMMTreeFixtureTest, leaf_index_on_tree){
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         int k = floor((double)(index[i])/sizeBlock);
-        EXPECT_EQ(t->leafInTree(k),expected[i]) << "Ocorreu um erro ao tentar obterr o índice da RMMTree em que se encontra a " << index[i] <<"-th folha";
+        EXPECT_EQ(t->leafInTree(k),expected[i]) << "Resposta errada ao tentar obter o índice da RMMTree em que se encontra a " << index[i] <<"-th folha";
     }
 }
 
@@ -61,7 +61,7 @@ TEST_F(RMMTreeFixtureTest, number_leaf){
     int expected[] = {1,2,3,4,5,6,7,8,9,10};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->numLeaf(index[i]),expected[i]) << "Ocorreu um erro ao tentar descobrir a qual folha i=" << index[i] << " pertence";
+        EXPECT_EQ(t->numLeaf(index[i]),expected[i]) << "Resposta errada ao tentar descobrir a qual folha i=" << index[i] << " pertence";
     }
 
 }
@@ -69,7 +69,7 @@ TEST_F(RMMTreeFixtureTest, number_leaf){
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
     int index[] = {0,1,3,4,7,8,9,10,11,15,13,18,19,20,22,23,24,26,27,30,32};
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->findclose(index[i]),bps->find_close(index[i])) << "Ocorreu um erro ao calcular o find_close de i=" << index[i];
+        EXPECT_EQ(t->findclose(index[i]),bps->find_close(index[i])) << "Resposta errada ao calcular o find_close de i=" << index[i];
     } 
 }
 
@@ -79,7 +79,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_general){
     int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,39,21,11,11,18,36};
     
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um FwdSearch genérico, para i=" << index[i];
+        EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << index[i];
     } 
 }
 
@@ -89,7 +89,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_answer_not_found){
     int size = t->bv.size();
     
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->fwdSearch(index[i],d[i]),size) << "Ocorreu um erro ao tentar obter 'answer not found' para FwdSearch para i=" << index[i];
+        EXPECT_EQ(t->fwdSearch(index[i],d[i]),size) << "Resposta errada ao tentar obter 'answer not found' para FwdSearch para i=" << index[i];
     } 
 } 
 
@@ -97,7 +97,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
    int index[] = {3,5,6,12,14,16,17,18,20,21,25,28,29,31,33,34,35,36,38,39};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->findopen(index[i]),bps->find_open(index[i])) << "Ocorreu um erro ao calcular o find_open de i=" << index[i];
+        EXPECT_EQ(t->findopen(index[i]),bps->find_open(index[i])) << "Resposta errada ao calcular o find_open de i=" << index[i];
     } 
 }
 
@@ -105,7 +105,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
     int index[] = {2,5,9,10,12,15,17,18,19,21,22,23,25,30,31,32,36};
   
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->enclose(index[i]),bps->enclose(index[i])) << "Ocorreu um erro ao calcular o enclose de i=" << index[i];
+        EXPECT_EQ(t->enclose(index[i]),bps->enclose(index[i])) << "Resposta errada ao calcular o enclose de i=" << index[i];
     } 
 }
 
@@ -115,7 +115,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_general){
     int expected[] = {7,8,21,6,13,15,6,32,37,7};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->bwdSearch(index[i],d[i]),expected[i]) << "Ocorreu um erro ao calcular um BwdSearch genérico, para i=" << index[i];
+        EXPECT_EQ(t->bwdSearch(index[i],d[i]),expected[i]) << "Resposta errada ao calcular um BwdSearch genérico, para i=" << index[i];
     } 
 }
 
@@ -125,7 +125,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_answer_not_found){
     int size = t->bv.size();
     
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->bwdSearch(index[i],d[i]),size) << "Ocorreu um erro ao tentar obter 'answer not found' para BwdSearch  com  i=" << index[i];
+        EXPECT_EQ(t->bwdSearch(index[i],d[i]),size) << "Resposta errada ao tentar obter 'answer not found' para BwdSearch  com  i=" << index[i];
     } 
 }
 
@@ -135,7 +135,7 @@ TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_same_block){
     int expected[] = {1,1,1,0,-3,-2,1,0,-1,-1,-2,-2};
 
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -145,7 +145,7 @@ TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_different_block){
     int expected[] = {-1,0,-4,-3,-3,-5,-2,-1,1,1};
 
     for(int k=9;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -155,7 +155,7 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
 
     /** TODO: ver caso em que o intervalo eh 0,39*/
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->rmq(i[k],j[k]),bps->rmq(i[k],j[k])) << "Ocorreu um erro ao encontrar a posição do excecsso mínimo em [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->rmq(i[k],j[k]),bps->rmq(i[k],j[k])) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -165,7 +165,7 @@ TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_same_block){
     int expected[] = {3,3,4,1,-1,-1,2,2,0,0,-1,0,6};
 
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -176,7 +176,7 @@ TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_different_block){
     //intervalo 0 e 10, mesmo problema do minexcess
     
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Ocorreu um erro ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -186,13 +186,80 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rMq){
     int expected[] ={11,2,13,15,27,33,38,39,11}; 
 
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->rMq(i[k],j[k]),expected[k]) << "Ocorreu um erro ao encontrar a posição do excecsso máximo em [" << i[k] << "," << j[k] << "]";
+        EXPECT_EQ(t->rMq(i[k],j[k]),expected[k]) << "Resposta errada ao encontrar a posição do excecsso máximo em [" << i[k] << "," << j[k] << "]";
     }
 }
+
+TEST_F(RMMTreeFixtureTest, check_if_i_is_a_leaf){ 
+    /** TODO: Verificar meu conceito*/
+    int index[] = {2,8,11,16,17,19,21,25,34,37,38,39}; 
+    bool expected[] ={true,false,true,true,false,true,false,true,false,true,true,false}; 
+
+    for(int k=0;k<(int)(sizeof(index)/sizeof(index[0]));k++){
+        EXPECT_EQ(t->isLeaf(index[k]),expected[k]) << "Resposta errada ao verificar se o nó codificado em [" << index[k] << " , close(i)] é uma folha."; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, check_if_x_is_ancestor_of_y){ 
+    int x[] = {1,1,0,13,17,22,26,0,0,0}; 
+    int y[] = {2,9,9,14,19,24,30,27,37,39}; 
+    bool expected[] ={true,false,true,false,false,true,false,true,true,false}; 
+
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->isAncestor(x[k],y[k]),expected[k]) << "Resposta errada ao verificar se o nó x= " << x[k] << " é ancestral do nó y= " << y[k]; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, node_depth_x){ 
+    int index[] = {2,7,11,17,23,27,34}; 
+    int expected[] ={2,1,5,4,3,5,3}; 
+
+    for(int k=0;k<(int)(sizeof(index)/sizeof(index[0]));k++){
+        EXPECT_EQ(t->depth(index[k]),expected[k]) << "Resposta errada ao verificar a profunidade do nó codificado em [" << index[k] << " , close(i)]"; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x){ 
+    int x[] = {0,2,7,12,15,18,20,25,32,33,37,39}; 
+    /** TODO: problema com enclose de 37 e 7*/
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->parent(x[k]),bps->enclose(x[k])) << "Resposta errada ao buscar o pai do nó codificado em bv[" << x[k] << " , close(i)]"; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, rigth_sibling_of_x){ 
+    int x[] = {2,8,13,19,24,30,37}; 
+    int size = t->bv.size();
+    int expected[] = {4,22,15,size,26,32,size};
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->nextSibling(x[k]),expected[k]) << "Resposta errada ao buscar o irmão direito do nó codificado em bv[" << x[k] << " , close(i)]"; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, left_sibling_of_x){ 
+    int x[] = {2,8,13,19,24,30,37}; 
+    int size = t->bv.size();
+    int expected[] = {size,size,11,9,size,26,7};
+    
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->prevSibling(x[k]),expected[k]) << "Resposta errada ao buscar o irmão esquerdo do nó codificado em bv[" << x[k] << " , close(i)]"; 
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, subtree_size){ 
+    int x[] = {0,1,2,7,8,9,22,27,29,39}; 
+    int size = t->bv.size();
+    int expected[] = {20,3,1,15,7,5,7,1,size,size};
+    
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->subtreeSize(x[k]),expected[k]) << "Resposta errada ao calcular o tamannho da subarvore enraizada em bv[" << x[k] << " , close(i)]"; 
+    }
+}
+
 
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    //testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.subtree_size";
     return RUN_ALL_TESTS();
 }
