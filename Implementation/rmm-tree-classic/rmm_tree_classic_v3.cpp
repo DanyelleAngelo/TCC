@@ -415,6 +415,7 @@ int RMMTree::minExcess(int i,int j){
 	int v_j = leafInTree(k_j);//índice da folha que cobre a área de j
 
 	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
+	/** TODO: segunda condição de parada apresenta problema para alguns intervalos. ver [0,10]*/
 	while(v+1 > v_j ||  (int)ceil((double)v_j/(1<< (int)(ceil(log2(v_j) - log2(v+1))))) !=v+1){
 
 		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
@@ -423,7 +424,6 @@ int RMMTree::minExcess(int i,int j){
 		}
 		v = floor((double)(v-1)/2);;
 	}
-	
 	v++;
 	//iniciamos a descida na árvore
 	while(v < numberLeaves-1){
@@ -456,7 +456,7 @@ int RMMTree::maxExcess(int i,int j){
 	int v_j = leafInTree(k_j);//índice da folha que cobre a área de j
 	
 	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
-	while(v+1 > v_j ||  (int)ceil((double)v_j/(1<< (int)(ceil(log2(v_j) - log2(v+1))))) !=v+1){
+	while(v+1 > v_j || (int)ceil((double)v_j/(1<< (int)(ceil(log2(v_j) - log2(v+1))))) !=v+1){
 
 		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
 			if(d+tree[v+1].excessMax > eM)eM = d+tree[v+1].excessMax;
@@ -464,8 +464,9 @@ int RMMTree::maxExcess(int i,int j){
 		}
 		v = floor((double)(v-1)/2);;
 	}
-	
+
 	v++;
+
 	//iniciamos a descida na árvore
 	while(v < numberLeaves-1){
 
@@ -477,7 +478,7 @@ int RMMTree::maxExcess(int i,int j){
 		}
 		else v = (2*v)+1;
 	}
-	
+
 	if(d+tree[v].excessMax <=eM)return eM;
 
 	int dr=0;
@@ -486,8 +487,19 @@ int RMMTree::maxExcess(int i,int j){
 }
 
 int RMMTree::rmq(int i,int j){
-	/** TODO: verificar o caso em que i=0 */
+	/** TODO: verificar o caso em que i=0. O excesso mínimo para esse caso é 1 (o que acontece em 0). e bps->rmq retorna 39. */
 	int m = minExcess(i,j);
+	
+	return fwdSearch(i-1,m);
+}
+
+int RMMTree::rMq(int i,int j){
+	int m = maxExcess(i,j);
+	
+	if(i==0){
+		m += (bv[i]==1)? -1 : 1;
+		return fwdSearch(0,m);
+	}
 	return fwdSearch(i-1,m);
 }
 
