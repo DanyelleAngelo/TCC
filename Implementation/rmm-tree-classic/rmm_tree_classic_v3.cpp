@@ -262,6 +262,7 @@ int RMMTree::bwdBlock(int i,int d,int *dr){
 		*dr += (bv[j] == 1)? -1 : 1;
 		if(*dr == d)return j-1;
 	}
+	
 	return bv.size();
 }
 
@@ -370,7 +371,7 @@ int RMMTree::bwdSearch(int i,int d){
 	
 	j= bwdBlock(i,d,&dr);
     if(dr == d) return j;
-
+	
 	k = floor((double)i/sizeBlock);
 	v = leafInTree(k);
 	
@@ -381,9 +382,9 @@ int RMMTree::bwdSearch(int i,int d){
 		}
 		v = floor((double)(v-1)/2);
 	}
-
+	
 	if( ((v+1)&v) ==0 )return bv.size();/*estamos nos nós mais a esquerda da árvore, e estes ainda não contém o excesso desejado*/
-
+	
 	v--;/*o excesso procurado está no nó à esquerda do último verificado*/
 	
 	/* ----- Descendo a RMM-tree ------*/
@@ -395,7 +396,7 @@ int RMMTree::bwdSearch(int i,int d){
 			v = (2*v) +1;
 		}
 	}
-
+	
 	k = numLeaf(v);
 	if(dr == d)return (k*sizeBlock)-1 ;
 	j=bwdBlock((k*sizeBlock)-1,d,&dr);/*Ao chamar bwdBlock a ideia é varrer do último bit da folha k até o seu primeiro bit.*/
@@ -517,4 +518,45 @@ int RMMTree::enclose(int i){
 	if(bv[i]==0)return findopen(i);
 	int j = bwdSearch(i,-2);
 	return (j == (int)bv.size()) ? j : j+1;
+}
+
+bool RMMTree::isLeaf(int x){
+	return ( (bv[x] == 1 && bv[x+1]==0) || (bv[x-1] == 1 && bv[x]==0));
+}
+
+bool RMMTree::isAncestor(int x, int y){
+	/** TODO: mesma ideia que isleaf, e se eu passar um parênteses de fechamento x, e um parente y, e x conter y??
+	 * nesse caso o resultado (x>ye findopen(x) < y) deveria retornar true.
+	*/
+	return (x <= y && y< findclose(x));
+}
+
+int RMMTree::depth(int x){
+	return 0;
+}
+
+int RMMTree::parent(int x){
+	return enclose(x);
+}
+
+int RMMTree::nextSibling(int x){
+	int i = findclose(x)+1;
+	return (bv[i]==1)? i : bv.size();
+}
+
+int RMMTree::prevSibling(int x){
+	return (bv[x-1]==0)? findopen(x-1) : bv.size();
+}
+
+int RMMTree::child(int x,int i){
+	return child(x,i);
+}
+
+int RMMTree::firstChild(int x){
+	return child(x,1);
+}
+
+int RMMTree::subtreeSize(int x){
+	assert(x>=0 && x < (int)bv.size());
+	return (bv[x]==1)? ceil((findclose(x)-x+1)/2) : bv.size();//mais uma vez, porque não tratar o caso em que bv[x] =0??
 }
