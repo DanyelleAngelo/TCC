@@ -46,14 +46,21 @@ TEST_F(RMMTreeFixtureTest, GET_INT){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, expected_log2_ceil_and_floor){
+TEST_F(RMMTreeFixtureTest, expected_log2_ceil){
     int index[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
-    int expectedC[] = {0,1,2,2,3,3,3,3,4,4,4,4,4,4,4,4,5,5};
-    int expectedF[] = {0,1,1,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4};
+    int expected[] = {0,1,2,2,3,3,3,3,4,4,4,4,4,4,4,4,5,5};
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ((int)ceil(t->cLog_2(index[i])),expectedC[i])<< "Resposta errada ao tentar calcular o teto do logarítmo na base 2 de " << index[i];
-        EXPECT_EQ((int)floor(t->fLog_2(index[i])),expectedF[i])<< "Resposta errada ao tentar calcular o chão do logarítmo na base 2 de " << index[i];
+        EXPECT_EQ((int)ceil(t->cLog_2(index[i])),expected[i])<< "Resposta errada ao tentar calcular o teto do logarítmo na base 2 de " << index[i];
+    }
+}
+
+TEST_F(RMMTreeFixtureTest, expected_log2_floor){
+    int index[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+    int expected[] = {0,1,1,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4};
+
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ((int)floor(t->fLog_2(index[i])),expected[i])<< "Resposta errada ao tentar calcular o chão do logarítmo na base 2 de " << index[i];
     }
 }
 
