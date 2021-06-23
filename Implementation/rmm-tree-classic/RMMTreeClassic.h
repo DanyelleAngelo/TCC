@@ -20,47 +20,177 @@ typedef struct Node{
 
 class RMMTree{
     public:
-		bit_vector bv;
+		bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
+
+		/*!
+		*	@brief Construtor
+		*/
         RMMTree(int_vector<1> &bv, int sizeBlock, int w);
-		//~RMMTree();
+
 		uint64_t getInt(const uint8_t  idx, const uint8_t len);
 		uint64_t readInt(const uint64_t* word, uint8_t offset, const uint8_t len);
+
+		/*!
+		*	@param n: número a ser retirado
+		*	@return chão do logarítmo na base 2 de n
+		*/
 		unsigned long long fLog_2(unsigned long long  n);
+
+		/*!
+		*	@param n: número a ser retirado
+		*	@return teto do logarítmo na base 2 de n
+		*/
 		unsigned long long cLog_2(unsigned long long  n);
+
+		/*!
+		*	@brief ler os bits de s até e de bv, e contabiliza o inteiro correspondente a esta sequência binária
+		*	@param s: ponto de partida da leitura
+		*	@param e: ponto final da leitura
+		*	@return inteiro correspondente aos bits lidos.
+		*/
 		int bitsread(int s,int e);
 		
 		/*!
 		*	@brief verifica se a k-th folha está no último ou penúltimo nível da árvore e calcula sua posição
 		*	@param k = k-th folha
-		*	@return índice da k-th folha
+		*	@return índice da k-th folha na rmM-tree
 		*/
 		int leafInTree(int k);
 
 		/*!
 		*	@brief verifica o nível em que a folha está, e calcula a sua ordem
-		*	@param v : índice da folha na ávore
+		*	@param v : índice da folha na rmM-tree
 		*	@return ordem da folha
 		*/
 		int numLeaf(int v);
+
+		/*!
+		*	@brief constrói a estrutura da rmM-tree, chamando primeiro a função para pré-computar
+		*	uma tabela que irá acelerar o processo, e chamando depois a função para construir as folhas
+		*	da rmM-tree e por último seus nós internos.
+		*/
 		void buildingTree();
+
+		/*!
+		*	@brief Imprime a raís, depois nós internos e por último folhas da rmM-tree através da 
+		*	função printNode()
+		*/
 		void printTree();
+
+		/*!
+		*	@brief Imprime os valores da tabela de aceleração através da função printNode()
+		*/
 		void printTableC();
+
+		/*!
+		*	@brief Imprime as informações básicas da rmM-tree, número de nós, número de folhas, altura
+		*	e tamanho de cobertura de bloco.
+		*/
 		void printInfoTree();
 
+		/*!
+		*	@brief Realiza um percusor de subida e depois desciada na rmM-tree,  nos nós a direita
+		* 	da folha (e na própria folha)  que contém a posição i+1 em busca do excesso d.
+		*	@param i: Posição a partir da qual quero realizar a busca (será incrementado de 1)
+		*	@param d: excesso de "1" buscado (profundidade)
+		*	@return primeira posição j > i em bv onde ocorre o excesso d.
+		*/
 		int fwdSearch(int i,int d);
+
+		/*!
+		*	@brief Realiza um percusor de subida e depois desciada na rmM-tree através dos nos nós 
+		* 	a esquerda da folha (e na própria folha)  que contém a posição i em busca do excesso d.
+		*	@param i: Posição a partir da qual quero realizar a busca.
+		*	@param d: excesso de "1" buscado (profundidade)
+		*	@return primeira posição j < i em bv onde ocorre o excesso d.
+		*/
 		int bwdSearch(int i,int d);
+
+		/*!
+		*	@brief Realiza um percurso de subida e descida na rmM-tree em busca do execesso mínimo
+		*	presente no intervalo i,j. O percurso de subida termina ao encontrar o nó ancestral da
+		*	folha que cobre a posição j.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return inteiro representando o excesso mínimo no intervalo i,j 
+		*/
 		int minExcess(int i,int j);
+
+		/*!
+		*	@brief Realiza um percurso de subida e descida na rmM-tree em busca do execesso máximo
+		*	presente no intervalo i,j. O percurso de subida termina ao encontrar o nó ancestral da
+		*	folha que cobre a posição j.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return inteiro representando o excesso máximo no intervalo i,j 
+		*/
 		int maxExcess(int i,int j);
+
+		/*!
+		*	@brief Chama minExcess() para contabilizar o excesso mínimo no intervalo i,j
+		*	e depois realiza um percurso de subida e descida na árvore, afim de contabilizar o
+		*	número de vezes que o excesso aparece na área
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return número de vezes que o excesso mínimo aparece em bv[i,j]
+		*/
 		int minCount(int i,int j);
+
+		/*!
+		*	@brief Chama minExcess() para contabilizar o excesso mínimo no intervalo i,j
+		*	e depois realiza um percurso de subida e descida na árvore, afim de obter a posição exata
+		*	em que o t-th execesso mínimo ocorre.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@param t: ordem em que o excesso mínimo deve ocorrer
+		*	@return índice, p, com i <= p <= j, onde ocorre o t-th excesso mínimo 
+		*/
 		int minSelectExcess(int i,int j, int t);
 
+		/*!
+		*	@brief Chama minExcess() para contabilizar o excesso mínimo no intervalo i,j
+		*	e depois chama a função fwdSearch(), passando como parâmetro o excesso mínimo computado,
+		*	e a posição i-1, a fim de encontar a posição exata em que esse excesso ocorre.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return índice, p, com i <= p <= j, onde ocorre pela primeira vez o excesso mínimo
+		*/
 		int rmq(int i,int j);
+
+		/*!
+		*	@brief Chama maxExcess() para contabilizar o excesso máximo no intervalo i,j
+		*	e depois chama a função fwdSearch(), passando como parâmetro o excesso máximo computado,
+		*	e a posição i-1, a fim de encontar a posição exata em que esse excesso ocorre.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return índice, p, com i <= p <= j, onde ocorre pela primeira vez o excesso máximo
+		*/
 		int rMq(int i,int j);
+
+		/*!
+		*	@brief busca o parênteses de fechamento, corresponde ao parênteses  de abertura i.
+		*	para isso, busca através da função fwdSearch() a primeira posição j >i onde ocorre
+		*	o excesso -1.
+		*	@param i: índice de um parênteses de abertura em bv, que cofica um nó
+		*	@return índice j do parênteses de fechamento corresponde ao parênteses de abertura i, ou i, caso
+		*	i codifique um parênteses de fechamento.
+		*/
 		int findClose(int i);
+
+		/*!
+		*	@brief busca o parênteses de abertura, corresponde ao parênteses  de fechamento i.
+		*	para isso, busca através da função bwdSearch() a primeira posição j < i onde ocorre
+		*	o excesso 0.
+		*	@param i: índice de um parênteses de fechamento em bv
+		*	@return índice j do parênteses de abertura corresponde ao parênteses de fechamento i, ou i, caso
+		*	i codifique um parênteses de abertura.
+		*/		
 		int findOpen(int i);
 
 		/*!
-		*	@brief 
+		*	@brief busca a posição j < i , tal que BV[j,findclose(j)] contenha a posição i.
+		*	@param i: índice de um parênteses de abertura em bv, que cofica um nó
+		*	@return bv.size() caso i=0, findOpen(i) caso bv[i]=1, ou nó pai de i (computado através da função bwdSearch(i,-2)+1)
 		*/
 		int enclose(int i);
 
@@ -129,12 +259,6 @@ class RMMTree{
 		*	@return: Primeiro filho do nó x, se houver, e  bv,size() caso contrário
 		*/
 		int firstChild(int x);
-
-		/*!
-		*	@brief  Calcula a quantidade de nós contidos em x (incluindo x)
-		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
-		*	@return tamanho da subárvore enraízada em x
-		*/
 
 		/*! 
 		*	@brief contabiliza o número de irmãos a esquerda do nó x
@@ -268,19 +392,19 @@ class RMMTree{
 		int postSelect(int t);
 
 	private:
-		rank_support_v<1> b_rank1;
-		rank_support_v<0> b_rank0;
-		rank_support_v<10,2> b_rank10;
-		select_support_mcl<1> b_sel1;
-		select_support_mcl<0> b_sel0;
-		select_support_mcl<10,2> b_sel10;
-		int sizeBlock;
-		int numberLeaves;
-		int numberNodes;
-		int height;
-		int w;
-		vector<Node> tree;
-		vector<Node> tableC;
+		rank_support_v<1> b_rank1;			// Fornece suporte a operaçãop  rank, tendo como alvo bit 1
+		rank_support_v<0> b_rank0;			// Fornece suporte a operaçãop  rank, tendo como alvo bit 0
+		rank_support_v<10,2> b_rank10;		// Fornece suporte a operaçãop  rank, tendo como alvo a ocorrência do bit 1,seguido do bit 0
+		select_support_mcl<1> b_sel1;		// Fornece suporte a operaçãop  select, tendo como alvo bit 1
+		select_support_mcl<0> b_sel0;		// Fornece suporte a operaçãop  select, tendo como alvo bit 0
+		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
+		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
+		int numberLeaves;					// Quantidade de folhas na rmM-tree
+		int numberNodes;					// Número de nós da rmM-tree
+		int height;							// Altura da rmM-tree
+		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
+		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
+		vector<Node> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 		
 		/*!
 		*	@return retorna a se a < b e b se b <=a. 
