@@ -1,5 +1,5 @@
 #include <iostream>
-#include "RMMTreeClassic.h"
+#include "rmMTreeClassic.h"
 
 using namespace std;
 
