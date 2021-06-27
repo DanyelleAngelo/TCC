@@ -51,14 +51,16 @@ class RMMTree{
 		int bitsread(int s,int e);
 		
 		/*!
-		*	@brief verifica se a k-th folha está no último ou penúltimo nível da árvore e calcula sua posição
+		*	@brief verifica se a k-th folha está no último ou penúltimo nível da árvore e calcula sua posição.
+		*	A ordem das folhas aqui vai de 0 à numberLeaves-1.
 		*	@param k = k-th folha
 		*	@return índice da k-th folha na rmM-tree
 		*/
 		int leafInTree(int k);
 
 		/*!
-		*	@brief verifica o nível em que a folha está, e calcula a sua ordem
+		*	@brief Dado um índice na rmM-tree,verifica o nível em que a folha está, e calcula a sua ordem.
+		*	A ordem das folhas vai de 0 à numberLeaves-1
 		*	@param v : índice da folha na rmM-tree
 		*	@return ordem da folha
 		*/
@@ -72,7 +74,7 @@ class RMMTree{
 		void buildingTree();
 
 		/*!
-		*	@brief Imprime a raís, depois nós internos e por último folhas da rmM-tree através da 
+		*	@brief Imprime a raíz, depois nós internos e por último folhas da rmM-tree através da 
 		*	função printNode()
 		*/
 		void printTree();
@@ -229,7 +231,6 @@ class RMMTree{
 		*	@return: retorna o índice do irmão à direita de x
 		*/
 		int nextSibling(int x);
-
 
 		/*!
 		*	@brief  busca o irmão à esquerda de x
@@ -475,11 +476,8 @@ class RMMTree{
 
 		/*!
 		*	@brief Constroí as folhas de cada nível da RmM-tree.
-		*	@param s: Posição onde começa a primeira folha do nível
-		*	@param e: Posição da última folha do nível.
-		*	@param k: Marca a posição ordinal das folhas na árvore.
 		*/
-		void buildingLeaves(int s, int e, int k);
+		void buildingLeaves();
 
 		/*!
 		*	@brief Constroí os nós internos e a raíz da RmM-tree

@@ -79,11 +79,10 @@ int RMMTree::leafInTree(int k){
 }
 
 int RMMTree::numLeaf(int v){
-	/*Considere-se a numeração das folhas de 1 até r*/
-	int t = (1 << cLog_2(numberLeaves)) - 1;
+	int t = 1 << cLog_2(numberLeaves);
 
-	if(v >= t )return v - t + 1;
-	else return v - t  + numberLeaves + 1;
+	if(v >= t-1 )return v - t  + 1 ;
+	else return v - t  + numberLeaves + 1 ;
 }
 
 void RMMTree::buildingTableC(){
@@ -113,48 +112,37 @@ void RMMTree::buildingTableC(){
 }
 
 void RMMTree::buildingTree(){
-	assert(sizeBlock%w ==0);
-	
     /*pré-computa tabela C, para acelerar a cosntruçã da RMM-tree*/
 	buildingTableC();
 
-	/*Inicia a construção das folhas, verificando se estas estão distribuídas em 2 níveis.*/
-	int lastLevelLeaves = (2*numberLeaves) -  (1 << height);
-	int prevLevelLeaves = numberLeaves - lastLevelLeaves;
-	int kth;
-
-	if(1 <= lastLevelLeaves)kth = (1 << height)-1;
-	else kth= (1 << height) - lastLevelLeaves-1;
-	buildingLeaves(kth,numberNodes,1);
-	if(prevLevelLeaves > 0){
-		buildingLeaves(numberNodes-numberLeaves,kth,prevLevelLeaves-1);
-	}
-
+	/*constrói as folhas da árvore*/
+	buildingLeaves();
 	/*Inicia a construção dos nós internos e raíz*/
 	buildingInternalNodesRoot();
 }
 
-void RMMTree::buildingLeaves(int s, int e, int k){
-	int x;
-
-	for(int i=s;i<e;i++,k++){
-		tree[i].excess = 0;
-		tree[i].excessMax = 0 - w;
-		tree[i].excessMin =w;
-		tree[i].numberExcessMin =0;
-		for(int p = ((k-1)*sizeBlock/w)+1;p<=k*sizeBlock/w;p++){
-			x = bitsread((p-1)*w,((p-1)*w)+w-1);
-
-			if(tree[i].excess + tableC[x].excessMax > tree[i].excessMax){
-				tree[i].excessMax = tree[i].excess + tableC[x].excessMax;
+void RMMTree::buildingLeaves(){
+	int x,v;
+	
+	for(int k=0;k<numberLeaves;k++){
+		v = leafInTree(k);
+		tree[v].excess = 0;
+		tree[v].excessMax = 0 - w;
+		tree[v].excessMin =w;
+		tree[v].numberExcessMin =0;
+		
+		for(int p = (k*(sizeBlock/w))+1;p<=((k+1)*sizeBlock)/w;p++){
+			x = bitsread((p-1)*w,(p*w)-1);
+			if(tree[v].excess + tableC[x].excessMax > tree[v].excessMax){
+				tree[v].excessMax = tree[v].excess + tableC[x].excessMax;
 			}
-			if(tree[i].excess + tableC[x].excessMin < tree[i].excessMin){
-				tree[i].excessMin = tree[i].excess + tableC[x].excessMin;
-				tree[i].numberExcessMin = tableC[x].numberExcessMin;
-			}else if(tree[i].excess + tableC[x].excessMin == tree[i].excessMin){
-				tree[i].numberExcessMin = tree[i].numberExcessMin + tableC[x].numberExcessMin;
+			if(tree[v].excess + tableC[x].excessMin < tree[v].excessMin){
+				tree[v].excessMin = tree[v].excess + tableC[x].excessMin;
+				tree[v].numberExcessMin = tableC[x].numberExcessMin;
+			}else if(tree[v].excess + tableC[x].excessMin == tree[v].excessMin){
+				tree[v].numberExcessMin = tree[v].numberExcessMin + tableC[x].numberExcessMin;
 			}
-			tree[i].excess += tableC[x].excess;
+			tree[v].excess += tableC[x].excess;
 		}
 	}
 }
@@ -218,28 +206,37 @@ void RMMTree::printInfoTree(){
 
 int RMMTree::fwdBlock(int i,int d,int *dr){
 	int p;
-	int f = ceil((double)(i)/w);
-	int t = (ceil((double)(i+1)/sizeBlock) * (sizeBlock/w));
+	int fb = floor((double)i/w);//para calcular o limite do primeiro bloquinho (de i)
+	int lb = floor((double)(i+1)/sizeBlock)* (sizeBlock/w);//limite do bloco 
+/* 	cout << "Por dentro do bloco, f eh " << fb << " e t eh " << lb << "\n";
+	cout << "Temos dr também que eh " << *dr << " e d eh " << d << "\n";  */
 	
 	//varre o sub-bloco a qual i+1 pertebce
-	for(int j=i+1;j<=(f*w)+1;j++){
+	for(int j=i+1;j<=(fb*w)+1;j++){
 		*dr += (bv[j] == 1)? 1 : -1;
 		if(*dr == d)return j;
 	}
 	
+/* 	cout << " dr eh " << *dr << "\n";
+	cout << " f eh " << fb << " e t eh " << lb << "\n"; */
 	//Verifica se "d" está contido no bloco subsequente
-	for(p=f; p<=t;p++){
-		int x = bitsread((p+1)*w, ((p+1)*w)+1);
+	for(p=fb; p<=lb;p++){
+		int x = bitsread((p+1)*w, ((p+2)*w)-1);
+/* 		cout << "interavalo eh "<< p*w << " e " << ((p+1)*w)-1 << "\n";
+		cout << " x eh " << x << "\n";
+		cout << " dr eh " << *dr << "\n"; */
 		if(*dr + tableC[x].excessMin <= d && *dr + tableC[x].excessMax >= d){
 			break;
 		}
 		*dr += tableC[x].excess;
 	}
+/* 	cout << " p eh " << p << " e t eh " << lb << "\n";
+	cout << " dr eh " << * dr << "\n"; */
 	
-	if(p > t)return t*w;//d não está no bloco subsequente
+	if(p > lb)return lb*sizeBlock;//d não está no bloco subsequente
 
 	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
-	for(int j= (p+1)*w; j <= ((p+1)*w)+1;j++){
+	for(int j= (p+1)*w; j <= ((p+2)*w)-1;j++){
 		*dr += (bv[j] ==1)? 1:-1;
 		if(*dr == d)return j;
 	}
@@ -248,15 +245,15 @@ int RMMTree::fwdBlock(int i,int d,int *dr){
 
 int RMMTree::bwdBlock(int i,int d,int *dr){
 	int p,x,j;
-	int f = floor((double)i/w);
-	int t = (floor((double)i/sizeBlock) * (sizeBlock/w));
+	int fb = floor((double)i/w);
+	int lb = (floor((double)i/sizeBlock) * (sizeBlock/w));
 	
-	for(j=i;j>=f*w;j--){
+	for(j=i;j>=fb*w;j--){
 		*dr += (bv[j] == 1)? -1 : 1;
 		if(*dr == d)return j-1;
 	}
 	
-	for(p=f-1;p>=t;p--){
+	for(p=fb-1;p>=lb;p--){
 		x = bitsread((p*w),(p*w)+1);
 		if( (*dr - tableC[x].excess + tableC[x].excessMin <= d)&& (*dr - tableC[x].excess + tableC[x].excessMax >= d) ){
 			break;
@@ -264,7 +261,7 @@ int RMMTree::bwdBlock(int i,int d,int *dr){
 		*dr -= tableC[x].excess;
 	}
 
-	if(p < t)return (t*w)-1;
+	if(p < lb)return (lb*w)-1;
 
 	for(j=(p*w)+1; j>=(p*w);j--){
 		*dr += (bv[j] == 1)? -1 : 1;
@@ -361,7 +358,7 @@ int RMMTree::minCountBlock(int i,int j,int m,int *d){
 	return n;
 }
 
-int RMMTree::minSelectBlock(int i,int j,int m, int *t,int *d){
+int RMMTree::minSelectBlock(int i,int j,int m, int *t,int *d){	
 	int fb = ceil((double)(i+1)/w);//para calcular o limite do primeiro bloquinho (de i)
 	int lb = floor((double)j/w);//limite do bloco de j
 	int lim = min(j,(fb*w)-1);
@@ -379,7 +376,7 @@ int RMMTree::minSelectBlock(int i,int j,int m, int *t,int *d){
 	
 	for(int p=fb+1; p<=lb; p++){
 		x = bitsread(p*w,(p*w)+1);
-		;
+		
 		if((*d + tableC[x].excessMin) == m){
 			*t-=1;
 			if(*t==0)return p;
@@ -401,24 +398,25 @@ int RMMTree::minSelectBlock(int i,int j,int m, int *t,int *d){
 
 
 int RMMTree::fwdSearch(int i,int d){
-	//assert(i>=-1 && i < (int)bv.size());
+	assert((i+1)>=0 && (i+1)< bv.size());
 
 	int j,k,v, dr=0;
-
+	
 	j= fwdBlock(i,d,&dr);
 	
     if(dr == d) return j;
 
-	k = ceil((double)(i+1)/sizeBlock);//calcula a k-th folha em que se encontra i+1
+	k = floor((double)(i+1)/sizeBlock);//calcula a k-th folha em que se encontra i+1
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
-	
+
+/* 	cout << "Antes de subir a arvore k eh " << k << " v eh " << v << " e dr eh " << dr << "\n"; */
 	/* -----Subindo a RMM-tree ------*/
-	while( ((v+1)&(v+2))!=0 && ( (dr+tree[v+1].excessMin > d) && (dr+tree[v+1].excessMax > d) )){
+	while( ((v+1)&(v+2))!=0 && !( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) )){
 		
-		if(v%2 !=0)dr += tree[v+1].excess;
+		if((v&1)==1)dr += tree[v+1].excess;
 		v = floor((double)(v-1)/2);
 	}
-	
+/* 	cout << "Depois de subir a arvore v eh " << v << " dr eh " << dr << "\n";  */
 	if(((v+1)&(v+2)) ==0)return bv.size();//verifica se o nó a que chegamos é a última do seu nível
 	
 	v++;/*o excesso procurado está no nó à direita do último verificado*/
@@ -434,14 +432,16 @@ int RMMTree::fwdSearch(int i,int d){
 		}
 	}
 
-	k = numLeaf(v); 
-	j = fwdBlock(((k-1)*sizeBlock)-1,d,&dr);
+	k = numLeaf(v);
+/* 	cout << "depois de descer a arvore k eh " << k << " dr eh " << dr << " e v eh "<< v << "\n";
+	cout << "Vamos investigar " << ((k)*sizeBlock)-1 << "\n";  */
+	j = fwdBlock((k*sizeBlock)-1,d,&dr);
+	
 	return (dr == d)? j : bv.size();/*Varre o boclo da folha anterior*/
 }
 
 int RMMTree::bwdSearch(int i,int d){
-	assert(i>=0 && i < (int)bv.size());
-
+	assert(i>=0 && i < bv.size());
 	int j,k,v, dr=0;
 
 	if(i==0)return -1;
@@ -450,10 +450,10 @@ int RMMTree::bwdSearch(int i,int d){
     if(dr == d) return j;
 	k = floor((double)i/sizeBlock);
 	v = leafInTree(k);
-	
 	/* -----Subindo a RMM-tree ------*/
-	while( ((v+1)&v) !=0  &&  ((dr - tree[v-1].excess + tree[v-1].excessMin > d) && (dr - tree[v-1].excess + tree[v-1].excessMax > d)) ){
-		if(v%2 == 0){
+	while( ((v+1)&v) !=0  &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
+		
+		if((v&1)== 0){
 			dr-=tree[v-1].excess;
 		}
 		v = floor((double)(v-1)/2);
@@ -474,13 +474,16 @@ int RMMTree::bwdSearch(int i,int d){
 	}
 	
 	k = numLeaf(v);
-	if(dr == d)return (k*sizeBlock)-1 ;
-	j=bwdBlock((k*sizeBlock)-1,d,&dr);/*Ao chamar bwdBlock a ideia é varrer do último bit da folha k até o seu primeiro bit.*/
+	
+	if(dr == d)return ((k+1)*sizeBlock)-1;
+	j=bwdBlock( ((k+1)*sizeBlock)-1,d,&dr);/*Ao chamar bwdBlock a ideia é varrer do último bit da folha k até o seu primeiro bit.*/
 
 	return (dr==d)? j : -1;
 }
 
 int RMMTree::minExcess(int i,int j){
+	assert(	(i<=j) && (i>=0 && j < bv.size()));
+
 	int d=0;
 	int k_i = floor((double)i/sizeBlock);//onde termina a folha que cobre i.
 	int k_j = floor((double)(j+1)/sizeBlock);
@@ -494,7 +497,7 @@ int RMMTree::minExcess(int i,int j){
 	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
 	while(v+1 > v_j ||  (int)((v_j)/ (1<< (int)(fLog_2(v_j) - (int)fLog_2(v+2)) ) ) !=v+2){
 		
-		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
+		if((v&1)==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
 			if(d+tree[v+1].excessMin < m)m = d+tree[v+1].excessMin;
 			d+= tree[v+1].excess; 
 		}
@@ -520,12 +523,12 @@ int RMMTree::minExcess(int i,int j){
 	if(d+tree[v].excessMin >=m)return m;
 
 	int dr=0;
-	int mr = minBlock((k_j)*sizeBlock,j,&dr);
+	int mr = minBlock(k_j*sizeBlock,j,&dr);
 	return (d + mr < m) ? (d + mr) : m;
 }
 
 int RMMTree::maxExcess(int i,int j){
-	assert(i<=j && (i>=0 && j<(int)bv.size()));
+	assert(	(i<=j) && (i>=0 && j < bv.size()));
 
 	int d=0;
 	int k_i = floor((double)i/sizeBlock);
@@ -539,7 +542,7 @@ int RMMTree::maxExcess(int i,int j){
 
 	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
 	while(v+1 > v_j ||   (int)((v_j)/ (1<< (int)(fLog_2(v_j) - fLog_2(v+2)) ) ) !=v+2){
-		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
+		if((v&1)==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
 			if(d+tree[v+1].excessMax > eM)eM = d+tree[v+1].excessMax;
 			d+= tree[v+1].excess; 
 		}
@@ -563,11 +566,13 @@ int RMMTree::maxExcess(int i,int j){
 	if(d+tree[v].excessMax <=eM)return eM;
 
 	int dr=0;
-	int mr = maxBlock((k_j)*sizeBlock,j,&dr);
+	int mr = maxBlock(k_j*sizeBlock,j,&dr);
 	return (d + mr > eM) ? (d + mr) : eM;
 }
 
 int RMMTree::minCount(int i,int j){
+	assert(	(i<=j) && (i>=0 && j < bv.size()));
+
 	int m = minExcess(i,j);
 	int d = 0;
 	int k_i = floor((double)i/sizeBlock);
@@ -581,7 +586,7 @@ int RMMTree::minCount(int i,int j){
 
 	while(v+1 > v_j ||  (int)((v_j)/ (1<< (int)(fLog_2(v_j) - fLog_2(v+2)) ) ) !=v+2){
 
-		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
+		if((v&1)==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
 			if(d+tree[v+1].excessMin == m)n += tree[v+1].numberExcessMin;
 			d+= tree[v+1].excess; 
 		}
@@ -608,6 +613,8 @@ int RMMTree::minCount(int i,int j){
 }
 
 int RMMTree::minSelectExcess(int i,int j, int t){
+	assert(	(i<=j) && (i>=0 && j < bv.size()));
+
 	int m = minExcess(i,j);
 	int d = 0;
 	int k_i = floor((double)i/sizeBlock);
@@ -620,7 +627,7 @@ int RMMTree::minSelectExcess(int i,int j, int t){
 	
 	while(v+2 > v_j ||  (int)((v_j)/ (1<< (int)(fLog_2(v_j) - fLog_2(v+2)) ) ) !=v+2 ){
 
-		if(v%2==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
+		if((v&1)==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita
 			if(d+tree[v+1].excessMin == m){
 				if(t<=tree[v+1].numberExcessMin)break;
 				t -= tree[v+1].numberExcessMin;
@@ -653,14 +660,13 @@ int RMMTree::minSelectExcess(int i,int j, int t){
 	
 	int k = numLeaf(v);
 	
-	p = minSelectBlock((k-1)*sizeBlock,min((k*sizeBlock)-1,j),m,&t,&d);
+	p = minSelectBlock(k*sizeBlock,min(((k+1)*sizeBlock)-1,j),m,&t,&d);
 	return (t==0)? p : bv.size();
 }
 
 int RMMTree::rmq(int i,int j){
 	/** TODO: verificar o caso em que i=0. O excesso mínimo para esse caso é 1 (o que acontece em 0). e bps->rmq retorna 39. */
 	int m = minExcess(i,j);
-	
 	return fwdSearch(i-1,m);
 }
 
@@ -675,31 +681,42 @@ int RMMTree::rMq(int i,int j){
 }
 
 int RMMTree::findClose(int i){
+	assert(i>=0 && i<bv.size());
+
 	if((i == 0) && bv[i]==1)return bv.size() -1;
 	return (bv[i] == 0) ? i : fwdSearch(i,-1);
 }
 
 int RMMTree::findOpen(int i){
+	assert(i>=0 && i < bv.size());
+
 	if((i == (int)(bv.size()-1)) && bv[i]==0)return 0;
 	return (bv[i] == 1) ?  i : bwdSearch(i,0)+1;
 }
 
 int RMMTree::enclose(int i){
+	assert(i>=0 && i < bv.size());
+
 	if(i==0)return bv.size();
 	if(bv[i]==0)return findOpen(i);
 	return bwdSearch(i,-2) + 1;
 }
 
 bool RMMTree::isLeaf(int x){
-	assert(x>=0 && x < (int)bv.size());
+	assert(x>=0 && x < bv.size());
+
 	return  (bv[x] == 1 && bv[x+1]==0);
 }
 
 bool RMMTree::isAncestor(int x, int y){
+	assert(x >=0 && y < bv.size() );
+
 	return (x <= y && y< findClose(x));
 }
 
 int RMMTree::depth(int x){
+	assert(x>=0 && x<bv.size());
+
 	return (2*b_rank1(x))-x;
 }
 
@@ -713,6 +730,8 @@ int RMMTree::nextSibling(int x){
 }
 
 int RMMTree::prevSibling(int x){
+	assert(x>0 && x < bv.size()-1);
+
 	return (bv[x-1]==0)? findOpen(x-1) : bv.size();
 }
 
@@ -737,20 +756,21 @@ int RMMTree::childRank(int x){
 }
 
 int RMMTree::subtreeSize(int x){
-	assert(x>=0 && x < (int)bv.size());
+	assert(x >=0 && x<bv.size());
+
 	return (bv[x]==1)? ceil((findClose(x)-x+1)/2) : bv.size();
 }
 
 int RMMTree::levelAncestor(int x,int d){
-	assert(x>=0 && x < (int)bv.size());
-	
+	assert(x >=0 && x<bv.size());
+
 	return (bv[x]==1)? bwdSearch(x,-d-1)+1 : bv.size();
 }
 
 int RMMTree::lca(int x,int y){
 	if(isAncestor(x,y))return x;
 	if(isAncestor(y,x))return y;
-	
+
 	return enclose(rmq(x,y)+1);
 }
 
@@ -779,6 +799,8 @@ int  RMMTree::degree(int x){
 }
 
 int  RMMTree::leafRank(int x){
+	assert(x>=0 && x <bv.size());
+
 	return b_rank10(x);
 }
 
@@ -795,10 +817,12 @@ int RMMTree::rightMostLeaf(int x){
 }
 
 int RMMTree::preRank(int x){
+	assert(x>=0 && x<bv.size());
 	return b_rank1(x);
 }
 
 int RMMTree::postRank(int x){
+
 	return b_rank0(findClose(x));
 }
 
