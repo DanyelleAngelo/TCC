@@ -2,7 +2,7 @@
 
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bp_support_sada.hpp>
-#include "../RMMTreeClassic.h"
+#include "../rmMTreeClassic.h"
 #include <sdsl/bits.hpp>
 /*
 *DISABLED_ desabilitar um teste inserindo esse prefixo em seu nome
