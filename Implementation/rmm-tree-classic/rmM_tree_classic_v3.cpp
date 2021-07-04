@@ -208,30 +208,21 @@ int RMMTree::fwdBlock(int i,int d,int *dr){
 	int p;
 	int fb = floor((double)i/w);//para calcular o limite do primeiro bloquinho (de i)
 	int lb = floor((double)(i+1)/sizeBlock)* (sizeBlock/w);//limite do bloco 
-/* 	cout << "Por dentro do bloco, f eh " << fb << " e t eh " << lb << "\n";
-	cout << "Temos dr também que eh " << *dr << " e d eh " << d << "\n";  */
-	
+
 	//varre o sub-bloco a qual i+1 pertebce
 	for(int j=i+1;j<=(fb*w)+1;j++){
 		*dr += (bv[j] == 1)? 1 : -1;
 		if(*dr == d)return j;
 	}
 	
-/* 	cout << " dr eh " << *dr << "\n";
-	cout << " f eh " << fb << " e t eh " << lb << "\n"; */
 	//Verifica se "d" está contido no bloco subsequente
 	for(p=fb; p<=lb;p++){
 		int x = bitsread((p+1)*w, ((p+2)*w)-1);
-/* 		cout << "interavalo eh "<< p*w << " e " << ((p+1)*w)-1 << "\n";
-		cout << " x eh " << x << "\n";
-		cout << " dr eh " << *dr << "\n"; */
 		if(*dr + tableC[x].excessMin <= d && *dr + tableC[x].excessMax >= d){
 			break;
 		}
 		*dr += tableC[x].excess;
 	}
-/* 	cout << " p eh " << p << " e t eh " << lb << "\n";
-	cout << " dr eh " << * dr << "\n"; */
 	
 	if(p > lb)return lb*sizeBlock;//d não está no bloco subsequente
 
@@ -409,14 +400,13 @@ int RMMTree::fwdSearch(int i,int d){
 	k = floor((double)(i+1)/sizeBlock);//calcula a k-th folha em que se encontra i+1
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 
-/* 	cout << "Antes de subir a arvore k eh " << k << " v eh " << v << " e dr eh " << dr << "\n"; */
 	/* -----Subindo a RMM-tree ------*/
 	while( ((v+1)&(v+2))!=0 && !( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) )){
 		
 		if((v&1)==1)dr += tree[v+1].excess;
 		v = floor((double)(v-1)/2);
 	}
-/* 	cout << "Depois de subir a arvore v eh " << v << " dr eh " << dr << "\n";  */
+	
 	if(((v+1)&(v+2)) ==0)return bv.size();//verifica se o nó a que chegamos é a última do seu nível
 	
 	v++;/*o excesso procurado está no nó à direita do último verificado*/
@@ -433,8 +423,7 @@ int RMMTree::fwdSearch(int i,int d){
 	}
 
 	k = numLeaf(v);
-/* 	cout << "depois de descer a arvore k eh " << k << " dr eh " << dr << " e v eh "<< v << "\n";
-	cout << "Vamos investigar " << ((k)*sizeBlock)-1 << "\n";  */
+	
 	j = fwdBlock((k*sizeBlock)-1,d,&dr);
 	
 	return (dr == d)? j : bv.size();/*Varre o boclo da folha anterior*/

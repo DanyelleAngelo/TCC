@@ -26,6 +26,8 @@ class RMMTree{
 		*	@brief Construtor
 		*/
         RMMTree(int_vector<1> &bv, int sizeBlock, int w);
+		
+		//métodos públicos
 
 		uint64_t getInt(const uint8_t  idx, const uint8_t len);
 		uint64_t readInt(const uint64_t* word, uint8_t offset, const uint8_t len);
@@ -400,10 +402,10 @@ class RMMTree{
 		select_support_mcl<0> b_sel0;		// Fornece suporte a operaçãop  select, tendo como alvo bit 0
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
 		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
+		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
 		int numberLeaves;					// Quantidade de folhas na rmM-tree
 		int numberNodes;					// Número de nós da rmM-tree
 		int height;							// Altura da rmM-tree
-		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
 		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 		vector<Node> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 		
