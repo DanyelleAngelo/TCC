@@ -20,10 +20,11 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        int sizeBlock=8;
-        int w=4;
+        int sizeBlock=4;
+        int w=2;
         bp_support_sada<> *bps;
         int size;
+        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
         int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
 
         void SetUp(){
@@ -500,6 +501,11 @@ TEST_F(RMMTreeFixtureTest, post_select){
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->postSelect(x[k]),expected[k]) << "Resposta errada ao calcular o parênteses de abertura correspondente ao  " << x[k] << "-th parênteses de fechamento."; 
     }
+}
+
+TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
+    t->printInfoTree();
+    t->printTree();
 }
 
 int main(int argc, char **argv){
