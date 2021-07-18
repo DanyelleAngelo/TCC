@@ -20,8 +20,8 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        int sizeBlock=4;
-        int w=2;
+        int sizeBlock=8;
+        int w=4;
         bp_support_sada<> *bps;
         int size;
         int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
@@ -48,7 +48,7 @@ TEST_F(RMMTreeFixtureTest, GET_INT){
 
 TEST_F(RMMTreeFixtureTest, expected_log2_ceil){
     int index[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
-    int expected[] = {0,1,2,2,3,3,3,3,4,4,4,4,4,4,4,4,5,5};
+    int expected[] = {0,1,2,2,3,3,3,3,4,4,4,4,4,4,4,4,5,5}; 
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ((int)ceil(t->cLog_2(index[i])),expected[i])<< "Resposta errada ao tentar calcular o teto do logarítmo na base 2 de " << index[i];
@@ -64,12 +64,9 @@ TEST_F(RMMTreeFixtureTest, expected_log2_floor){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, leaf_index_on_tree){
+TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
     int index[] = {2,7,10,14,19,23,26,30,35,37};//para b=4
     int expected[] = {15,16,17,18,9,10,11,12,13,14};
-
-    /* int index[] = {2,7,10,14,19,23,26,30,35,37};//para b=8
-    int expected[] = {7,7,8,8,4,4,5,5,6,6}; */
 
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         int k = floor((double)(index[i])/sizeBlock);
@@ -77,16 +74,12 @@ TEST_F(RMMTreeFixtureTest, leaf_index_on_tree){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, number_leaf){
+TEST_F(RMMTreeFixtureTest, DISABLED_given_a_node_v_returns_the_leaf_order){
     int index[] = {15,16,17,18,9,10,11,12,13,14};//para b=4
     int expected[] = {0,1,2,3,4,5,6,7,8,9};
 
-    
-/*     int index[] = {7,8,4,5,6};//para b=8
-    int expected[] = {1,2,3,4,5}; */
-
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->numLeaf(index[i]),expected[i]) << "Resposta errada ao tentar descobrir a qual folha i=" << index[i] << " pertence";
+        EXPECT_EQ(t->numLeaf(index[i]),expected[i]) << "Resposta errada ao tentar descobrir a ordem do nó v=" << index[i];
     }
 
 }
@@ -102,7 +95,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_general){
     int index[] = {9,10,17,22,12,21,0,15,19,23,25,0,0,0,36,18,8,0,9,12,0};
     int d[] = {-2,1,-1,-1,-1,-1,2,-3,1,2,0,0,3,5,-1,-1,3,5,-1,-4,4};
     int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,39,21,11,11,18,36,10};
-    
+
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
         EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << index[i];
     } 

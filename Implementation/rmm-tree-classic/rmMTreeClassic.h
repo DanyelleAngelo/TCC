@@ -415,6 +415,28 @@ class RMMTree{
 		int min(int a , int b);
 
 		/*!
+		*	@brief Pré-computa uma tabela de excessos C, para agilizar a construção e as operações da RMM-tree.
+		*/
+		void buildingTableC();
+
+		/*!
+		*	@brief Constroí as folhas de cada nível da RmM-tree.
+		*/
+		void buildingLeaves();
+
+		/*!
+		*	@brief Constroí os nós internos e a raíz da RmM-tree
+		*/
+		void buildingInternalNodesRoot();
+
+		/*!
+		*	@brief Imprime as informações de excesso de um nó
+		*	@param vector: estrutura (árvore ou tabela) que terá seu nó impresso
+		*	@param i: índice do elemento da estrutura.
+		*/
+		void printNode(vector<Node> vector, int i);
+		
+		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
 		*	@param i: Posição a partir da qual devo buscar o excesso (i é adicionado de 1)
 		*	@param d: Excesso buscado
@@ -471,27 +493,6 @@ class RMMTree{
 		*/
 		int minSelectBlock(int i,int j,int m,int *t,int *d);
 
-		/*!
-		*	@brief Pré-computa uma tabela de excessos C, para agilizar a construção e as operações da RMM-tree.
-		*/
-		void buildingTableC();
-
-		/*!
-		*	@brief Constroí as folhas de cada nível da RmM-tree.
-		*/
-		void buildingLeaves();
-
-		/*!
-		*	@brief Constroí os nós internos e a raíz da RmM-tree
-		*/
-		void buildingInternalNodesRoot();
-
-		/*!
-		*	@brief Imprime as informações de excesso de um nó
-		*	@param vector: estrutura (árvore ou tabela) que terá seu nó impresso
-		*	@param i: índice do elemento da estrutura.
-		*/
-		void printNode(vector<Node> vector, int i);
 };
 
 #endif
