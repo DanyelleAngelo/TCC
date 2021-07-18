@@ -181,14 +181,20 @@ void RMMTree::printNode(vector<Node> vector, int i){
 }
 
 void RMMTree::printTree(){
-	int i;
+	int v;
 	cout << " ----- Root ----- \n";
 	printNode(tree, 0);
 	cout << " ----- Internal nodes ----- \n";
-	for(i=1;i<numberNodes-numberLeaves;i++)printNode(tree, i);
+	for(v=1;v<numberNodes-numberLeaves;v++){
+		cout << " Nó " << v << "\n";
+		printNode(tree, v);
+	}
 
 	cout << " ----- Folhas -----" << endl;
-	for(;i<numberNodes;i++)printNode(tree,i);
+	for(;v<numberNodes;v++){
+		cout << numLeaf(v) << "-th folha " << " - nó " << v << "\n";
+		printNode(tree,v);
+	}
 }
 
 void RMMTree::printTableC(){
