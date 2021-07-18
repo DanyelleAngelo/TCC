@@ -403,6 +403,7 @@ class RMMTree{
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
 		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
 		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
+		int size;							// Tamanho da sequência de parênteses balanceados
 		int numberLeaves;					// Quantidade de folhas na rmM-tree
 		int numberNodes;					// Número de nós da rmM-tree
 		int height;							// Altura da rmM-tree
@@ -443,7 +444,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		int fwdBlock(int i,int d,int *dr);
+		int fwdBlock(int i,int d,int &dr);
 
 		/*!
 		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
@@ -452,7 +453,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		int bwdBlock(int i,int d,int *dr);
+		int bwdBlock(int i,int d,int &dr);
 
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i", em busca do menor excesso na área.
@@ -461,7 +462,7 @@ class RMMTree{
 		*	@param d: Excesso relativo.
 		*	@return o excesso mínimo no intervalo definido.
 		*/
-		int minBlock(int i,int j,int *d);
+		int minBlock(int i,int j,int &d);
 
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i", em busca do maior excesso na área.
@@ -470,7 +471,7 @@ class RMMTree{
 		*	@param d: Excesso relativo.
 		*	@return o excesso máximo no intervalo definido.
 		*/
-		int maxBlock(int i,int j,int *d);
+		int maxBlock(int i,int j,int &d);
 
 		/*!
 		*	@brief Contabiliza a quantidade de vezes que o excesso mínimo ocorre no intervalo i e j
@@ -480,7 +481,7 @@ class RMMTree{
 		*	@param d : excesso relativo (contabilizado a cada bit varrido), parâmetro passado por referência
 		*	@return o número de vezes que o excesso mínimo aparece no intervalo definido.
 		*/
-		int minCountBlock(int i,int j,int m,int *d);
+		int minCountBlock(int i,int j,int m,int &d);
 
 		/*!
 		*	@brief Procura a posição em que o excesso mínimo ocorre pela t-th no intervalo i e j
@@ -491,7 +492,7 @@ class RMMTree{
 		*	@param d : excesso relativo (contabilizado a cada bit varrido), parâmetro passado por referência
 		*	@return a posição p em que o corre o t-th excesso mínimo m.
 		*/
-		int minSelectBlock(int i,int j,int m,int *t,int *d);
+		int minSelectBlock(int i,int j,int m,int &t,int &d);
 
 };
 
