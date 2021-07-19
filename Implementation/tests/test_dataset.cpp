@@ -8,6 +8,41 @@
 using namespace sdsl;
 using namespace std;
 
+/* 
+ * Read the parentheses sequence in 'fn' as the bit array 'B'. An opening 
+ * parenthesis is represented as a 1 and a closing parentheses is represented as
+ * a 0
+ */
+BIT_ARRAY* parentheses_to_bits(const char* fn, long* n) {
+  
+  char parenthesis;
+  long counter = 0L;
+  
+  FILE* fp = fopen(fn, "r");
+  if (!fp) {
+    fprintf(stderr, "Error opening file \"%s\".\n", fn);
+    exit(EXIT_FAILURE);
+  }
+
+  fseek(fp, 0L, SEEK_END);
+  *n = ftell(fp);
+
+  BIT_ARRAY* B = bit_array_create(*n);
+  
+  fseek(fp, 0L, SEEK_SET);
+
+  while (fread(&parenthesis,sizeof(char),1,fp)==1) {
+    if(parenthesis == '(')
+      bit_array_set_bit(B, counter);
+    counter++;
+  }
+  
+  fclose(fp);
+  
+  return B;
+
+}
+
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
@@ -52,21 +87,11 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
 }
 
 int main(int argc, char **argv){
-<<<<<<< HEAD:Implementation/tests/test_dataset.cpp
-    //::testing::InitGoogleTest(&argc, argv);
     long n = 498753914;
     BIT_ARRAY *B = parentheses_to_bits("wiki.par", 498753914);
     printf("%ld parentheses read\n", n);
+
+    //::testing::InitGoogleTest(&argc, argv);
     //testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     //return RUN_ALL_TESTS();
-=======
-    BIT_ARRAY *B = parentheses_to_bits("wiki.par", 498753914);
-    printf("%ld parentheses read\n", n);
-
-
-    ::testing::InitGoogleTest(&argc, argv);
-    
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
-    return RUN_ALL_TESTS();
->>>>>>> a839b85713bad048ca5017d59486753ae23b6287:Implementation/tests/tet_dataset.cpp
 }
