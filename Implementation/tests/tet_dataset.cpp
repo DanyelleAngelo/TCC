@@ -1,4 +1,7 @@
 #include "gtest/gtest.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "rw_bp/bit_array.h"
 #include <sdsl/bp_support_sada.hpp>
 #include "rmm-tree-classic/rmMTreeClassic.h"
 
@@ -49,6 +52,10 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
 }
 
 int main(int argc, char **argv){
+    BIT_ARRAY *B = parentheses_to_bits("wiki.par", 498753914);
+    printf("%ld parentheses read\n", n);
+
+
     ::testing::InitGoogleTest(&argc, argv);
     
     testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
