@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include <sdsl/bp_support_sada.hpp>
-#include "rmm-tree-classic/rmMTreeClassic.h"
+#include "../rmm-tree-classic/rmMTreeClassic.h"
 
 using namespace sdsl;
 using namespace std;
@@ -14,10 +14,10 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int size;
         
         void SetUp(){
-            t = new RMMTree(v,sizeBlock,w);
-            bps = new bp_support_sada<>(&(t->bv));
-            size = (int)v.size();
-            t->buildingTree();
+            //t = new RMMTree(v,sizeBlock,w);
+            //bps = new bp_support_sada<>(&(t->bv));
+            //size = (int)v.size();
+            //t->buildingTree();
         }
         void TearDown(){
             delete t;
@@ -49,8 +49,10 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
 }
 
 int main(int argc, char **argv){
-    ::testing::InitGoogleTest(&argc, argv);
-    
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
-    return RUN_ALL_TESTS();
+    //::testing::InitGoogleTest(&argc, argv);
+    long n = 498753914;
+    BIT_ARRAY *B = parentheses_to_bits("wiki.par", 498753914);
+    printf("%ld parentheses read\n", n);
+    //testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    //return RUN_ALL_TESTS();
 }
