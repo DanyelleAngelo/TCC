@@ -1,48 +1,16 @@
 #include "gtest/gtest.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "rw_bp/bit_array.h"
+#include "read_bp/read_bp.h"
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-classic/rmMTreeClassic.h"
 
 using namespace sdsl;
 using namespace std;
 
-/* 
- * Read the parentheses sequence in 'fn' as the bit array 'B'. An opening 
- * parenthesis is represented as a 1 and a closing parentheses is represented as
- * a 0
- */
-BIT_ARRAY* parentheses_to_bits(const char* fn, long* n) {
-  
-  char parenthesis;
-  long counter = 0L;
-  
-  FILE* fp = fopen(fn, "r");
-  if (!fp) {
-    fprintf(stderr, "Error opening file \"%s\".\n", fn);
-    exit(EXIT_FAILURE);
-  }
 
-  fseek(fp, 0L, SEEK_END);
-  *n = ftell(fp);
-
-  BIT_ARRAY* B = bit_array_create(*n);
-  
-  fseek(fp, 0L, SEEK_SET);
-
-  while (fread(&parenthesis,sizeof(char),1,fp)==1) {
-    if(parenthesis == '(')
-      bit_array_set_bit(B, counter);
-    counter++;
-  }
-  
-  fclose(fp);
-  
-  return B;
-
-}
-
+int_vector<1> v;
+    
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
@@ -52,10 +20,10 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int size;
         
         void SetUp(){
-            //t = new RMMTree(v,sizeBlock,w);
-            //bps = new bp_support_sada<>(&(t->bv));
-            //size = (int)v.size();
-            //t->buildingTree();
+            t = new RMMTree(v,sizeBlock,w);
+            bps = new bp_support_sada<>(&(t->bv));
+            size = (int)v.size();
+            t->buildingTree();
         }
         void TearDown(){
             delete t;
@@ -86,12 +54,13 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
     }
 }
 
-int main(int argc, char **argv){
-    long n = 498753914;
-    BIT_ARRAY *B = parentheses_to_bits("wiki.par", 498753914);
-    printf("%ld parentheses read\n", n);
+int main(int argc, char *argv[]){
 
-    //::testing::InitGoogleTest(&argc, argv);
-    //testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
-    //return RUN_ALL_TESTS();
+    if(argc<2){
+        cout << "Número de parâmetros incorreto.\n"<<endl; 
+    }
+    parentheses_to_bits(argv[1], v);
+    ::testing::InitGoogleTest(&argc, argv);
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    return RUN_ALL_TESTS();
 }
