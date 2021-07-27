@@ -5,7 +5,7 @@
 #include "../rmMTreeClassic.h"
 #include <sdsl/bits.hpp>
 /*
-*DISABLED_ desabilitar um teste inserindo esse prefixo em seu nome
+* desabilitar um teste inserindo esse prefixo em seu nome
 *testing::GTEST_FLAG(filter) = "-MyLibrary.TestWriting"; usar o nome do teste precedido de "-" desabilita ele no main,
 a ausência desse mesmo elemento "-", torna o teste o único a ser executado.
 */
@@ -24,8 +24,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int w=2;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
-        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
 
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
@@ -65,7 +65,7 @@ TEST_F(RMMTreeFixtureTest, expected_log2_floor){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
+TEST_F(RMMTreeFixtureTest, index_in_bp_leaf_index_on_tree){
     int index[] = {2,7,10,14,19,23,26,30,35,37};//para b=4
     int expected[] = {15,16,17,18,9,10,11,12,13,14};
 
@@ -75,7 +75,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_given_a_node_v_returns_the_leaf_order){
+TEST_F(RMMTreeFixtureTest, given_a_node_v_returns_the_leaf_order){
     int index[] = {15,16,17,18,9,10,11,12,13,14};//para b=4
     int expected[] = {0,1,2,3,4,5,6,7,8,9};
 
@@ -167,10 +167,10 @@ TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_different_block){
 }
 
 TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){ 
-    int i[] = {9,1,12,15,17,33,38,39,0,8}; 
-    int j[] = {30,6,26,29,32,39,39,39,39,15}; 
+    int i[] = {9,1,12,15,17,33,38,39,8}; 
+    int j[] = {30,6,26,29,32,39,39,39,15}; 
 
-    for(int k=8;k<(int)(sizeof(i)/sizeof(i[0]));k++){
+    for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
         EXPECT_EQ(t->rmq(i[k],j[k]),bps->rmq(i[k],j[k])) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << i[k] << "," << j[k] << "]";
     }
 }
@@ -511,6 +511,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

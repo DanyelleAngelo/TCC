@@ -154,6 +154,18 @@ class RMMTree{
 		int min(int a , int b);
 
 		/*!
+		*	@param n: número a ser retirado
+		*	@return chão do logarítmo na base 2 de n
+		*/
+		unsigned long long fLog_2(unsigned long long  n);
+
+		/*!
+		*	@param n: número a ser retirado
+		*	@return teto do logarítmo na base 2 de n
+		*/
+		unsigned long long cLog_2(unsigned long long  n);
+
+		/*!
 		*	@brief Pré-computa uma tabela de excessos C, para agilizar a construção e as operações da RMM-tree.
 		*/
 		void buildingTableC();

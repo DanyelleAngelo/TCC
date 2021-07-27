@@ -31,12 +31,20 @@ RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock, int w, int order){
 	temp = sqrt(order);
 }
 
+unsigned long long RMMTree::fLog_2(unsigned long long  n){
+	return  (8*sizeof (unsigned long long) - __builtin_clzll(n) - 1);
+}
+
+unsigned long long RMMTree::cLog_2(unsigned long long  n){
+	return  fLog_2(2*n -1);
+}
+
 unsigned long long RMMTree::cLog_m(unsigned long long  n,unsigned long long  m){
 	return ceil(log2(n)/log2(m));
 }
 
 unsigned long long RMMTree::fLog_m(unsigned long long  n,unsigned long long  m){
-	return floor(log2(n)/log2(m));
+	return log2(n)/log2(m);
 }
 
 int RMMTree::min(int a , int b){
@@ -76,7 +84,7 @@ int RMMTree::numLeaf(int v){
 
 int RMMTree::numKey(int k,int i){
 	int startBlock= k*sizeBlock*order;
-	return floor((i-startBlock)/order);
+	return (i-startBlock)/order;
 }
 
 void RMMTree::buildingTree(){
@@ -220,7 +228,7 @@ int RMMTree::fwdBlock(int i,int d,int &dr){
 int RMMTree::fwdVerifySibling(int &v, int &dr, int d){
 	
 	//calcula parent a fim de verificar quantos írmãos de v existem a sua esquerda
-	int parent = floor((double)(v-1)/order);
+	int parent = (v-1)/order;
 	int child = v - (parent*order);//obtém o número de irmãos a direita de v
 	v++;
 	
@@ -242,7 +250,7 @@ int RMMTree::fwdSearch(int i,int d){
 	assert((i+1)>=0 && (i+1)< size);
 
 	int dr=0;
-	int k = floor((double)(i+1)/(sizeBlock*order));//calcula a k-th folha em que se encontra i+1
+	int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
 	
@@ -251,7 +259,7 @@ int RMMTree::fwdSearch(int i,int d){
 	
 	/* -----Subindo a RMM-tree ------*/
 	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
-		v = floor((double)(v-1)/order);
+		v = (v-1)/order;
 	} 
 	
 	if(v < numberNodes - numberLeaves)v = (v*order)+1+key;
@@ -292,8 +300,8 @@ int RMMTree::bwdKey(int i,int key, int k,int d,int &dr){
 
 int RMMTree::bwdBlock(int i,int d,int &dr){
 	int p,x,j;
-	int fb = floor((double)i/w);
-	int lb = (floor((double)i/sizeBlock) * (sizeBlock/w));
+	int fb = i/w;
+	int lb = (i/sizeBlock) * (sizeBlock/w);
 	
 	for(j=i;j>=fb*w;j--){
 		dr += (bv[j] == 1)? -1 : 1;
@@ -319,7 +327,7 @@ int RMMTree::bwdBlock(int i,int d,int &dr){
 }
 
 int RMMTree::bwdVerifySibling(int &v, int &dr, int d){
-	int parent = floor((double)(v-1)/order);
+	int parent = (v-1)/order;
 	int child = v - (parent*order)-1; // obtém o número de irmãos a esquerda de v
 
 	v--;
@@ -339,7 +347,7 @@ int RMMTree::bwdSearch(int i,int d){
 	if(i==0)return -1;
 
 	int dr=0;
-	int k = floor((double)i/(sizeBlock*order));
+	int k = i/(sizeBlock*order);
 	int v = leafInTree(k);
 	int key = numKey(k,i);
 
@@ -348,7 +356,7 @@ int RMMTree::bwdSearch(int i,int d){
 	
 	/* -----Subindo a RMM-tree ------*/
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
-		v = floor((double)(v-1)/order);
+		v = (v-1)/order;
 	}
 	
 	if(v < numberNodes - numberLeaves)v = (v*order)+1+key;
