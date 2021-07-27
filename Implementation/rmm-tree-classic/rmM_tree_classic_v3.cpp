@@ -446,7 +446,7 @@ int RMMTree::bwdSearch(int i,int d){
 	v = leafInTree(k);
 
 	/* -----Subindo a RMM-tree ------*/
-	while( ((v+1)&v) !=0  &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
+	while(v!=0  /*((v+1)&v) !=0*/  &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
 		
 		if((v&1)== 0){
 			dr-=tree[v-1].excess;

@@ -1,20 +1,21 @@
-2021-07-27T00:57:30-03:00
+2021-07-27T14:31:41+00:00
 Running ./test_kary_rmm_tree
-Run on (4 X 1500 MHz CPU s)
+Run on (56 X 3200 MHz CPU s)
 CPU Caches:
-  L1 Data 32 KiB (x4)
-  L1 Instruction 32 KiB (x4)
-  L2 Unified 2048 KiB (x1)
-Load Average: 6.42, 6.85, 5.96
+  L1 Data 32 KiB (x28)
+  L1 Instruction 32 KiB (x28)
+  L2 Unified 1024 KiB (x28)
+  L3 Unified 19712 KiB (x2)
+Load Average: 0.91, 0.56, 0.47
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Kary_RMMTree_FixtureBM/findClose_kary/26",1102915,694.075,640.048,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_kary/9",542137,1274.95,1265.95,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_kary/37",1614027,433.547,432.811,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_kary/11",1613022,433.658,432.977,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_kary/8",524327,1319.43,1316.26,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_kary/34",494654,1400.46,1398.04,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_kary/35",451930,1531.19,1528.63,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_kary/6",881431,783.531,782.202,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_kary/31",2309376,302.811,302.305,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_kary/5",2317178,301.485,300.699,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_kary/107394957",10648184,63.9694,63.9662,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_kary/156511405",10937096,64.2799,64.2793,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_kary/368654914",16522018,42.6747,42.6739,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_kary/431754251",10877450,64.8495,64.8493,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_kary/423778981",10882282,64.4157,64.4146,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_kary/149648187",10000000,50.116,50.1147,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_kary/218213353",14103538,50.1976,50.1974,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_kary/160482619",14115467,49.8536,49.8524,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_kary/322622108",11604879,60.6629,60.6624,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_kary/159952089",4522141,155.662,155.653,ns,,,,,

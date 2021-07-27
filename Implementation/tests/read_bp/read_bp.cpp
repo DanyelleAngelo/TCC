@@ -9,7 +9,6 @@ using namespace sdsl;
 void parentheses_to_bits(const char* fn, int_vector<1> &v) {
     char parenthesis;
     long count = 0;
-    
     FILE* fp = fopen(fn, "r");
     if (!fp) {
         exit(EXIT_FAILURE);

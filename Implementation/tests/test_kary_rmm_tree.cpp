@@ -1,9 +1,9 @@
-
 #include <iostream>
 #include <benchmark/benchmark.h>
-#include <memory>
 #include <sdsl/int_vector.hpp>
+#include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-optimized/rmMTreeOptimized.h"
+#include "read_bp/read_bp.h"
 
 using namespace sdsl;
 using namespace std;
@@ -14,12 +14,13 @@ int size;
 class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
 		int sizeBlock =4;
-		int order =4;
 		int w=2;
-		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+		int_vector<1> v;
+		int order=4;
 	Kary_RMMTree_FixtureBM(){
+		parentheses_to_bits("wiki.par",v);
 		t = new RMMTree(v,sizeBlock,w,order);
-		size = v.size();		
+		size =(int) v.size();		
 		t->buildingTree();
 		srand(size);
 	}
@@ -62,7 +63,7 @@ BENCHMARK_DEFINE_F(Kary_RMMTree_FixtureBM, findOpen_kary)(benchmark::State& st){
 }
 BENCHMARK_REGISTER_F(Kary_RMMTree_FixtureBM,findOpen_kary)->Apply(ArgumentsFindOpen);
 
-int main(int argc, char **argv){ 
+int main(int argc, char **argv){
 	benchmark::Initialize(&argc,argv); 
-  	 benchmark::RunSpecifiedBenchmarks();
+  	benchmark::RunSpecifiedBenchmarks();
 }

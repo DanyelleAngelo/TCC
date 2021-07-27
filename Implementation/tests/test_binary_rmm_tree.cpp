@@ -1,12 +1,13 @@
-
 #include <iostream>
 #include <benchmark/benchmark.h>
-#include <memory>
 #include <sdsl/int_vector.hpp>
+#include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-classic/rmMTreeClassic.h"
+#include "read_bp/read_bp.h"
 
 using namespace sdsl;
 using namespace std;
+
 RMMTree *t;
 int size;
 
@@ -14,10 +15,11 @@ class Bin_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
 		int sizeBlock =4;
 		int w=2;
-		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+		int_vector<1> v;
 	Bin_RMMTree_FixtureBM(){
+		parentheses_to_bits("wiki.par",v);
 		t = new RMMTree(v,sizeBlock,w);
-		size = v.size();		
+		size =(int) v.size();		
 		t->buildingTree();
 		srand(size);
 	}
@@ -45,22 +47,22 @@ static void ArgumentsFindOpen(benchmark::internal::Benchmark *v){
 	}
 }
 
-BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findClose_binary)(benchmark::State& st){
+BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findClose_bin)(benchmark::State& st){
 	for(auto _ :st){
 		t->findClose(st.range(0));
 	}
 }
-BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findClose_binary)->Apply(ArgumentsFindClose);
+BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findClose_bin)->Apply(ArgumentsFindClose);
 
 
-BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findOpen_binary)(benchmark::State& st){
+BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findOpen_bin)(benchmark::State& st){
 	for(auto _ :st){
 		t->findOpen(st.range(0));
 	}
 }
-BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findOpen_binary)->Apply(ArgumentsFindOpen);
+BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findOpen_bin)->Apply(ArgumentsFindOpen);
 
-int main(int argc, char **argv){ 
+int main(int argc, char **argv){
 	benchmark::Initialize(&argc,argv); 
-  	 benchmark::RunSpecifiedBenchmarks();
+  	benchmark::RunSpecifiedBenchmarks();
 }
