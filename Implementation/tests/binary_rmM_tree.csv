@@ -1,0 +1,21 @@
+2021-07-27T02:26:02+00:00
+Running ./test_benchmark
+Run on (56 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x28)
+  L1 Instruction 32 KiB (x28)
+  L2 Unified 1024 KiB (x28)
+  L3 Unified 19712 KiB (x2)
+Load Average: 0.25, 0.17, 0.11
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"RMMTreeFixtureBM/findClose_binary/26",3750450,185.546,185.543,ns,,,,,
+"RMMTreeFixtureBM/findClose_binary/9",2722416,257.303,257.297,ns,,,,,
+"RMMTreeFixtureBM/findClose_binary/37",6458300,108.472,108.471,ns,,,,,
+"RMMTreeFixtureBM/findClose_binary/11",6454704,108.39,108.39,ns,,,,,
+"RMMTreeFixtureBM/findClose_binary/8",2651708,263.965,263.96,ns,,,,,
+"RMMTreeFixtureBM/findOpen_binary/34",3221097,217.398,217.395,ns,,,,,
+"RMMTreeFixtureBM/findOpen_binary/35",2736439,255.961,255.954,ns,,,,,
+"RMMTreeFixtureBM/findOpen_binary/6",2679171,261.315,261.309,ns,,,,,
+"RMMTreeFixtureBM/findOpen_binary/31",8712677,80.3919,80.39,ns,,,,,
+"RMMTreeFixtureBM/findOpen_binary/5",8717364,80.3732,80.371,ns,,,,,

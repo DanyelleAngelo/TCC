@@ -24,8 +24,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int w=2;
         bp_support_sada<> *bps;
         int size;
-        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
 
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
@@ -511,6 +511,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
     return RUN_ALL_TESTS();
 }

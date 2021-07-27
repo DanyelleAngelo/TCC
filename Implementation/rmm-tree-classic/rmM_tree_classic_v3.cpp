@@ -400,8 +400,7 @@ int RMMTree::fwdSearch(int i,int d){
 	int j,k,v, dr=0;
 	
 	j= fwdBlock(i,d,dr);
-	
-    if(dr == d) return j;
+    	if(dr == d) return j;
 
 	k = floor((i+1)/sizeBlock);//calcula a k-th folha em que se encontra i+1
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
