@@ -28,7 +28,7 @@ class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 
 static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
 	int k,i=0;
-	while(i<5){
+	while(i<200){
 		k = rand()%size;
 		if(t->bv[k]==1){
 			v->Args({k});
@@ -39,7 +39,7 @@ static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
 
 static void ArgumentsFindOpen(benchmark::internal::Benchmark *v){
 	int k,i=0;
-	while(i<5){
+	while(i<200){
 		k = rand()%size;
 		if(t->bv[k]==0){
 			v->Args({k});

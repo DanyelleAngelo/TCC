@@ -7,7 +7,7 @@ binary:
 
 binary_benchmark:
 	g++ test_binary_rmm_tree.cpp ../rmm-tree-classic/rmM_tree_classic_v3.cpp read_bp/read_bp.cpp -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -o test_binary_rmm_tree -O2 
-	./test_binary_rmm_tree wiki.par --benchmark_out=result_kary_rmm_tree.csv --benchmark_out_format=csv 
+	./test_binary_rmm_tree wiki.par --benchmark_out=result_binary_rmm_tree.csv --benchmark_out_format=csv 
  
 
 kary_benchmark:
