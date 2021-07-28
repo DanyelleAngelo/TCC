@@ -24,7 +24,7 @@ RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock,int w){
 	this->sizeBlock = sizeBlock;
 	this->w =  w;
 	this->size = bv.size();
-	this->numberLeaves = ceil((double)(bv.size()/sizeBlock));
+	this->numberLeaves = ceil((double)this->size/sizeBlock);
 	this->numberNodes = (2*this->numberLeaves) -1;//árvore binária completa
 	this->height = cLog_2(this->numberLeaves);
 	this->tree.resize(this->numberNodes);
@@ -69,7 +69,7 @@ int RMMTree::min(int a , int b){
 
 int RMMTree::bitsread(int s,int e){
 	int value=0;
-	for(int j=s;j<=e;j++)value = (value << 1) + bv[j] ;
+	for(int j=s;j<=e  && j<size;j++)value = (value << 1) + bv[j] ;
 	return value;
 }
 
@@ -217,7 +217,7 @@ int RMMTree::fwdBlock(int i,int d,int &dr){
 	int lb = ceil((double)(i+2)/sizeBlock)* (sizeBlock/w);//limite do bloco 
 	
 	//varre o sub-bloco a qual i+1 pertebce
-	for(int j=i+1;j<=(fb*w)-1;j++){
+	for(int j=i+1;j<=(fb*w)-1  && j<size;j++){
 		dr += (bv[j] == 1)? 1 : -1;
 		if(dr == d)return j;
 	}
@@ -234,7 +234,7 @@ int RMMTree::fwdBlock(int i,int d,int &dr){
 	if(p > lb)return lb*sizeBlock;//d não está no bloco subsequente
 
 	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
-	for(int j= (p-1)*w; j <= (p*w)-1;j++){
+	for(int j= (p-1)*w; j <= (p*w)-1  && j<size;j++){
 		dr += (bv[j] ==1)? 1:-1;
 		if(dr == d)return j;
 	}
@@ -530,12 +530,12 @@ int RMMTree::maxExcess(int i,int j){
 	int k_i =i/sizeBlock;
 	int k_j = (j+1)/sizeBlock;
 	int eM   = maxBlock(i,min(((k_i+1)*sizeBlock)-1,j),d);
-
-	if(j <= (k_i+1)*sizeBlock)return eM;//j e i pertencem ao mesmo bloco
+	
+	if(j <= (k_i+1)*sizeBlock-1)return eM;//j e i pertencem ao mesmo bloco
 
 	int v   = leafInTree(k_i);//índice da folha 	que cobre a área de i
 	int v_j = leafInTree(k_j)+1;//índice da folha que cobre a área de j
-
+	
 	//inicia a subida na árvore, paramos quando estamos prestes a encontrar um nó que não está dentro do intervalo B[i,j]
 	while(v+1 > v_j ||   (int)((v_j)/ (1<< (int)(fLog_2(v_j) - fLog_2(v+2)) ) ) !=v+2){
 		if((v&1)==1){//filho da esquerda, verificamos o excesso mínimo do filho da direita

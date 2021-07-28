@@ -24,8 +24,9 @@ typedef struct Node{
 class RMMTree{
     public:
         bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
-
-         /*!
+		int size;							// Tamanho da sequência de parênteses balanceados.
+		
+		/*!
 		*	@brief Construtor
 		*/
         RMMTree(int_vector<1> &bv, int sizeBlock, int w, int order);
@@ -139,7 +140,6 @@ class RMMTree{
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
 		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
 		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
-		int size;							// Tamanho da sequência de parênteses balanceados.
 		int numberLeaves;					// Quantidade de folhas na rmM-tree
 		int numberNodes;					// Número de nós da rmM-tree
 		int order;                          // Ordem da rmM-tree

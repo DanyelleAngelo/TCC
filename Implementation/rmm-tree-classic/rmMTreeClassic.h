@@ -21,6 +21,7 @@ typedef struct Node{
 class RMMTree{
     public:
 		bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
+		int size;							// Tamanho da sequência de parênteses balanceados
 
 		/*!
 		*	@brief Construtor
@@ -242,7 +243,7 @@ class RMMTree{
 		int prevSibling(int x);
 
 		/*!
-		* 	@brief: usa minSelect para computar o t-th filho do nó x (se houver)
+		* 	@brief usa minSelect para computar o t-th filho do nó x (se houver)
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@param t: ordem do filho de x a ser buscado
 		*	@return : índice do parênteses de abertura que codifica o t-th filho de x, se houver, e  bv,size() caso contrário
@@ -312,28 +313,28 @@ class RMMTree{
 		int levelPrev(int x);
 
 		/*!
-		* 	@brief: usa fwdSearch para encontrar o nó mais a esquerda com profundidade d
+		* 	@brief usa fwdSearch para encontrar o nó mais a esquerda com profundidade d
 		*	@param d: profundidade desejada
 		*	@return índice do parênteses de abertura do nó mais a esquerda da árvore com profundidade d
 		*/
 		int levelLeftMost(int d);
 
 		/*!
-		* 	@brief: usa bwdSearch (a partir de bv.size()) para encontrar o nó mais a direita com profundidade d
+		* 	@brief usa bwdSearch (a partir de bv.size()) para encontrar o nó mais a direita com profundidade d
 		*	@param d: profundidade desejada
 		*	@return índice do parênteses de abertura do nó mais a direita da árvore com profundidade d
 		*/
 		int levelRightMost(int d);
 
 		/*!
-		* 	@brief: usa rMq para buscar o filho de x que tenha a maior profundidade (mais a esquerda). 
+		* 	@brief usa rMq para buscar o filho de x que tenha a maior profundidade (mais a esquerda). 
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return : índice do filho de x com maior profundidade
 		*/
 		int  deepestNode(int x);
 
 		/*!
-		* 	@brief: usa minCount para computar o número de vezes que o excesso mínimo (ocorre quando x engloba um filho)
+		* 	@brief usa minCount para computar o número de vezes que o excesso mínimo (ocorre quando x engloba um filho)
 		*	aparece em x. 
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return : quantidade de filhos de x
@@ -341,21 +342,21 @@ class RMMTree{
 		int  degree(int x);
 
 		/*!
-		*	@brief: contabiliza a quantida de ocorrências do bit 1 seguido do bit 0, no intervalo B[0,x].
+		*	@brief contabiliza a quantida de ocorrências do bit 1 seguido do bit 0, no intervalo B[0,x].
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return: quantidade de folhas a esquerda de x
 		*/
 		int leafRank(int x);
 
 		/*!
-		*	@brief: busca o índice da t-th ocorrência do par de bits 10.
+		*	@brief busca o índice da t-th ocorrência do par de bits 10.
 		*	@param t: ordem da folha buscada
 		*	@return: índice da t-th folha.
 		*/
 		int leafSelect(int t);
 
 		/*!
-		* 	@brief: usa leafSelect para encontrar a folha mais a esquerda de x.
+		* 	@brief usa leafSelect para encontrar a folha mais a esquerda de x.
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return índice da folha mais à esquerda de x. Se x for uma folha retorna seu irmão mais a esquerda,
 		*	se ele não existir, retorna o próprio x. Se x for um nṍ pai, retorna o seu filho com maior profundidade,mais a esqueda.
@@ -364,7 +365,7 @@ class RMMTree{
 
 
 		/*!
-		* 	@brief: usa leafSelect para encontrar a folha mais a direita de x.
+		* 	@brief usa leafSelect para encontrar a folha mais a direita de x.
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return índice da folha mais à direita de x. Se x for uma folha retorna seu irmão mais a direita,
 		*	se ele não existir, retorna o próprio x. Se x for um nṍ pai, retorna o seu filho com maior profundidade,mais a direita.
@@ -372,21 +373,21 @@ class RMMTree{
 		int rightMostLeaf(int x);
 
 		/*!
-		*	@brief: visita x usando um percurso pré-ordem
+		*	@brief visita x usando um percurso pré-ordem
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return rank1 no intervalo B[0,x]
 		*/
 		int preRank(int x);
 
 		/*!
-		*	@brief: calcula o rank de x, a partir de um percurso pos-order
+		*	@brief calcula o rank de x, a partir de um percurso pos-order
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return rank0 no intervalo B[0,close(x)]
 		*/
 		int postRank(int x);
 
 		/*!
-		*	@brief: calcula a posição do t-th parênteses de abertura
+		*	@brief calcula a posição do t-th parênteses de abertura
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return t-th parênteses de abertura
 		*/
@@ -403,7 +404,6 @@ class RMMTree{
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
 		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
 		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
-		int size;							// Tamanho da sequência de parênteses balanceados
 		int numberLeaves;					// Quantidade de folhas na rmM-tree
 		int numberNodes;					// Número de nós da rmM-tree
 		int height;							// Altura da rmM-tree

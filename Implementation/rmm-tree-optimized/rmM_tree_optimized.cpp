@@ -53,7 +53,7 @@ int RMMTree::min(int a , int b){
 
 int RMMTree::bitsread(int s,int e){
 	int value=0;
-	for(int j=s;j<=e;j++)value = (value << 1) + bv[j] ;
+	for(int j=s;j<=e && j<size;j++)value = (value << 1) + bv[j] ;
 	return value;
 }
 
@@ -84,7 +84,7 @@ int RMMTree::numLeaf(int v){
 
 int RMMTree::numKey(int k,int i){
 	int startBlock= k*sizeBlock*order;
-	return (i-startBlock)/order;
+	return (i-startBlock)/sizeBlock;
 }
 
 void RMMTree::buildingTree(){
@@ -186,6 +186,7 @@ void RMMTree::buildingInternalNodesRoot(){
 
 int RMMTree::fwdKey(int i,int key,int k,int nKeys,int d,int &dr){
 	int j;
+	
 	for(;key < nKeys;key++){
 		j= fwdBlock(i,d,dr);
 		if(dr == d) return j;
@@ -201,7 +202,7 @@ int RMMTree::fwdBlock(int i,int d,int &dr){
 	int lb = ceil((double)(i+2)/sizeBlock)* (sizeBlock/w);//limite do bloco 
 	
 	//varre o sub-bloco a qual i+1 pertebce
-	for(int j=i+1;j<=(fb*w)-1;j++){
+	for(int j=i+1;j<=(fb*w)-1 && j<size;j++){
 		dr += (bv[j] == 1)? 1 : -1;
 		if(dr == d)return j;
 	}
@@ -218,7 +219,7 @@ int RMMTree::fwdBlock(int i,int d,int &dr){
 	if(p > lb)return lb*sizeBlock;//d não está no bloco subsequente
 
 	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
-	for(int j= (p-1)*w; j <= (p*w)-1;j++){
+	for(int j= (p-1)*w; j <= (p*w)-1 && j<size;j++){
 		dr += (bv[j] ==1)? 1:-1;
 		if(dr == d)return j;
 	}
