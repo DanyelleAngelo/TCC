@@ -13,8 +13,8 @@ int_vector<1> v;
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
 	RMMTree *t; 
-	int sizeBlock=4; 
-	int w=2; 
+	int sizeBlock=16; 
+	int w=8; 
 	bp_support_sada<> *bps; 
 	int  size;
         

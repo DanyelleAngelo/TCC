@@ -13,10 +13,10 @@ int size;
 
 class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
-		int sizeBlock =4;
-		int w=2;
+		int sizeBlock =8;
+		int w=4;
 		int_vector<1> v;
-		int order=8;
+		int order=64;
 	Kary_RMMTree_FixtureBM(){
 		parentheses_to_bits("wiki.par",v);
 		t = new RMMTree(v,sizeBlock,w,order);

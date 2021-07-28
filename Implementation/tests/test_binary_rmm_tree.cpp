@@ -13,8 +13,8 @@ int size;
 
 class Bin_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
-		int sizeBlock =4;
-		int w=2;
+		int sizeBlock =8;
+		int w=4;
 		int_vector<1> v;
 	Bin_RMMTree_FixtureBM(){
 		parentheses_to_bits("wiki.par",v);
