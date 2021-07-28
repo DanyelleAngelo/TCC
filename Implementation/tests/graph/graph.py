@@ -9,10 +9,10 @@ k_findOpenX, k_findOpenY, b_findOpenX, b_findOpenY = [], [], [], []
 k_findCloseX, k_findCloseY ,b_findCloseX, b_findCloseY = [], [],[],[]
 i=0
 
-with open("../result_kary_rmm_tree.csv","r") as f:
+with open("wiki/result_kary_rmm_tree_order8b8w4.csv","r") as f:
     kary = f.readlines()[11:]
 
-with open("../result_binary_rmm_tree.csv","r") as f:
+with open("wiki/result_binary_rmm_tree_b8w4.csv","r") as f:
     binary = f.readlines()[11:]
 
 for linha in kary:

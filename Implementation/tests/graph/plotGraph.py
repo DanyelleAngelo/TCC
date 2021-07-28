@@ -10,5 +10,6 @@ def graph(k_op_x, k_op_y ,b_op_x, b_op_y, operacao):
     plt.title("Tempo de CPU para as operações %s" %operacao)
     plt.legend()#para o label de cada plot
     plt.xticks([])
+    plt.text(3.00, 3.0, "Size block=8,w=4, 8-ary tree e binary tree", fontsize=8, horizontalalignment='right')
     plt.show()
-    plt.savefig("%s.png" %operacao,dpi=150)
+    #plt.savefig("%s.png" %operacao,dpi=150)
