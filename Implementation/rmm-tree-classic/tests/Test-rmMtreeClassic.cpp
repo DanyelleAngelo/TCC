@@ -511,6 +511,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.GET_INT";
     return RUN_ALL_TESTS();
 }

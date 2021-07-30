@@ -9,26 +9,25 @@ using namespace sdsl;
 using namespace std;
 
 RMMTree *t;
-int size;
-
+   
 class Bin_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
-		int sizeBlock =8;
+		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+		int sizeBlock =4;
 		int w=4;
-		int_vector<1> v;
+		
 	Bin_RMMTree_FixtureBM(){
-		parentheses_to_bits("wiki.par",v);
-		t = new RMMTree(v,sizeBlock,w);
-		size =(int) v.size();		
+		//parentheses_to_bits("wiki.par",v);
+		t = new RMMTree(v,sizeBlock,w);	
 		t->buildingTree();
-		srand(size);
+		srand(t->size);
 	}
 };
 
 static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
 	int k,i=0;
-	while(i<200){
-		k = rand()%size;
+	while(i<10){
+		k = rand()%(t->size);
 		if(t->bv[k]==1){
 			v->Args({k});
 			i++;
@@ -38,8 +37,8 @@ static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
 
 static void ArgumentsFindOpen(benchmark::internal::Benchmark *v){
 	int k,i=0;
-	while(i<200){
-		k = rand()%size;
+	while(i<10){
+		k = rand()%(t->size);
 		if(t->bv[k]==0){
 			v->Args({k});
 			i++;
@@ -47,20 +46,20 @@ static void ArgumentsFindOpen(benchmark::internal::Benchmark *v){
 	}
 }
 
-BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findClose_bin)(benchmark::State& st){
+BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findClose_b)(benchmark::State& st){
 	for(auto _ :st){
 		t->findClose(st.range(0));
 	}
 }
-BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findClose_bin)->Apply(ArgumentsFindClose);
+BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findClose_b)->Apply(ArgumentsFindClose);
 
 
-BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findOpen_bin)(benchmark::State& st){
+BENCHMARK_DEFINE_F(Bin_RMMTree_FixtureBM, findOpen_b)(benchmark::State& st){
 	for(auto _ :st){
 		t->findOpen(st.range(0));
 	}
 }
-BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findOpen_bin)->Apply(ArgumentsFindOpen);
+BENCHMARK_REGISTER_F(Bin_RMMTree_FixtureBM,findOpen_b)->Apply(ArgumentsFindOpen);
 
 int main(int argc, char **argv){
 	benchmark::Initialize(&argc,argv); 

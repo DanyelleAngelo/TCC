@@ -1,4 +1,4 @@
-all: kary_benchmark
+all: kary_benchmark binary_benchmark
 
 
 binary:
@@ -16,7 +16,7 @@ binary_benchmark:
 
 kary_benchmark:
 	g++ test_kary_rmm_tree.cpp ../rmm-tree-optimized/rmM_tree_optimized.cpp read_bp/read_bp.cpp -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -o test_kary_rmm_tree -O2
-	./test_kary_rmm_tree wiki.par --benchmark_out=result_kary_rmm_tree.csv --benchmark_out_format=csv
+	./test_kary_rmm_tree  --benchmark_out=result_kary_rmm_tree.csv --benchmark_out_format=csv
 
 clean:
 	rm *.o
