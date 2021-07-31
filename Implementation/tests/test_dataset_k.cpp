@@ -1,6 +1,6 @@
 #include "gtest/gtest.h" 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <vector>
 #include "read_bp/read_bp.h" 
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-optimized/rmMTreeOptimized.h"
@@ -12,39 +12,35 @@ int_vector<1> v;
     
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
-	RMMTree *t; 
-	int order=32;
-	int sizeBlock=16; 
-	int w=8; 
-	bp_support_sada<> *bps; 
-	int  size;
+		RMMTree *t; 
+		int order=32;
+		int sizeBlock=16; 
+		int w=8; 
+		bp_support_sada<> *bps;
         
         void SetUp(){ 
-	    t = new RMMTree(v,sizeBlock,w,order); 
-	    bps = new bp_support_sada<>(&(t->bv)); 
-            size = (int)v.size(); t->buildingTree();
-		srand(size);
+			t = new RMMTree(v,sizeBlock,w,order); 
+			bps = new bp_support_sada<>(&(t->bv)); 
+			srand(size);
+            ArgumentsFindClose();
+            ArgumentsFindOpen();
         }
         void TearDown(){
-	    delete t;
-	    delete bps;
+			delete t;
+			delete bps;
         }
 };
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-	for(int i=0;i<20;i++){
-	    int  k = rand()%size;
-	    if(v[k]==1)
- 	           EXPECT_EQ(t->findClose(k),bps->find_close(k)) << "Resposta errada ao calcular o find_close de i=" << k;
-    	} 
+    for(int i=0;i<argsFindOpen.size();i++){
+        EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
+    }
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
-    	for(int i=0;i<20;i++){
-		int k = rand()%size;
-		if(v[k]==0) 
-                 	EXPECT_EQ(t->findOpen(k),bps->find_open(k)) << "Resposta errada ao calcular o find_open de i=" << k;
-   	 } 
+TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
+    for(int i=0;i<argsFindOpen.size();i++){
+        EXPECT_EQ(t->findOpen(argsFindOpen[i]),bps->find_open(argsFindOpen[i])) << "Resposta errada ao calcular o find_open de i=" << argsFindOpen[i];
+    } 
 }
 
 int main(int argc, char *argv[]){
