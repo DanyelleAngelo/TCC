@@ -17,17 +17,41 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		int sizeBlock=16; 
 		int w=8; 
 		bp_support_sada<> *bps;
+		vector<int> argsFindClose;
+        vector<int> argsFindOpen;
         
         void SetUp(){ 
 			t = new RMMTree(v,sizeBlock,w,order); 
 			bps = new bp_support_sada<>(&(t->bv)); 
-			srand(size);
+			srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
         }
         void TearDown(){
 			delete t;
 			delete bps;
+        }
+
+        void ArgumentsFindClose(){
+        	int k,i=0;
+            while(i<(t->size)/2){
+                k = rand()%(t->size);
+                if(t->bv[k]==1){
+                    argsFindClose.push_back(k);
+                    i++;
+                }
+            }
+        }
+
+        void ArgumentsFindOpen(){
+        	int k,i=0;
+            while(i<(t->size)/2){
+                k = rand()%(t->size);
+                if(t->bv[k]==0){
+                    argsFindOpen.push_back(k);
+                    i++;
+                }
+            }
         }
 };
 
