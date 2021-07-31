@@ -22,6 +22,7 @@ class RMMTree{
     public:
 		bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
 		long long int size;							// Tamanho da sequência de parênteses balanceados
+		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 
 		/*!
 		*	@brief Construtor
@@ -407,7 +408,6 @@ class RMMTree{
 		long int numberLeaves;					// Quantidade de folhas na rmM-tree
 		long int numberNodes;					// Número de nós da rmM-tree
 		int height;							// Altura da rmM-tree
-		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 		vector<Node> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 		
 		/*!

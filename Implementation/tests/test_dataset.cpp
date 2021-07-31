@@ -16,15 +16,16 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		int sizeBlock=16; 
 		int w=8; 
 		bp_support_sada<> *bps; 
-		vector<int> argsFindClose;
-        vector<int> argsFindOpen;
+		vector<long long int> argsFindClose;
+                vector<int> argsFindOpen;
 
-		void SetUp(){ 
+		void SetUp(){
 			t = new RMMTree(v,sizeBlock,w); 
-			bps = new bp_support_sada<>(&(t->bv)); 
-			srand(t->size);
-            ArgumentsFindClose();
-            ArgumentsFindOpen();
+			bps = new bp_support_sada<>(&(t->bv));
+			t->buildingTree(); 
+			srand((int)(t->size/sizeBlock));
+                        ArgumentsFindClose();
+            	        ArgumentsFindOpen();
 		}
 		void TearDown(){
 			delete t;
@@ -32,8 +33,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		}
 
         void ArgumentsFindClose(){
-        	int k,i=0;
-            while(i<(t->size)/2){
+            long long int  k,i=0;
+            while(i<25000){
                 k = rand()%(t->size);
                 if(t->bv[k]==1){
                     argsFindClose.push_back(k);
@@ -43,8 +44,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
         }
 
         void ArgumentsFindOpen(){
-        	int k,i=0;
-            while(i<(t->size)/2){
+            int k,i=0;
+            while(i<25000){
                 k = rand()%(t->size);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);
@@ -55,12 +56,13 @@ class RMMTreeFixtureTest : public ::testing::Test{
 };
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-    for(int i=0;i<argsFindOpen.size();i++){
-        EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
+    for(int i=0;i<argsFindClose.size();i++){
+    	EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
     }
 }
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
+
     for(int i=0;i<argsFindOpen.size();i++){
         EXPECT_EQ(t->findOpen(argsFindOpen[i]),bps->find_open(argsFindOpen[i])) << "Resposta errada ao calcular o find_open de i=" << argsFindOpen[i];
     } 
@@ -84,6 +86,7 @@ int main(int argc, char *argv[]){
 		cout << "Número de parâmetros  incorreto.\n"<<endl;
    	 }
     	parentheses_to_bits(argv[1], v);
+cout << "tamanho de v no main: "  << v.size() <<"\n";
     	::testing::InitGoogleTest(&argc, argv);
     	testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
 	return RUN_ALL_TESTS();

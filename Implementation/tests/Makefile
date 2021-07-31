@@ -1,9 +1,9 @@
-all: kary_benchmark binary_benchmark
+all: kary
 
 
 binary:
-	g++ -o test_dataset.bin ../rmm-tree-classic/rmM_tree_classic_v3.cpp read_bp/read_bp.cpp test_dataset.cpp  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g 
-	./test_dataset.bin prot.par 
+	g++ -o test_dataset ../rmm-tree-classic/rmM_tree_classic_v3.cpp read_bp/read_bp.cpp test_dataset.cpp  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g 
+	./test_dataset prot.par 
 
 kary:
 	g++ -o test_dataset_k.bin ../rmm-tree-optimized/rmM_tree_optimized.cpp read_bp/read_bp.cpp test_dataset_k.cpp  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall  
