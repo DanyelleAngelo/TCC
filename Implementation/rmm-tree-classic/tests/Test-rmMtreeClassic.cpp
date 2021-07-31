@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-
+#include <vector>
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmMTreeClassic.h"
@@ -24,15 +24,41 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int size;
         int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
-
+        vector<int> argsFindClose;
+        vector<int> argsFindOpen;
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
             bps = new bp_support_sada<>(&(t->bv));
             size = (int)v.size();
             t->buildingTree();
+		    srand(t->size);
+            ArgumentsFindClose();
+            ArgumentsFindOpen();
         }
         void TearDown(){
             delete t;
+        }
+
+        void ArgumentsFindClose(){
+        	int k,i=0;
+            while(i<(t->size)/2){
+                k = rand()%(t->size);
+                if(t->bv[k]==1){
+                    argsFindClose.push_back(k);
+                    i++;
+                }
+            }
+        }
+
+        void ArgumentsFindOpen(){
+        	int k,i=0;
+            while(i<(t->size)/2){
+                k = rand()%(t->size);
+                if(t->bv[k]==0){
+                    argsFindOpen.push_back(k);
+                    i++;
+                }
+            }
         }
 };
 
@@ -84,9 +110,8 @@ TEST_F(RMMTreeFixtureTest, DISABLED_given_a_node_v_returns_the_leaf_order){
 }
  
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-    int index[] = {0,1,3,4,7,8,9,10,11,15,13,18,19,20,22,23,24,26,27,30,32};
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->findClose(index[i]),bps->find_close(index[i])) << "Resposta errada ao calcular o find_close de i=" << index[i];
+    for(int i=0;i<argsFindClose.size();i++){
+        EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
     } 
 }
 
@@ -110,18 +135,16 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_answer_not_found){
 } 
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
-   int index[] = {3,5,6,12,14,16,17,18,20,21,25,28,29,31,33,34,35,36,38,39};
-
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->findOpen(index[i]),bps->find_open(index[i])) << "Resposta errada ao calcular o find_open de i=" << index[i];
+    for(int i=0;i<argsFindOpen.size();i++){
+        EXPECT_EQ(t->findOpen(argsFindOpen[i]),bps->find_open(argsFindOpen[i])) << "Resposta errada ao calcular o find_open de i=" << argsFindOpen[i];
     } 
 }
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
-    int index[] = {2,5,9,10,12,15,17,18,19,21,22,23,25,30,31,32,36};
-  
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->enclose(index[i]),bps->enclose(index[i])) << "Resposta errada ao calcular o enclose de i=" << index[i];
+    int k=0;
+    for(int i=0;i<(t->size)/2;i++){
+        k = rand()%(t->size);
+        EXPECT_EQ(t->enclose(k),bps->enclose(k)) << "Resposta errada ao calcular o enclose de i=" << k;
     } 
 }
 
@@ -511,6 +534,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.GET_INT";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }
