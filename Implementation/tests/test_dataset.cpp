@@ -22,7 +22,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		void SetUp(){ 
 			t = new RMMTree(v,sizeBlock,w); 
 			bps = new bp_support_sada<>(&(t->bv)); 
-			srand(size);
+			srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
 		}

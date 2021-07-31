@@ -412,7 +412,7 @@ void RMMTree::printTableC(){
 }
 
 void RMMTree::printTree(){
-	int v;
+	int v,leaf;
 	cout << " ----- Root and Internal nodes ----- \n";
 	for(v=0;v<numberNodes-numberLeaves;v++){
 		cout << " Nó " << v << "\n";
@@ -423,7 +423,9 @@ void RMMTree::printTree(){
 	}
 	cout << " ----- Folhas -----" << endl;
 	for(int k=0;v<numberNodes;v++,k++){
-		cout << numLeaf(v) << "-th folha " << " - nó " << v << "\n";
+		leaf=numLeaf(v);
+		cout << leaf << "-th folha " << " - nó " << v << "\n";
+		cout <<  k << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
 		for(int k=0;k<tree[v].nKeys; k++){
 			cout << "Chave " << k << "\n";
 			printNode(tree[v].keys , k);

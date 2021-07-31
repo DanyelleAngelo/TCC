@@ -37,6 +37,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         }
         void TearDown(){
             delete t;
+            delete bps;
         }
 
         void ArgumentsFindClose(){

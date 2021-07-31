@@ -181,7 +181,7 @@ void RMMTree::printNode(vector<Node> vector, int i){
 }
 
 void RMMTree::printTree(){
-	int v;
+	int v,k;
 	cout << " ----- Root ----- \n";
 	printNode(tree, 0);
 	cout << " ----- Internal nodes ----- \n";
@@ -192,7 +192,8 @@ void RMMTree::printTree(){
 
 	cout << " ----- Folhas -----" << endl;
 	for(;v<numberNodes;v++){
-		cout << numLeaf(v) << "-th folha " << " - nó " << v << "\n";
+		k=numLeaf(v);
+		cout <<  k << "-th folha " << " - nó " << v << ": área de cobertura: B[" << k*sizeBlock << "," << (k+1)*sizeBlock -1<< "]\n";
 		printNode(tree,v);
 	}
 }
@@ -400,14 +401,17 @@ int RMMTree::fwdSearch(int i,int d){
 	int j,k,v, dr=0;
 	
 	j= fwdBlock(i,d,dr);
-    	if(dr == d) return j;
+    if(dr == d) return j;
 
 	k = (i+1)/sizeBlock;//calcula a k-th folha em que se encontra i+1
-	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
+	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha]
 	
 	/* -----Subindo a RMM-tree ------*/
-	while( v!=0/*((v+1)&(v+2))!=0*/ && !( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) )){
-
+	while( v!=0/*((v+1)&(v+2))!=0*/){
+		if(v < numberNodes-1 && ( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) ) ){
+			//o que acontece se v for o último nó da árvore?só podemos passar pela segunda condição após garantir que existe o próximo irmão
+			break;
+		}
 		if((v&1)==1)dr += tree[v+1].excess;//já processamos todos os filhos do pai de v. guardar seu excesso.
 		v =(v-1)/2;
 	}
