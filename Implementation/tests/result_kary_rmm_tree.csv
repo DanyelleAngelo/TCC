@@ -1,30 +1,30 @@
-2021-07-29T22:22:39-03:00
+2021-07-31T16:21:54-03:00
 Running ./test_kary_rmm_tree
 Run on (4 X 1500 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x4)
   L1 Instruction 32 KiB (x4)
   L2 Unified 2048 KiB (x1)
-Load Average: 7.07, 6.72, 5.74
+Load Average: 5.70, 5.61, 5.56
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Kary_RMMTree_FixtureBM/findClose_k/48",1999213,363.785,360.496,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/76",5093613,146.087,145.539,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/26",2387968,303.976,302.681,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/19",3425513,203.462,203.202,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/65",5093451,139.291,137.449,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/47",1579857,456.284,454.866,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/10",1564359,449.283,448.179,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/1",2175381,321.133,320.624,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/13",5073063,136.66,136.487,ns,,,,,
-"Kary_RMMTree_FixtureBM/findClose_k/53",5078173,139.574,136.564,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/35",1726584,416.028,404.791,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/17",2235770,318.237,311.42,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/50",5532805,127.901,125.106,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/44",3003031,246.276,245.62,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/20",4334243,170.874,170.411,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/16",3347181,216.546,215.902,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/18",2069647,352.375,351.091,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/16",3409030,235.182,215.206,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/54",5491425,132.035,126.364,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k/33",5554738,125.766,125.548,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/48",2172800,328.239,327.047,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/76",5889566,124.346,123.916,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/26",2496456,285.797,284.473,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/19",3662512,203.223,202.671,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/65",5912510,125.458,124.939,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/47",1631132,445.172,443.313,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/10",1460625,486.036,485.055,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/1",2278415,304.776,303.917,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/13",5659414,123.051,122.698,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k/53",5887820,126.365,125.93,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/35",1689137,417.534,416.45,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/17",2220623,319.443,318.576,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/50",5972200,118.317,117.09,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/44",3101548,225.022,224.626,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/20",4499358,152.355,152.105,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/16",3302271,212.761,212.42,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/18",2131325,344.66,342.584,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/16",3285833,220.017,219.445,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/54",5949479,116.899,116.622,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k/33",5868902,116.244,115.983,ns,,,,,

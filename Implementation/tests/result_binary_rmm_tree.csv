@@ -1,30 +1,30 @@
-2021-07-29T22:23:36-03:00
+2021-07-31T16:22:49-03:00
 Running ./test_binary_rmm_tree
 Run on (4 X 1500 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x4)
   L1 Instruction 32 KiB (x4)
   L2 Unified 2048 KiB (x1)
-Load Average: 6.96, 6.74, 5.80
+Load Average: 5.01, 5.42, 5.50
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Bin_RMMTree_FixtureBM/findClose_b/48",2261685,331.355,307.308,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/76",8774920,83.7526,82.2169,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/26",2767614,247.761,246.411,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/19",4809094,156.373,150.441,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/65",8695105,81.4205,79.6916,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/47",2368626,304.337,296.02,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/10",2650832,276.66,270.555,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/1",2457433,295.391,285.395,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/13",8822086,81.8756,79.4707,ns,,,,,
-"Bin_RMMTree_FixtureBM/findClose_b/53",8784838,81.9125,79.292,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/35",3668535,191.585,188.776,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/17",4445934,158.979,156.004,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/50",10543691,67.756,66.5199,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/44",5129331,137.592,135.442,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/20",5648862,125.549,123.857,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/16",5505122,128.045,124.085,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/18",3942814,176.253,176.057,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/16",5754755,121.215,121.067,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/54",10493185,66.0405,65.9599,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b/33",10542591,65.9021,65.831,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/48",2348844,298.792,298.103,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/76",9856266,70.9717,70.8466,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/26",2833324,246.116,245.685,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/19",4946617,141.603,141.358,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/65",9838224,71.0566,70.946,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/47",2432617,287.968,287.517,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/10",2496348,270.202,269.652,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/1",2410952,287.254,286.366,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/13",9748562,72.1913,71.8523,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b/53",9790529,71.7862,71.3677,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/35",3688444,198.075,189.063,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/17",4393427,163.57,159.929,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/50",10524026,66.2394,66.1277,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/44",4994093,139.292,139.045,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/20",5690041,124.212,123.633,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/16",5682356,123.461,123.175,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/18",3830590,182.788,182.467,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/16",5684848,124.467,123.754,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/54",10544283,67.9941,67.0762,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b/33",10465350,66.7342,66.6163,ns,,,,,
