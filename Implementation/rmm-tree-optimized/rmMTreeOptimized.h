@@ -10,10 +10,10 @@ using namespace sdsl;
 using std::vector;
 
 typedef struct Key{
-    int excess;
-    int excessMax;
-    int excessMin;
-    int numberExcessMin;
+    long int excess;
+    long int excessMax;
+    long int excessMin;
+    long int numberExcessMin;
 }Key;
 
 typedef struct Node{
@@ -24,12 +24,12 @@ typedef struct Node{
 class RMMTree{
     public:
         bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
-		int size;							// Tamanho da sequência de parênteses balanceados.
+		long long int size;							// Tamanho da sequência de parênteses balanceados.
 		
 		/*!
 		*	@brief Construtor
 		*/
-        RMMTree(int_vector<1> &bv, int sizeBlock, int w, int order);
+        RMMTree(int_vector<1> &bv, int sizeBlock,  int w, int order);
 
         //métodos públicos 
 
@@ -41,7 +41,7 @@ class RMMTree{
 		*	@param e: ponto final da leitura
 		*	@return inteiro correspondente aos bits lidos.
 		*/
-		int bitsread(int s,int e);
+		long long int bitsread(long long int s,long long int e);
 	
 		/*!
 		*	@brief verifica se a k-th folha está no último ou penúltimo nível da árvore e calcula sua posição.
@@ -49,7 +49,7 @@ class RMMTree{
 		*	@param k = k-th folha
 		*	@return índice da k-th folha na rmM-tree
 		*/
-		int leafInTree(int k);
+		long long int leafInTree(long long int k);
 
 		/*!
 		*	@brief Dado um índice na rmM-tree,verifica o nível em que a folha está, e calcula a sua ordem.
@@ -57,7 +57,7 @@ class RMMTree{
 		*	@param v : índice da folha na rmM-tree
 		*	@return ordem da folha
 		*/
-		int numLeaf(int v);
+		long long int numLeaf(long long int v);
 
 		/*!
 		*	@brief Dado a k-th folha da rmM-tree e um índice i em bp, calcula o ínicio do bloco da k-th folha
@@ -66,7 +66,7 @@ class RMMTree{
 		*	@param i: índice em bp
 		*	@return chave em v onde i está localizado.
 		*/
-		int numKey(int k, int i);
+		int numKey(int k,long long int i);
 
 		/*!
 		*	@brief constrói a estrutura da rmM-tree, chamando primeiro a função para pré-computar
@@ -82,7 +82,7 @@ class RMMTree{
 		*	@param d: excesso de "1" buscado (profundidade)
 		*	@return primeira posição j > i em bv onde ocorre o excesso d.
 		*/
-		int fwdSearch(int i,int d);
+		long long int fwdSearch(long long int i,int d);
 
 		/*!
 		*	@brief Realiza um percusor de subida e depois desciada na rmM-tree através dos nos nós 
@@ -91,7 +91,7 @@ class RMMTree{
 		*	@param d: excesso de "1" buscado (profundidade)
 		*	@return primeira posição j < i em bv onde ocorre o excesso d.
 		*/
-		int bwdSearch(int i,int d);
+		long long int bwdSearch(long long int i,int d);
 
 		/*!
 		*	@brief busca o parênteses de fechamento, corresponde ao parênteses  de abertura i.
@@ -101,7 +101,7 @@ class RMMTree{
 		*	@return índice j do parênteses de fechamento corresponde ao parênteses de abertura i, ou i, caso
 		*	i codifique um parênteses de fechamento.
 		*/
-		int findClose(int i);
+		long long int findClose(long long int i);
 
 		/*!
 		*	@brief busca o parênteses de abertura, corresponde ao parênteses  de fechamento i.
@@ -111,7 +111,7 @@ class RMMTree{
 		*	@return índice j do parênteses de abertura corresponde ao parênteses de fechamento i, ou i, caso
 		*	i codifique um parênteses de abertura.
 		*/		
-		int findOpen(int i);
+		long long int findOpen(long long int i);
 		
 		/*!
 		*	@brief Imprime os valores da tabela de aceleração através da função printNode()
@@ -138,12 +138,12 @@ class RMMTree{
 		select_support_mcl<1> b_sel1;		// Fornece suporte a operaçãop  select, tendo como alvo bit 1
 		select_support_mcl<0> b_sel0;		// Fornece suporte a operaçãop  select, tendo como alvo bit 0
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
-		int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
-		int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
-		int numberLeaves;					// Quantidade de folhas na rmM-tree
-		int numberNodes;					// Número de nós da rmM-tree
-		int order;                          // Ordem da rmM-tree
-        int height;							// Altura da rmM-tree
+		long long int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
+		long long int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
+		long long int numberLeaves;					// Quantidade de folhas na rmM-tree
+		long long int numberNodes;					// Número de nós da rmM-tree
+		long long int order;                          // Ordem da rmM-tree
+        long long int height;							// Altura da rmM-tree
 		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 		vector<Key> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 
@@ -151,7 +151,7 @@ class RMMTree{
 		/*!
 		*	@return retorna a se a < b e b se b <=a. 
 		*/
-		int min(int a , int b);
+		long long int min(long long int a , long long int b);
 
 		/*!
 		*	@param n: número a ser retirado
@@ -185,11 +185,12 @@ class RMMTree{
 		*	e executa a varredura bloco a bloco procurando pelo excesso d.
 		*	@param i: Posição a partir da qual devo buscar o excesso.
 		*	@param nKeys: Número de chaves na folha v.
+		*	@param k: folha em que se encontra o parênteses i 
 		*	@param d: Excesso buscado
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		int fwdKey(int i,int key,int k,int nKeys,int d,int &dr);
+		long long int fwdKey(long long int i,int key,long long int k,int nKeys,int d,int &dr);
 
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
@@ -198,7 +199,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		int fwdBlock(int i,int d,int &dr);
+		long long int fwdBlock(long long int i,int d,int &dr);
 
 		/*!
 		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
@@ -209,7 +210,7 @@ class RMMTree{
 		*	@param d: excesso procurado
 		*	@return a chave que contém o excesso d desejado ou size caso a resposta não seja encontrada nos irmãos de v.
 		*/
-		int fwdVerifySibling(int &v,int &dr, int d);
+		long long int fwdVerifySibling(long long int &v, int &dr, int d);
 
 		/*!
 		*	@brief Pecorre as chaves da folha v (a qual i pertence) mais a direita de i.
@@ -219,7 +220,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou -1 caso o excesso não se encontre neste bloco.
 		*/
-		int bwdKey(int i,int key,int k,int d,int &dr);
+		long long int bwdKey(long long int i,int key,long long int k,int d, int &dr);
 
 		/*!
 		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
@@ -228,7 +229,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição (subtraída de 1) onde ocorre o excesso d ou ou -1 caso o excesso não se encontre neste bloco.
 		*/
-		int bwdBlock(int i,int d,int &dr);
+		long long int bwdBlock(long long int i,int d, int &dr);
 
 		/*!
 		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
@@ -239,7 +240,7 @@ class RMMTree{
 		*	@param d: excesso procurado
 		*	@return a chave que contém o excesso d desejado, e -1 caso a resposta não seja encontrada nos irmãos de v.
 		*/
-		int bwdVerifySibling(int &v,int &dr, int d);
+		long long int bwdVerifySibling(long long int &v, int &dr, int d);
 
 
 		/*!
@@ -247,7 +248,7 @@ class RMMTree{
 		*	@param vector: estrutura (árvore ou tabela) que terá seu nó impresso
 		*	@param i: índice do elemento da estrutura.
 		*/
-		void printNode(vector<Key> vector, int i);
+		void printNode(vector<Key> vector, long long int i);
 };
 
 #endif

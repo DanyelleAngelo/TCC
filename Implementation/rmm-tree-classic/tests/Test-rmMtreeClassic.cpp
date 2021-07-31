@@ -18,19 +18,19 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        int sizeBlock=12;
-        int w=6;
+        int sizeBlock=4;
+        int w=4;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
-        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
+
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
             bps = new bp_support_sada<>(&(t->bv));
-            size = (int)v.size();
             t->buildingTree();
+            size=t->size;
 		    srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
@@ -90,7 +90,7 @@ TEST_F(RMMTreeFixtureTest, expected_log2_floor){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
+TEST_F(RMMTreeFixtureTest, index_in_bp_leaf_index_on_tree){
     int index[] = {2,7,10,14,19,23,26,30,35,37};//para b=4
     int expected[] = {15,16,17,18,9,10,11,12,13,14};
 
@@ -100,7 +100,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_given_a_node_v_returns_the_leaf_order){
+TEST_F(RMMTreeFixtureTest, given_a_node_v_returns_the_leaf_order){
     int index[] = {15,16,17,18,9,10,11,12,13,14};//para b=4
     int expected[] = {0,1,2,3,4,5,6,7,8,9};
 
