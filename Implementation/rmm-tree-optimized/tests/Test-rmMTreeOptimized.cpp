@@ -170,7 +170,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 
-TEST_F(RMMTreeFixtureTest, print_tree){
+TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
     t->printInfoTree();
     t->printTree();
 }
@@ -178,6 +178,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwdSearch_findClose";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

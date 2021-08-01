@@ -18,23 +18,24 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		int w=8; 
 		bp_support_sada<> *bps;
 		vector<int> argsFindClose;
-        vector<int> argsFindOpen;
+                vector<int> argsFindOpen;
         
         void SetUp(){ 
-			t = new RMMTree(v,sizeBlock,w,order); 
-			bps = new bp_support_sada<>(&(t->bv)); 
-			srand(t->size);
+	    t = new RMMTree(v,sizeBlock,w,order); 
+	    t->buildingTree();
+ 	    bps = new bp_support_sada<>(&(t->bv)); 
+	    srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
         }
         void TearDown(){
-			delete t;
-			delete bps;
+	     delete t;
+	     delete bps;
         }
 
         void ArgumentsFindClose(){
-        	int k,i=0;
-            while(i<(t->size)/2){
+            int k,i=0;
+            while(i<200){
                 k = rand()%(t->size);
                 if(t->bv[k]==1){
                     argsFindClose.push_back(k);
@@ -44,8 +45,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
         }
 
         void ArgumentsFindOpen(){
-        	int k,i=0;
-            while(i<(t->size)/2){
+            int k,i=0;
+            while(i<200){
                 k = rand()%(t->size);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);

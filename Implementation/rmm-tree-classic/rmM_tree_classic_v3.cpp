@@ -92,7 +92,6 @@ void RMMTree::buildingTableC(){
 	node.excessMax = 0 - w;
 	node.excessMin = w;
 	node.numberExcessMin = 0;
-
 	for(long long int i=0; i < (1<<w); i++){
 		tableC.push_back(node);
 
@@ -109,7 +108,7 @@ void RMMTree::buildingTableC(){
 				tableC[i].numberExcessMin+=1;
 			}
 		}
-    }
+  	  }
 }
 
 void RMMTree::buildingTree(){
@@ -204,8 +203,7 @@ void RMMTree::printTableC(){
 }
 
 void RMMTree::printInfoTree(){
-    cout << "BPS: " << this->bv << '\n'
-		 << "Tamanho de bloco: " << sizeBlock << '\n'
+    cout << "Tamanho de bloco: " << sizeBlock << '\n'
 		 << "Quantidade de folhas: " << numberLeaves << '\n'
 		 << "Quantidade de nós: " << numberNodes << '\n'
 		 << "Altura da árvore: " << height << '\n'
@@ -216,7 +214,6 @@ long long int RMMTree::fwdBlock(long long int i,int d,int &dr){
 	long long int p;
 	long long int fb = ceil((double)(i+1)/w);//para calcular o limite do primeiro bloquinho (de i)
 	long long int lb = ceil((double)(i+2)/sizeBlock)* (sizeBlock/w);//limite do bloco 
-	
 	//varre o sub-bloco a qual i+1 pertebce
 	for(long long int j=i+1;j<=(fb*w)-1  && j<size;j++){
 		dr += (bv[j] == 1)? 1 : -1;
@@ -226,6 +223,7 @@ long long int RMMTree::fwdBlock(long long int i,int d,int &dr){
 	//Verifica se "d" está contido no bloco subsequente
 	for(p=fb+1; p<=lb;p++){
 		long long int x = bitsread((p-1)*w, (p*w)-1);
+
 		if(dr + tableC[x].excessMin <= d && dr + tableC[x].excessMax >= d){
 			break;
 		}
@@ -233,7 +231,6 @@ long long int RMMTree::fwdBlock(long long int i,int d,int &dr){
 	}
 	
 	if(p > lb)return lb*sizeBlock;//d não está no bloco subsequente
-
 	//Finalmente faz a varredura do subbloco subsquente ao de i+1, onde se encontra d
 	for(long long int j= (p-1)*w; j <= (p*w)-1  && j<size;j++){
 		dr += (bv[j] ==1)? 1:-1;
@@ -397,12 +394,12 @@ long long int RMMTree::minSelectBlock(long long int i,long long int j,long long 
 
 long long int RMMTree::fwdSearch(long long int i,int d){
 	assert((i+1)>=0 && (i+1)< size);
-	
+
 	long long int j,k,v;
 	int dr=0;
-	
+
 	j= fwdBlock(i,d,dr);
-    if(dr == d) return j;
+        if(dr == d) return j;
 
 	k = (i+1)/sizeBlock;//calcula a k-th folha em que se encontra i+1
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha]
