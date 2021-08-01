@@ -18,7 +18,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int order=4;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
@@ -117,7 +117,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_get_key_where_i_is_located){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, fwdsearch_i_answer_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_fwdsearch_i_answer_in_the_same_block){ 
     int index[] = {0,0,0,0,5,5,10,12,12,16,16,16,21,28,32};
     int d[] = {1,4,0,5,-1,4,0,1,0,-2,-3,1,3,0,-4};
     int expected[] = {1,10,6,11,6,11,12,13,14,18,21,27,24,30,36};
@@ -127,7 +127,7 @@ TEST_F(RMMTreeFixtureTest, fwdsearch_i_answer_in_the_same_block){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, fwdSearch_general){
+TEST_F(RMMTreeFixtureTest, DISABLED_fwdSearch_general){
     int index[] = {14,11,29};
     int d[] = {-2,-4,-1};
     int expected[] = {18,21,34};
@@ -143,7 +143,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_i_answer_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_i_answer_in_the_same_block){ 
     int index[] = {3,7,13,20,21,26,31};
     int d[] = {-2,0,-5,0,4,-3,-1};
     int expected[] = {-1,5,6,18,15,21,22};
@@ -153,7 +153,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_i_answer_in_the_same_block){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_general){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_general){ 
     int index[] = {9,17,22,12,15,19,36,37,18};
     int d[] = {-2,-1,-1,-4,0,2,0,3,-1};
     int expected[] = {7,8,21,6,13,15,6,32,7};
@@ -178,6 +178,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.bwdSearch_findOpen";
     return RUN_ALL_TESTS();
 }
