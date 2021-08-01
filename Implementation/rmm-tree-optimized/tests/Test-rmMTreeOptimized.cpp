@@ -13,12 +13,12 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        size_t sizeBlock=8;
-        size_t w=4;
-        int order=16;
+        size_t sizeBlock=4;
+        size_t w=2;
+        int order=4;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
@@ -26,7 +26,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
             t = new RMMTree(v,sizeBlock,w,order);
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
-		    srand(t->size);
+		    srand(t->size/2);
             ArgumentsFindClose();
             ArgumentsFindOpen();
         }
@@ -143,7 +143,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdsearch_i_answer_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, bwdSearch_i_answer_in_the_same_block){ 
     int index[] = {3,7,13,20,21,26,31};
     int d[] = {-2,0,-5,0,4,-3,-1};
     int expected[] = {-1,5,6,18,15,21,22};
@@ -170,7 +170,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 
-TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
+TEST_F(RMMTreeFixtureTest, print_tree){
     t->printInfoTree();
     t->printTree();
 }
@@ -178,6 +178,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwdSearch_findClose";
     return RUN_ALL_TESTS();
 }

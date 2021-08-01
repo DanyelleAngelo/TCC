@@ -265,7 +265,6 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 		v = (v-1)/order;
 	} 
 	
-	if(v < numberNodes - numberLeaves)v = (v*order)+1+key;
 	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
@@ -275,6 +274,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 		for(key=0;key<tree[v].nKeys;key++){
 			if((dr+tree[v].keys[key].excessMin <=d)&& (dr + tree[v].keys[key].excessMax >=d) ){
 				v = (v*order)+1+key;
+				key=0;
 				break;
 			}
 			else{
@@ -292,8 +292,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 
 long long int RMMTree::bwdKey(long long int i,int key,long long int k,int d, int &dr){
 	long long int j;
-	
-	for(; key>=0;key--){
+	for(; key>=0;key--){ 
 		j = bwdBlock(i,d,dr);
 		if(dr==d)return j;
 		i =  (order*k+key)*sizeBlock -1;//obtém o inicio da chave atual subtraído de 1, para começar a varrer a próxima chave a partir do seu final
@@ -305,12 +304,10 @@ long long int RMMTree::bwdBlock(long long int i,int d, int &dr){
 	long long int p,x,j;
 	long long int fb = i/w;
 	long long int lb = (i/sizeBlock) * (sizeBlock/w);
-	
-	for(j=i;j>=fb*w;j--){
+	for(j=min(i,size);j>=fb*w;j--){
 		dr += (bv[j] == 1)? -1 : 1;
 		if(dr == d)return j-1;
 	}
-	
 	for(p=fb-1;p>=lb;p--){
 		x = bitsread((p*w),(p+1)*w-1);
 		if( (dr - tableC[x].excess + tableC[x].excessMin <= d)&& (dr - tableC[x].excess + tableC[x].excessMax >= d) ){
@@ -320,7 +317,6 @@ long long int RMMTree::bwdBlock(long long int i,int d, int &dr){
 	}
 
 	if(p < lb)return (lb*w)-1;
-
 	for(j=(p+1)*w-1; j>=p*w; j--){
 		dr += (bv[j] == 1)? -1 : 1;
 		if(dr == d)return j-1;
@@ -330,15 +326,16 @@ long long int RMMTree::bwdBlock(long long int i,int d, int &dr){
 }
 
 long long int RMMTree::bwdVerifySibling(long long int &v, int &dr, int d){
+	
 	long long int parent = (v-1)/order;
 	long long int child = v - (parent*order)-1; // obtém o número de irmãos a esquerda de v
-
 	v--;
 
 	for(; child >0 && v >0;child--){
 		for(long long int key =tree[v].nKeys-1; key>=0;key--){
 			if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax))return key;
 			dr-=tree[v].keys[key].excess;
+			if(dr == d)return key;
 		}
 		v--;
 	}
@@ -361,14 +358,13 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
 		v = (v-1)/order;
 	}
-	
-	if(v < numberNodes - numberLeaves)v = (v*order)+1+key;
-	
+
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
-		for(key = tree[v].nKeys;key>=0;key--){
+		for(key = tree[v].nKeys-1;key>=0;key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
+				key = tree[v].nKeys -1;
 				break;
 			}
 			else{
@@ -378,9 +374,9 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	}
 	
 	k = numLeaf(v);
-	if(dr == d)return (k+key+1)*sizeBlock-1;
-	
-	j = bwdKey(((k+1)*tree[v].nKeys)*sizeBlock-1,tree[v].nKeys-1,k,d,dr);
+	if(dr == d)return (k*sizeBlock*order)+(key*sizeBlock) -1;
+
+	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,tree[v].nKeys-1,k,d,dr);
 
 	return (dr==d)? j : -1;
 }
@@ -427,7 +423,7 @@ void RMMTree::printTree(){
 	for(long long int k=0;v<numberNodes;v++,k++){
 		leaf=numLeaf(v);
 		cout << leaf << "-th folha " << " - nó " << v << "\n";
-		cout <<  k << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
+		cout <<  k << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock*order << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
 		for(long long int k=0;k<tree[v].nKeys; k++){
 			cout << "Chave " << k << "\n";
 			printNode(tree[v].keys , k);
@@ -436,8 +432,7 @@ void RMMTree::printTree(){
 }
 
 void RMMTree::printInfoTree(){
-    cout << "BPS: " << this->bv << '\n'
-		 << "Tamanho de bloco: " << sizeBlock << '\n'
+    cout << "Tamanho de bloco: " << sizeBlock << '\n'
 		 << "Ordem da árvore " << order << '\n'
 		 << "Quantidade de folhas: " << numberLeaves << '\n'
 		 << "Quantidade de nós: " << numberNodes << '\n'
