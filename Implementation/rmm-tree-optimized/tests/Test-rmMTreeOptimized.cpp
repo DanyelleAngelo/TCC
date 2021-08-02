@@ -18,7 +18,8 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int order=4;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        //a,b,c,d,e,f,g,h,i,j,k,l
+        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,1,0,0,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
@@ -138,7 +139,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_fwdSearch_general){
 }
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-    for(int i=0;i<argsFindOpen.size();i++){
+    for(int i=0;i<argsFindClose.size();i++){
         EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
     } 
 }
@@ -178,6 +179,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwd*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

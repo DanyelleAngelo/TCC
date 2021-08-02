@@ -131,7 +131,7 @@ void RMMTree::buildingLeaves(){
 	Key key;
 	for(long long int k=0; k < numberLeaves;k++){
 		v = leafInTree(k);
-		while (tree[v].nKeys < order && numKey < ceil(size/sizeBlock)){
+		while (tree[v].nKeys < order && numKey <= ceil(size/sizeBlock)){
 			key.excess = 0;
 			key.excessMax = 0 -w;
 			key.excessMin = 0 +w;
@@ -188,7 +188,6 @@ void RMMTree::buildingInternalNodesRoot(){
 
 long long int RMMTree::fwdKey(long long int i,int key,long long int k,int nKeys,int d,int &dr){
 	long long int j;
-	
 	for(;key < nKeys;key++){
 		j= fwdBlock(i,d,dr);
 		if(dr == d) return j;
@@ -233,19 +232,20 @@ long long int RMMTree::fwdVerifySibling(long long int &v, int &dr, int d){
 	//calcula parent a fim de verificar quantos írmãos de v existem a sua esquerda
 	long long int parent = (v-1)/order;
 	long long int child = v - (parent*order);//obtém o número de irmãos a direita de v
-	cout << " numero de irmaos de v eh " <<child << endl;
 	if(child==order)return size;
+
 	v++;
-	cout << " v eh " << v << " seu pai eh " << parent << " e ele tem " << child << " irmaos\n";
 	//pecorre os írmãos de v
+
 	for( ;child < tree[parent].nKeys && v<numberNodes;child++){
-		
 		for(long long int key=0;key<tree[v].nKeys;key++){	
-			if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax))return key;
+			if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
+				return key;
+			}
 			dr +=  tree[v].keys[key].excess;
-			//if(dr==d)return key;
+			if(dr==d)return key;
 		}
-		v++;
+		if(child+1 < tree[parent].nKeys)v++;
 	}
 	
 	return size;//a resposta não está nos irmãos de v
@@ -258,22 +258,21 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
-	cout << " nó v eh " << v << " k eh " << k << " key " << key << endl;
 	long long int j = fwdKey(i,key, k ,tree[v].nKeys,d,dr);
+	
 	if(dr == d)return j;
-	cout << " no v eh " << v << " e dr eh " << dr << endl;
+
 	/* -----Subindo a RMM-tree ------*/
 	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
 		v = (v-1)/order;
 	} 
-	
 	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
 		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
 		o excesso e descer pelo o seu nó.
 		*/
-		for(key=0;key<tree[v].nKeys;key++){
+		for(;key<tree[v].nKeys;key++){
 			if((dr+tree[v].keys[key].excessMin <=d)&& (dr + tree[v].keys[key].excessMax >=d) ){
 				v = (v*order)+1+key;
 				key=0;
@@ -286,9 +285,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	}
  
 	k = numLeaf(v);
-	
 	j = fwdKey((order*k+key)*sizeBlock -1,0, k ,tree[v].nKeys,d,dr);
-
 	return (dr == d)? j : size;
 }
 
@@ -331,15 +328,19 @@ long long int RMMTree::bwdVerifySibling(long long int &v, int &dr, int d){
 	
 	long long int parent = (v-1)/order;
 	long long int child = v - (parent*order)-1; // obtém o número de irmãos a esquerda de v
+	
+	if(child==0)return -1;
 	v--;
-
+	
 	for(; child >0 && v >0;child--){
 		for(long long int key =tree[v].nKeys-1; key>=0;key--){
-			if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax))return key;
+			if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
+				return key;
+			}
 			dr-=tree[v].keys[key].excess;
 			if(dr == d)return key;
 		}
-		v--;
+		if(child-1 >0)v--;
 	}
 	return -1;
 }
@@ -352,7 +353,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	long long int k = i/(sizeBlock*order);
 	long long int v = leafInTree(k);
 	int key = numKey(k,i);
-
+	
 	long long int j = bwdKey(i,key,k,d,dr);
 	if(dr==d) return j;
 	
@@ -360,10 +361,11 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
 		v = (v-1)/order;
 	}
-
+	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
-		for(key = tree[v].nKeys-1;key>=0;key--){
+		
+		for(;key>=0;key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
 				key = tree[v].nKeys -1;
