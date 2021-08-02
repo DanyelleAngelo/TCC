@@ -233,15 +233,17 @@ long long int RMMTree::fwdVerifySibling(long long int &v, int &dr, int d){
 	//calcula parent a fim de verificar quantos írmãos de v existem a sua esquerda
 	long long int parent = (v-1)/order;
 	long long int child = v - (parent*order);//obtém o número de irmãos a direita de v
+	cout << " numero de irmaos de v eh " <<child << endl;
+	if(child==order)return size;
 	v++;
-	
+	cout << " v eh " << v << " seu pai eh " << parent << " e ele tem " << child << " irmaos\n";
 	//pecorre os írmãos de v
 	for( ;child < tree[parent].nKeys && v<numberNodes;child++){
 		
-		for(long long int key=0;key<tree[v].nKeys;key++){
-			
+		for(long long int key=0;key<tree[v].nKeys;key++){	
 			if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax))return key;
 			dr +=  tree[v].keys[key].excess;
+			//if(dr==d)return key;
 		}
 		v++;
 	}
@@ -256,10 +258,10 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
-	
+	cout << " nó v eh " << v << " k eh " << k << " key " << key << endl;
 	long long int j = fwdKey(i,key, k ,tree[v].nKeys,d,dr);
 	if(dr == d)return j;
-	
+	cout << " no v eh " << v << " e dr eh " << dr << endl;
 	/* -----Subindo a RMM-tree ------*/
 	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
 		v = (v-1)/order;
@@ -422,8 +424,7 @@ void RMMTree::printTree(){
 	cout << " ----- Folhas -----" << endl;
 	for(long long int k=0;v<numberNodes;v++,k++){
 		leaf=numLeaf(v);
-		cout << leaf << "-th folha " << " - nó " << v << "\n";
-		cout <<  k << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock*order << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
+		cout << leaf << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock*order << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
 		for(long long int k=0;k<tree[v].nKeys; k++){
 			cout << "Chave " << k << "\n";
 			printNode(tree[v].keys , k);

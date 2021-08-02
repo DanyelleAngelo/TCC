@@ -18,7 +18,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int order=4;
         bp_support_sada<> *bps;
         int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
+        int_vector<1> v = {1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,0,1,0,0,0,0,1,0,1,1,1,0,1,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
@@ -178,6 +178,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.bwdSearch_findOpen";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwd*";
     return RUN_ALL_TESTS();
 }
