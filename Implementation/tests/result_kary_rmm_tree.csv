@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-08-03T17:15:15+00:00
 Running ./test_kary_rmm_tree.bin
 Run on (56 X 3200 MHz CPU s)
@@ -10009,3 +10010,17 @@ name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,l
 "Kary_RMMTree_FixtureBM/findOpen_k/650823554",1453229,481.375,481.366,ns,,,,,
 "Kary_RMMTree_FixtureBM/findOpen_k/948055659",9259968,75.7013,75.6996,ns,,,,,
 "Kary_RMMTree_FixtureBM/findOpen_k/892878280",4098384,170.677,170.675,ns,,,,,
+=======
+2021-08-03T18:28:50-03:00
+Running ./1.bin
+Run on (4 X 1500 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x4)
+  L1 Instruction 32 KiB (x4)
+  L2 Unified 2048 KiB (x1)
+Load Average: 12.49, 10.58, 8.39
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"Kary_RMMTree_FixtureBM/findClose_k",313952,2268.71,2242.81,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k",1349440,524.824,505.079,ns,,,,,
+>>>>>>> 08ddf9ebb34f95c584778bbe926628190904804c
