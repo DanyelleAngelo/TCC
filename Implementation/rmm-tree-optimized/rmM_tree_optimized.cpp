@@ -129,9 +129,10 @@ void RMMTree::buildingLeaves(){
 	long long int x,v;
 	int numKey=0;
 	Key key;
+	
 	for(long long int k=0; k < numberLeaves;k++){
 		v = leafInTree(k);
-		while (tree[v].nKeys < order && numKey <= ceil(size/sizeBlock)){
+		while (tree[v].nKeys < order && numKey <= ceil((double)size/sizeBlock)){
 			key.excess = 0;
 			key.excessMax = 0 -w;
 			key.excessMin = 0 +w;
