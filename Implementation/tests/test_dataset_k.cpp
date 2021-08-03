@@ -13,29 +13,29 @@ int_vector<1> v;
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
 		RMMTree *t; 
-		int order=32;
-		int sizeBlock=16; 
-		int w=8; 
+		int order=64;//64 e 32 e 16
+		int sizeBlock=32; 
+		int w=16; 
 		bp_support_sada<> *bps;
 		vector<int> argsFindClose;
-                vector<int> argsFindOpen;
+        vector<int> argsFindOpen;
         
         void SetUp(){ 
-	    t = new RMMTree(v,sizeBlock,w,order); 
-	    t->buildingTree();
- 	    bps = new bp_support_sada<>(&(t->bv)); 
-	    srand(t->size);
+		    t = new RMMTree(v,sizeBlock,w,order); 
+		    t->buildingTree();
+ 	    	bps = new bp_support_sada<>(&(t->bv)); 
+	    	srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
         }
         void TearDown(){
-	     delete t;
-	     delete bps;
+	    	delete t;
+	    	delete bps;
         }
 
         void ArgumentsFindClose(){
             int k,i=0;
-            while(i<200){
+            while(i<25000){
                 k = rand()%(t->size);
                 if(t->bv[k]==1){
                     argsFindClose.push_back(k);
@@ -46,7 +46,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 
         void ArgumentsFindOpen(){
             int k,i=0;
-            while(i<200){
+            while(i<25000){
                 k = rand()%(t->size);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);
@@ -72,8 +72,8 @@ int main(int argc, char *argv[]){
 	 if(argc<2){
 		cout << "Número de parâmetros  incorreto.\n"<<endl;
    	 }
-    	parentheses_to_bits(argv[1], v);
-    	::testing::InitGoogleTest(&argc, argv);
-    	testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    parentheses_to_bits(argv[1], v);
+    ::testing::InitGoogleTest(&argc, argv);
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
 	return RUN_ALL_TESTS();
 }

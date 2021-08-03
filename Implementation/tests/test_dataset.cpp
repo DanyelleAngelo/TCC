@@ -17,15 +17,15 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		int w=8; 
 		bp_support_sada<> *bps; 
 		vector<long long int> argsFindClose;
-                vector<int> argsFindOpen;
+        vector<long long int> argsFindOpen;
 
 		void SetUp(){
 			t = new RMMTree(v,sizeBlock,w); 
 			bps = new bp_support_sada<>(&(t->bv));
 			t->buildingTree(); 
 			srand((int)(t->size/sizeBlock));
-                        ArgumentsFindClose();
-            	        ArgumentsFindOpen();
+            ArgumentsFindClose();
+            ArgumentsFindOpen();
 		}
 		void TearDown(){
 			delete t;

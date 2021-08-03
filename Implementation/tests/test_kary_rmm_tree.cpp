@@ -1,6 +1,5 @@
 #include <iostream>
 #include <benchmark/benchmark.h>
-#include <sdsl/int_vector.hpp>
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-optimized/rmMTreeOptimized.h"
 #include "read_bp/read_bp.h"
@@ -13,36 +12,36 @@ RMMTree *t;
    
 class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
-		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
-		int sizeBlock =4;
-		int w=4;
-		int order =4;
+		int sizeBlock =16;
+		int w=8;
+		int order = 1024;
+		int_vector<1> v;
 		
 	Kary_RMMTree_FixtureBM(){
-		//parentheses_to_bits("wiki.par",v);
-		t = new RMMTree(v,sizeBlock,w,order);	
+		parentheses_to_bits("dna.par",v);
+		t = new RMMTree(v,sizeBlock,w,order);
 		t->buildingTree();
 		srand(t->size);
 	}
 };
 
-static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
+static void ArgumentsFindClose(benchmark::internal::Benchmark *b){
 	int k,i=0;
-	while(i<10){
+	while(i<1000){
 		k = rand()%(t->size);
 		if(t->bv[k]==1){
-			v->Args({k});
+			b->Args({k});
 			i++;
 		}
 	}
 }
 
-static void ArgumentsFindOpen(benchmark::internal::Benchmark *v){
+static void ArgumentsFindOpen(benchmark::internal::Benchmark *b){
 	int k,i=0;
-	while(i<10){
+	while(i<1000){
 		k = rand()%(t->size);
 		if(t->bv[k]==0){
-			v->Args({k});
+			b->Args({k});
 			i++;
 		}
 	}
