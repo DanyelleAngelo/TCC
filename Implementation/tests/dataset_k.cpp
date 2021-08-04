@@ -17,6 +17,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		RMMTree *t;
         int sizeBlock=32;
         int w=16;
+        bp_support_sada<> *bps; 
 		vector<int> args_fOpen;
 		vector<int> args_fClose;
         
@@ -69,7 +70,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 int main(int argc, char *argv[]){
-	if(argc<6){
+	if(argc<4){
 		cout << "Número de argumentos inválidos" << endl;
 		exit(EXIT_FAILURE);
 	}

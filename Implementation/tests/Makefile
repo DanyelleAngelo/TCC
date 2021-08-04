@@ -1,4 +1,4 @@
-all: rmmTreeOptimized testBenchmark clean
+all: rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 #--------- gerando bibliotecas necessárias---------
 rmmTreeClassic:
@@ -32,53 +32,53 @@ testBenchmark:  lib_rmmTreeOptimized.a lib_read_bp.a
 
 binary_wiki: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  read_bp/read_bp.cpp -std=c++11  -I ~/include   -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	valgrind --leak-check=full -s ./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --benchmark_out_format=csv
+	./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --benchmark_out_format=csv
 
 kary_wiki: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		valgrind --leak-check=full -s ./bm_kary_rmm_tree wiki.par 500000 $$order --benchmark_out=results/wiki/kary_i500000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree wiki.par 500000 $$order --benchmark_out=results/wiki/kary_i500000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
-binary_cstree: lib_rmmTreeClassic.a lib_read_bp.a
+binary_ctree: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  read_bp/read_bp.cpp -std=c++11  -I ~/include   -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	valgrind --leak-check=full -s ./bm_binary_rmm_tree cstree.par 100000  --benchmark_out=results/cstree/bin_i100000.csv --benchmark_out_format=csv 
+	./bm_binary_rmm_tree ctree.par 100000  --benchmark_out=results/ctree/bin_i100000.csv --benchmark_out_format=csv 
  
-kary_cstree: lib_rmmTreeOptimized.a lib_read_bp.a
+kary_ctree: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		valgrind --leak-check=full -s ./bm_kary_rmm_tree cstree.par 100000 $$order --benchmark_out=results/cstree/kary_i100000_m$$order.csv  --benchmark_out_format=csv 
+		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv 
 	done
 
 binary_prot: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  read_bp/read_bp.cpp -std=c++11  -I ~/include   -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	valgrind --leak-check=full -s ./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --benchmark_out_format=csv ; \
+	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --benchmark_out_format=csv ; \
 
 kary_prot: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		valgrind --leak-check=full -s ./bm_kary_rmm_tree prot.par 300000 $$order --benchmark_out=results/prot/kary_i300000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree prot.par 300000 $$order --benchmark_out=results/prot/kary_i300000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_dna: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  read_bp/read_bp.cpp -std=c++11  -I ~/include   -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	valgrind --leak-check=full -s ./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000_m4.csv --benchmark_out_format=csv 
+	./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000_m4.csv --benchmark_out_format=csv 
  
 
 kary_dna: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		valgrind --leak-check=full -s ./bm_kary_rmm_tree dna.par 1000000 $$order --benchmark_out=results/dna/kary_i1000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree dna.par 1000000 $$order --benchmark_out=results/dna/kary_i1000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_osm: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  read_bp/read_bp.cpp -std=c++11  -I ~/include   -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	valgrind --leak-check=full -s ./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv  
+	./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv  
 
 kary_osm: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		valgrind --leak-check=full -s ./bm_kary_rmm_tree osm.par 2000000 $$order --benchmark_out=results/cstree/kary_i2000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree osm.par 2000000 $$order --benchmark_out=results/ctree/kary_i2000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 clean:

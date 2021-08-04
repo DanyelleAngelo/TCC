@@ -72,7 +72,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 int main(int argc, char *argv[]){
-    if(argc<5){
+    if(argc<3){
 		cout << "Número de argumentos inválidos" << endl;
 		exit(EXIT_FAILURE);
 	}
