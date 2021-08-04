@@ -30,29 +30,19 @@ RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock,int w){
 	this->tree.resize(this->numberNodes);
 }
 
-uint64_t RMMTree::getInt(const uint8_t  idx, const uint8_t len){
-	if(idx + len > size)return -1;
-	if(len > 64)return -1;
-
-/* 	uint8_t offset = idx & 0x3F;
-	const uint64_t* d = bv.data();
-	d+=(idx >> 6);//dividindo por 64 */
-
-	return readInt(bv.data() + (idx>>6), idx & 0x3F, len);
-
- 	
-	//return bits::read_int_and_move(d, offset, len);  
+uint16_t RMMTree::reverse_16(uint16_t x){
+	uint16_t y;
+	unsigned char *q = (unsigned char *)&y;
+	unsigned char *p = (unsigned char *)&x;
+	q[1] = BitReverseTable256[p[0]];
+	q[0] = BitReverseTable256[p[1]];
+	return y;
 }
 
-uint64_t RMMTree::readInt(const uint64_t* word, uint8_t offset, const uint8_t len){
-	uint64_t w1 = (*word)& bits::lo_set[64-offset];
-	
-	if ((offset+len) > 64) {
-		return (w1  << (offset+ len -64)) 
-			|  ((*(word+1) & bits::lo_unset[64-((offset+len)&0x3F)]) >> (64-((offset+len)&0x3F)) ); 
-	}
-	return w1 >> (64-offset - len);
-	
+long long int RMMTree::bitsread(uint64_t idx){
+	uint64_t word = bv.data()[idx>>6];
+	auto x = reverse_16( (word >> (idx & 0x3f)) & bits::lo_set[16]);
+	return x;
 }
 
 unsigned long long RMMTree::fLog_2(unsigned long long  n){
@@ -65,12 +55,6 @@ unsigned long long RMMTree::cLog_2(unsigned long long  n){
 
 long long int RMMTree::min(long long int a , long long int b){
 	return (a < b )? a:b;
-}
-
-long long int RMMTree::bitsread(long long int s,long long int e){
-	long long int value=0;
-	for(long long int j=s;j<=e  && j<size;j++)value = (value << 1) + bv[j] ;
-	return value;
 }
 
 long long int RMMTree::leafInTree(long long int k){
@@ -132,7 +116,7 @@ void RMMTree::buildingLeaves(){
 		tree[v].numberExcessMin =0;
 		
 		for(long long int p = (k*(sizeBlock/w))+1;p<=((k+1)*sizeBlock)/w;p++){
-			x = bitsread((p-1)*w,(p*w)-1);
+			x = bitsread((p-1)*w);
 			if(tree[v].excess + tableC[x].excessMax > tree[v].excessMax){
 				tree[v].excessMax = tree[v].excess + tableC[x].excessMax;
 			}
@@ -222,7 +206,7 @@ long long int RMMTree::fwdBlock(long long int i,int d,int &dr){
 	
 	//Verifica se "d" está contido no bloco subsequente
 	for(p=fb+1; p<=lb;p++){
-		long long int x = bitsread((p-1)*w, (p*w)-1);
+		long long int x = bitsread((p-1)*w);
 
 		if(dr + tableC[x].excessMin <= d && dr + tableC[x].excessMax >= d){
 			break;
@@ -250,7 +234,7 @@ long long int RMMTree::bwdBlock(long long int i,int d,int &dr){
 	}
 	
 	for(p=fb-1;p>=lb;p--){
-		x = bitsread((p*w),(p+1)*w-1);
+		x = bitsread(p*w);
 		if( (dr - tableC[x].excess + tableC[x].excessMin <= d)&& (dr - tableC[x].excess + tableC[x].excessMax >= d) ){
 			break;
 		}
@@ -282,7 +266,7 @@ long long int RMMTree::minBlock(long long int i,long long int j, int &d){
 	
 	//varre os próximos blocos de tamanho w.
 	for(p=fb+1; p <=lb;p++){
-		x = bitsread(p*w, (p*w)+1);
+		x = bitsread(p*w);
 
 		if((d + tableC[x].excessMin) < m)m = d + tableC[x].excessMin;
 		d += tableC[x].excess;
@@ -312,7 +296,7 @@ long long int RMMTree::maxBlock(long long int i,long long int j,int &d){
 	
 	//varre os próximos blocos de tamanho w.
 	for(p=fb+1; p <=lb;p++){
-		x = bitsread(p*w, (p*w)+1);
+		x = bitsread(p*w);
 
 		if((d + tableC[x].excessMax) > eM)eM = d + tableC[x].excessMax;
 		d += tableC[x].excess;
@@ -341,7 +325,7 @@ long long int RMMTree::minCountBlock(long long int i,long long int j,long long i
 	if(j<=lim) return n;
 
 	for(long long int p=fb+1; p<=lb; p++){
-		x = bitsread(p*w,(p*w)+1);
+		x = bitsread(p*w);
 		if((d + tableC[x].excessMin) == m)n++;
 		d += tableC[x].excess;
 	}
@@ -371,7 +355,7 @@ long long int RMMTree::minSelectBlock(long long int i,long long int j,long long 
 	if(j<=lim) return p;
 	
 	for(p=fb; p<=lb; p++){
-		x = bitsread(p*w,(p+1)*w-1);
+		x = bitsread(p*w);
 		
 		if((d + tableC[x].excessMin) <=  m)break;
 		

@@ -4,10 +4,11 @@
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmMTreeClassic.h"
 #include <sdsl/bits.hpp>
+
 /*
-* desabilitar um teste inserindo esse prefixo em seu nome
-*testing::GTEST_FLAG(filter) = "-MyLibrary.TestWriting"; usar o nome do teste precedido de "-" desabilita ele no main,
-a ausência desse mesmo elemento "-", torna o teste o único a ser executado.
+* Os testes desabilitados (com excessão de print_tree), estão assim porque a resposta esperada (vetor expected[]) foi construída com base na
+* sequência de parenteses balanceadas dada como exemplo no livro "Compacta Data Structures" de Gonzalo Navarro.
+* int_vector<1> v={1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
 */
 
 
@@ -18,19 +19,17 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        int sizeBlock=4;
-        int w=4;
+        int sizeBlock=32;
+        int w=16;
         bp_support_sada<> *bps;
-        int size;
-        int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
-
+        RMMTreeFixtureTest(){}
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
-            size=t->size;
 		    srand(t->size);
             ArgumentsFindClose();
             ArgumentsFindOpen();
@@ -64,11 +63,11 @@ class RMMTreeFixtureTest : public ::testing::Test{
 };
 
 TEST_F(RMMTreeFixtureTest, GET_INT){
-    int index[] = {9,17,30,36};
-    int len = 2;
-    int expected[]={3,0,2,1};
+    int index[] = {0,1};
+    int expected[]={64905,64274};
+
     for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->bitsread(index[i],index[i]+len-1),expected[i])<< "Resposta errada ao tentar devolver o inteiro correspondente aos bits [" << index[i] << ","<<(index[i]+len-1)<<"]";
+        EXPECT_EQ(t->bitsread(index[i]),expected[i])<< "Resposta errada ao tentar devolver o inteiro correspondente aos bits [" << index[i] << ","<<(index[i]+w-1)<<"]";
     }
 }
 
@@ -90,7 +89,7 @@ TEST_F(RMMTreeFixtureTest, expected_log2_floor){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, index_in_bp_leaf_index_on_tree){
+TEST_F(RMMTreeFixtureTest, DISABLED_index_in_bp_leaf_index_on_tree){
     int index[] = {2,7,10,14,19,23,26,30,35,37};//para b=4
     int expected[] = {15,16,17,18,9,10,11,12,13,14};
 
@@ -100,7 +99,7 @@ TEST_F(RMMTreeFixtureTest, index_in_bp_leaf_index_on_tree){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, given_a_node_v_returns_the_leaf_order){
+TEST_F(RMMTreeFixtureTest, DISABLED_given_a_node_v_returns_the_leaf_order){
     int index[] = {15,16,17,18,9,10,11,12,13,14};//para b=4
     int expected[] = {0,1,2,3,4,5,6,7,8,9};
 
@@ -116,7 +115,7 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, fwdSearch_general){
+TEST_F(RMMTreeFixtureTest, DISABLED_fwdSearch_general){
     int index[] = {9,10,17,22,12,21,0,15,19,23,25,0,0,0,18,8,0,9,12,0};
     int d[] = {-2,1,-1,-1,-1,-1,2,-3,1,2,0,0,3,5,-1,3,5,-1,-4,4};
     int expected[] = {21,11,18,35,17,36,2,18,24,27,29,6,9,11,21,11,11,18,36,10};
@@ -125,15 +124,6 @@ TEST_F(RMMTreeFixtureTest, fwdSearch_general){
         EXPECT_EQ(t->fwdSearch(index[i],d[i]),expected[i]) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << index[i];
     } 
 }
-
-TEST_F(RMMTreeFixtureTest, fwdSearch_answer_not_found){
-    int index[] = {9,17,22};
-    int d[] = {10,-8,57};
-    
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->fwdSearch(index[i],d[i]),size) << "Resposta errada ao tentar obter 'answer not found' para FwdSearch para i=" << index[i];
-    } 
-} 
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
     for(int i=0;i<argsFindOpen.size();i++){
@@ -149,7 +139,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_general){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_general){ 
     int index[] = {9,17,22,12,15,19,36,37,18,37};
     int d[] = {-2,-1,-1,-4,0,2,0,3,-1,-2};
     int expected[] = {7,8,21,6,13,15,6,32,7,-1};
@@ -159,16 +149,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_general){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_answer_not_found){ 
-    int index[] = {9,17,22};
-    int d[] = {5,10,-4};
-    
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->bwdSearch(index[i],d[i]),-1) << "Resposta errada ao tentar obter 'answer not found' para BwdSearch  com  i=" << index[i];
-    } 
-}
-
-TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_minExcess_i_and_j_in_the_same_block){ 
     int i[] = {0,0,8,13,16,20,22,24,25,29,33}; 
     int j[] = {3,2,11,15,19,22,23,27,26,30,34};
     int expected[] = {1,1,1,0,-3,-2,1,0,-1,-1,-2};
@@ -178,7 +159,7 @@ TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_same_block){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_different_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_minExcess_i_and_j_in_the_different_block){ 
     int i[] = {9,1,12,15,17,0}; 
     int j[] = {30,6,26,29,32,10};
     int expected[] = {-1,0,-4,-3,-3,1};
@@ -197,7 +178,7 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_maxExcess_i_and_j_in_the_same_block){ 
     int i[] = {0,0,8,13,16,20,22,24,25,29,33,36}; 
     int j[] = {3,2,11,15,19,22,23,27,26,30,34,39};
     int expected[] = {3,3,4,1,-1,-1,2,2,0,0,-1,0};
@@ -207,7 +188,7 @@ TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_same_block){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_different_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_maxExcess_i_and_j_in_the_different_block){ 
     int i[] = {9,1,12,15,17,33,0}; 
     int j[] = {30,6,26,29,32,39,10};
     int expected[] = {3,2,0,1,1,-1,5};
@@ -218,7 +199,7 @@ TEST_F(RMMTreeFixtureTest, maxExcess_i_and_j_in_the_different_block){
 }
 
 
-TEST_F(RMMTreeFixtureTest, expected_response_to_rMq){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_expected_response_to_rMq){ 
     int i[] = {9,1,12,15,17,33,39,0}; 
     int j[] = {30,6,26,29,32,39,39,39};
     int expected[] ={11,2,13,15,27,33,39,11}; 
@@ -228,7 +209,7 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rMq){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, number_of_times_excess_min_appears_with_i_and_j_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_number_of_times_excess_min_appears_with_i_and_j_in_the_same_block){ 
     int i[] = {12,16,21,28,28,29,32,36};
     int j[] = {15,18,23,31,30,31,35,38};  
     
@@ -239,7 +220,7 @@ TEST_F(RMMTreeFixtureTest, number_of_times_excess_min_appears_with_i_and_j_in_th
     }
 }
 
-TEST_F(RMMTreeFixtureTest, number_of_times_excess_min_appears_with_i_and_j_in_the_different_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_number_of_times_excess_min_appears_with_i_and_j_in_the_different_block){ 
     int i[] = {0,0};
     int j[] = {15,23};  
     
@@ -250,7 +231,7 @@ TEST_F(RMMTreeFixtureTest, number_of_times_excess_min_appears_with_i_and_j_in_th
     }
 }
 
-TEST_F(RMMTreeFixtureTest, ith_time_the_minimum_excess_appears_in_the_same_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_ith_time_the_minimum_excess_appears_in_the_same_block){ 
     int i[] = {0,4,12,12,28,28,28,29,29,32,32,36,36}; 
     int j[] = {3,7,15,15,31,31,29,31,31,33,35,38,38};
     int q[] = {1,1,1,2,1,2,1,1,2,1,1,1,2,1};
@@ -261,7 +242,7 @@ TEST_F(RMMTreeFixtureTest, ith_time_the_minimum_excess_appears_in_the_same_block
     }
 }
 
-TEST_F(RMMTreeFixtureTest, ith_time_the_minimum_excess_appears_in_the_different_block){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_ith_time_the_minimum_excess_appears_in_the_different_block){ 
     int i[] = {13,11,0,24,34,33,33}; 
     int j[] = {34,16,7,33,38,38,38};
     int q[] = {1,3,2,4,2,1,2,1};
@@ -272,7 +253,7 @@ TEST_F(RMMTreeFixtureTest, ith_time_the_minimum_excess_appears_in_the_different_
     }
 }
 
-TEST_F(RMMTreeFixtureTest, check_if_i_is_a_leaf){
+TEST_F(RMMTreeFixtureTest, DISABLED_check_if_i_is_a_leaf){
     int index[] = {2,8,11,16,17,19,21,25,34,37,37}; 
     bool expected[] ={true,false,true,false,false,true,false,false,false,true,true}; 
 
@@ -281,7 +262,7 @@ TEST_F(RMMTreeFixtureTest, check_if_i_is_a_leaf){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, check_if_x_is_ancestor_of_y){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_check_if_x_is_ancestor_of_y){ 
     int x[] = {1,1,0,13,17,22,26,0,0}; 
     int y[] = {2,9,9,14,19,24,30,27,37}; 
     bool expected[] ={true,false,true,false,false,true,false,true,true}; 
@@ -291,7 +272,7 @@ TEST_F(RMMTreeFixtureTest, check_if_x_is_ancestor_of_y){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, node_depth_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_node_depth_x){ 
     int index[] = {2,7,11,17,23,27,34}; 
     int expected[] ={2,1,5,5,3,5,4}; 
 
@@ -308,26 +289,26 @@ TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x
     }
 }
 
-TEST_F(RMMTreeFixtureTest, rigth_sibling_of_x){ 
-    int x[] = {2,8,13,19,24,30};
+TEST_F(RMMTreeFixtureTest, DISABLED_rigth_sibling_of_x){ 
+    int x[] = {2,8,13,24,30};
 
-    int expected[] = {4,22,15,size,26,32};
+    int expected[] = {4,22,15,26,32};
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->nextSibling(x[k]),expected[k]) << "Resposta errada ao buscar o irmão direito do nó codificado em bv[" << x[k] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, left_sibling_of_x){ 
-    int x[] = {2,8,13,19,24,30,37}; 
+TEST_F(RMMTreeFixtureTest, DISABLED_left_sibling_of_x){ 
+    int x[] = {13,19,30,37}; 
     
-    int expected[] = {size,size,11,9,size,26,7};
+    int expected[] = {11,9,26,7};
     
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->prevSibling(x[k]),expected[k]) << "Resposta errada ao buscar o irmão esquerdo do nó codificado em bv[" << x[k] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, return_lastChild_of_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_return_lastChild_of_x){ 
     int x[] = {1,7,10,8,23};
     
     int expected[] = {4,22,15,19,32};
@@ -337,27 +318,27 @@ TEST_F(RMMTreeFixtureTest, return_lastChild_of_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, return_firstChild_of_x){ 
-    int x[] = {0,37,15,22,26,9,23};
+TEST_F(RMMTreeFixtureTest, DISABLED_return_firstChild_of_x){ 
+    int x[] = {0,22,26,9,23};
 
-    int expected[] = {1,size,size,23,27,10,24};
+    int expected[] = {13,27,10,24};
     
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->firstChild(x[k]),expected[k]) << "Resposta errada ao buscar o primeiro filho do nó codificado em bv[" << x[k] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, subtree_size){ 
-    int x[] = {1,2,7,8,9,22,27,29,};
+TEST_F(RMMTreeFixtureTest, DISABLED_subtree_size){ 
+    int x[] = {1,2,7,8,9,22,27};
     
-    int expected[] = {3,1,15,7,5,7,1,size};
+    int expected[] = {3,1,15,7,5,7,1};
     
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->subtreeSize(x[k]),expected[k]) << "Resposta errada ao calcular o tamannho da subarvore enraizada em bv[" << x[k] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, ancestor_of_x_that_is_d_levels_above_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_ancestor_of_x_that_is_d_levels_above_x){ 
     int x[] = {19,2,11,15,24,27,37};
     int d[] = {2,2,4,4,2,3,1};  
     
@@ -368,7 +349,7 @@ TEST_F(RMMTreeFixtureTest, ancestor_of_x_that_is_d_levels_above_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, lowest_common_ancestor_of_x_and_y){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_lowest_common_ancestor_of_x_and_y){ 
     int x[] = {2,9,8,1,10,23};
     int y[] = {4,19,22,37,13,27};  
     
@@ -379,7 +360,7 @@ TEST_F(RMMTreeFixtureTest, lowest_common_ancestor_of_x_and_y){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, expected_level_next){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_expected_level_next){ 
     int x[] = {4,7,10,15};
     int expected[] = {8,37,24,27};
     
@@ -388,7 +369,7 @@ TEST_F(RMMTreeFixtureTest, expected_level_next){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, expected_level_prev){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_expected_level_prev){ 
     int x[] = {22,8,7,30};
     int expected[] = {8,4,1,26};
     
@@ -397,7 +378,7 @@ TEST_F(RMMTreeFixtureTest, expected_level_prev){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, leftmost_node_with_depth_d){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_leftmost_node_with_depth_d){ 
     int d[] = {1,3,4,5,6};
     int expected[] = {0,2,9,10,11};
     
@@ -406,7 +387,7 @@ TEST_F(RMMTreeFixtureTest, leftmost_node_with_depth_d){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, rightmost_node_with_depth_d){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_rightmost_node_with_depth_d){ 
     int d[] = {1};
     int expected[] = {0};
 /*     int d[] = {1,3,4,5};//exclusivo para a sequência de exemplo de Navarro(20106)
@@ -417,7 +398,7 @@ TEST_F(RMMTreeFixtureTest, rightmost_node_with_depth_d){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, deepest_and_leftmost_child_of_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_deepest_and_leftmost_child_of_x){ 
     int x[] = {0,1,7,22,37};
     int expected[] = {11,2,11,27,37};
     
@@ -426,7 +407,7 @@ TEST_F(RMMTreeFixtureTest, deepest_and_leftmost_child_of_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, number_of_children_of_node_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_number_of_children_of_node_x){ 
     int x[] = {1,7,10,23,26};
     int expected[] = {2,2,3,4,1};
     
@@ -435,18 +416,18 @@ TEST_F(RMMTreeFixtureTest, number_of_children_of_node_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, position_of_tth_son_of_x){ 
-    int x[] = {0,1,7,9,10,22,23,23,32};
-    int q[] = {3,2,1,2,2,1,4,2,1};
+TEST_F(RMMTreeFixtureTest, DISABLED_position_of_tth_son_of_x){ 
+    int x[] = {0,1,7,10,22,23,23};
+    int q[] = {3,2,1,2,1,4,2};
     
-    int expected[] = {37,4,8,size,13,23,32,26,size};
+    int expected[] = {37,4,8,13,23,32,26};
     
     for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
         EXPECT_EQ(t->child(x[k],q[k]),expected[k]) << "Resposta errada ao buscar o " << q[k] << "-th filho  do nó codificado em B[" << x[k] << " , close(x)]"; 
     }
 } 
 
-TEST_F(RMMTreeFixtureTest, number_of_siblings_left_of_node_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_number_of_siblings_left_of_node_x){ 
     int x[] = {37,7,1,22,32,30,15};
     int expected[] = {2,1,1,1,3,2,2};
     
@@ -455,7 +436,7 @@ TEST_F(RMMTreeFixtureTest, number_of_siblings_left_of_node_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, number_of_leaves_to_the_left_of_node_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_number_of_leaves_to_the_left_of_node_x){ 
     int x[] = {0,8,22,24,27,32,37};
     int expected[] = {0,2,6,6,7,9,10};
     
@@ -464,7 +445,7 @@ TEST_F(RMMTreeFixtureTest, number_of_leaves_to_the_left_of_node_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, tth_leaf_index){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_tth_leaf_index){ 
     int x[] = {1,2,3,4,5,6,7,8,9,10,11};
     int expected[] = {2,4,11,13,15,19,24,27,30,32,37};
     
@@ -473,7 +454,7 @@ TEST_F(RMMTreeFixtureTest, tth_leaf_index){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, leftmost_leaf_of_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_leftmost_leaf_of_x){ 
     int x[] = {4,8,22,24,30,37,7,32,27};
     int expected[] = {4,11,24,24,30,37,11,32,27};
     
@@ -482,7 +463,7 @@ TEST_F(RMMTreeFixtureTest, leftmost_leaf_of_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, rightmost_leaf_of_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_rightmost_leaf_of_x){ 
     int x[] = {8,22,23,26};
     int expected[] = {19,32,32,27};
     
@@ -491,7 +472,7 @@ TEST_F(RMMTreeFixtureTest, rightmost_leaf_of_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, pre_rank_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_pre_rank_x){ 
     int x[] = {11,15};
     int expected[] = {8,10};
     
@@ -500,7 +481,7 @@ TEST_F(RMMTreeFixtureTest, pre_rank_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, post_rank_x){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_post_rank_x){ 
     int x[] = {11,16};
     int expected[] = {3,5};
     
@@ -509,7 +490,7 @@ TEST_F(RMMTreeFixtureTest, post_rank_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, pre_select){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_pre_select){ 
     int x[] = {3,9};
     int expected[] = {2,11};
     
@@ -518,7 +499,7 @@ TEST_F(RMMTreeFixtureTest, pre_select){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, post_select){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_post_select){ 
     int x[] = {8,12,18};
     int expected[] = {9,27,7};
     

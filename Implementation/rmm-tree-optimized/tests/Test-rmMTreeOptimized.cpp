@@ -5,6 +5,11 @@
 #include "../rmMTreeOptimized.h"
 #include <sdsl/bits.hpp>
 
+/*
+* Os testes desabilitados (com excessão de print_tree), estão assim porque a resposta esperada (vetor expected[]) foi construída com base na
+* sequência de parenteses balanceadas especifica.
+*/
+
 
 using namespace sdsl;
 using namespace std;
@@ -13,13 +18,12 @@ using namespace std;
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
         RMMTree *t;
-        size_t sizeBlock=4;
-        size_t w=2;
+        size_t sizeBlock=32;
+        size_t w=16;
         int order=4;
         bp_support_sada<> *bps;
-        int size;
-        //a,b,c,d,e,f,g,h,i,j,k,l
-        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,1,0,0,1,0,0,0};
+        
+        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0};
         //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
@@ -58,6 +62,15 @@ class RMMTreeFixtureTest : public ::testing::Test{
             }
         }
 };
+
+TEST_F(RMMTreeFixtureTest, GET_INT){
+    int index[] = {0,1};
+    int expected[]={64905,64274};
+
+    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
+        EXPECT_EQ(t->bitsread(index[i]),expected[i])<< "Resposta errada ao tentar devolver o inteiro correspondente aos bits [" << index[i] << ","<<(index[i]+w-1)<<"]";
+    }
+}
 
 
 TEST_F(RMMTreeFixtureTest, expected_logM_ceil){
