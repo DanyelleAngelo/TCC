@@ -1,4 +1,4 @@
-all: rmmTreeOptimized  kary_comparWithSdsl
+all: binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot gitUpdate binary_dna kary_dna gitUpdate binary_osm kary_osm gitUpdate
 #rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 #--------- gerando bibliotecas necessárias---------
@@ -13,6 +13,12 @@ rmmTreeOptimized:
 readBp:
 	g++ -c read_bp/read_bp.cpp -I ~/include  /usr/local/lib/libsdsl.a
 	ar crv lib_read_bp.a read_bp.o
+
+#Sobe dados para o repositorio
+gitUpdate:
+	git add .
+	git commit -m "Resultados obtidos das estruturas"
+	git push
 
 #---------testes comparando as estruturas criadas com a sdsl---------
 binary_compareWithSdsl: lib_rmmTreeClassic.a lib_read_bp.a
@@ -34,7 +40,7 @@ testBenchmark:  lib_rmmTreeOptimized.a lib_read_bp.a
 binary_wiki: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --benchmark_out_format=csv
-
+	
 kary_wiki: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
@@ -48,12 +54,12 @@ binary_ctree: lib_rmmTreeClassic.a lib_read_bp.a
 kary_ctree: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv 
+		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv ; \ 
 	done
 
 binary_prot: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --benchmark_out_format=csv ; \
+	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --benchmark_out_format=csv 
 
 kary_prot: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 

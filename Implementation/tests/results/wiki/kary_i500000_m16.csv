@@ -1,13 +1,13 @@
-2021-08-04T17:49:54+00:00
-Running ./bm_binary_rmm_tree
+2021-08-04T17:55:37+00:00
+Running ./bm_kary_rmm_tree
 Run on (56 X 3200 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x28)
   L1 Instruction 32 KiB (x28)
   L2 Unified 1024 KiB (x28)
   L3 Unified 19712 KiB (x2)
-Load Average: 0.35, 0.22, 0.47
+Load Average: 1.00, 0.77, 0.65
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Bin_RMMTree_FixtureBM/findClose_b",10,7.29452e+07,7.29403e+07,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b",10,9.44704e+07,9.44668e+07,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k",10,9.20621e+07,9.20608e+07,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k",12,1.13506e+08,1.13503e+08,ns,,,,,
