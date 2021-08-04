@@ -1,4 +1,4 @@
-all:
+all: bm_binary bm_kary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
 #rmmTreeClassic rmmTreeOptimized bm_binary bm_kary binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 
@@ -29,7 +29,7 @@ kary_comparWithSdsl: lib_rmmTreeOptimized.a lib_read_bp.a
 #---------teste simples de benchmark, usando a estrutura kary---------
 testBenchmark:  lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ test_benchmark.cpp -o test_benchmark lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
-	valgrind --leak-check=full -s  ./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --benchmark_out_format=csv
+	valgrind --leak-check=full -s  ./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
 
 
 #---------compila os testes de benchmark com as suas devidas bibliotecas---------
@@ -42,7 +42,7 @@ bm_kary: lib_rmmTreeOptimized.a lib_read_bp.a
 
 #---------testes mais complexos de benchmark---------
 binary_wiki: bm_binary
-	./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --benchmark_out_format=csv
+	./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --time-unit=ms --benchmark_out_format=csv
 	
 kary_wiki: bm_kary
 	for order in 4 8 16 ; do\
@@ -50,7 +50,7 @@ kary_wiki: bm_kary
 	done
 
 binary_ctree: bm_binary
-	./bm_binary_rmm_tree ctree.par 100000  --benchmark_out=results/ctree/bin_i100000.csv --benchmark_out_format=csv 
+	./bm_binary_rmm_tree ctree.par 100000  --benchmark_out=results/ctree/bin_i100000.csv --time-unit=ms --benchmark_out_format=csv 
  
 kary_ctree: bm_kary
 	for order in 4 8 16 ; do\
@@ -58,7 +58,7 @@ kary_ctree: bm_kary
 	done
 
 binary_prot: bm_binary
-	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --benchmark_out_format=csv 
+	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --time-unit=ms --benchmark_out_format=csv 
 
 kary_prot: bm_kary
 	for order in 4 8 16 ; do\
@@ -66,7 +66,7 @@ kary_prot: bm_kary
 	done
 
 binary_dna: bm_binary
-	./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000_m4.csv --benchmark_out_format=csv 
+	./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000_m4.csv --time-unit=ms --benchmark_out_format=csv 
  
 
 kary_dna: bm_kary
@@ -75,7 +75,7 @@ kary_dna: bm_kary
 	done
 
 binary_osm: bm_binary
-	./bm_binary_rmm_tree osm.par 10000  --benchmark_out=results/osm/bin_i10000_m4.csv --benchmark_out_format=csv
+	./bm_binary_rmm_tree osm.par 10000  --benchmark_out=results/osm/bin_i10000_m4.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_osm: bm_kary
 	for order in 4 8 16 ; do\
