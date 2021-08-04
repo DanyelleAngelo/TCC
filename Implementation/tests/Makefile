@@ -80,7 +80,7 @@ kary_dna: lib_rmmTreeOptimized.a lib_read_bp.a
 
 binary_osm: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
-	./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv
+	./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv 
 
 kary_osm: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include  /usr/local/lib/libsdsl.a -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
