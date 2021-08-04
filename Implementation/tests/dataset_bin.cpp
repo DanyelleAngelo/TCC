@@ -10,13 +10,13 @@ using namespace std;
 
 int iterations;
 int_vector<1> v;
-int sizeBlock;
-int w;
-int order;
     
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
 		RMMTree *t; 
+        int sizeBlock=32;
+        int w=16;
+
 		bp_support_sada<> *bps; 
 		vector<long long int> argsFindClose;
         vector<long long int> argsFindOpen;
@@ -72,11 +72,12 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 int main(int argc, char *argv[]){
+    if(argc<5){
+		cout << "Número de argumentos inválidos" << endl;
+		exit(EXIT_FAILURE);
+	}
 	parentheses_to_bits(argv[1],v);
 	iterations = atoi(argv[2]);
-	sizeBlock= atoi(argv[3]);
-	order = atoi(argv[4]);	
-	w = sizeBlock/2;
 
     ::testing::InitGoogleTest(&argc, argv);
     testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";

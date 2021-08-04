@@ -11,13 +11,13 @@ using namespace std;
 
 int iterations;
 int_vector<1> v;
-int sizeBlock;
-int w;
 int order;
 
 class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
 		RMMTree *t;
+		int sizeBlock=32;
+		int w=16;
 		vector<int> args_fOpen;
 		vector<int> args_fClose;
 
@@ -75,11 +75,13 @@ BENCHMARK_F(Kary_RMMTree_FixtureBM, findOpen_k)(benchmark::State& st){
 }
 
 int main(int argc, char **argv){
+	if(argc<6){
+		cout << "Número de argumentos inválidos" << endl;
+		exit(EXIT_FAILURE);
+	}
 	parentheses_to_bits(argv[1],v);
 	iterations = atoi(argv[2]);
-	sizeBlock= atoi(argv[3]);
-	order = atoi(argv[4]);	
-	w = sizeBlock/2;
+	order = atoi(argv[3]);	
 
     benchmark::Initialize(&argc,argv);
     benchmark::RunSpecifiedBenchmarks();
