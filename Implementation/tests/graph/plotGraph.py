@@ -1,14 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def graph(k_op_x, k_op_y ,b_op_x, b_op_y,operacao,path):
-    plt.plot(b_op_x, b_op_y,label='Binary rmM-tree',linewidth=1.0)
-    plt.plot(k_op_x, k_op_y, label='Kary rmM-tree',linewidth=1.0)
+barWidth=0.5
+rgb = ["#6A5ACD", "#6495ED",   "#00BFFF", "#008CFF"] 
 
-    plt.xlabel("Entrada para %s" %operacao)
-    plt.ylabel("Tempo de CPU gasto")
-    plt.title("Tempo de CPU para as operações %s" %operacao)
-    plt.legend()#para o label de cada plot
-    plt.xticks([])
-    plt.savefig("%s-%s.png" %(path,operacao),dpi=300)
-    plt.show()
+def graph(k_x, k_y, b_x, b_y, operacao,path,iterations,order):
+    plt.figure(figsize=(7,15))
+
+    i=0
+    plt.grid(axis='y',linestyle='dotted', color=rgb[i])
+    for k in order:
+        plt.bar(k_x["k%s" %k],k_y["k%s"%k],color=rgb[i],width=barWidth, label=k_x["k%s"%k], align='center')
+        i+=1
+
+    plt.bar(b_x, b_y,color=rgb[i],width=barWidth,label=b_x,  align='center')
+
+    plt.ylabel("Tempo médio para %s chamadas a função (ns) " %(iterations))
+    plt.xlabel("Ordem da rmM-tree")
+    plt.title("Desempenho da k-ary rmM-tree para a operação %s" %operacao)
+    plt.savefig("%s/%s-i%s.png" %(path,operacao,iterations),dpi=300)
+    #plt.show()

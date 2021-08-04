@@ -58,7 +58,7 @@ kary_ctree: bm_kary
 	done
 
 binary_prot: bm_binary
-	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000_m4.csv --time-unit=ms --benchmark_out_format=csv 
+	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000.csv --time-unit=ms --benchmark_out_format=csv 
 
 kary_prot: bm_kary
 	for order in 4 8 16 ; do\
@@ -66,7 +66,7 @@ kary_prot: bm_kary
 	done
 
 binary_dna: bm_binary
-	./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000_m4.csv --time-unit=ms --benchmark_out_format=csv 
+	./bm_binary_rmm_tree dna.par 1000000  --benchmark_out=results/dna/bin_i1000000.csv --time-unit=ms --benchmark_out_format=csv 
  
 
 kary_dna: bm_kary
