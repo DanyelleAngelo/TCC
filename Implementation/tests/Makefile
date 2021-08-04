@@ -54,7 +54,7 @@ binary_ctree: lib_rmmTreeClassic.a lib_read_bp.a
 kary_ctree: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv ; \ 
+		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_prot: lib_rmmTreeClassic.a lib_read_bp.a
