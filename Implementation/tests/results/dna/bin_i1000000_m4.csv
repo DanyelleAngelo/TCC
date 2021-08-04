@@ -1,4 +1,4 @@
-2021-08-04T18:19:55+00:00
+2021-08-04T19:13:56+00:00
 Running ./bm_binary_rmm_tree
 Run on (56 X 3200 MHz CPU s)
 CPU Caches:
@@ -6,8 +6,8 @@ CPU Caches:
   L1 Instruction 32 KiB (x28)
   L2 Unified 1024 KiB (x28)
   L3 Unified 19712 KiB (x2)
-Load Average: 1.05, 0.95, 0.87
+Load Average: 1.01, 1.01, 1.00
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Bin_RMMTree_FixtureBM/findClose_b",33,3.19107e+07,3.19086e+07,ns,,,,,
-"Bin_RMMTree_FixtureBM/findOpen_b",27,3.96802e+07,3.9676e+07,ns,,,,,
+"Bin_RMMTree_FixtureBM/findClose_b",7,2.11357e+08,2.11355e+08,ns,,,,,
+"Bin_RMMTree_FixtureBM/findOpen_b",5,2.59267e+08,2.59254e+08,ns,,,,,

@@ -1,4 +1,4 @@
-all: binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot gitUpdate binary_dna kary_dna gitUpdate binary_osm kary_osm gitUpdate
+all: gitUpdate binary_osm kary_osm gitUpdate
 #rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 #--------- gerando bibliotecas necessárias---------
@@ -79,8 +79,8 @@ kary_dna: lib_rmmTreeOptimized.a lib_read_bp.a
 	done
 
 binary_osm: lib_rmmTreeClassic.a lib_read_bp.a
-	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
-	./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv  
+	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
+	./bm_binary_rmm_tree osm.par 2000000  --benchmark_out=results/osm/bin_i2000000_m4.csv --benchmark_out_format=csv
 
 kary_osm: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include  /usr/local/lib/libsdsl.a -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
