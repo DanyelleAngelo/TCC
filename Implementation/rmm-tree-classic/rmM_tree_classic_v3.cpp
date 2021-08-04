@@ -40,6 +40,11 @@ uint16_t RMMTree::reverse_16(uint16_t x){
 }
 
 long long int RMMTree::bitsread(uint64_t idx){
+	if(idx+16 >= size){
+		long long int value =0;
+		for(uint64_t s=idx;s<size;s++)value= (value<<1) + bv[s];
+		return value;
+	}
 	uint64_t word = bv.data()[idx>>6];
 	auto x = reverse_16( (word >> (idx & 0x3f)) & bits::lo_set[16]);
 	return x;

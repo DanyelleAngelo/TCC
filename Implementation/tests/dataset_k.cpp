@@ -18,9 +18,9 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int sizeBlock=32;
         int w=16;
         bp_support_sada<> *bps; 
-		vector<int> args_fOpen;
-		vector<int> args_fClose;
-        
+		vector<int> argsFindOpen;
+		vector<int> argsFindClose;
+	
         void SetUp(){ 
 		    t = new RMMTree(v,sizeBlock,w,order); 
 		    t->buildingTree();
@@ -58,7 +58,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 };
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-    for(int i=0;i<argsFindOpen.size();i++){
+    for(int i=0;i<argsFindClose.size();i++){
         EXPECT_EQ(t->findClose(argsFindClose[i]),bps->find_close(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
     }
 }

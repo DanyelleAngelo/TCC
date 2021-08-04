@@ -1,4 +1,5 @@
-all: rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
+all: rmmTreeOptimized  kary_comparWithSdsl
+#rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 #--------- gerando bibliotecas necessárias---------
 rmmTreeClassic:
@@ -15,12 +16,12 @@ readBp:
 
 #---------testes comparando as estruturas criadas com a sdsl---------
 binary_compareWithSdsl: lib_rmmTreeClassic.a lib_read_bp.a
-	g++ dataset_bin.cpp -o dataset_bin lib_read_bp.a lib_rmmTreeClassic.a  -I ~/include   -lgtest  
+	g++ dataset_bin.cpp -o dataset_bin lib_read_bp.a lib_rmmTreeClassic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --leak-check=full -s ./dataset_bin wiki.par 10
 
 kary_comparWithSdsl: lib_rmmTreeOptimized.a lib_read_bp.a
-	g++ dataset_k.cpp -o dataset_k  lib_read_bp.a lib_rmmTreeOptimized.a  -I ~/include   -lgtest  
-	valgrind --leak-check=full -s ./dataset_k wiki.par 10 4
+	g++ dataset_k.cpp -o dataset_k  lib_read_bp.a lib_rmmTreeOptimized.a  -I ~/include /usr/local/lib/libsdsl.a   -lgtest -lpthread -Wall -g 
+	valgrind --leak-check=full -s ./dataset_k wiki.par 10 16
 
 #---------teste simples de benchmark, usando a estrutura kary---------
 testBenchmark:  lib_rmmTreeOptimized.a lib_read_bp.a
