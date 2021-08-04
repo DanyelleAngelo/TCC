@@ -1,4 +1,4 @@
-all: gitUpdate binary_osm kary_osm gitUpdate
+all: gitUpdate
 #rmmTreeClassic rmmTreeOptimized binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 #--------- gerando bibliotecas necessárias---------
