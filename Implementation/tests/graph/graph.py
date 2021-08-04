@@ -8,8 +8,8 @@ binary = []
 k_findOpenX, k_findOpenY, b_findOpenX, b_findOpenY = [], [], [], []
 k_findCloseX, k_findCloseY ,b_findCloseX, b_findCloseY = [], [],[],[]
 i=0
-path = "../results/wiki/"
-infos = "m1024_b16w8"
+path = "../results/dna/"
+infos = "5k_m1024_b16w8"
 with open("%skary_%s.csv" %(path,infos),"r") as f:
     kary = f.readlines()[11:]
 
@@ -18,7 +18,6 @@ with open("%sbin_%s.csv" %(path,infos),"r") as f:
 
 for linha in kary:
     col = [s for s in linha.split(",")]
- 
     name = col[0].replace('"', '').split("/")
     if(name[1] == "findOpen_k"):
         k_findOpenX.append(name[2])

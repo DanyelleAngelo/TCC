@@ -9,36 +9,37 @@
 using namespace sdsl;
 using namespace std;
 
+int iterations;
+int_vector<1> v;
+int sizeBlock;
+int w;
+int order;
 
 class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 	public:
 		RMMTree *t;
-		int sizeBlock =4;
-		int w=4;
-		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,0,0,0};
-        int order=4;
-		int sizeInput;
 		vector<int> args_fOpen;
 		vector<int> args_fClose;
+
 		Kary_RMMTree_FixtureBM(){}
+		~Kary_RMMTree_FixtureBM(){}
+
 		void SetUp(const ::benchmark::State& state){
-			//parentheses_to_bits("wiki.par",v);
             t = new RMMTree(v,sizeBlock,w,order);	
 			t->buildingTree();
-			sizeInput=10;
-			//PauseTiming();
+
 			srand(t->size);
 			ArgumentsFindClose();
 			ArgumentsFindOpen();
-			//ResumeTiming();
 		}
 		void TearDown(const ::benchmark::State& state) {
 			delete t;
   		}
-		~Kary_RMMTree_FixtureBM(){}
+
+
 		void ArgumentsFindClose(){
 			int k,i=0;
-			while(i<sizeInput){
+			while(i<iterations){
 				k = rand()%(t->size);
 				if(v[k]==1){
 					args_fClose.push_back(i);
@@ -49,7 +50,7 @@ class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 
 		void ArgumentsFindOpen(){
 			int k,i=0;
-			while(i<sizeInput){
+			while(i<iterations){
 				k = rand()%(t->size);
 				if(v[k]==0){
 					args_fOpen.push_back(i);
@@ -59,22 +60,27 @@ class Kary_RMMTree_FixtureBM: public benchmark::Fixture{
 		}
 };
 
-
-BENCHMARK_DEFINE_F(Kary_RMMTree_FixtureBM, findClose_k)(benchmark::State& st){
+BENCHMARK_F(Kary_RMMTree_FixtureBM, findClose_k)(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < sizeInput;i++)
+		for(int i=0; i < args_fClose.size();i++)
 			t->findClose(args_fClose[i]);
 	}
 }
-BENCHMARK_REGISTER_F(Kary_RMMTree_FixtureBM,findClose_k);
 
-
-BENCHMARK_DEFINE_F(Kary_RMMTree_FixtureBM, findOpen_k)(benchmark::State& st){
+BENCHMARK_F(Kary_RMMTree_FixtureBM, findOpen_k)(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < sizeInput;i++)
+		for(int i=0; i < args_fClose.size();i++)
 			t->findOpen(args_fOpen[i]);
 	}
 }
-BENCHMARK_REGISTER_F(Kary_RMMTree_FixtureBM,findOpen_k);
 
-BENCHMARK_MAIN();
+int main(int argc, char **argv){
+	parentheses_to_bits(argv[1],v);
+	iterations = atoi(argv[2]);
+	sizeBlock= atoi(argv[3]);
+	order = atoi(argv[4]);	
+	w = sizeBlock/2;
+
+    benchmark::Initialize(&argc,argv);
+    benchmark::RunSpecifiedBenchmarks();
+}

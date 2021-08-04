@@ -8,23 +8,24 @@
 using namespace sdsl; 
 using namespace std; 
 
+int iterations;
 int_vector<1> v;
+int sizeBlock;
+int w;
+int order;
     
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
-		RMMTree *t; 
-		int order=64;//64 e 32 e 16
-		int sizeBlock=32; 
-		int w=16; 
-		bp_support_sada<> *bps;
-		vector<int> argsFindClose;
-        vector<int> argsFindOpen;
+		RMMTree *t;
+		vector<int> args_fOpen;
+		vector<int> args_fClose;
+
         
         void SetUp(){ 
 		    t = new RMMTree(v,sizeBlock,w,order); 
 		    t->buildingTree();
  	    	bps = new bp_support_sada<>(&(t->bv)); 
-	    	srand(t->size);
+	    	srand(t->size/sizeBlock);
             ArgumentsFindClose();
             ArgumentsFindOpen();
         }
@@ -35,7 +36,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 
         void ArgumentsFindClose(){
             int k,i=0;
-            while(i<25000){
+            while(i<iterations){
                 k = rand()%(t->size);
                 if(t->bv[k]==1){
                     argsFindClose.push_back(k);
@@ -46,7 +47,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 
         void ArgumentsFindOpen(){
             int k,i=0;
-            while(i<25000){
+            while(i<iterations){
                 k = rand()%(t->size);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);
@@ -69,10 +70,12 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
 }
 
 int main(int argc, char *argv[]){
-	 if(argc<2){
-		cout << "Número de parâmetros  incorreto.\n"<<endl;
-   	 }
-    parentheses_to_bits(argv[1], v);
+	parentheses_to_bits(argv[1],v);
+	iterations = atoi(argv[2]);
+	sizeBlock= atoi(argv[3]);
+	order = atoi(argv[4]);	
+	w = sizeBlock/2;
+
     ::testing::InitGoogleTest(&argc, argv);
     testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
 	return RUN_ALL_TESTS();
