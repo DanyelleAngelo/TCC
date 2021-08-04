@@ -78,7 +78,7 @@ binary_osm: lib_rmmTreeClassic.a lib_read_bp.a
 kary_osm: lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  read_bp/read_bp.cpp -std=c++11    -I ~/include     -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree osm.par 2000000 $$order --benchmark_out=results/ctree/kary_i2000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree osm.par 2000000 $$order --benchmark_out=results/osm/kary_i2000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 clean:
