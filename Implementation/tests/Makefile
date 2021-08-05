@@ -1,5 +1,4 @@
-all: 
-#bm_binary bm_kary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
+all: rmmTreeOptimized1_1 bm_kary bm_binary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
 #rmmTreeClassic rmmTreeOptimized bm_binary bm_kary binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 
@@ -51,8 +50,8 @@ kary_1.1:
 bm_binary: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
-bm_kary: lib_rmmTreeOptimized.a lib_read_bp.a
-	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
+bm_kary: lib_rmmTreeOptimized1_1.a lib_read_bp.a
+	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_read_bp.a lib_rmmTreeOptimized1_1.a  -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2 
 
 
 #---------testes mais complexos de benchmark---------
