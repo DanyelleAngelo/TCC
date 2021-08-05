@@ -59,7 +59,7 @@ binary_wiki: bm_binary
 	./bm_binary_rmm_tree wiki.par 500000 --benchmark_out=results/wiki/bin_i500000.csv --time-unit=ms --benchmark_out_format=csv
 	
 kary_wiki: bm_kary
-	for order in 4 8 16 ; do\
+	for order in 4 8 16 32 64 ; do\
 		./bm_kary_rmm_tree wiki.par 500000 $$order --benchmark_out=results/wiki/kary_i500000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
@@ -67,7 +67,7 @@ binary_ctree: bm_binary
 	./bm_binary_rmm_tree ctree.par 100000  --benchmark_out=results/ctree/bin_i100000.csv --time-unit=ms --benchmark_out_format=csv 
  
 kary_ctree: bm_kary
-	for order in 4 8 16 ; do\
+	for order in 4 8 16 32 64 ; do\
 		./bm_kary_rmm_tree ctree.par 100000 $$order --benchmark_out=results/ctree/kary_i100000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
@@ -75,7 +75,7 @@ binary_prot: bm_binary
 	./bm_binary_rmm_tree prot.par 300000  --benchmark_out=results/prot/bin_i300000.csv --time-unit=ms --benchmark_out_format=csv 
 
 kary_prot: bm_kary
-	for order in 4 8 16 ; do\
+	for order in 4 8 16 32 64 ; do\
 		./bm_kary_rmm_tree prot.par 300000 $$order --benchmark_out=results/prot/kary_i300000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
@@ -84,7 +84,7 @@ binary_dna: bm_binary
  
 
 kary_dna: bm_kary
-	for order in 4 8 16 ; do\
+	for order in 4 8 16 32 64 ; do\
 		./bm_kary_rmm_tree dna.par 1000000 $$order --benchmark_out=results/dna/kary_i1000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
@@ -92,7 +92,7 @@ binary_osm: bm_binary
 	./bm_binary_rmm_tree osm.par 10000  --benchmark_out=results/osm/bin_i10000_m4.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_osm: bm_kary
-	for order in 4 8 16 ; do\
+	for order in 4 8 16 32 64 ; do\
 		./bm_kary_rmm_tree osm.par 10000 $$order --benchmark_out=results/osm/kary_i10000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
