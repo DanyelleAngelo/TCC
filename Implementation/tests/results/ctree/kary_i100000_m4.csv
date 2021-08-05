@@ -9,5 +9,5 @@ CPU Caches:
 Load Average: 1.00, 1.00, 0.94
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"Kary_RMMTree_FixtureBM/findClose_k",26,4.11065e+07,4.11049e+07,ns,,,,,
-"Kary_RMMTree_FixtureBM/findOpen_k",19,5.42155e+07,5.42135e+07,ns,,,,,
+"Kary_RMMTree_FixtureBM/findClose_k",26,37857437,37855752,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k",19,46407369,46404729,ns,,,,,
