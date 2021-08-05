@@ -237,6 +237,15 @@ class RMMTree{
 		long long int fwdVerifySibling(long long int &v, int &dr, int d);
 
 		/*!
+		*	@brief auxilia no processo de subida da árvore, verificando se o excesso procurado está nos intervalos do nó pai
+		*	@param v: nó da rmM-tree investigado na passagem pela árvore
+		*	@param dr: excesso relativo dr
+		*	@param d: excesso procurado
+		*	@return veradeiro caso a resposta seja encontrada no pai de v, e falso caso contrário.
+		*/
+		bool fwdVerifyParent(long long int &v, int &dr, int d);
+
+		/*!
 		*	@brief Pecorre as chaves da folha v (a qual i pertence) mais a direita de i.
 		*	e executa a varredura bloco a bloco procurando pelo excesso d.
 		*	@param i: Posição a partir da qual devo buscar o excesso.
@@ -266,6 +275,14 @@ class RMMTree{
 		*/
 		long long int bwdVerifySibling(long long int &v, int &dr, int d);
 
+		/*!
+		*	@brief auxilia no processo de subida da árvore, verificando se o excesso procurado está nos intervalos do nó pai
+		*	@param v: nó da rmM-tree investigado na passagem pela árvore
+		*	@param dr: excesso relativo dr
+		*	@param d: excesso procurado
+		*	@return  verdadeiro caso a resposta seja encontrada no pai de v, e falso caso contrário.
+		*/
+		bool bwdVerifyParent(long long int &v, int &dr, int d);
 
 		/*!
 		*	@brief Imprime as informações de excesso de uma chave ou elemento de tabela
