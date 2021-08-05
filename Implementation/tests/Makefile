@@ -1,4 +1,4 @@
-all: kary_comparWithSdsl clean
+all: 
 #bm_binary bm_kary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
 #rmmTreeClassic rmmTreeOptimized bm_binary bm_kary binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
@@ -10,7 +10,11 @@ rmmTreeClassic:
 
 rmmTreeOptimized:
 	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
-	ar crv lib_rmmTreeOptimized.a rmM_tree_optimized.o
+	ar crv lib_rmmTreeOptimized.a rmM_tree_optimized1_1.o
+
+rmmTreeOptimized1_1:
+	g++ -c ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
+	ar crv lib_rmmTreeOptimized1_1.a rmM_tree_optimized1_1.o
 	
 readBp:
 	g++ -c read_bp/read_bp.cpp -I ~/include  /usr/local/lib/libsdsl.a
@@ -24,7 +28,7 @@ binary_compareWithSdsl: lib_rmmTreeClassic.a lib_read_bp.a
 
 kary_comparWithSdsl: lib_rmmTreeOptimized.a lib_read_bp.a
 #	g++ dataset_k.cpp -o dataset_k.bin  lib_read_bp.a lib_rmmTreeOptimized.a  -I ~/include /usr/local/lib/libsdsl.a   -lgtest -lpthread -Wall -g 
-	g++ -o test_benchmark test_benchmark.cpp ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g 
+	g++ -o dataset_k  dataset_k.cpp ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g 
 	valgrind --leak-check=full -s ./dataset_k wiki.par 10 16
 
 
@@ -39,7 +43,7 @@ kary_1.0:
 	./test_benchmark vector.par 10 4 --benchmark_out=results/compare_versions_of_kary/kary_rmm_tree_v1_0.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_1.1:
-	g++ -o test_benchmark test_benchmark.cpp ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
+	g++ -o test_benchmark test_benchmark.cpp lib_rmmTreeOptimized1_1.a lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
 	./test_benchmark vector.par 10 4 --benchmark_outresults/compare_versions_of_kary/kary_rmm_tree_v1_1.csv --time-unit=ms --benchmark_out_format=csv
 
 
