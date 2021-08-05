@@ -1,4 +1,5 @@
-all: bm_binary bm_kary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
+all: kary_comparWithSdsl clean
+#bm_binary bm_kary gitUpdate binary_wiki kary_wiki gitUpdate binary_ctree kary_ctree gitUpdate binary_prot kary_prot binary_dna kary_dna gitUpdate
 #rmmTreeClassic rmmTreeOptimized bm_binary bm_kary binary_wiki kary_wiki binary_ctree kary_ctree binary_prot kary_prot binary_dna kary_dna binary_osm kary_osm
 
 
@@ -18,21 +19,31 @@ readBp:
 
 #---------testes comparando as estruturas criadas com a sdsl---------
 binary_compareWithSdsl: lib_rmmTreeClassic.a lib_read_bp.a
-	g++ dataset_bin.cpp -o dataset_bin lib_read_bp.a lib_rmmTreeClassic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --leak-check=full -s ./dataset_bin wiki.par 10
+	g++ dataset_bin.cpp -o dataset_b.bin lib_read_bp.a lib_rmmTreeClassic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
+	valgrind --leak-check=full -s ./dataset_b wiki.par 10
 
 kary_comparWithSdsl: lib_rmmTreeOptimized.a lib_read_bp.a
-	g++ dataset_k.cpp -o dataset_k  lib_read_bp.a lib_rmmTreeOptimized.a  -I ~/include /usr/local/lib/libsdsl.a   -lgtest -lpthread -Wall -g 
+#	g++ dataset_k.cpp -o dataset_k.bin  lib_read_bp.a lib_rmmTreeOptimized.a  -I ~/include /usr/local/lib/libsdsl.a   -lgtest -lpthread -Wall -g 
+	g++ -o test_benchmark test_benchmark.cpp ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g 
 	valgrind --leak-check=full -s ./dataset_k wiki.par 10 16
 
 
 #---------teste simples de benchmark, usando a estrutura kary---------
 testBenchmark:  lib_rmmTreeOptimized.a lib_read_bp.a
 	g++ test_benchmark.cpp -o test_benchmark lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
-	valgrind --leak-check=full -s  ./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
+	./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
+
+#---------executa testes para comparar as duas implementações da rmM-tree otimizada---------
+kary_1.0:
+	g++ test_benchmark.cpp -o test_benchmark lib_read_bp.a lib_rmmTreeOptimized.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
+	./test_benchmark vector.par 10 4 --benchmark_out=results/compare_versions_of_kary/kary_rmm_tree_v1_0.csv --time-unit=ms --benchmark_out_format=csv
+
+kary_1.1:
+	g++ -o test_benchmark test_benchmark.cpp ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp lib_read_bp.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
+	./test_benchmark vector.par 10 4 --benchmark_outresults/compare_versions_of_kary/kary_rmm_tree_v1_1.csv --time-unit=ms --benchmark_out_format=csv
 
 
-#---------compila os testes de benchmark com as suas devidas bibliotecas---------
+#---------compila os arquivos de testes de benchmark com as suas devidas bibliotecas---------
 bm_binary: lib_rmmTreeClassic.a lib_read_bp.a
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree lib_read_bp.a lib_rmmTreeClassic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 

@@ -1,0 +1,13 @@
+2021-08-04T18:53:22+00:00
+Running ./bm_kary_rmm_tree
+Run on (56 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x28)
+  L1 Instruction 32 KiB (x28)
+  L2 Unified 1024 KiB (x28)
+  L3 Unified 19712 KiB (x2)
+Load Average: 1.05, 1.03, 1.00
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"Kary_RMMTree_FixtureBM/findClose_k",25,4.54486e+07,4.54484e+07,ns,,,,,
+"Kary_RMMTree_FixtureBM/findOpen_k",20,5.28137e+07,5.28116e+07,ns,,,,,
