@@ -201,7 +201,7 @@ void RMMTree::buildingInternalNodesRoot(){
 	}
 }
 
-long long int RMMTree::fwdKey(long long int i,int key,long long int k,int nKeys,int d,int &dr){
+long long int RMMTree::fwdKey(long long int i,int v,int key,long long int k,int nKeys,int d,int &dr){
 	long long int j;
 	for(;key < nKeys;key++){
 		j= fwdBlock(i,d,dr);
@@ -273,7 +273,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
-	long long int j = fwdKey(i,key, k ,tree[v].nKeys,d,dr);
+	long long int j = fwdKey(i,v,key, k ,tree[v].nKeys,d,dr);
 	
 	if(dr == d)return j;
 
@@ -300,11 +300,11 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	}
  
 	k = numLeaf(v);
-	j = fwdKey((order*k+key)*sizeBlock -1,0, k ,tree[v].nKeys,d,dr);
+	j = fwdKey((order*k+key)*sizeBlock -1,v,0, k ,tree[v].nKeys,d,dr);
 	return (dr == d)? j : size;
 }
 
-long long int RMMTree::bwdKey(long long int i,int key,long long int k,int d, int &dr){
+long long int RMMTree::bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr){
 	long long int j;
 	for(; key>=0;key--){ 
 		j = bwdBlock(i,d,dr);
@@ -369,7 +369,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	long long int v = leafInTree(k);
 	int key = numKey(k,i);
 	
-	long long int j = bwdKey(i,key,k,d,dr);
+	long long int j = bwdKey(i,v,key,k,d,dr);
 	if(dr==d) return j;
 	
 	/* -----Subindo a RMM-tree ------*/
@@ -395,7 +395,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	k = numLeaf(v);
 	if(dr == d)return (k*sizeBlock*order)+(key*sizeBlock) -1;
 
-	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,tree[v].nKeys-1,k,d,dr);
+	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,tree[v].nKeys-1,v,k,d,dr);
 
 	return (dr==d)? j : -1;
 }

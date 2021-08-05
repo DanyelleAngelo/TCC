@@ -214,7 +214,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		long long int fwdKey(long long int i,int key,long long int k,int nKeys,int d,int &dr);
+		long long int fwdKey(long long int i,int v,int key,long long int k,int nKeys,int d,int &dr);
 
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
@@ -253,7 +253,7 @@ class RMMTree{
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou -1 caso o excesso não se encontre neste bloco.
 		*/
-		long long int bwdKey(long long int i,int key,long long int k,int d, int &dr);
+		long long int bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr);
 
 		/*!
 		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
