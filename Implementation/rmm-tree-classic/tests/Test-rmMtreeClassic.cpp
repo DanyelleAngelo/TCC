@@ -4,6 +4,7 @@
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmMTreeClassic.h"
 #include <sdsl/bits.hpp>
+#include <sdsl/bp_support_g.hpp>
 
 /*
 * Os testes desabilitados (com excessão de print_tree), estão assim porque a resposta esperada (vetor expected[]) foi construída com base na
@@ -22,17 +23,21 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int sizeBlock=32;
         int w=16;
         bp_support_sada<> *bps;
-        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0};
+        int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
+        vector<int> argsRmqI;
+        vector<int> argsRmqJ;
+
         RMMTreeFixtureTest(){}
         void SetUp(){
             t = new RMMTree(v,sizeBlock,w);
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
-		    srand(t->size);
+		    srand(t->size/2);
             ArgumentsFindClose();
             ArgumentsFindOpen();
+            ArgumentsRmq();
         }
         void TearDown(){
             delete t;
@@ -56,6 +61,19 @@ class RMMTreeFixtureTest : public ::testing::Test{
                 k = rand()%(t->size);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);
+                    i++;
+                }
+            }
+        }
+
+        void ArgumentsRmq(){
+        	int k_i,k_j,i=0;
+            while(i<(t->size)/2){
+                k_i = rand()%(t->size);
+                k_j = rand()%(t->size);
+                if(k_i < k_j){
+                    argsRmqI.push_back(k_i);
+                    argsRmqJ.push_back(k_j);
                     i++;
                 }
             }
@@ -149,10 +167,10 @@ TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_general){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_minExcess_i_and_j_in_the_same_block){ 
-    int i[] = {0,0,8,13,16,20,22,24,25,29,33}; 
-    int j[] = {3,2,11,15,19,22,23,27,26,30,34};
-    int expected[] = {1,1,1,0,-3,-2,1,0,-1,-1,-2};
+TEST_F(RMMTreeFixtureTest, minExcess_i_and_j_in_the_same_block){ 
+    int i[] = {0,16,32,38}; 
+    int j[] = {15,31,37,42};
+    int expected[] = {1,-2,-1,-3};
 
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
         EXPECT_EQ(t->minExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso mínimo no intervalo [" << i[k] << "," << j[k] << "]";
@@ -170,11 +188,12 @@ TEST_F(RMMTreeFixtureTest, DISABLED_minExcess_i_and_j_in_the_different_block){
 }
 
 TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){ 
-    int i[] = {9,1,12,15,17,38,39,8}; 
-    int j[] = {30,6,26,29,32,39,39,15}; 
-
-    for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->rmq(i[k],j[k]),bps->rmq(i[k],j[k])) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << i[k] << "," << j[k] << "]";
+    int m;
+    int p;
+    for(int k=0;k<argsRmqI.size();k++){
+        m = t->minExcess(argsRmqI[k],argsRmqJ[k]);
+        p = t->rmq(argsRmqI[k],argsRmqJ[k]);
+        EXPECT_EQ(m,bps->excess(p) - bps->excess(argsRmqI[k]-1)) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << argsRmqI[k]<< "," << argsRmqJ[k] << "]";
     }
 }
 
@@ -182,6 +201,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_maxExcess_i_and_j_in_the_same_block){
     int i[] = {0,0,8,13,16,20,22,24,25,29,33,36}; 
     int j[] = {3,2,11,15,19,22,23,27,26,30,34,39};
     int expected[] = {3,3,4,1,-1,-1,2,2,0,0,-1,0};
+
 
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
         EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
@@ -195,17 +215,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_maxExcess_i_and_j_in_the_different_block){
     
     for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
         EXPECT_EQ(t->maxExcess(i[k],j[k]),expected[k]) << "Resposta errada ao contabilizar o excesso máximo no intervalo [" << i[k] << "," << j[k] << "]";
-    }
-}
-
-
-TEST_F(RMMTreeFixtureTest, DISABLED_expected_response_to_rMq){ 
-    int i[] = {9,1,12,15,17,33,39,0}; 
-    int j[] = {30,6,26,29,32,39,39,39};
-    int expected[] ={11,2,13,15,27,33,39,11}; 
-
-    for(int k=0;k<(int)(sizeof(i)/sizeof(i[0]));k++){
-        EXPECT_EQ(t->rMq(i[k],j[k]),expected[k]) << "Resposta errada ao encontrar a posição do excecsso máximo em [" << i[k] << "," << j[k] << "]";
     }
 }
 
@@ -328,6 +337,18 @@ TEST_F(RMMTreeFixtureTest, DISABLED_return_firstChild_of_x){
     }
 }
 
+
+TEST_F(RMMTreeFixtureTest, DISABLED_position_of_tth_son_of_x){ 
+    int x[] = {0,1,7,10,22,23,23};
+    int q[] = {3,2,1,2,1,4,2};
+    
+    int expected[] = {37,4,8,13,23,32,26};
+    
+    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+        EXPECT_EQ(t->child(x[k],q[k]),expected[k]) << "Resposta errada ao buscar o " << q[k] << "-th filho  do nó codificado em B[" << x[k] << " , close(x)]"; 
+    }
+} 
+
 TEST_F(RMMTreeFixtureTest, DISABLED_subtree_size){ 
     int x[] = {1,2,7,8,9,22,27};
     
@@ -416,16 +437,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_number_of_children_of_node_x){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_position_of_tth_son_of_x){ 
-    int x[] = {0,1,7,10,22,23,23};
-    int q[] = {3,2,1,2,1,4,2};
-    
-    int expected[] = {37,4,8,13,23,32,26};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->child(x[k],q[k]),expected[k]) << "Resposta errada ao buscar o " << q[k] << "-th filho  do nó codificado em B[" << x[k] << " , close(x)]"; 
-    }
-} 
 
 TEST_F(RMMTreeFixtureTest, DISABLED_number_of_siblings_left_of_node_x){ 
     int x[] = {37,7,1,22,32,30,15};
@@ -508,7 +519,7 @@ TEST_F(RMMTreeFixtureTest, DISABLED_post_select){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
+TEST_F(RMMTreeFixtureTest, print_tree){
     t->printInfoTree();
     t->printTree();
 }
@@ -516,6 +527,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
     return RUN_ALL_TESTS();
 }

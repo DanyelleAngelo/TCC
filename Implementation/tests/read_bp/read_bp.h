@@ -10,6 +10,6 @@ using namespace sdsl;
 *   @param fn: nome do arquivo
 *   @param v: vetor onde armazenaremos a sequência de bits.
 */
-void parentheses_to_bits(const char* fn, int_vector<1> &v);
+void parentheses_to_bits(char* fn, int_vector<1> &v);
 
 #endif

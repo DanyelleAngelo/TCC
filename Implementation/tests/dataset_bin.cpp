@@ -1,4 +1,4 @@
-#include "gtest/gtest.h" 
+/* #include "gtest/gtest.h" 
 #include <iostream>
 #include <vector>
 #include "read_bp/read_bp.h" 
@@ -82,4 +82,4 @@ int main(int argc, char *argv[]){
     ::testing::InitGoogleTest(&argc, argv);
     testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
 	return RUN_ALL_TESTS();
-}
+} */

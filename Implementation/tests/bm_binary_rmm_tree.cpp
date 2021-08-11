@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 #include <benchmark/benchmark.h>
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bp_support_sada.hpp>
@@ -85,4 +85,4 @@ int main(int argc, char **argv){
 
     benchmark::Initialize(&argc,argv);
     benchmark::RunSpecifiedBenchmarks();
-}
+} */

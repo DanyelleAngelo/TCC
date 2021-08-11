@@ -258,7 +258,7 @@ long long int RMMTree::bwdBlock(long long int i,int d,int &dr){
 
 long long int RMMTree::minBlock(long long int i,long long int j, int &d){
 	long long int p,x, m=w;
-	long long int fb = ceil((double)(i+1)/w);//para calcular o limite do primeiro bloquinho (de i)
+	long long int fb = ceil((double)i/w)+1;//para calcular o limite do primeiro bloquinho (de i)
 	long long int lb = j/w;//limite do bloco de j
 	long long int lim = min(j,(fb*w)-1);
 
@@ -432,7 +432,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
     if(dr == d) return j;
 	k = i/sizeBlock;
 	v = leafInTree(k);
-
+	
 	/* -----Subindo a RMM-tree ------*/
 	while(v!=0  &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
 		
@@ -455,7 +455,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 			v = (2*v) +1;
 		}
 	}
-	
+
 	k = numLeaf(v);
 	
 	if(dr == d)return ((k+1)*sizeBlock)-1;
@@ -493,7 +493,6 @@ long long int RMMTree::minExcess(long long int i,long long int j){
 	v++;
 	//iniciamos a descida na árvore
 	while(v < numberLeaves-1){
-
 		if(d+tree[v].excessMin >=m)return m;
 		
 		if( (int)((v_j)/ (1<<  (int)(fLog_2(v_j) - (int)fLog_2((2*v)+2)) ))  != (2*v)+2){
@@ -503,9 +502,7 @@ long long int RMMTree::minExcess(long long int i,long long int j){
 		}
 		else v = (2*v)+1;
 	}
-
 	if(d+tree[v].excessMin >=m)return m;
-
 	int dr=0;
 	long long int mr = minBlock(k_j*sizeBlock,j,dr);
 	return (d + mr < m) ? (d + mr) : m;

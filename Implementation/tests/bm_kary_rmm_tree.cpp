@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 #include <benchmark/benchmark.h>
 #include <sdsl/bp_support_sada.hpp>
 #include "../rmm-tree-optimized/rmMTreeOptimized.h"
@@ -84,4 +84,4 @@ int main(int argc, char **argv){
 
     benchmark::Initialize(&argc,argv);
     benchmark::RunSpecifiedBenchmarks();
-}
+} */

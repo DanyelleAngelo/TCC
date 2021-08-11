@@ -26,12 +26,11 @@ def graph(k_x, k_y, b_x, b_y, operacao,path,iterations,order):
 
     yticks = [float(i) for i in k_y.values()]
     maxY = max(i for i in yticks)
-    maxY = max(maxY,float(b_y[0])) +10
+    maxY = max(maxY,float(b_y[0])) +5
     minY = min(i for i in yticks)
-    minY= min(minY,float(b_y[0]))-40
+    minY= min(minY,float(b_y[0]))-15
     plt.ylim(minY,maxY)
     plt.yticks(np.arange(minY,maxY,5.5))
-
     plt.title("Tempo gasto pela operação %s para diferentes ordens da rmM-tree" %operacao)
-    plt.savefig("%s/%s-i%s.png" %(path,operacao,iterations),dpi=300)
-    plt.show()
+    plt.savefig("%s/%s-i%s.png" %(path,operacao,iterations), bbox_inches='tight',dpi=300)
+    #plt.show()

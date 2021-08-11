@@ -230,7 +230,7 @@ class RMMTree{
 		bool isAncestor(long long int x, long long int y);
 
 		/*!
-		*	@brief  contabiliza o excesso de 1 no intervalo bv[0,x] para saber a profundidade do nó.
+		*	@brief  contabiliza o excesso de 1 no intervalo bv[0,x] para saber a profundidade do nó x.
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
 		*	@return: profundidade do nó x
 		*/
@@ -273,7 +273,7 @@ class RMMTree{
 		long long int lastChild(long long int x);
 
 		/*!
-		*	@brief chama função child, passando 1 como t para encontrar o primeiro filho de x
+		*	@brief verifica se o nó é uma folha, se não for retorna o primeiro elemento contido por ele
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
 		*	@return: Primeiro filho do nó x, se houver, e  bv,size() caso contrário
 		*/
@@ -314,7 +314,7 @@ class RMMTree{
 		*	a ideia é pegar o próximo elemento do nível)
 		* 	com a mesma profundidade de x
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
-		*	@return : índice do primeiro nó a direita de x, com a mesma profundidade de x
+		*	@return : índice do primeiro nó a direita de x, com a mesma profundidade de x; ou size se a resposta não for encotrada
 		*/
 		long long int levelNext(long long int x);
 
@@ -323,7 +323,7 @@ class RMMTree{
 		*	a ideia é pegar o  elemento anterior do memso nível nível)
 		* 	com a mesma profundidade de x
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
-		*	@return : índice do primeiro nó a esquerda de x, com a mesma profundidade de x
+		*	@return : índice do primeiro nó a esquerda de x, com a mesma profundidade de x; ou menos 1 se a resposta não for encontrada.
 		*/
 		long long int levelPrev(long long int x);
 
@@ -364,7 +364,7 @@ class RMMTree{
 		long long int leafRank(long long int x);
 
 		/*!
-		*	@brief busca o índice da t-th ocorrência do par de bits 10.
+		*	@brief busca o índice da t-th ocorrência do par de bits 10 (ou seja da t-th folha).
 		*	@param t: ordem da folha buscada
 		*	@return: índice da t-th folha.
 		*/
@@ -377,7 +377,6 @@ class RMMTree{
 		*	se ele não existir, retorna o próprio x. Se x for um nṍ pai, retorna o seu filho com maior profundidade,mais a esqueda.
 		*/
 		long long int leftMostLeaf(long long int x);
-
 
 		/*!
 		* 	@brief usa leafSelect para encontrar a folha mais a direita de x.

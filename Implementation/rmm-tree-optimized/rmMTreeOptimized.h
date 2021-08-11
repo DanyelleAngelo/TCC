@@ -43,6 +43,7 @@ typedef struct Node{
 class RMMTree{
     public:
         bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
+		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 		long long int size;							// Tamanho da sequência de parênteses balanceados.
 		
 		/*!
@@ -113,6 +114,16 @@ class RMMTree{
 		long long int bwdSearch(long long int i,int d);
 
 		/*!
+		*	@brief Realiza um percurso de subida e descida na rmM-tree em busca do execesso mínimo
+		*	presente no intervalo i,j. O percurso de subida termina ao encontrar o nó ancestral da
+		*	folha que cobre a posição j.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return inteiro representando o excesso mínimo no intervalo i,j 
+		*/
+		long long int minExcess(long long int i,long long int j);
+
+		/*!
 		*	@brief busca o parênteses de fechamento, corresponde ao parênteses  de abertura i.
 		*	para isso, busca através da função fwdSearch() a primeira posição j >i onde ocorre
 		*	o excesso -1.
@@ -131,6 +142,180 @@ class RMMTree{
 		*	i codifique um parênteses de abertura.
 		*/		
 		long long int findOpen(long long int i);
+
+		/*!
+		*	@brief Chama minExcess() para contabilizar o excesso mínimo no intervalo i,j
+		*	e depois chama a função fwdSearch(), passando como parâmetro o excesso mínimo computado,
+		*	e a posição i-1, a fim de encontar a posição exata em que esse excesso ocorre.
+		*	@param i: índice a partir do qual deve-se realizar a busca
+		*	@param j: índice onde devemos terminar a busca
+		*	@return índice, p, com i <= p <= j, onde ocorre pela primeira vez o excesso mínimo
+		*/
+		long long int rmq(long long int i,long long int j);
+
+		/*!
+		*	@brief busca a posição j < i , tal que BV[j,findclose(j)] contenha a posição i.
+		*	@param i: índice de um parênteses de abertura em bv, que cofica um nó
+		*	@return bv.size() caso i=0, findOpen(i) caso bv[i]=1, ou nó pai de i (computado através da função bwdSearch(i,-2)+1)
+		*/
+		long long int enclose(long long int i);
+
+		/*!
+		*	@brief  verifica se bv[x] é um bit 1 e se o elemento que o sucede é um bit 0 para decidir se este é um nó folha.
+		*	@param x: índice do parêntes que codifica o nó analisado.
+		*	@return: true se x codificar um nó folha, false caso contrário.
+		*/
+		bool isLeaf(long long int x);
+
+		/*!
+		*	@brief  verifica se o nó x é ancestral do nó y, checando se o primeiro contém o segundo.
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@param y: índice do vetor de parêntese balanceados que codifica o nó
+		*	@return: true se x é ancestral de y, false caso contrário.
+		*/
+		bool isAncestor(long long int x, long long int y);
+
+		/*!
+		*	@brief  contabiliza o excesso de 1 no intervalo bv[0,x] para saber a profundidade do nó x.
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: profundidade do nó x
+		*/
+		long long int depth(long long int x);
+
+		/*!
+		*	@brief  Busca o nó que contém o x, mais à esquerda de x.
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: índice do nó pai de x
+		*/
+		long long int parent(long long int x);
+
+		/*!
+		*	@brief  busca o irmão à direita de x
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: retorna o índice do irmão à direita de x
+		*/
+		long long int nextSibling(long long int x);
+
+		/*!
+		*	@brief  busca o irmão à esquerda de x
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: retorna o índice do irmão à esquerda de x
+		*/
+		long long int prevSibling(long long int x);
+	
+		/*!
+		*	@brief  verifica se o elemento anterior a close de i, é um nó (se i não é folha)
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: retorna o índice do i-th filho de x, se houver, e  bv,size() caso contrário
+		*/
+		long long int lastChild(long long int x);
+
+		/*!
+		*	@brief verifica se o nó é uma folha, se não for retorna o primeiro elemento contido por ele
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x 
+		*	@return: Primeiro filho do nó x, se houver, e  bv,size() caso contrário
+		*/
+		long long int firstChild(long long int x);
+
+		/*!
+		*	@brief contabiliza o número de bits 1 no intervalo b[x,close(x)]
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return tamanho da subárvore enraízada em x
+		*/
+		long long int subtreeSize(long long int x);
+
+		/*!
+		*	@brief  busca o ancestral de x que está d níveis acima dele
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		* 	@param d: quantidade de níveis acima de x onde teremos a resposta
+		*	@return: índice j do ancestral de x tal que depth(j)=depth(x)-d
+		*/
+		long long int levelAncestor(long long int x,int d);
+
+		/*!
+		*	@brief usa fwdSearch para encontrar o próximo nó a direita de x (não necessariamente o irmão de x,
+		*	a ideia é pegar o próximo elemento do nível)
+		* 	com a mesma profundidade de x
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return : índice do primeiro nó a direita de x, com a mesma profundidade de x; ou size se a resposta não for encotrada
+		*/
+		long long int levelNext(long long int x);
+
+		/*!
+		*	@brief usa bwdSearch para encontrar o elemnto a esquerda de x (não necessariamente o irmão de x,
+		*	a ideia é pegar o  elemento anterior do memso nível nível)
+		* 	com a mesma profundidade de x
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return : índice do primeiro nó a esquerda de x, com a mesma profundidade de x; ou menos 1 se a resposta não for encontrada.
+		*/
+		long long int levelPrev(long long int x);
+
+		/*!
+		* 	@brief usa fwdSearch para encontrar o nó mais a esquerda com profundidade d
+		*	@param d: profundidade desejada
+		*	@return índice do parênteses de abertura do nó mais a esquerda da árvore com profundidade d
+		*/
+		long long int levelLeftMost(int d);
+
+		/*!
+		* 	@brief usa bwdSearch (a partir de bv.size()) para encontrar o nó mais a direita com profundidade d
+		*	@param d: profundidade desejada
+		*	@return índice do parênteses de abertura do nó mais a direita da árvore com profundidade d
+		*/
+		long long int levelRightMost(int d);
+
+		/*!
+		*	@brief contabiliza a quantida de ocorrências do bit 1 seguido do bit 0, no intervalo B[0,x].
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return: quantidade de folhas a esquerda de x
+		*/
+		long long int leafRank(long long int x);
+
+		/*!
+		*	@brief busca o índice da t-th ocorrência do par de bits 10 (ou seja da t-th folha).
+		*	@param t: ordem da folha buscada
+		*	@return: índice da t-th folha.
+		*/
+		long long int leafSelect(long long int t);
+
+		/*!
+		* 	@brief usa leafSelect para encontrar a folha mais a esquerda de x.
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return índice da folha mais à esquerda de x. Se x for uma folha retorna seu irmão mais a esquerda,
+		*	se ele não existir, retorna o próprio x. Se x for um nṍ pai, retorna o seu filho com maior profundidade,mais a esqueda.
+		*/
+		long long int leftMostLeaf(long long int x);
+
+		/*!
+		* 	@brief usa leafSelect para encontrar a folha mais a direita de x.
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return índice da folha mais à direita de x. Se x for uma folha retorna seu irmão mais a direita,
+		*	se ele não existir, retorna o próprio x. Se x for um nṍ pai, retorna o seu filho com maior profundidade,mais a direita.
+		*/
+		long long int rightMostLeaf(long long int x);
+
+		/*!
+		*	@brief visita x usando um percurso pré-ordem
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return rank1 no intervalo B[0,x]
+		*/
+		long long int preRank(long long int x);
+
+		/*!
+		*	@brief calcula o rank de x, a partir de um percurso pos-order
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return rank0 no intervalo B[0,close(x)]
+		*/
+		long long int postRank(long long int x);
+
+		/*!
+		*	@brief calcula a posição do t-th parênteses de abertura
+		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
+		*	@return t-th parênteses de abertura
+		*/
+		long long int preSelect(long long int t);
+
+		long long int postSelect(long long int t);
 		
 		/*!
 		*	@brief Imprime os valores da tabela de aceleração através da função printNode()
@@ -163,7 +348,6 @@ class RMMTree{
 		long long int numberNodes;					// Número de nós da rmM-tree
 		long long int order;                          // Ordem da rmM-tree
         long long int height;							// Altura da rmM-tree
-		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 		vector<Key> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 
         //métodos privados
@@ -205,16 +389,14 @@ class RMMTree{
 		void buildingInternalNodesRoot();
 
 		/*!
-		*	@brief Pecorre as chaves da folha v (a qual i pertence) mais a esquerda de i.
-		*	e executa a varredura bloco a bloco procurando pelo excesso d.
+		*	@brief Pecorre as chaves da folha v em busca do excesso d.
 		*	@param i: Posição a partir da qual devo buscar o excesso.
-		*	@param nKeys: Número de chaves na folha v.
 		*	@param k: folha em que se encontra o parênteses i 
 		*	@param d: Excesso buscado
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
 		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
 		*/
-		long long int fwdKey(long long int i,int v,int key,long long int k,int nKeys,int d,int &dr);
+		long long int fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr);
 
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
@@ -246,8 +428,7 @@ class RMMTree{
 		bool fwdVerifyParent(long long int &v, int &dr, int d);
 
 		/*!
-		*	@brief Pecorre as chaves da folha v (a qual i pertence) mais a direita de i.
-		*	e executa a varredura bloco a bloco procurando pelo excesso d.
+		*	@brief Pecorre as chaves da folha v em busca do excesso d.
 		*	@param i: Posição a partir da qual devo buscar o excesso.
 		*	@param d: Excesso buscado
 		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
@@ -283,6 +464,28 @@ class RMMTree{
 		*	@return  verdadeiro caso a resposta seja encontrada no pai de v, e falso caso contrário.
 		*/
 		bool bwdVerifyParent(long long int &v, int &dr, int d);
+
+		/*!
+		*	@brief Procura pelo excesso mínimo ao longo das chaves do nó v.
+		*	@param i: poto de partida da busca
+		*	@param j: ponto final da busca
+		*	@param v: nó que contém as chaves no qual buscaremos o excesso mínimo
+		*	@param key: chave a partir da qual faremos a busca
+		*	@param k:  ordem da folha correspondente ao nó v
+		*	@param mr: excesso mínimo contabilizado até o momento.
+		*	@param d:
+		*	@return 
+		*/
+		long long int minExcessKey(long long int i,long long int j,long long int v,int key,long long int k, int m, int &d);
+
+		/*!
+		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i", em busca do menor excesso na área.
+		*	@param i: Posição a partir da qual devo iniciar a busca.
+		*	@param j: Intervalo superior da busca. Varremos até "j" ou até chegarmos ao limite do bloco de i, o que vier primeiro.
+		*	@param d: Excesso relativo.
+		*	@return o excesso mínimo no intervalo definido.
+		*/
+		long long int minBlock(long long int i,long long int j,int &d);
 
 		/*!
 		*	@brief Imprime as informações de excesso de uma chave ou elemento de tabela
