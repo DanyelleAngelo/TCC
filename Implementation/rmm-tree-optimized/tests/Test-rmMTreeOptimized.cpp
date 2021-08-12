@@ -204,7 +204,6 @@ TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){
     int p;
     
     for(int k=4;k<5;k++){
-        cout << "-----------------k eh " << k <<endl;
         m = t->minExcess(argsRmqI[k],argsRmqJ[k]);
         p = t->rmq(argsRmqI[k],argsRmqJ[k]);
         EXPECT_EQ(m,bps->excess(p) - bps->excess(argsRmqI[k]-1)) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << argsRmqI[k]<< "," << argsRmqJ[k] << "]";

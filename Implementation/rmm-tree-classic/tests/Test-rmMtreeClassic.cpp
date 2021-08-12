@@ -291,9 +291,8 @@ TEST_F(RMMTreeFixtureTest, DISABLED_node_depth_x){
 }
 
 TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x){ 
-    int x[] = {0,2,7,12,15,18,20,25,32,33,37,39}; 
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
+       for(int i=0;i<(t->size)/2;i++){
+        k = rand()%(t->size);
         EXPECT_EQ(t->parent(x[k]),bps->enclose(x[k])) << "Resposta errada ao buscar o pai do nó codificado em bv[" << x[k] << " , close(i)]"; 
     }
 }

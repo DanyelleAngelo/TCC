@@ -284,15 +284,18 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 		j = fwdKey(i,v,key+1, k,d,dr);
 		if(dr == d)return j;
 	}
-	
+	if(numLeaf(v) == numberLeaves-1)return size;//varremos a última folha, mas não encontramos a resposta
+
 	/* -----Subindo a RMM-tree ------*/
 	bool target = false;
 	while(v!=0 && !target){
 		target = fwdVerifyParent(v,dr,d);
 	} 
 	
+	if(v==0 && target==false)return size;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
+
 	/* ----- Descendo a RMM-tree ------*/
-	while(v <= numberNodes - numberLeaves){
+	while(v < numberNodes - numberLeaves){
 		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
 		o excesso e descer pelo o seu nó.
 		*/
@@ -306,7 +309,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 			}
 		}
 	}
-	
+
 	k = numLeaf(v);
 	j = fwdKey((order*k)*sizeBlock -1,v,0, k,d,dr);
 	return (dr == d)? j : size;
@@ -389,19 +392,20 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 		if(dr==d) return j;
 	}
 
+	if(numLeaf(v) == 0)return -1;
+
 	/* -----Subindo a RMM-tree ------*/
 	bool target = false;
-	int level = height;
+	//int level = height;
 	while(v!=0 && !target){
 		target = bwdVerifyParent(v,dr,d);
-		level--;
+		//level--;
 	}
-	
-	/* TODO otimizar essa parte, verificar se o elemento, é o primerio nó do seu nível, e se dr == d */ 
-	if(ceil(((double)pow(order, level+1)-1)/(order-1))==v && dr ==d)return -1; 
+
+	if(v==0 && target==false)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
 	
 	/* ----- Descendo a RMM-tree ------*/
-	while(v <= numberNodes - numberLeaves){
+	while(v < numberNodes - numberLeaves){
 		for(key = tree[v].nKeys -1; key>=0; key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
@@ -539,8 +543,7 @@ long long int RMMTree::minExcess(long long int i, long long int j){
 long long int RMMTree::findClose(long long int i){
 	assert(i>=0 && i<size);
 	if((i == 0) && bv[i]==1)return size -1;
-	long long int a = fwdSearch(i,-1);
-	return (bv[i] == 0) ? i : a;
+	return (bv[i] == 0) ? i : fwdSearch(i,-1);
 }
 
 long long int RMMTree::findOpen(long long int i){
@@ -551,16 +554,12 @@ long long int RMMTree::findOpen(long long int i){
 }
 
 long long int RMMTree::rmq(long long int i,long long int j){
-	cout << " Começando " << i << " e j eh " << j << endl;
 	long long int m = minExcess(i,j);
-	cout << " m eh " << m <<"\n";
 	return fwdSearch(i-1,m);
 }
 
 
 long long int RMMTree::enclose(long long int i){
-	assert(i>=0 && i < size);
-
 	if(i==0)return size;
 
 	if(bv[i]==0)return findOpen(i);
@@ -592,13 +591,11 @@ long long int RMMTree::parent(long long int x){
 
 long long int RMMTree::nextSibling(long long int x){
 	long long int i = findClose(x)+1;
-	return (bv[i]==1)? i : size;
+	return (i<size && bv[i]==1)? i : size;
 }
 
 long long int RMMTree::prevSibling(long long int x){
-	assert(x>0 && x < size-1);
-
-	return (bv[x-1]==0)? findOpen(x-1) : size;
+	return (x!=0 && bv[x-1]==0)? findOpen(x-1) : size;
 }
 
 long long int RMMTree::lastChild(long long int x){
@@ -622,11 +619,14 @@ long long int RMMTree::levelAncestor(long long int x,int d){
 }
 
 long long int RMMTree::levelNext(long long int x){
-	return fwdSearch(findClose(x),1);
+	long long int close = findClose(x);
+	return fwdSearch(close,1);
 }
 
 long long int RMMTree::levelPrev(long long int x){
-	return findOpen(bwdSearch(x,0)+1);
+	long long int i = bwdSearch(x,0);
+	if(i==size-1)return 0;
+	return findOpen(i+1);
 }
 
 long long int RMMTree::levelLeftMost(int d){
@@ -661,7 +661,6 @@ long long int RMMTree::preRank(long long int x){
 }
 
 long long int RMMTree::postRank(long long int x){
-
 	return b_rank0(findClose(x));
 }
 

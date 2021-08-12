@@ -1,22 +1,9 @@
 #ifndef ARGUMENTS_H
 #define ARGUMENTS_H
-#include <string>
-#include <vector>
-#include <sdsl/bp_support_sada.hpp>
 
-using namespace std; 
 
-int iterations;
 static int sizeBlock=32;
 static int w=16;
-int_vector<1> v;
-vector<long long int> args_par_close;
-vector<long long int> args_par_open;
-vector<long long int> args_enclose;
-vector<long long int> args_isLeaf;
-vector<long long int> args_ancestor;
-vector<long long int> args_rand_I;
-vector<long long int> args_rand_II;
 
 /*!
 *   @brief : gera uma sequência de iterations índices correspondestes a parênteses de abertura

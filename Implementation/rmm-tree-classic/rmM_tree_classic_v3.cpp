@@ -709,13 +709,11 @@ long long int RMMTree::parent(long long int x){
 
 long long int RMMTree::nextSibling(long long int x){
 	long long int i = findClose(x)+1;
-	return (bv[i]==1)? i : size;
+	return (i<size && bv[i]==1)? i : size;
 }
 
 long long int RMMTree::prevSibling(long long int x){
-	assert(x>0 && x < size-1);
-
-	return (bv[x-1]==0)? findOpen(x-1) : size;
+	return (x!=0 && bv[x-1]==0)? findOpen(x-1) : size;
 }
 
 long long int RMMTree::child(long long int x,long long int t){
@@ -761,11 +759,15 @@ long long int RMMTree::lca(long long int x,long long int y){
 }
 
 long long int RMMTree::levelNext(long long int x){
-	return fwdSearch(findClose(x),1);
+	long long int close = findClose(x);
+	if(close >=size)return size;
+	return fwdSearch(close,1);
 }
 
 long long int RMMTree::levelPrev(long long int x){
-	return findOpen(bwdSearch(x,0)+1);
+	long long int i = bwdSearch(x,0);
+	if(i < 0 )return -1;
+	return findOpen(i+1);
 }
 
 long long int RMMTree::levelLeftMost(int d){

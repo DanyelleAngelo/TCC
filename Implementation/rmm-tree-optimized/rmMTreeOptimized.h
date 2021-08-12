@@ -243,7 +243,7 @@ class RMMTree{
 
 		/*!
 		*	@brief usa bwdSearch para encontrar o elemnto a esquerda de x (não necessariamente o irmão de x,
-		*	a ideia é pegar o  elemento anterior do memso nível nível)
+		*	a ideia é pegar o  elemento anterior do mesmo nível nível)
 		* 	com a mesma profundidade de x
 		*	@param x: parênteses de abertura no vetor de parênteses balanceados que codifica o nó x
 		*	@return : índice do primeiro nó a esquerda de x, com a mesma profundidade de x; ou menos 1 se a resposta não for encontrada.
