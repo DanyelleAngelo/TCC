@@ -1,0 +1,38 @@
+
+#include <benchmark/benchmark.h>
+#include <memory>
+#include <sdsl/int_vector.hpp>
+#include "../rmm-tree-classic/rmMTreeClassic.h"
+
+using namespace sdsl;
+
+class RMMTreeFixtureBM: public benchmark::Fixture{
+	public:
+		RMMTree *t;
+		int sizeBlock =4;
+		int w=2;
+		int size;
+		int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+	void SetUp(const :: benchmark::State& state){
+	if(state.thread_index==0){	t = new RMMTree(v,sizeBlock,w);
+		size = (int)v.size();
+		t->buildingTree();}
+	}
+};
+
+static void ArgumentsFindClose(benchmark::internal::Benchmark *v){
+	for(int i=0;i<5;i++){
+		v->Args({i});
+	}
+}
+
+BENCHMARK_DEFINE_F(RMMTreeFixtureBM, findClose_binary)(benchmark::State& st){
+	for(auto _ :st){
+		t->findClose(st.range(0));
+	}
+}
+
+
+BENCHMARK_REGISTER_F(RMMTreeFixtureBM,findClose_binary)->Apply(ArgumentsFindClose);
+
+BENCHMARK_MAIN();
