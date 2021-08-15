@@ -285,7 +285,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 		if(dr == d)return j;
 	}
 	if(numLeaf(v) == numberLeaves-1)return size;//varremos a última folha, mas não encontramos a resposta
-
+	key=0;
 	/* -----Subindo a RMM-tree ------*/
 	bool target = false;
 	while(v!=0 && !target){
@@ -296,7 +296,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
-		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
+		/*pecorre todas a chaves do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
 		o excesso e descer pelo o seu nó.
 		*/
 		for(key=0;key<tree[v].nKeys;key++){
@@ -393,7 +393,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	}
 
 	if(numLeaf(v) == 0)return -1;
-
+	key=0;
 	/* -----Subindo a RMM-tree ------*/
 	bool target = false;
 	//int level = height;
@@ -409,6 +409,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 		for(key = tree[v].nKeys -1; key>=0; key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
+				key = tree[v].nKeys -1;
 				break;
 			}
 			dr -= tree[v].keys[key].excess;
@@ -416,7 +417,8 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	}
 
 	k = numLeaf(v);
-	if(dr == d)return k*(order*sizeBlock) + (key*sizeBlock) -1;
+	
+	if(dr == d)return (k*order*sizeBlock) + (key*sizeBlock) -1;
 	
 	key = tree[v].nKeys-1;
 	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,v,tree[v].nKeys-1,k,d,dr);

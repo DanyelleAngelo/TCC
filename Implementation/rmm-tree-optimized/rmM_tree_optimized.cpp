@@ -201,9 +201,9 @@ void RMMTree::buildingInternalNodesRoot(){
 	}
 }
 
-long long int RMMTree::fwdKey(long long int i,int v,int key,long long int k,int nKeys,int d,int &dr){
+long long int RMMTree::fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr){
 	long long int j;
-	for(;key < nKeys;key++){
+	for(;key < tree[v].nKeys;key++){
 		j= fwdBlock(i,d,dr);
 		if(dr == d) return j;
 
@@ -273,7 +273,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
-	long long int j = fwdKey(i,v,key, k ,tree[v].nKeys,d,dr);
+	long long int j = fwdKey(i,v,key, k,d,dr);
 	
 	if(dr == d)return j;
 
@@ -281,7 +281,9 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
 		v = (v-1)/order;
 	} 
-	
+
+	if(v==0 && key==size)return size;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
+
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
 		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
@@ -300,7 +302,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	}
  
 	k = numLeaf(v);
-	j = fwdKey((order*k+key)*sizeBlock -1,v,0, k ,tree[v].nKeys,d,dr);
+	j = fwdKey((order*k+key)*sizeBlock -1,v,0, k,d,dr);
 	return (dr == d)? j : size;
 }
 
@@ -376,6 +378,8 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
 		v = (v-1)/order;
 	}
+
+	if(v==0 && key==-1)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
 	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
@@ -396,14 +400,15 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	if(dr == d)return (k*sizeBlock*order)+(key*sizeBlock) -1;
 
 	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,tree[v].nKeys-1,v,k,d,dr);
-
 	return (dr==d)? j : -1;
 }
 
+long long int RMMTree::minExcess(long long int i, long long int j){
+	return 0;
+}
 
 long long int RMMTree::findClose(long long int i){
 	assert(i>=0 && i<size);
-
 	if((i == 0) && bv[i]==1)return size -1;
 	return (bv[i] == 0) ? i : fwdSearch(i,-1);
 }
@@ -413,6 +418,124 @@ long long int RMMTree::findOpen(long long int i){
 
 	if((i == (int)(size-1)) && bv[i]==0)return 0;
 	return (bv[i] == 1) ?  i : bwdSearch(i,0)+1;
+}
+
+long long int RMMTree::rmq(long long int i,long long int j){
+	return 0;
+}
+
+
+long long int RMMTree::enclose(long long int i){
+	if(i==0)return size;
+
+	if(bv[i]==0)return findOpen(i);
+
+	return bwdSearch(i,-2) + 1;
+}
+
+bool RMMTree::isLeaf(long long int x){
+	assert(x>=0 && x < size);
+
+	return  (bv[x] == 1 && bv[x+1]==0);
+}
+
+bool RMMTree::isAncestor(long long int x, long long int y){
+	assert(x >=0 && y < size );
+
+	return (x <= y && y< findClose(x));
+}
+
+long long int RMMTree::depth(long long int x){
+	assert(x>=0 && x<size);
+
+	return (2*b_rank1(x))-x;
+}
+
+long long int RMMTree::parent(long long int x){
+	return enclose(x);
+}
+
+long long int RMMTree::nextSibling(long long int x){
+	long long int i = findClose(x)+1;
+	return (i<size && bv[i]==1)? i : size;
+}
+
+long long int RMMTree::prevSibling(long long int x){
+	return (x!=0 && bv[x-1]==0)? findOpen(x-1) : size;
+}
+
+long long int RMMTree::lastChild(long long int x){
+	return (!isLeaf(x))? findOpen(findClose(x)-1) : size;
+}
+
+long long int RMMTree::firstChild(long long int x){
+	return (!isLeaf(x) )? x+1 : size;
+}
+
+long long int RMMTree::subtreeSize(long long int x){
+	assert(x >=0 && x<size);
+
+	return (bv[x]==1)? ceil((findClose(x)-x+1)/2) : size;
+}
+
+long long int RMMTree::levelAncestor(long long int x,int d){
+	assert(x >=0 && x<size);
+
+	return (bv[x]==1)? bwdSearch(x,-d-1)+1 : size;
+}
+
+long long int RMMTree::levelNext(long long int x){
+	long long int close = findClose(x);
+	return fwdSearch(close,1);
+}
+
+long long int RMMTree::levelPrev(long long int x){
+	long long int i = bwdSearch(x,0);
+	if(i==size-1)return 0;
+	return findOpen(i+1);
+}
+
+long long int RMMTree::levelLeftMost(int d){
+	return (d==1) ? 0 : fwdSearch(0,d-1);
+}
+
+long long int RMMTree::levelRightMost(int d){
+	return (d==1) ? 0 : findOpen(bwdSearch(size-1,d)+1);
+}
+
+long long int  RMMTree::leafRank(long long int x){
+	assert(x>=0 && x <size);
+
+	return b_rank10(x);
+}
+
+long long int  RMMTree::leafSelect(long long int t){
+	return b_sel10(t)-1;
+}
+
+long long int RMMTree::leftMostLeaf(long long int x){
+	return (!isLeaf(x))? leafSelect(leafRank(x-1)+1) : x;
+}
+
+long long int RMMTree::rightMostLeaf(long long int x){
+	return (!isLeaf(x))? leafSelect(leafRank(findClose(x))) : x;
+}
+
+long long int RMMTree::preRank(long long int x){
+	assert(x>=0 && x<size);
+	return b_rank1(x);
+}
+
+long long int RMMTree::postRank(long long int x){
+	return b_rank0(findClose(x));
+}
+
+long long int RMMTree::preSelect(long long int t){
+	return b_sel1(t);
+}
+
+long long int RMMTree::postSelect(long long int t){
+	return findOpen(b_sel0(t));
 }
 
 void RMMTree::printNode(vector<Key> vector, long long int i){

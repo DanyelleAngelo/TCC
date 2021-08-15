@@ -1,4 +1,5 @@
-all: rmmTreeClassic rmmTreeOptimized testArguments libTestRmmTreeOptimized libTestRmmTreeClassic kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
+all: rmmTreeClassic rmmTreeOptimized testArguments libTestRmmTreeOptimized libTestRmmTreeClassic testBenchmark
+#kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
 	git add .
@@ -67,7 +68,7 @@ rmmTreeClassic:
 	g++ -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
 
 rmmTreeOptimized: 
-	g++ -c ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
+	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
 
 readBp: 
 	g++ -c read_bp/read_bp.cpp -I ~/include
@@ -77,7 +78,7 @@ testArguments:
 
 #---------gerando biblioteca para testes ---------
 libTestRmmTreeOptimized: rmmTreeOptimized readBp testArguments
-	ar crv lib_test_rmm_optimized.a rmM_tree_optimized1_1.o read_bp.o generates_arguments.o
+	ar crv lib_test_rmm_optimized.a rmM_tree_optimized.o read_bp.o generates_arguments.o
 
 libTestRmmTreeClassic: rmmTreeClassic readBp testArguments
 	ar crv lib_test_rmm_classic.a rmM_tree_classic_v3.o read_bp.o generates_arguments.o

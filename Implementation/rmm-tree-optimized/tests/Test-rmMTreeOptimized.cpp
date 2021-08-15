@@ -199,7 +199,7 @@ TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, expected_response_to_rmq){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_expected_response_to_rmq){ 
     int m;
     int p;
     
@@ -246,11 +246,8 @@ TEST_F(RMMTreeFixtureTest, DISABLED_node_depth_x){
 
 TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x){ 
     int k=0;
-    for(int i=0;i<1;i++){//(t->size)/2
+    for(int i=0;i<(t->size)/2;i++){
         k = rand()%(t->size);
-        k=213;
-        
-        cout << " teste " << v[k] << " e " << v[k-1] <<endl;
         EXPECT_EQ(t->parent(k),bps->enclose(k)) << "Resposta errada ao buscar o pai do nó codificado em bv[" << k << " , close(i)]"; 
     }
 }
