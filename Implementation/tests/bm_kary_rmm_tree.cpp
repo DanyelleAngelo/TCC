@@ -44,6 +44,22 @@ static void BM_ComputaExcessMax_E(benchmark::State& st){
 }
 BENCHMARK(BM_ComputaExcessMax_E)->Iterations(1);
 
+static void BM_FwdSearch_bin(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_rand_I.size();i++)
+			t->fwdSearch(args_rand_I,rand()%eM);
+	}
+}
+BENCHMARK(BM_FwdSearch_k);
+
+static void BM_BwdSearch_k(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_rand_II.size();i++)
+			t->bwdSearch(args_rand_II,rand()%eM);
+	}
+}
+BENCHMARK(BM_BwdSearch_k);
+
 static void BM_FindClose_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_par_open.size();i++)

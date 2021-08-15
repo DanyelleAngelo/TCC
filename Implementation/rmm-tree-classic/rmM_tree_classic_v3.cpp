@@ -394,7 +394,7 @@ long long int RMMTree::fwdSearch(long long int i,int d){
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha]
 	
 	/* -----Subindo a RMM-tree ------*/
-	while( v!=0 && !( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) ) ){
+	while( ((v+1)&(v+2))!=0 && !( (dr+tree[v+1].excessMin <= d) && (d<=dr+tree[v+1].excessMax) ) ){
 		if((v&1)==1)dr += tree[v+1].excess;//já processamos todos os filhos do pai de v. guardar seu excesso.
 		v =(v-1)/2;
 	}
@@ -434,7 +434,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	v = leafInTree(k);
 	
 	/* -----Subindo a RMM-tree ------*/
-	while(v!=0  &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
+	while(((v+1)&v) !=0 &&  !((dr - tree[v-1].excess + tree[v-1].excessMin <= d) && (d <= dr - tree[v-1].excess + tree[v-1].excessMax)) ){
 		
 		if((v&1)== 0){
 			dr-=tree[v-1].excess;

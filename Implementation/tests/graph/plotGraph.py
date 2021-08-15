@@ -30,7 +30,7 @@ def graph(k_x, k_y, b_x, b_y, operacao,path,iterations,order):
     minY = min(i for i in yticks)
     minY= min(minY,float(b_y[0]))-15
     plt.ylim(minY,maxY)
-    plt.yticks(np.arange(minY,maxY,5.5))
+    #plt.yticks(np.arange(minY,maxY,5.5))
     plt.title("Tempo gasto pela operação %s para diferentes ordens da rmM-tree" %operacao)
     plt.savefig("%s/%s-i%s.png" %(path,operacao,iterations), bbox_inches='tight',dpi=300)
-    #plt.show()
+    plt.show()

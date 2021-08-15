@@ -1,4 +1,4 @@
-all: kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
+all: rmmTreeClassic rmmTreeOptimized testArguments libTestRmmTreeOptimized libTestRmmTreeClassic kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
 	git add .

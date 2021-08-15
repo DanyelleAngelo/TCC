@@ -291,9 +291,10 @@ TEST_F(RMMTreeFixtureTest, DISABLED_node_depth_x){
 }
 
 TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x){ 
-       for(int i=0;i<(t->size)/2;i++){
+    int k;
+    for(int i=0;i<(t->size)/2;i++){
         k = rand()%(t->size);
-        EXPECT_EQ(t->parent(x[k]),bps->enclose(x[k])) << "Resposta errada ao buscar o pai do nó codificado em bv[" << x[k] << " , close(i)]"; 
+        EXPECT_EQ(t->parent(k),bps->enclose(k)) << "Resposta errada ao buscar o pai do nó codificado em bv[" << k << " , close(i)]"; 
     }
 }
 
@@ -526,6 +527,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.expected_response_to_rmq";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }
