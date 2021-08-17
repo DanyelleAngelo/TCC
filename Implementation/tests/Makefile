@@ -1,5 +1,4 @@
-all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic kary_comparWithSdsl
-#kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
+all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmm_tree bm_binary_rmm_tree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
 	git add .
@@ -13,8 +12,8 @@ binary_compareWithSdsl:
 
 kary_comparWithSdsl:
 	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized_v0.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	./dataset_k wiki.par 25000 16
-#	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
+#	./dataset_k wiki.par 5000000 16
+	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
 #---------teste simples de benchmark, usando a estrutura kary---------
@@ -85,7 +84,7 @@ libTestRmmTreeOptimized_v0: rmmTreeOptimized_v0 readBp testArguments
 	ar crv lib_test_rmm_optimized_v0.a rmM_tree_optimized.o read_bp.o generates_arguments.o
 
 libTestRmmTreeOptimized_v1: rmmTreeOptimized_v1 readBp testArguments
-	ar crv lib_test_rmm_optimized.a rmM_tree_optimized1_1.o read_bp.o generates_arguments.o
+	ar crv lib_test_rmm_optimized_v1.a rmM_tree_optimized1_1.o read_bp.o generates_arguments.o
 
 libTestRmmTreeClassic: rmmTreeClassic readBp testArguments
 	ar crv lib_test_rmm_classic.a rmM_tree_classic_v3.o read_bp.o generates_arguments.o
