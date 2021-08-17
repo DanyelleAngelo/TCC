@@ -1,4 +1,4 @@
-all: rmmTreeClassic rmmTreeOptimized testArguments libTestRmmTreeOptimized libTestRmmTreeClassic testBenchmark
+all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic kary_comparWithSdsl
 #kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
@@ -12,8 +12,9 @@ binary_compareWithSdsl:
 	valgrind --leak-check=full -s ./dataset_b wiki.par 10
 
 kary_comparWithSdsl:
-	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
+	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized_v0.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
+	./dataset_k wiki.par 25000 16
+#	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
 #---------teste simples de benchmark, usando a estrutura kary---------
@@ -60,15 +61,18 @@ bm_binary_rmm_tree:
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree  lib_test_rmm_classic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
 bm_kary_rmm_tree:
-	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_test_rmm_optimized.a -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2
+	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_test_rmm_optimized_v0.a -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
 
 #---------gerando arquivos objetos ---------
 rmmTreeClassic: 
 	g++ -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
 
-rmmTreeOptimized: 
+rmmTreeOptimized_v0: 
 	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
+
+rmmTreeOptimized_v1: 
+	g++ -c ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
 
 readBp: 
 	g++ -c read_bp/read_bp.cpp -I ~/include
@@ -77,8 +81,11 @@ testArguments:
 	g++ -c generates_arguments.cpp read_bp/read_bp.cpp -I ~/include
 
 #---------gerando biblioteca para testes ---------
-libTestRmmTreeOptimized: rmmTreeOptimized readBp testArguments
-	ar crv lib_test_rmm_optimized.a rmM_tree_optimized.o read_bp.o generates_arguments.o
+libTestRmmTreeOptimized_v0: rmmTreeOptimized_v0 readBp testArguments
+	ar crv lib_test_rmm_optimized_v0.a rmM_tree_optimized.o read_bp.o generates_arguments.o
+
+libTestRmmTreeOptimized_v1: rmmTreeOptimized_v1 readBp testArguments
+	ar crv lib_test_rmm_optimized.a rmM_tree_optimized1_1.o read_bp.o generates_arguments.o
 
 libTestRmmTreeClassic: rmmTreeClassic readBp testArguments
 	ar crv lib_test_rmm_classic.a rmM_tree_classic_v3.o read_bp.o generates_arguments.o

@@ -1,4 +1,4 @@
-all:  v1
+all:  v0
 
 v0:
 	g++ -o rmMTreeTeste ../rmM_tree_optimized.cpp Test-rmMTreeOptimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lgtest -lpthread -Wall 

@@ -430,6 +430,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.returns_the_index_j_that_encodes_the_parent_of_node_x";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

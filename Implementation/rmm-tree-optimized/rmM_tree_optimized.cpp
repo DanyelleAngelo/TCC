@@ -203,11 +203,16 @@ void RMMTree::buildingInternalNodesRoot(){
 
 long long int RMMTree::fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr){
 	long long int j;
+	
 	for(;key < tree[v].nKeys;key++){
-		j= fwdBlock(i,d,dr);
-		if(dr == d) return j;
-
+		if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
+			j= fwdBlock(i,d,dr);
+			if(dr == d) return j;
+		}
+		dr +=  tree[v].keys[key].excess;
 		i = (order*k+key+1)*sizeBlock -1;//obtém o fim da chave atual, para começar a varrer próxima chave a partir do seu início
+		if(dr==d)return i;
+
 	}
 	return size;
 }
@@ -247,7 +252,7 @@ long long int RMMTree::fwdVerifySibling(long long int &v, int &dr, int d){
 	//calcula parent a fim de verificar quantos írmãos de v existem a sua esquerda
 	long long int parent = (v-1)/order;
 	long long int child = v - (parent*order);//obtém o número de irmãos a direita de v
-	if(child==order)return size;
+	if(child==tree[parent].nKeys)return size;
 
 	v++;
 	//pecorre os írmãos de v
@@ -273,9 +278,13 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
-	long long int j = fwdKey(i,v,key, k,d,dr);
-	
+	long long int j = fwdBlock(i,d,dr);
 	if(dr == d)return j;
+	key++;
+	if(key < tree[v].nKeys){
+		j= fwdKey((order*k+key)*sizeBlock -1,v,key, k,d,dr);
+		if(dr == d)return j;
+	}
 
 	/* -----Subindo a RMM-tree ------*/
 	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
@@ -308,10 +317,15 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 
 long long int RMMTree::bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr){
 	long long int j;
-	for(; key>=0;key--){ 
-		j = bwdBlock(i,d,dr);
-		if(dr==d)return j;
-		i =  (order*k+key)*sizeBlock -1;//obtém o inicio da chave atual subtraído de 1, para começar a varrer a próxima chave a partir do seu final
+	for(; key>=0;key--){if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
+			j = bwdBlock(i,d,dr);
+			//está tendo problemas ao varrer a chave. o resultado não é válido, mas porque?
+			if(dr==d)return j;
+		}
+		dr-=tree[v].keys[key].excess;
+		i =  (order*k+key)*sizeBlock-1;//obtém o inicio da chave atual subtraído de 1, para começar a varrer a próxima chave a partir do seu final
+		
+		if(dr==d)return i;
 	}
 	return -1;
 }
@@ -371,19 +385,23 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	long long int v = leafInTree(k);
 	int key = numKey(k,i);
 	
-	long long int j = bwdKey(i,v,key,k,d,dr);
+	long long int j = bwdBlock(i,d,dr);
 	if(dr==d) return j;
-	
+	key--;
+	if(key>=0){
+		j=bwdKey((order*k+key+1)*sizeBlock-1,v,key,k,d,dr);
+		if(dr==d) return j;
+
+	}
+
 	/* -----Subindo a RMM-tree ------*/
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
 		v = (v-1)/order;
 	}
-
-	if(v==0 && key==-1)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
 	
+	if(v==0 && key==-1)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
-		
 		for(;key>=0;key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
@@ -397,9 +415,9 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	}
 	
 	k = numLeaf(v);
-	if(dr == d)return (k*sizeBlock*order)+(key*sizeBlock) -1;
+	if(dr == d)return (k*order*sizeBlock) + (key*sizeBlock) -1;
 
-	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,tree[v].nKeys-1,v,k,d,dr);
+	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,v,key,k,d,dr);
 	return (dr==d)? j : -1;
 }
 
