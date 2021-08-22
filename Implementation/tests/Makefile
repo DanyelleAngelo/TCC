@@ -1,4 +1,4 @@
-all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmm_tree bm_binary_rmm_tree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
+all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmm_tree bm_binary_rmm_tree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
 	git add .
@@ -10,10 +10,10 @@ binary_compareWithSdsl:
 	g++ dataset_bin.cpp -o dataset_b lib_test_rmm_classic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --leak-check=full -s ./dataset_b wiki.par 10
 
-kary_comparWithSdsl:
+kary_compareWithSdsl:
 	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized_v0.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-#	./dataset_k wiki.par 5000000 16
-	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
+	./dataset_k wiki.par 5000000 16
+#	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
 #---------teste simples de benchmark, usando a estrutura kary---------
