@@ -430,6 +430,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.print_tree";
     return RUN_ALL_TESTS();
 }

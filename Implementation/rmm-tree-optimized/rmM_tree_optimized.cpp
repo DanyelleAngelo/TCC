@@ -320,7 +320,8 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 
 long long int RMMTree::bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr){
 	long long int j;
-	for(;key>=0;key--){if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
+	for(; key>=0;key--){
+		if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
 			j = bwdBlock(i,d,dr);
 			//está tendo problemas ao varrer a chave. o resultado não é válido, mas porque?
 			if(dr==d)return j;

@@ -492,11 +492,11 @@ long long int RMMTree::minExcess(long long int i, long long int j){
 		if(j <= temp)return m;
 	}
 
-/* 	long long int parent;
-	while(v+1 > v_j || ceil((double)v_j/pow(order,fLog_m(v_j,order)-fLog_m(v+1,order))) != v+1+t_child){
+ 	long long int parent;
+	while(v+1 > v_j || ceil((double)v_j/pow(order,fLog_m(v_j,order)-fLog_m(v+1,order))) != v+1){
 		parent = (v-1)/order;
 		v=parent;
-	} */
+	} 
 
 	// while(v+1 > v_j || ceil((double)v_j/pow(order,fLog_m(v_j,order)-fLog_m(v+1,order))) != v+1){
 		
