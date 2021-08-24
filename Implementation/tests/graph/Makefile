@@ -1,4 +1,4 @@
-all: wiki
+all: wiki dna prot ctree clean
 #dna prot ctree clean
 
 wiki:
