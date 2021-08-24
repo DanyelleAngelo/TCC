@@ -34,7 +34,7 @@ BENCHMARK(BM_BuildTree_bin);
 static void BM_FwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_I.size();i++)
-			t->fwdSearch(args_rand_I,rand()%eM);
+			t->fwdSearch(args_rand_I[i],rand()%eM);
 	}
 }
 BENCHMARK(BM_FwdSearch_bin);
@@ -42,18 +42,10 @@ BENCHMARK(BM_FwdSearch_bin);
 static void BM_BwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_II.size();i++)
-			t->bwdSearch(args_rand_II,rand()%eM);
+			t->bwdSearch(args_rand_II[i],rand()%eM);
 	}
 }
 BENCHMARK(BM_BwdSearch_bin);
-
-static void BM_FwdSearch_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
-			t->fwdSearch(args_par_open[i],rand()%eM);
-	}
-}
-BENCHMARK(BM_FwdSearch_bin);
 
 static void BM_FindClose_bin(benchmark::State& st){
 	for(auto _ :st){
@@ -79,14 +71,6 @@ static void BM_Enclose_bin(benchmark::State& st){
 }
 BENCHMARK(BM_Enclose_bin);
 
-static void BM_IsLeaf_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_isLeaf.size();i++)
-			t->isLeaf(args_isLeaf[i]);
-	}
-}
-BENCHMARK(BM_IsLeaf_bin);
-
 static void BM_IsAncestor_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_ancestor.size();i+=2)
@@ -103,6 +87,14 @@ static void BM_Depth_bin(benchmark::State& st){
 }
 BENCHMARK(BM_Depth_bin);
 
+static void BM_IsLeaf_bin(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_isLeaf.size();i++)
+			t->isLeaf(args_isLeaf[i]);
+	}
+}
+BENCHMARK(BM_IsLeaf_bin);
+
 static void BM_Parent_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_excluding0.size();i++){
@@ -111,6 +103,14 @@ static void BM_Parent_bin(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_Parent_bin);
+
+static void BM_SubTreeSize_bin(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_par_open.size();i++)
+			t->subtreeSize(args_par_open[i]);
+	}
+}
+BENCHMARK(BM_SubTreeSize_bin);
 
 static void BM_NextSibling_bin(benchmark::State& st){
 	for(auto _ :st){
@@ -143,26 +143,6 @@ static void BM_FirstChild_bin(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_FirstChild_bin);
-
-static void BM_SubTreeSize_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
-			t->subtreeSize(args_par_open[i]);
-	}
-}
-BENCHMARK(BM_SubTreeSize_bin);
-
-static void BM_LevelAncestor_bin(benchmark::State& st){
-	int d;
-	for(auto _ :st){
-		//lembrando que args_ancestor, tem o dobro de iterações que setamos
-		for(int i=0; i < args_ancestor.size();i+=2){
-			d= rand()%eM;
-			t->levelAncestor(args_ancestor[i],d);
-		}
-	}
-}
-BENCHMARK(BM_LevelAncestor_bin);
 
 static void BM_LevelNext_bin(benchmark::State& st){
 	for(auto _ :st){
@@ -205,6 +185,18 @@ static void BM_RightMostLeaf_bin(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_RightMostLeaf_bin); 
+
+static void BM_LevelAncestor_bin(benchmark::State& st){
+	int d;
+	for(auto _ :st){
+		//lembrando que args_ancestor, tem o dobro de iterações que setamos
+		for(int i=0; i < args_ancestor.size();i+=2){
+			d= rand()%eM;
+			t->levelAncestor(args_ancestor[i],d);
+		}
+	}
+}
+BENCHMARK(BM_LevelAncestor_bin);
 
 static void BM_PostRank_bin(benchmark::State& st){
 	for(auto _ :st){

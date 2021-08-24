@@ -47,7 +47,7 @@ BENCHMARK(BM_ComputaExcessMax_E)->Iterations(1);
 static void BM_FwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_I.size();i++)
-			t->fwdSearch(args_rand_I,rand()%eM);
+			t->fwdSearch(args_rand_I[i],rand()%eM);
 	}
 }
 BENCHMARK(BM_FwdSearch_k);
@@ -55,7 +55,7 @@ BENCHMARK(BM_FwdSearch_k);
 static void BM_BwdSearch_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_II.size();i++)
-			t->bwdSearch(args_rand_II,rand()%eM);
+			t->bwdSearch(args_rand_II[i],rand()%eM);
 	}
 }
 BENCHMARK(BM_BwdSearch_k);
@@ -84,13 +84,7 @@ static void BM_Enclose_k(benchmark::State& st){
 }
 BENCHMARK(BM_Enclose_k);
 
-static void BM_IsLeaf_k(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_isLeaf.size();i++)
-			t->isLeaf(args_isLeaf[i]);
-	}
-}
-BENCHMARK(BM_IsLeaf_k);
+
 
 static void BM_IsAncestor_k(benchmark::State& st){
 	for(auto _ :st){
@@ -108,6 +102,14 @@ static void BM_Depth_k(benchmark::State& st){
 }
 BENCHMARK(BM_Depth_k);
 
+static void BM_IsLeaf_k(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_isLeaf.size();i++)
+			t->isLeaf(args_isLeaf[i]);
+	}
+}
+BENCHMARK(BM_IsLeaf_k);
+
 static void BM_Parent_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_excluding0.size();i++){
@@ -116,6 +118,14 @@ static void BM_Parent_k(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_Parent_k);
+
+static void BM_SubTreeSize_k(benchmark::State& st){
+	for(auto _ :st){
+		for(int i=0; i < args_par_open.size();i++)
+			t->subtreeSize(args_par_open[i]);
+	}
+}
+BENCHMARK(BM_SubTreeSize_k);
 
 static void BM_NextSibling_k(benchmark::State& st){
 	for(auto _ :st){
@@ -149,26 +159,6 @@ static void BM_FirstChild_k(benchmark::State& st){
 }
 BENCHMARK(BM_FirstChild_k);
 
-static void BM_SubTreeSize_k(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
-			t->subtreeSize(args_par_open[i]);
-	}
-}
-BENCHMARK(BM_SubTreeSize_k);
-
-static void BM_LevelAncestor_k(benchmark::State& st){
-	int d;
-	for(auto _ :st){
-		//lembrando que args_ancestor, tem o dobro de iterações que setamos
-		for(int i=0; i < args_ancestor.size();i+=2){
-			d= rand()%eM;
-			t->levelAncestor(args_ancestor[i],d);
-		}
-	}
-}
-BENCHMARK(BM_LevelAncestor_k);
-
 static void BM_LevelNext_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_excluding0.size();i++){
@@ -176,6 +166,7 @@ static void BM_LevelNext_k(benchmark::State& st){
 		}
 	}
 }
+
 BENCHMARK(BM_LevelNext_k);
 
 static void BM_LevelPrev_k(benchmark::State& st){
@@ -210,6 +201,18 @@ static void BM_RightMostLeaf_k(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_RightMostLeaf_k); 
+
+static void BM_LevelAncestor_k(benchmark::State& st){
+	int d;
+	for(auto _ :st){
+		//lembrando que args_ancestor, tem o dobro de iterações que setamos
+		for(int i=0; i < args_ancestor.size();i+=2){
+			d= rand()%eM;
+			t->levelAncestor(args_ancestor[i],d);
+		}
+	}
+}
+BENCHMARK(BM_LevelAncestor_k);
 
 static void BM_PostRank_k(benchmark::State& st){
 	for(auto _ :st){
