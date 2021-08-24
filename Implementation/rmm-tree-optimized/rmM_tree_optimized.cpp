@@ -260,10 +260,14 @@ long long int RMMTree::fwdVerifySibling(long long int &v, int &dr, int d){
 	for( ;child < tree[parent].nKeys && v<numberNodes;child++){
 		for(long long int key=0;key<tree[v].nKeys;key++){	
 			if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
+				if(v<numberNodes - numberLeaves)v = (v*order)+1+key;
 				return key;
 			}
 			dr +=  tree[v].keys[key].excess;
-			if(dr==d)return key;
+			if(dr==d){
+				if(v<numberNodes - numberLeaves)v = (v*order)+key+2;
+				return key;
+			}
 		}
 		if(child+1 < tree[parent].nKeys)v++;
 	}
@@ -292,13 +296,12 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 	} 
 
 	if(v==0 && key==size)return size;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
-
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
 		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
 		o excesso e descer pelo o seu nó.
 		*/
-		for(;key<tree[v].nKeys;key++){
+		for(key=0;key<tree[v].nKeys;key++){
 			if((dr+tree[v].keys[key].excessMin <=d)&& (dr + tree[v].keys[key].excessMax >=d) ){
 				v = (v*order)+1+key;
 				key=0;
@@ -317,7 +320,7 @@ long long int RMMTree::fwdSearch(long long int i, int d){
 
 long long int RMMTree::bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr){
 	long long int j;
-	for(; key>=0;key--){if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
+	for(;key>=0;key--){if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
 			j = bwdBlock(i,d,dr);
 			//está tendo problemas ao varrer a chave. o resultado não é válido, mas porque?
 			if(dr==d)return j;
@@ -366,10 +369,14 @@ long long int RMMTree::bwdVerifySibling(long long int &v, int &dr, int d){
 	for(; child >0 && v >0;child--){
 		for(long long int key =tree[v].nKeys-1; key>=0;key--){
 			if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
+				if(v<numberNodes - numberLeaves)v = (v*order)+1+key;
 				return key;
 			}
 			dr-=tree[v].keys[key].excess;
-			if(dr == d)return key;
+			if(dr == d){
+				if(v<numberNodes - numberLeaves)v = (v*order)+key;
+				return key; //a resposta esta na chave anterior
+			}
 		}
 		if(child-1 >0)v--;
 	}
@@ -402,7 +409,7 @@ long long int RMMTree::bwdSearch(long long int i,int d){
 	if(v==0 && key==-1)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
-		for(;key>=0;key--){
+		for(key=tree[v].nKeys-1;key>=0;key--){
 			if( (dr - tree[v].keys[key].excess +tree[v].keys[key].excessMin <= d)&&(dr - tree[v].keys[key].excess +tree[v].keys[key].excessMax >= d)){
 				v = (v*order)+1+key;
 				key = tree[v].nKeys -1;
