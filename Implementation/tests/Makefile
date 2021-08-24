@@ -1,4 +1,4 @@
-all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmm_tree bm_binary_rmm_tree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
+all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna gitUpdate
 
 gitUpdate:
 	git add .
@@ -56,10 +56,10 @@ kary_dna:
 
 
 #---------compila os arquivos de testes de benchmark com as suas devidas bibliotecas---------
-bm_binary_rmm_tree:
+bm_binary_rmmTree:
 	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree  lib_test_rmm_classic.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
-bm_kary_rmm_tree:
+bm_kary_rmmTree:
 	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree lib_test_rmm_optimized_v0.a -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
 

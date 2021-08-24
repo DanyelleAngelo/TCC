@@ -36,7 +36,7 @@ void ArgumentsParClose(){
 	srand(v.size()/20);
 	int k,i=0;
 	while(i<iterations){
-		k = rand()%(v.size()-1);
+		k = rand()%(v.size()-2);
 	    if(v[k]==0){
 			args_par_close.push_back(k);
 			i++;
@@ -60,8 +60,8 @@ void ArgumentsIsAncestor(){
     srand(v.size()/4);
 	int k_i,k_j,i=0;
     while(i<iterations){
-        k_i = rand()%(v.size()-1);
-        k_j = rand()%(v.size()-1);
+        k_i = rand()%(v.size()-2);
+        k_j = rand()%(v.size()-2);
         if(k_i < k_j){
             args_ancestor.push_back(k_i);
             args_ancestor.push_back(k_j);
@@ -74,7 +74,7 @@ void ArgumentsRand_I(){
 	srand(v.size()/8);
 	int k,i=0;
 	while(i<iterations){
-		k = rand()%(v.size()-1);
+		k = rand()%(v.size()-2);
 	    args_rand_I.push_back(k);
 		i++;
 	}
@@ -84,7 +84,7 @@ void ArgumentsRand_II(){
 	srand(v.size()/16);
 	int k,i=0;
 	while(i<iterations){
-		k = rand()%(v.size()-1);
+		k = rand()%(v.size()-2);
 	    args_rand_II.push_back(k);
 		i++;
 	}

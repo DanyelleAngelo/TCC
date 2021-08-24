@@ -1,0 +1,26 @@
+2021-08-24T04:14:30+00:00
+Running ./bm_kary_rmm_tree
+Run on (56 X 3200 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x28)
+  L1 Instruction 32 KiB (x28)
+  L2 Unified 1024 KiB (x28)
+  L3 Unified 19712 KiB (x2)
+Load Average: 0.66, 0.20, 0.07
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"BM_BuildTree_k",1,2.06863e+10,2.0686e+10,ns,,,,,
+"BM_ComputaExcessMax_E/iterations:1",0,0,0,ns,,,,,
+"BM_FindClose_k",3,2.18573e+08,2.1857e+08,ns,,,,,
+"BM_FindOpen_k",2,2.82087e+08,2.82072e+08,ns,,,,,
+"BM_Enclose_k",1,1.12147e+09,1.12145e+09,ns,,,,,
+"BM_IsLeaf_k",6,9.43592e+07,9.43594e+07,ns,,,,,
+"BM_IsAncestor_k",4,1.59544e+08,1.59544e+08,ns,,,,,
+"BM_Depth_k",6,1.07287e+08,1.07287e+08,ns,,,,,
+"BM_Parent_k",1,1.13881e+09,1.13877e+09,ns,,,,,
+"BM_NextSibling_k",3,1.88417e+08,1.88404e+08,ns,,,,,
+"BM_PrevSibling_k",4,1.82491e+08,1.82491e+08,ns,,,,,
+"BM_LastChild_k",3,2.29321e+08,2.29321e+08,ns,,,,,
+"BM_FirstChild_k",8,8.40956e+07,8.40921e+07,ns,,,,,
+"BM_SubTreeSize_k",3,2.51033e+08,2.51034e+08,ns,,,,,
+"BM_LevelAncestor_k",1,6.50034e+09,6.50018e+09,ns,,,,,
