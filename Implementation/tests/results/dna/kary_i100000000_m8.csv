@@ -1,4 +1,4 @@
-2021-08-24T07:32:05+00:00
+2021-08-26T01:09:06+00:00
 Running ./bm_kary_rmm_tree
 Run on (56 X 3200 MHz CPU s)
 CPU Caches:
@@ -9,27 +9,24 @@ CPU Caches:
 Load Average: 1.00, 1.00, 1.00
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"BM_BuildTree_k",1,5.58266e+10,5.58257e+10,ns,,,,,
+"BM_BuildTree_k",1,5.57924e+10,5.57915e+10,ns,,,,,
 "BM_ComputaExcessMax_E/iterations:1",0,0,0,ns,,,,,
-"BM_FwdSearch_k",1,6.23193e+11,6.23179e+11,ns,,,,,
-"BM_BwdSearch_k",1,6.9582e+11,6.95805e+11,ns,,,,,
-"BM_FindClose_k",1,3.62724e+10,3.62716e+10,ns,,,,,
-"BM_FindOpen_k",1,4.1416e+10,4.1415e+10,ns,,,,,
-"BM_Enclose_k",1,4.831e+10,4.83089e+10,ns,,,,,
-"BM_IsAncestor_k",1,2.45502e+10,2.45494e+10,ns,,,,,
-"BM_Depth_k",1,1.21e+10,1.20997e+10,ns,,,,,
-"BM_IsLeaf_k",1,1.22694e+10,1.22691e+10,ns,,,,,
-"BM_Parent_k",1,4.85562e+10,4.8555e+10,ns,,,,,
-"BM_SubTreeSize_k",1,3.94241e+10,3.94232e+10,ns,,,,,
-"BM_NextSibling_k",1,2.74944e+10,2.74937e+10,ns,,,,,
-"BM_PrevSibling_k",1,2.63876e+10,2.6387e+10,ns,,,,,
-"BM_LastChild_k",1,3.56589e+10,3.5658e+10,ns,,,,,
-"BM_FirstChild_k",1,1.06864e+10,1.06861e+10,ns,,,,,
-"BM_LevelNext_k",1,5.02786e+10,5.02774e+10,ns,,,,,
-"BM_LevelPrev_k",1,5.86148e+10,5.86134e+10,ns,,,,,
-"BM_LevelLeftMost_k",399,1.77044e+06,1.77038e+06,ns,,,,,
-"BM_LevelRightMost_k",297,2.3742e+06,2.3742e+06,ns,,,,,
-"BM_RightMostLeaf_k",1,6.79102e+10,6.79083e+10,ns,,,,,
-"BM_LevelAncestor_k",1,2.85753e+11,2.85745e+11,ns,,,,,
-"BM_PostRank_k",1,7.15668e+10,7.15648e+10,ns,,,,,
-"BM_PostSelect_k",1,7.78496e+10,7.78475e+10,ns,,,,,
+"BM_FwdSearch_k",1,6.28004e+11,6.2799e+11,ns,,,,,
+"BM_BwdSearch_k",1,6.95368e+11,6.95352e+11,ns,,,,,
+"BM_FindClose_k",1,3.63017e+10,3.63008e+10,ns,,,,,
+"BM_FindOpen_k",1,4.07761e+10,4.07752e+10,ns,,,,,
+"BM_Enclose_k",1,4.76442e+10,4.76432e+10,ns,,,,,
+"BM_IsAncestor_k",1,2.46435e+10,2.46427e+10,ns,,,,,
+"BM_Parent_k",1,4.87864e+10,4.8785e+10,ns,,,,,
+"BM_SubTreeSize_k",1,3.93433e+10,3.93422e+10,ns,,,,,
+"BM_NextSibling_k",1,2.7822e+10,2.78211e+10,ns,,,,,
+"BM_PrevSibling_k",1,2.61761e+10,2.61754e+10,ns,,,,,
+"BM_LastChild_k",1,3.55178e+10,3.55168e+10,ns,,,,,
+"BM_LevelNext_k",1,5.00872e+10,5.00859e+10,ns,,,,,
+"BM_LevelPrev_k",1,5.89245e+10,5.89229e+10,ns,,,,,
+"BM_LevelLeftMost_k",398,1.77792e+06,1.77785e+06,ns,,,,,
+"BM_LevelRightMost_k",298,2.36079e+06,2.36078e+06,ns,,,,,
+"BM_RightMostLeaf_k",1,6.90328e+10,6.90307e+10,ns,,,,,
+"BM_LevelAncestor_k",1,2.86777e+11,2.86768e+11,ns,,,,,
+"BM_PostRank_k",1,7.2218e+10,7.22159e+10,ns,,,,,
+"BM_PostSelect_k",1,7.88375e+10,7.88352e+10,ns,,,,,

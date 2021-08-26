@@ -79,22 +79,6 @@ static void BM_IsAncestor_bin(benchmark::State& st){
 }
 BENCHMARK(BM_IsAncestor_bin);
 
-static void BM_Depth_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_excluding0.size();i++)
-			t->depth(args_excluding0[i]);
-	}
-}
-BENCHMARK(BM_Depth_bin);
-
-static void BM_IsLeaf_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_isLeaf.size();i++)
-			t->isLeaf(args_isLeaf[i]);
-	}
-}
-BENCHMARK(BM_IsLeaf_bin);
-
 static void BM_Parent_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_excluding0.size();i++){
@@ -135,14 +119,6 @@ static void BM_LastChild_bin(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_LastChild_bin);
-
-static void BM_FirstChild_bin(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_rand_II.size();i++)
-			t->firstChild(args_rand_II[i]);
-	}
-}
-BENCHMARK(BM_FirstChild_bin);
 
 static void BM_LevelNext_bin(benchmark::State& st){
 	for(auto _ :st){

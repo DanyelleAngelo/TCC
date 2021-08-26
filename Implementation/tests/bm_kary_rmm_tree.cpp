@@ -84,8 +84,6 @@ static void BM_Enclose_k(benchmark::State& st){
 }
 BENCHMARK(BM_Enclose_k);
 
-
-
 static void BM_IsAncestor_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_ancestor.size();i+=2)
@@ -93,22 +91,6 @@ static void BM_IsAncestor_k(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_IsAncestor_k);
-
-static void BM_Depth_k(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_excluding0.size();i++)
-			t->depth(args_excluding0[i]);
-	}
-}
-BENCHMARK(BM_Depth_k);
-
-static void BM_IsLeaf_k(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_isLeaf.size();i++)
-			t->isLeaf(args_isLeaf[i]);
-	}
-}
-BENCHMARK(BM_IsLeaf_k);
 
 static void BM_Parent_k(benchmark::State& st){
 	for(auto _ :st){
@@ -150,14 +132,6 @@ static void BM_LastChild_k(benchmark::State& st){
 	}
 }
 BENCHMARK(BM_LastChild_k);
-
-static void BM_FirstChild_k(benchmark::State& st){
-	for(auto _ :st){
-		for(int i=0; i < args_rand_II.size();i++)
-			t->firstChild(args_rand_II[i]);
-	}
-}
-BENCHMARK(BM_FirstChild_k);
 
 static void BM_LevelNext_k(benchmark::State& st){
 	for(auto _ :st){
