@@ -1,0 +1,87 @@
+\begin{thebibliography}{\hspace{\parindent}}
+
+\bibitem[ARROYUELO(2010)ARROYUELO]{paper-succint-trees-in-practice} ARROYUELO,
+  D.~t\@. Succinct Trees in Practice. In: MEETING ON ALGORITHM ENGINEERING {\&}
+  EXPERMIMENTS, Austin, Texas, USA. \textbf{Proceedings{\ldots}} Society for
+  Industrial and Applied Mathematics, 2010. p.84–97. (ALENEX '10).
+
+\bibitem[CARVALHO(2002)CARVALHO]{paper-gap-between-processor-memory} CARVALHO,
+  C\@. The gap between processor and memory speeds. In: IEEE INTERNATIONAL
+  CONFERENCE ON CONTROL AND AUTOMATION. \textbf{Proceedings{\ldots}}
+  [S.l.:~s.n.], 2002.
+
+\bibitem[CISCO(2020)CISCO]{relatorio-cisco} CISCO. \textbf{Cisco Annual
+  Internet Report (2018–2023)}. [S.l.]: Cisco, 2020.
+
+\bibitem[COIRA(2017)COIRA]{coira-feranando} COIRA, F.~S\@. Compact data
+  structures for large and complex datasets. In:  OF . \textbf{Anais{\ldots}}
+  [S.l.:~s.n.], 2017.
+
+\bibitem[CORDOVA~J. E~NAVARRO(2016)CORDOVA~J.
+  E~NAVARRO]{paper-simple-and-efficient-fully-functional-succinct-trees}
+  CORDOVA~J. E~NAVARRO, G\@. Simple and Efficient Fully-Functional Succinct
+  Trees. In: GBR. \textbf{Anais{\ldots}} Theoretical Computer Science, 2016.
+  v.656, n.PB, p.135–145.
+
+\bibitem[CORMEN(2012)CORMEN]{book-algoritmos-teoria-pratica} CORMEN, T. H.~t\@.
+  \textbf{Algoritmos}. 3.ed. Rio de Janeiro, RJ, Brasil: Elsevier, 2012.
+
+\bibitem[DOMO(2020)DOMO]{domo-study} DOMO. \textbf{Data Never Sleeps 8.0}.
+  [S.l.]: Domo, 2020.
+
+\bibitem[EFNUSHEVA~D.;~CHOLAKOSKA(2017)EFNUSHEVA~D.;~CHOLAKOSKA]{paper-processor-memory-bottleneck}
+  EFNUSHEVA~D.;~CHOLAKOSKA, A. e. T. A.~M\@. A survey of different approaches
+  for overcoming the processor-memory bottleneck. \textbf{Computer Science and
+  Information Technology}, [S.l.], v.9, n.2, p.151--163, 2017.
+
+\bibitem[HANKINS~R. A. E~PATEL(2003)HANKINS~R. A.
+  E~PATEL]{paper-effect-node-size-cache-b-trees} HANKINS~R. A. E~PATEL, J.~M\@.
+  Effect of Node Size on the Performance of Cache-Conscious B+-trees. In:
+  THEORETICAL COMPUTER SCIENCE. \textbf{Anais{\ldots}} ACM SIGMETRICS
+  international conference, 2003. v.29, p.475--476.
+
+\bibitem[HENNESSY~J. L. E~PATTERSON(2014)HENNESSY~J. L.
+  E~PATTERSON]{book-computer-architecutre} HENNESSY~J. L. E~PATTERSON, D.~A\@.
+  \textbf{Arquitetura de Computadores}: uma abordagem quantitativa. Quinta.ed.
+  Rio de Janeiro, RJ, BR: Elsevier, 2014.
+
+\bibitem[MAHAPATRA~N. R. E~VENKATRAO(1999)MAHAPATRA~N. R.
+  E~VENKATRAO]{paper-Processor-Memory-bottleneck-Problems-Solutions}
+  MAHAPATRA~N. R. E~VENKATRAO, B\@. The Processor-Memory Bottleneck: problems
+  and solutions. \textbf{XRDS}, New York, NY, USA, v.5, n.3es, p.2–es,
+  Apr.~1999.
+
+\bibitem[MUNRO~J. I. E~RAMAN(1997)MUNRO~J. I.
+  E~RAMAN]{paper-succint-representation-of-balanced-parentheses} MUNRO~J. I.
+  E~RAMAN, V\@. Succinct representation of balanced parentheses, static trees
+  and planar graphs. In: ANNUAL SYMPOSIUM ON FOUNDATIONS OF COMPUTER SCIENCE,
+  38. \textbf{Proceedings{\ldots}} Society for Industrial and Applied
+  Mathematics, 1997. p.118--126.
+
+\bibitem[NAVARRO(????)NAVARRO]{datasets-inf-udec} NAVARRO, G\@.
+  \textbf{Par{\^e}nteses balanceados}.
+
+\bibitem[NAVARRO(2016)NAVARRO]{book-compact-data-structures} NAVARRO, G\@.
+  \textbf{Compact data structures}:a practical approach. 1.ed. New York, NY,
+  USA: Sheridan Books, Inc, 2016.
+
+\bibitem[RAO~J. E~ROSS(2000)RAO~J. E~ROSS]{paper-making-btree-cache} RAO~J.
+  E~ROSS, K.~A\@. Making B+- Trees Cache Conscious in Main Memory. In: SOCIETY
+  FOR INDUSTRIAL AND APPLIED MATHEMATICS, New York, NY, USA.
+  \textbf{Anais{\ldots}} Association for Computing Machinery, 2000.
+
+\bibitem[REINSEL~D. E~GANTZ(2018)REINSEL~D. E~GANTZ]{relatorio-idc} REINSEL~D.
+  E~GANTZ, J. e. R.~J\@. \textbf{The Digitization of the World, From Edge to
+  Core}. [S.l.]: International Data Corporation (IDC), 2018.
+
+\bibitem[RUSSELL~S. E~NORVIG(2013)RUSSELL~S.
+  E~NORVIG]{book-inteligencia-artificial} RUSSELL~S. E~NORVIG, P\@.
+  \textbf{Inteligência Artificial}. 3.ed. Rio de Janeiro, RJ, Brasil:
+  Elsevier, 2013.
+
+\bibitem[SADAKANE~K. E~NAVARRO(2010)SADAKANE~K.
+  E~NAVARRO]{paper-fully-functinal-succint-trees} SADAKANE~K. E~NAVARRO, G\@.
+  Fully-Functional Succinct Trees. In: ASSOCIATION FOR COMPUTING MACHINERY.
+  \textbf{Anais{\ldots}} Society for Industrial and Applied Mathematics, 2010.
+
+\end{thebibliography}

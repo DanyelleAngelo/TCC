@@ -1,0 +1,90 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ifbtcc.aux
+A level-1 auxiliary file: text/introduction.aux
+A level-1 auxiliary file: text/background.aux
+A level-1 auxiliary file: text/desenvolvimento.aux
+A level-1 auxiliary file: text/resultados.aux
+A level-1 auxiliary file: text/conclusion.aux
+The style file: ifbclass/libs/abnt.bst
+Database file #1: bib/references.bib
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1338 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1338 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1342 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1342 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1342 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1342 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1343 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1343 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1343 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1343 of file ifbclass/libs/abnt.bst
+`booktitle' is a missing field, not a string, for entry coira-feranando
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+`booktitle' is a missing field, not a string, for entry paper-simple-and-efficient-fully-functional-succinct-trees
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A. e Tentov, A. M." for entry paper-processor-memory-bottleneck
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+`booktitle' is a missing field, not a string, for entry paper-effect-node-size-cache-b-trees
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+`booktitle' is a missing field, not a string, for entry paper-making-btree-cache
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+`booktitle' is a missing field, not a string, for entry paper-fully-functinal-succint-trees
+while executing---line 1346 of file ifbclass/libs/abnt.bst
+You've used 18 entries,
+            2371 wiz_defined-function locations,
+            680 strings with 6878 characters,
+and the built_in function-call counts, 22299 in all, are:
+= -- 2784
+> -- 99
+< -- 225
++ -- 1364
+- -- 70
+* -- 998
+:= -- 2096
+add.period$ -- 78
+call.type$ -- 18
+change.case$ -- 134
+chr.to.int$ -- 90
+cite$ -- 18
+duplicate$ -- 2829
+empty$ -- 807
+format.name$ -- 126
+if$ -- 4863
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 39
+num.names$ -- 90
+pop$ -- 426
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 1286
+stack$ -- 0
+substring$ -- 1744
+swap$ -- 1792
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 0
+while$ -- 144
+width$ -- 0
+write$ -- 20
+(There were 19 error messages)

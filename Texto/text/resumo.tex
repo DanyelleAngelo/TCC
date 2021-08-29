@@ -1,0 +1,17 @@
+O desenvolvimento de novas aplicações de tempo real e o crescente aumento na produção de dados aliados à disparidade de desempenho entre processador 
+e memória é um grande desafio para projetistas e desenvolvedores de software.
+Neste contexto, torna-se fundamental a utilização eficaz dos níveis superiores da hierarquia de memória, onde o tempo gasto para concluir uma 
+solicitação do processador é menor e a capacidade de armazenamento é  reduzida; essa utilização eficaz pode acontecer por intermédio das estruturas 
+de dados sucintas, as mesmas possibilitam a representação e operação sobre um conjunto de dados de maneira eficiente, ao mesmo tempo em que possibilitam 
+o seu gerenciamento em memórias mais rápidas e com capacidade de armazenamento menor.\\
+A Range min-Max tree (rmM-tree) é um exemplo de sucesso dessas estruturas, construída na forma de uma árvore binária completa, a 
+rmM-tree ocupa cerca de $n + O(\frac{n}{b} \log n)$ bits, e possibilita a realização de operações sobre os objetos aos quais representa em 
+tempo $O(\log n)$ bits. Embora essa estrutura possua custo computacional teoricamente 
+satisfatório, devido ao seu baixo fator de ramificação, podem ocorrer um grande número de transferências de dados entre cache e memória RAM. 
+Nosso objetivo neste trabalho é minimizar o número de eventuais faltas de cache (\textit{cache misses}) através da maximização da quantidade de dados 
+enviados a cada transferência. Assim, esse trabalho se concentra no estudo da Range min-Max tree clássica e na otimização do uso da cache por essa 
+estrutura mediante ao aumento do número de ramificações da mesma.
+%e na otimização do uso da cache mediante a
+\begin{keywords}
+Estrutura de dados sucintas; Range min-Max tree; Árvores; Lacuna de desenvolvimento procesador-memória; Cache.
+\end{keywords}
