@@ -37,7 +37,7 @@ def plot(path,iterations):
     binary = []
     #estrutura binária
     with open("%s/bin_i%s.csv" %(path,iterations),"r") as f:
-        binary = f.readlines()[12:]
+        binary = f.readlines()[13:]
 
     for linha in binary:
         col = [s for s in linha.split(",")]
@@ -47,21 +47,21 @@ def plot(path,iterations):
 
     #estrutura 4-aria
     with open("%s/kary_i%s_m4.csv" %(path,iterations), "r") as f:
-        kary = f.readlines()[13:]
+        kary = f.readlines()[14:]
     for linha in kary:
         col = [s for s in linha.split(",")]
         data_4.append(float(col[3])/iterations)
 
     #estrutura 8-aria
     with open("%s/kary_i%s_m8.csv" %(path,iterations), "r") as f:
-        kary = f.readlines()[13:]
+        kary = f.readlines()[14:]
     for linha in kary:
         col = [s for s in linha.split(",")]
         data_8.append(float(col[3])/iterations)
 
     #estrutura 16-aria
     with open("%s/kary_i%s_m16.csv" %(path,iterations), "r") as f:
-        kary = f.readlines()[13:]
+        kary = f.readlines()[14:]
     for linha in kary:
         col = [s for s in linha.split(",")]
         data_16.append(float(col[3])/iterations) 
