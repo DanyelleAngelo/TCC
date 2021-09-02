@@ -61,7 +61,7 @@ BENCHMARK(BM_FwdSearch_bin);
 static void BM_BwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_II.size();i++)
-			t->bwdSearch(args_rand_II[i],depth_bwd[i]);
+			t->bwdSearch(args_rand_II[i],0-depth_bwd[i]);
 	}
 }
 BENCHMARK(BM_BwdSearch_bin);
@@ -185,9 +185,8 @@ static void BM_LevelAncestor_bin(benchmark::State& st){
 	int d;
 	for(auto _ :st){
 		//lembrando que args_ancestor, tem o dobro de iterações que setamos
-		for(int i=0; i < args_ancestor.size();i+=2){
-			d= rand()%eM;
-			t->levelAncestor(args_ancestor[i],d);
+		for(int i=0; i < args_rand_II.size();i+=2){
+			t->levelAncestor(args_rand_II[i],0-depth_bwd[i]);
 		}
 	}
 }
