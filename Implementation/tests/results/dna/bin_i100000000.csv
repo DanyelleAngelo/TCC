@@ -1,4 +1,4 @@
-2021-08-26T02:54:36+00:00
+2021-09-02T02:16:53+00:00
 Running ./bm_binary_rmm_tree
 Run on (56 X 3200 MHz CPU s)
 CPU Caches:
@@ -6,26 +6,27 @@ CPU Caches:
   L1 Instruction 32 KiB (x28)
   L2 Unified 1024 KiB (x28)
   L3 Unified 19712 KiB (x2)
-Load Average: 1.00, 1.00, 1.00
+Load Average: 1.00, 1.00, 0.99
 ***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"BM_BuildTree_bin",1,5.13149e+10,5.13141e+10,ns,,,,,
-"BM_FwdSearch_bin",1,1.70819e+11,1.70815e+11,ns,,,,,
-"BM_BwdSearch_bin",1,2.0696e+11,2.06955e+11,ns,,,,,
-"BM_FindClose_bin",1,3.11314e+10,3.11307e+10,ns,,,,,
-"BM_FindOpen_bin",1,3.55339e+10,3.55332e+10,ns,,,,,
-"BM_Enclose_bin",1,4.1847e+10,4.18461e+10,ns,,,,,
-"BM_IsAncestor_bin",1,2.18432e+10,2.18428e+10,ns,,,,,
-"BM_Parent_bin",1,4.20879e+10,4.20869e+10,ns,,,,,
-"BM_SubTreeSize_bin",1,3.29832e+10,3.29824e+10,ns,,,,,
-"BM_NextSibling_bin",1,2.44745e+10,2.4474e+10,ns,,,,,
-"BM_PrevSibling_bin",1,2.29199e+10,2.29195e+10,ns,,,,,
-"BM_LastChild_bin",1,3.17998e+10,3.1799e+10,ns,,,,,
-"BM_LevelNext_bin",1,3.96627e+10,3.96619e+10,ns,,,,,
-"BM_LevelPrev_bin",1,4.93309e+10,4.933e+10,ns,,,,,
-"BM_LevelLeftMost_bin",2458,286237,286234,ns,,,,,
-"BM_LevelRightMost_bin",1698,413830,413829,ns,,,,,
-"BM_RightMostLeaf_bin",1,5.6212e+10,5.62108e+10,ns,,,,,
-"BM_LevelAncestor_bin",1,6.51104e+10,6.51089e+10,ns,,,,,
-"BM_PostRank_bin",1,6.20935e+10,6.20922e+10,ns,,,,,
-"BM_PostSelect_bin",1,7.25041e+10,7.25025e+10,ns,,,,,
+"buildTree_bin",1,5.24628e+10,5.24609e+10,ns,,,,,
+"generates_args_depth/iterations:1",0,0,0,ns,,,,,
+"BM_FwdSearch_bin",1,5.24879e+09,5.24848e+09,ns,,,,,
+"BM_BwdSearch_bin",1,4.57829e+09,4.57807e+09,ns,,,,,
+"BM_FindClose_bin",1,9.22724e+08,9.22668e+08,ns,,,,,
+"BM_FindOpen_bin",1,1.07037e+09,1.07032e+09,ns,,,,,
+"BM_Enclose_bin",1,1.25991e+09,1.25981e+09,ns,,,,,
+"BM_IsAncestor_bin",1,6.82842e+08,6.82843e+08,ns,,,,,
+"BM_Parent_bin",1,1.26581e+09,1.26572e+09,ns,,,,,
+"BM_SubTreeSize_bin",1,1.01244e+09,1.01237e+09,ns,,,,,
+"BM_NextSibling_bin",1,7.55381e+08,7.5533e+08,ns,,,,,
+"BM_PrevSibling_bin",1,6.87526e+08,6.87511e+08,ns,,,,,
+"BM_LastChild_bin",1,9.61836e+08,9.61781e+08,ns,,,,,
+"BM_LevelNext_bin",1,1.2119e+09,1.21186e+09,ns,,,,,
+"BM_LevelPrev_bin",1,1.48258e+09,1.48249e+09,ns,,,,,
+"BM_LevelLeftMost_bin",2430,288448,288423,ns,,,,,
+"BM_LevelRightMost_bin",1680,420915,420896,ns,,,,,
+"BM_RightMostLeaf_bin",1,1.71029e+09,1.7102e+09,ns,,,,,
+"BM_LevelAncestor_bin",1,1.95479e+09,1.9547e+09,ns,,,,,
+"BM_PostRank_bin",1,1.88385e+09,1.88378e+09,ns,,,,,
+"BM_PostSelect_bin",1,2.17785e+09,2.17767e+09,ns,,,,,

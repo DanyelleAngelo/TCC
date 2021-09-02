@@ -11,6 +11,8 @@ using namespace sdsl;
 RMMTree *t;
 int eM=0;
 int order;
+vector<int> depth_fwd;
+vector<int> depth_bwd;
 
 extern int_vector<1> v;
 extern int iterations;
@@ -23,13 +25,13 @@ extern vector<long long int> args_rand_II;
 extern vector<long long int> args_excluding0;
 extern vector<long long int> args_select;
 
-static void BM_BuildTree_k(benchmark::State& st){
+static void buildTree_k(benchmark::State& st){
 	for(auto _ :st){
         t = new RMMTree(v,sizeBlock,w,order);	
 		t->buildingTree();
 	}
 }
-BENCHMARK(BM_BuildTree_k);
+BENCHMARK(buildTree_k);
 
 /*Não leve em consideração os resultados desse teste, o mesmo deve ser usado apenas para computar o excesso máximo do vetor, haja vista
 *que precisamos do resultado em outras funções, e não temos ele pronto, nem mesmo a função para isso*/
@@ -44,18 +46,36 @@ static void BM_ComputaExcessMax_E(benchmark::State& st){
 }
 BENCHMARK(BM_ComputaExcessMax_E)->Iterations(1);
 
+//gera profundidades validas para usarmos em fwd e bwd search
+static void generate_args_depth(benchmark::State& st){
+	int d=0;
+	for(int i=0; i < args_rand_I.size();i++){
+		d = t->depth(args_rand_I[i]);
+		if(eM-d>0)depth_fwd.push_back( rand()% (eM-d));
+		else depth_fwd.push_back(0);
+	}
+
+	for(int i=0; i < args_rand_II.size();i++){
+		d = t->depth(args_rand_II[i]);
+		if(d-1>0)depth_bwd.push_back(rand()%(d-1));
+		else depth_bwd.push_back(0);
+	}
+}
+BENCHMARK(generate_args_depth)->Iterations(1);
+
 static void BM_FwdSearch_k(benchmark::State& st){
 	for(auto _ :st){
 		for(int i=0; i < args_rand_I.size();i++)
-			t->fwdSearch(args_rand_I[i],rand()%eM);
+			t->fwdSearch(args_rand_I[i],depth_fwd[i]);
 	}
 }
 BENCHMARK(BM_FwdSearch_k);
 
 static void BM_BwdSearch_k(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_II.size();i++)
-			t->bwdSearch(args_rand_II[i],rand()%eM);
+		for(int i=0; i < args_rand_II.size();i++){
+			long long int a =t->bwdSearch(args_rand_II[i],depth_bwd[i]);
+		}
 	}
 }
 BENCHMARK(BM_BwdSearch_k);
