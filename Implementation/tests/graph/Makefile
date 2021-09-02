@@ -1,5 +1,4 @@
 all: wiki dna prot ctree clean
-#dna prot ctree clean
 
 wiki:
 	python3 graph.py ../results/wiki 1000000
@@ -12,6 +11,7 @@ prot:
 
 ctree:
 	python3 graph.py ../results/ctree 1000000
+
 
 clean:
 	rm -rf __pycache__

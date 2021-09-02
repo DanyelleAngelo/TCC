@@ -1,0 +1,36 @@
+\begin{table}[h!]
+	\centering
+	\caption[Operações sobre a rmM-tree k-ária]{Operações suportadas pela rmM-tree k-ária }
+	\label{tbl:karyOperations-rmm-tree}
+	\rowcolors{2}{lightgray!30}{white}
+	\resizebox{\columnwidth}{!}{
+	\begin{tabular}{ll}
+	\toprule
+	\textbf{Operação} & \textbf{Retorno} \\
+	\toprule
+	fwdSearch(i,d)  & Índice $j$, tal que $excess(j) = excess(i) + d$\\
+	bwdSearch(i,d)  & Índice $j$, tal que $excess(j+1,i) = -d$\\
+	findClose(i) / findOpen(i)  & Posição do parênteses corresponde à $BV[i]$\\
+	enclose(i) & Posição do parênteses de abertura que envolve  $BV[i]$  \\
+	rank$_1$(i) / rank$_0$(i) & Número de parênteses abrindo/fechando em $BV[0,i]$ \\
+    select$_1$(i) / select$_0$(i) & Posição do i-ésimo parênteses de abertura/fechamento\\
+    preRank(i) / postRank(i) & rank de $i$ calculado a partir de um percurso \textit{preorder \mbox{ ou } postorder} \\
+    preSelect(i) / postSelect(i) & retorna o nó com \textit{preorder/postorder} $i$\\
+    isLeaf(i) & Verifica se $BV[i]$ codifica uma folha \\
+    isAncestor(i,j) & Verifica se o nó codificado em $i$ é ancestral de $j$ \\
+    depth(i) & Profundidade do nó $i$ \\
+    parent(i) & Obtém o pai do nó $i$ \\
+    firstChild(i) / lastChild(i) & Retorna o primeiro/último filho do nó codficiado em $BV[i]$ \\
+    nextSibling(i) / prevSibling(i) & Primeiro irmão à direita/esquerda de $i$ \\
+    subtreeSize(i) & Número de nós enraízados na subárvore de $i$ \\
+    levelAncestor(i,d) & Ancestral $j$ de $i$ tal que $depth(j) = depth(i) - d$\\
+    levelNext(i) / levelPrev(i) & Nó à direita/esquerda de $i$ com a mesma profundidade de $i$.\\
+    levelLeftMost(d) / levelRightMost(d) &Nó mais à esquerda/direita, com profundidade d.\\
+    leafRank(i)& Número de folhas à esquerda da folha codificada em $i$ \\
+    leafSelect(i)& $i-$ésima folha em $BV[0,size-1]$ \\
+    leftMostLeaf(i)& folha codificada em $j$, mais à direita de $i$, tal que $j<i$\\
+    rightMostLeaf(i)& folha codificada em $j$, mais à direita possível, tal que $j \leq i$\\
+	\bottomrule
+	\end{tabular}
+	}
+\end{table}
