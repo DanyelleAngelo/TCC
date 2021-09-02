@@ -512,12 +512,13 @@ long long int RMMTree::levelAncestor(long long int x,int d){
 
 long long int RMMTree::levelNext(long long int x){
 	long long int close = findClose(x);
+	if(close <0 || close ==size)return size;
 	return fwdSearch(close,1);
 }
 
 long long int RMMTree::levelPrev(long long int x){
 	long long int i = bwdSearch(x,0);
-	if(i==size-1)return 0;
+	if(i <0 || i==size-1)return 0;
 	return findOpen(i+1);
 }
 
@@ -526,7 +527,9 @@ long long int RMMTree::levelLeftMost(int d){
 }
 
 long long int RMMTree::levelRightMost(int d){
-	return (d==1) ? 0 : findOpen(bwdSearch(size-1,d)+1);
+	long long int i = bwdSearch(size-1,d);
+	if(i + 1 < 0 || i+1 >=size) return -1;
+	return (d==1) ? 0 : findOpen(i+1);
 }
 
 long long int  RMMTree::leafRank(long long int x){
@@ -544,7 +547,9 @@ long long int RMMTree::leftMostLeaf(long long int x){
 }
 
 long long int RMMTree::rightMostLeaf(long long int x){
-	return (!isLeaf(x))? leafSelect(leafRank(findClose(x))) : x;
+	long long int i = findClose(x);
+	if(i<0 || i == size)return size;
+	return (!isLeaf(x))? leafSelect(leafRank(i)) : x;
 }
 
 long long int RMMTree::preRank(long long int x){
@@ -553,7 +558,9 @@ long long int RMMTree::preRank(long long int x){
 }
 
 long long int RMMTree::postRank(long long int x){
-	return b_rank0(findClose(x));
+	long long int i = findClose(x);
+	if(i<0 || i == size)return size;
+	return b_rank0(i);
 }
 
 long long int RMMTree::preSelect(long long int t){
