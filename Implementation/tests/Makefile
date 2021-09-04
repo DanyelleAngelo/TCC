@@ -1,14 +1,20 @@
-all: testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic testArguments libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeClassic bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna 
+all: generateLibs execTestsBenchmark clean 
 
 gitUpdate:
 	git add .
 	git commit -m "Resultados obtidos das estruturas"
 	git push
 
+generateLibs: testArguments rmmTreeOptimized_v0 libTestRmmTreeOptimized_v0  rmmTreeOptimized_v1 libTestRmmTreeOptimized_v1 rmmTreeClassic libTestRmmTreeClassic 
+
+execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna
+
+execTestsComparison: binary_compareWithSdsl kary_compareWithSdsl
+
 #--------- comparando as estruturas criadas com a sdsl---------
 binary_compareWithSdsl:
 	g++ dataset_bin.cpp -o dataset_b lib_test_rmm_classic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --leak-check=full -s ./dataset_b wiki.par 10
+	./dataset_b wiki.par 25000
 
 kary_compareWithSdsl:
 	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized_v0.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
@@ -52,6 +58,14 @@ binary_dna:
 kary_dna:
 	for order in 4 8 16 ; do\
 		./bm_kary_rmm_tree dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+	done
+
+binary_osm:
+	./bm_binary_rmm_tree osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+
+kary_osm:
+	for order in 4 8 16 ; do\
+		./bm_kary_rmm_tree osm.par 3000000 $$order --benchmark_out=results/osm/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 
