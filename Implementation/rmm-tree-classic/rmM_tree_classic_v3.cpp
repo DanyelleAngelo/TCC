@@ -12,6 +12,7 @@
 
 using namespace std;
 using namespace sdsl;
+long long int bNotDivisible=0;
 
 RMMTree::RMMTree(int_vector<1> &bv, int sizeBlock,int w){
 	this->bv = bv;
@@ -41,9 +42,7 @@ uint16_t RMMTree::reverse_16(uint16_t x){
 
 long long int RMMTree::bitsread(uint64_t idx){
 	if(idx+16 >= size){
-		long long int value =0;
-		for(uint64_t s=idx;s<size;s++)value= (value<<1) + bv[s];
-		return value;
+		return bNotDivisible;
 	}
 	uint64_t word = bv.data()[idx>>6];
 	auto x = reverse_16( (word >> (idx & 0x3f)) & bits::lo_set[16]);
@@ -97,7 +96,34 @@ void RMMTree::buildingTableC(){
 				tableC[i].numberExcessMin+=1;
 			}
 		}
-  	  }
+  	}
+	  
+	//para o caso em que o número de nós da árvore não é divisível por sizeBlock
+	if(size % (sizeBlock) !=0){
+		long long int restofDivision = size - (sizeBlock * (size/sizeBlock));
+		long long int bitsStoredInC =  (restofDivision/w)*w;
+		long long int i = (sizeBlock * (size/sizeBlock)) + bitsStoredInC;
+		bNotDivisible = tableC.size();
+		tableC.push_back(node);
+
+		tableC[bNotDivisible].excess += (bv[i])? 1 : -1;
+		tableC[bNotDivisible].excessMax= tableC[bNotDivisible].excess;
+		tableC[bNotDivisible].excessMin = tableC[bNotDivisible].excess;
+		tableC[bNotDivisible].numberExcessMin = 1;
+		
+		for(i=i+1; i < size; i++){
+			tableC[bNotDivisible].excess += (bv[i] ==1)? 1 : -1;
+			if(tableC[bNotDivisible].excessMax < tableC[bNotDivisible].excess)tableC[bNotDivisible].excessMax = tableC[bNotDivisible].excess;
+			if(tableC[bNotDivisible].excessMin > tableC[bNotDivisible].excess){
+				tableC[bNotDivisible].excessMin = tableC[bNotDivisible].excess;
+				tableC[bNotDivisible].numberExcessMin =1;
+			}
+			else if(tableC[bNotDivisible].excessMin == tableC[bNotDivisible].excess){
+				tableC[bNotDivisible].numberExcessMin++;
+			}
+
+		}
+	}
 }
 
 void RMMTree::buildingTree(){

@@ -10,6 +10,7 @@ using namespace std;
 using namespace sdsl;
 //https://github.com/google/benchmark para monitorar o tempo
 long long int temp;
+long long int bNotDivisible=0;
 
 RMMTree::RMMTree(int_vector<1> &bv,  int sizeBlock,  int w, int order){
 	assert(!(order&(order-1)));
@@ -43,9 +44,7 @@ uint16_t RMMTree::reverse_16(uint16_t x){
 long long int RMMTree::bitsread(uint64_t idx){
 	uint64_t word;
 	if(idx+16>=size){
-		long long int value=0;
-		for(uint64_t s=idx; s<size;s++)value = (value << 1) + bv[s];
-		return value;
+		return bNotDivisible;
 	}
  	word = bv.data()[idx>>6];
 	auto x = reverse_16( (word >> (idx & 0x3f)) & bits::lo_set[16]);
@@ -73,10 +72,8 @@ long long int RMMTree::min(long long int a , long long int b){
 }
 
 long long int RMMTree::leafInTree(long long int k){
-	//se number Leaves é potência de order, todas as folhas estão no mesmo nível
-
 	if(height==0)return 0;
-
+	//se number Leaves é potência de order, todas as folhas estão no mesmo nível
 	long long int nNodesPrevLevel = 1 << (temp*(height-1));
 	long long int totalNodesExcludingLastLevel = ceil((double)(order*nNodesPrevLevel -1)/(order-1));
 	if(k < numberNodes -totalNodesExcludingLastLevel){//último nível
@@ -86,6 +83,7 @@ long long int RMMTree::leafInTree(long long int k){
 }
 
 long long int RMMTree::numLeaf(long long int v){
+	if(height == 0) return 0;
 	//se number Leaves é potência de order, todas as folhas estão no mesmo nível
 	long long int nNodesPrevLevel = 1 << (temp*(height-1));
 	long long int totalNodesExcludingLastLevel = (order*nNodesPrevLevel -1)/(order-1);
@@ -137,6 +135,32 @@ void RMMTree::buildingTableC(){
 			}
 		}
     }
+
+	//para o caso em que o número de nós da árvore não é divisível por sizeBlock
+	if(size % (sizeBlock) !=0){
+		long long int restofDivision = size - (sizeBlock * (size/sizeBlock));
+		long long int bitsStoredInC =  (restofDivision/w)*w;
+		long long int i = (sizeBlock * (size/sizeBlock)) + bitsStoredInC;
+		bNotDivisible = tableC.size();
+		tableC.push_back(key);
+		
+		tableC[bNotDivisible].excess += (bv[i])? 1 : -1;
+		tableC[bNotDivisible].excessMax= tableC[bNotDivisible].excess;
+		tableC[bNotDivisible].excessMin = tableC[bNotDivisible].excess;
+		tableC[bNotDivisible].numberExcessMin = 1;
+		
+		for(i=i+1; i < size; i++){
+			tableC[bNotDivisible].excess += (bv[i] ==1)? 1 : -1;
+			if(tableC[bNotDivisible].excessMax < tableC[bNotDivisible].excess)tableC[bNotDivisible].excessMax = tableC[bNotDivisible].excess;
+			if(tableC[bNotDivisible].excessMin > tableC[bNotDivisible].excess){
+				tableC[bNotDivisible].excessMin = tableC[bNotDivisible].excess;
+				tableC[bNotDivisible].numberExcessMin =1;
+			}
+			else if(tableC[bNotDivisible].excessMin == tableC[bNotDivisible].excess){
+				tableC[bNotDivisible].numberExcessMin++;
+			}
+		}
+	}
 }
 
 void RMMTree::buildingLeaves(){
@@ -146,12 +170,12 @@ void RMMTree::buildingLeaves(){
 	
 	for(long long int k=0; k < numberLeaves;k++){
 		v = leafInTree(k);
-		while (tree[v].nKeys < order && numKey <= ceil((double)size/sizeBlock)){
+		while (tree[v].nKeys < order && numKey < ceil((double)size/sizeBlock)){
 			key.excess = 0;
 			key.excessMax = 0 -w;
 			key.excessMin = 0 +w;
 			key.numberExcessMin = 0;
-			for(long long int p = (numKey*(sizeBlock/w))+1;p<=((numKey+1)*sizeBlock)/w;p++){
+			for(long long int p = (numKey*(sizeBlock/w))+1;p<=((numKey+1)*sizeBlock)/w && ((p-1)*w)<size;p++){
 				x = bitsread((p-1)*w);
 				if(key.excess + tableC[x].excessMax > key.excessMax){
 					key.excessMax = key.excess + tableC[x].excessMax;
@@ -701,7 +725,7 @@ void RMMTree::printTree(){
 	cout << " ----- Folhas -----" << endl;
 	for(long long int k=0;v<numberNodes;v++,k++){
 		leaf=numLeaf(v);
-		cout << leaf << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock*order << "," << (leaf+1)*sizeBlock*order -1<< "]\n";
+		cout << leaf << "-th folha " << " - nó " << v << ": área de cobertura: B[" << leaf*sizeBlock*order << "," <<min((leaf+1)*sizeBlock*tree[v].nKeys,size-1)<< "]\n";
 		for(long long int k=0;k<tree[v].nKeys; k++){
 			cout << "Chave " << k << "\n";
 			printNode(tree[v].keys , k);

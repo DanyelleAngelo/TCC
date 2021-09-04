@@ -23,7 +23,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int order=4;
         bp_support_sada<> *bps;
         int_vector<1> v = {1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,1,0,0,1,1,1,0,0,1,1,0,1,1,0,0,0,1,0,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0,1,0,1,0,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,1,0,0,0};
-        //int_vector<1> v = {1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,1,0,0};
+        //int_vector<1> v = {1,1,1,1,0,1,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0,1,1,1,0,1,0,0,0,1,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1,0,1,0,1,0,0,0};
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
         vector<int> argsRmqI;
@@ -79,7 +79,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         }
 };
 
-TEST_F(RMMTreeFixtureTest, GET_INT){
+TEST_F(RMMTreeFixtureTest, DISABLED_GET_INT){
     int index[] = {0,1};
     int expected[]={64905,64274};
 
@@ -226,7 +226,7 @@ TEST_F(RMMTreeFixtureTest, check_if_i_is_a_leaf){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, check_if_x_is_ancestor_of_y){ 
+TEST_F(RMMTreeFixtureTest, DISABLED_check_if_x_is_ancestor_of_y){ 
     int x[] = {0,4,25}; 
     int y[] = {1,6,6}; 
     bool expected[] ={true,true,false}; 
@@ -430,6 +430,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.print_tree";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }
