@@ -1,4 +1,4 @@
-all: generateLibs execTestsBenchmark clean 
+all: generateLibs execTestsBenchmark gitUpdate clean 
 
 gitUpdate:
 	git add .
