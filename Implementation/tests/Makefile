@@ -1,4 +1,4 @@
-all: generateLibs binary_wiki clean 
+all: generateLibs execTestsBenchmark clean gitUpdate 
 
 gitUpdate:
 	git add .
