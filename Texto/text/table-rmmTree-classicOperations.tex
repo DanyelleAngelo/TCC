@@ -1,12 +1,12 @@
 \begin{table}[h!]
 	\centering
-	\caption[Operações sobre a RMM-tree clássica]{Operações suportadas pela rmM-tree bináriaW}
+	\caption[Operações sobre a RMM-tree clássica]{Operações suportadas pela rmM-tree binária}
 	\label{tbl:classicOperations-rmm-tree}
 	\rowcolors{2}{lightgray!30}{white}
 	\resizebox{\columnwidth}{!}{
 	\begin{tabular}{ll}
 	\toprule
-	\textbf{Operação} & \textbf{Retorno} \\
+	\textbf{Operação} & \textbf{Descrição} \\
 	\toprule
     
 	fwdSearch(i,d)  & Índice $j$, tal que $excess(j) = excess(i) + d$\\
@@ -18,8 +18,8 @@
 	rmq(i,j) / rMq(i,j) & $p>=i$ mais à esquerda de $i$, onde ocorre o excesso mínimo/máximo do intervalo dado \\
 	rank$_1$(i) / rank$_0$(i) & Número de parênteses abrindo/fechando em $BV[0,i]$ \\
     select$_1$(i) / select$_0$(i) & Posição do i-ésimo parênteses de abertura/fechamento\\
-    preRank(i)/postRank(i) & rank de $i$ calculado a partir de um percurso \textit{preorder \mbox{ ou } postorder} \\
-    preSelect(i)/postSelect(i) & retorna o nó com \textit{preorder/postorder} $i$\\
+    preRank(i)/postRank(i) & nó $i$ usando \textit{pré-ordem \mbox{ ou } pós-ordem} \\
+    preSelect(i)/postSelect(i) & índice do $i$-ésimo nó em $BV$ usando \textit{pré-ordem \mbox{ ou } pós-ordem}\\
     isLeaf(i) & Verifica se $BV[i]$ codifica uma folha \\
     isAncestor(i,j) & Verifica se o nó codificado em $i$ é ancestral de $j$ \\
     depth(i) & Profundidade do nó $i$ \\

@@ -472,7 +472,7 @@ requirements for the degree of \@degree\ in \@majorfielden.
 \setlength\parindent{1.30cm}
 
 %% Lists, enumerations, etc.
-\setlist[itemize]{leftmargin=\parindent+\labelwidth-\labelsep, label={\tiny$\blacksquare$}}
+\setlist[itemize]{leftmargin=\parindent+\labelwidth-\labelsep}
 \setlist[enumerate]{leftmargin=\parindent+\labelwidth-\labelsep}
 
 %% Appendix
@@ -662,17 +662,17 @@ requirements for the degree of \@degree\ in \@majorfielden.
 
   -----------------------------------------------------------------------\\
  Prof. Me. Daniel Saad Nogueira Nunes\\
-  Departamento de Computação/IFB
+  IFB, Taguatinga
   
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
   Prof. Me. João Victor de Araujo Oliveira\\
-  Departamento de Computação/IFB
+  IFB, Taguatinga
 
   \vspace{\baselineskip}
   -----------------------------------------------------------------------\\
   Prof. Dr. Felipe Alves da Louza \\
-  Departamento de Engenharia/UFU
+  Faculdade de Engenharia Elétrica/UFU
 
   \vfill
   \@address

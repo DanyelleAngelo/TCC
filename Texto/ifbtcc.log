@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  28 AUG 2021 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  6 SEP 2021 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,6 +957,20 @@ Package: relsize 2013/03/29 ver 4.1
 \algocf@algoframe=\box78
 \algocf@algobox=\box79
 )
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
 \c@examplecounter=\count334
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -1068,27 +1082,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip106
 )
 (./ifbtcc.aux (./text/introduction.aux) (./text/background.aux)
-(./text/desenvolvimento.aux) (./text/resultados.aux) (./text/conclusion.aux))
+(./text/desenvolvimento.aux) (./text/resultados.aux
+
+LaTeX Warning: Label `tbl:dataset' multiply defined.
+
+) (./text/conclusion.aux))
 \openout1 = `ifbtcc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 14
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 15
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -1151,16 +1169,16 @@ e
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 149.
+(lastpage)             ! on input line 153.
 \c@lstlisting=\count352
-LaTeX Info: Redefining \microtypecontext on input line 149.
+LaTeX Info: Redefining \microtypecontext on input line 153.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 149.
+LaTeX Info: Redefining \showhyphens on input line 153.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1173,7 +1191,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring ON on input line 149.
+Package hyperref Info: Link coloring ON on input line 153.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1186,26 +1204,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 149.
-LaTeX Info: Redefining \pageref on input line 149.
-LaTeX Info: Redefining \nameref on input line 149.
+LaTeX Info: Redefining \ref on input line 153.
+LaTeX Info: Redefining \pageref on input line 153.
+LaTeX Info: Redefining \nameref on input line 153.
 
 (./ifbtcc.out) (./ifbtcc.out)
 \@outlinefile=\write5
 \openout5 = `ifbtcc.out'.
 
-<ifbclass/images/ifblogo.png, id=139, 233.673pt x 284.7438pt>
+<ifbclass/images/ifblogo.png, id=159, 233.673pt x 284.7438pt>
 File: ifbclass/images/ifblogo.png Graphic file (type png)
 <use ifbclass/images/ifblogo.png>
-Package pdftex.def Info: ifbclass/images/ifblogo.png  used on input line 153.
+Package pdftex.def Info: ifbclass/images/ifblogo.png  used on input line 157.
 (pdftex.def)             Requested size: 116.83621pt x 142.37155pt.
 LaTeX Font Info:    Trying to load font information for T1+times on input line 
-153.
-LaTeX Font Info:    No file T1times.fd. on input line 153.
+157.
+LaTeX Font Info:    No file T1times.fd. on input line 157.
 
 
 LaTeX Font Warning: Font shape `T1/times/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 153.
+(Font)              using `T1/cmr/m/n' instead on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -1215,12 +1233,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `times' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Font Warning: Font shape `T1/times/m/it' undefined
-(Font)              using `T1/times/m/n' instead on input line 153.
-
-[1
+ [1
 
 
 Non-PDF special ignored!
@@ -1233,7 +1246,7 @@ png>] [2
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 155.
+ 159.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -1242,19 +1255,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 155.
+ 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 155.
+ 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 155.
+ 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
@@ -1266,96 +1279,77 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-55.
+59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
  [0]
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 
  []
 
 
-Overfull \hbox (16.12639pt too wide) in paragraph at lines 158--158
+Overfull \hbox (16.12639pt too wide) in paragraph at lines 162--162
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162   \banca
+l.166   \banca
                [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162   \banca
+l.166   \banca
                [2
 
 ] [3] [4
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
+] (./text/resumo.tex) [5] [6
 
- []
+] (./text/abstract.tex)
+[7] [8
 
-[5] [6
-
-] (./text/agradecimentos.tex) [7] [8
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-
- []
-
-[9] [10
-
-] (./text/resumo.tex) [11] [12
-
-] (./text/abstract.tex) [13] [14
-
-]
-(./ifbtcc.toc)
+] (./ifbtcc.toc [9])
 \tf@toc=\write6
 \openout6 = `ifbtcc.toc'.
 
- [15]
+ [10]
 \openout2 = `text/introduction.aux'.
 
- (./text/introduction.tex [16
-
-
-]
+ (./text/introduction.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Trying to load font information for T1+pnc on input line 1.
 
@@ -1366,16 +1360,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pnc' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
+.
 
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[17]
+[11
+
+
+]
 Underfull \vbox (badness 1264) has occurred while \output is active []
 
 
@@ -1385,107 +1385,104 @@ Make it at least 15.73112pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[18]) [19]
+[12]
+Underfull \vbox (badness 5681) has occurred while \output is active []
+
+ [13])
+[14]
 \openout2 = `text/background.aux'.
 
- (./text/background.tex [20
+ (./text/background.tex
+Cap\'{\i }tulo 2.
+<images/gap-processor-memory.png, id=340, 513.92pt x 268.00125pt>
+File: images/gap-processor-memory.png Graphic file (type png)
+<use images/gap-processor-memory.png>
+Package pdftex.def Info: images/gap-processor-memory.png  used on input line 12
+.
+(pdftex.def)             Requested size: 359.74153pt x 187.59958pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15
 
 
 
 ]
-Cap\'{\i }tulo 2.
-<images/gap-processor-memory.png, id=326, 513.92pt x 268.00125pt>
-File: images/gap-processor-memory.png Graphic file (type png)
-<use images/gap-processor-memory.png>
-Package pdftex.def Info: images/gap-processor-memory.png  used on input line 14
-.
-(pdftex.def)             Requested size: 359.74153pt x 187.59958pt.
-[21]
-<images/servidor.png, id=341, 1245.65375pt x 385.44pt>
+<images/servidor.png, id=358, 1245.65375pt x 385.44pt>
 File: images/servidor.png Graphic file (type png)
 <use images/servidor.png>
-Package pdftex.def Info: images/servidor.png  used on input line 36.
+Package pdftex.def Info: images/servidor.png  used on input line 25.
 (pdftex.def)             Requested size: 455.24411pt x 140.8638pt.
-<images/mobile.png, id=342, 1123.19624pt x 367.3725pt>
+<images/mobile.png, id=359, 1123.19624pt x 367.3725pt>
 File: images/mobile.png Graphic file (type png)
 <use images/mobile.png>
-Package pdftex.def Info: images/mobile.png  used on input line 38.
+Package pdftex.def Info: images/mobile.png  used on input line 27.
 (pdftex.def)             Requested size: 455.24411pt x 148.89714pt.
-
-Underfull \vbox (badness 2027) has occurred while \output is active []
-
- [22 <./images/gap-processor-memory.png>]
-<images/tree-dns.png, id=366, 312.11606pt x 234.8775pt>
+ [16 <./images/gap-processor-memory.png>] [17 <./images/servidor.png> <./images
+/mobile.png>]
+<images/tree-dns.png, id=398, 312.11606pt x 234.8775pt>
 File: images/tree-dns.png Graphic file (type png)
 <use images/tree-dns.png>
-Package pdftex.def Info: images/tree-dns.png  used on input line 59.
+Package pdftex.def Info: images/tree-dns.png  used on input line 43.
 (pdftex.def)             Requested size: 249.69318pt x 187.90225pt.
-<images/decision-tree.png, id=367, 2268.475pt x 1264.725pt>
+<images/decision-tree.png, id=399, 2268.475pt x 1264.725pt>
 File: images/decision-tree.png Graphic file (type png)
 <use images/decision-tree.png>
-Package pdftex.def Info: images/decision-tree.png  used on input line 61.
+Package pdftex.def Info: images/decision-tree.png  used on input line 45.
 (pdftex.def)             Requested size: 455.24411pt x 253.78964pt.
-
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
- [23 <./images/servidor.png> <./images/mobile.png>] [24 <./images/tree-dns.png>
- <./images/decision-tree.png>]
-<images/access.png, id=393, 252.945pt x 106.59825pt>
+ [18 <./images/tree-dns.png> <./images/decision-tree.png>]
+<images/access.png, id=418, 194.22563pt x 74.52844pt>
 File: images/access.png Graphic file (type png)
 <use images/access.png>
-Package pdftex.def Info: images/access.png  used on input line 85.
-(pdftex.def)             Requested size: 151.76816pt x 63.95943pt.
-<images/rank.png, id=394, 252.945pt x 96.20944pt>
+Package pdftex.def Info: images/access.png  used on input line 68.
+(pdftex.def)             Requested size: 194.22514pt x 74.52824pt.
+<images/rank.png, id=419, 193.32225pt x 66.39806pt>
 File: images/rank.png Graphic file (type png)
 <use images/rank.png>
-Package pdftex.def Info: images/rank.png  used on input line 86.
-(pdftex.def)             Requested size: 151.76816pt x 57.7261pt.
-<images/select.png, id=395, 252.945pt x 106.59825pt>
+Package pdftex.def Info: images/rank.png  used on input line 69.
+(pdftex.def)             Requested size: 193.32178pt x 66.39787pt.
+<images/select.png, id=420, 202.8077pt x 65.043pt>
 File: images/select.png Graphic file (type png)
 <use images/select.png>
-Package pdftex.def Info: images/select.png  used on input line 87.
-(pdftex.def)             Requested size: 151.76816pt x 63.95943pt.
- [25 <./images/access.png> <./images/rank.png> <./images/select.png>]
-<images/arvore_geral.png, id=413, 825.11691pt x 407.18983pt>
+Package pdftex.def Info: images/select.png  used on input line 70.
+(pdftex.def)             Requested size: 202.80719pt x 65.04283pt.
+<images/arvore_geral.png, id=425, 820.16125pt x 412.1455pt>
 File: images/arvore_geral.png Graphic file (type png)
 <use images/arvore_geral.png>
-Package pdftex.def Info: images/arvore_geral.png  used on input line 98.
-(pdftex.def)             Requested size: 455.24411pt x 224.66339pt.
- [26 <./images/arvore_geral.png>]
+Package pdftex.def Info: images/arvore_geral.png  used on input line 81.
+(pdftex.def)             Requested size: 455.24411pt x 228.7686pt.
+
+[19] [20 <./images/access.png> <./images/rank.png> <./images/select.png> <./ima
+ges/arvore_geral.png>]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 123.
+(amsmath)                trying to recover with `aligned' on input line 105.
 
-<images/dfdus.png, id=431, 825.94286pt x 375.804pt>
-File: images/dfdus.png Graphic file (type png)
-<use images/dfdus.png>
-Package pdftex.def Info: images/dfdus.png  used on input line 140.
-(pdftex.def)             Requested size: 455.24411pt x 207.13438pt.
-[27] [28 <./images/dfdus.png>] [29]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-22.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-<images/rmm-tree-bin.png, id=461, 825.94286pt x 597.98264pt>
+[21]
+<images/dfuds.png, id=468, 825.94286pt x 384.88937pt>
+File: images/dfuds.png Graphic file (type png)
+<use images/dfuds.png>
+Package pdftex.def Info: images/dfuds.png  used on input line 120.
+(pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
+ [22 <./images/dfuds.png>]
+File: images/dfuds.png Graphic file (type png)
+<use images/dfuds.png>
+Package pdftex.def Info: images/dfuds.png  used on input line 138.
+(pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
+ [23] [24] [25]
+<images/rmm-tree-bin.png, id=516, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin.png Graphic file (type png)
 <use images/rmm-tree-bin.png>
-Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 239.
+Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 233.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
- [30] [31 <./images/rmm-tree-bin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+ [26] [27 <./images/rmm-tree-bin.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
-
- []
-
-[32]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 30
-2.
+[28]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 34
+1.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1493,49 +1490,87 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [33] [34]
-<images/rmm-tree-bin-fwdsearch.png, id=531, 825.94286pt x 597.98264pt>
+ [29pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.
+1.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
+e.1.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+      ] [30]
+<images/rmm-tree-bin-fwdsearch.png, id=602, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-fwdsearch.png>
 Package pdftex.def Info: images/rmm-tree-bin-fwdsearch.png  used on input line 
-383.
+394.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
 
-[35 <./images/rmm-tree-bin-fwdsearch.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[36]
-<images/rmm-tree-bin-bwdsearch.png, id=552, 825.94286pt x 597.98264pt>
+[31] [32 <./images/rmm-tree-bin-fwdsearch.png>] [33] [34]
+<images/rmm-tree-bin-bwdsearch.png, id=690, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-bwdsearch.png>
 Package pdftex.def Info: images/rmm-tree-bin-bwdsearch.png  used on input line 
-508.
+517.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37] [38]
+[35] [36 <./images/rmm-tree-bin-bwdsearch.png>]
+Underfull \vbox (badness 6188) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[39 <./images/rmm-tree-bin-bwdsearch.png>] [40]
-<images/rmm-tree-bin-minexcess.png, id=652, 825.94286pt x 597.98264pt>
+ [37]
+[38]
+<images/rmm-tree-bin-minexcess.png, id=747, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-minexcess.png Graphic file (type png)
 <use images/rmm-tree-bin-minexcess.png>
 Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 
-608.
+612.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
- [41 <./images/rmm-tree-bin-minexcess.png>] [42] [43] [44] [45] [46]
-(./text/table-rmmTree-classicOperations.tex
+ [39 <./images/rmm-tree-bin-minexcess.png>] [40] [41] [42] [43] [44]
+[45] (./text/table-rmmTree-classicOperations.tex)
+Underfull \vbox (badness 5847) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [47]) [48]
+ [46]
+[47]) [48]
 \openout2 = `text/desenvolvimento.aux'.
 
  (./text/desenvolvimento.tex
@@ -1544,113 +1579,59 @@ Cap\'{\i }tulo 3.
 
 
 
-] [50] [51]
-Overfull \hbox (1.11804pt too wide) in paragraph at lines 110--111
-[]$\OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [0]\OML/ztmcm/m/it/12 :keys\OT1/ztmcm/
-m/n/12 [2]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 = \OML/ztmcm/m/it/12 R\OT1/zt
-mcm/m/n/12 [3]\OML/ztmcm/m/it/12 :keys\OT1/ztmcm/m/n/12 [0]\OML/ztmcm/m/it/12 :
-e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [3]\OML/ztmcm/m/it/
-12 :keys\OT1/ztmcm/m/n/12 [1]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztm
-cm/m/it/12 R\OT1/ztmcm/m/n/12 [3]\OML/ztmcm/m/it/12 :keys\OT1/ztmcm/m/n/12 [2]\
-OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 
-[3]\OML/ztmcm/m/it/12 :keys\OT1/ztmcm/m/n/12 [3]\OML/ztmcm/m/it/12 :e \OT1/ztmc
-m/m/n/12 =
- []
-
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 119.
-
-
-Overfull \hbox (27.41246pt too wide) in alignment at lines 112--120
- [][][] []
- []
-
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 130.
-
-
-Overfull \hbox (25.6006pt too wide) in alignment at lines 123--131
- [][][] []
- []
-
-<images/rmm-tree-kary.png, id=725, 818.50937pt x 279.99463pt>
+] [50]
+<images/rmm-tree-kary.png, id=839, 818.50937pt x 279.99463pt>
 File: images/rmm-tree-kary.png Graphic file (type png)
 <use images/rmm-tree-kary.png>
-Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 141.
+Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 65.
 (pdftex.def)             Requested size: 455.24411pt x 155.72783pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
-
-LaTeX Warning: Float too large for page by 10.8326pt on input line 200.
-
-[52]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[53 <./images/rmm-tree-kary.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
-[]\T1/ptm/b/n/12 Algoritmo 6: \T1/ptm/m/n/12 (+20) Ve-ri-fi-cando as cha-ves de
- um nó fo-lha atra-vés de
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 81.
 
+[51 <./images/rmm-tree-kary.png>]
 
-Underfull \hbox (badness 3148) in paragraph at lines 285--285
-[]\T1/ptm/b/n/12 Algoritmo 7: \T1/ptm/m/n/12 (+20) Busca o ex-cesso re-la-tivo 
-nos ir-mãos de $\OML/ztmcm/m/it/12 v$ \T1/ptm/m/n/12 (+20) atra-vés de
- []
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 91.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[54]
-<images/rmm-tree-kary-fwdsearch.png, id=759, 821.81314pt x 284.12434pt>
+[52] [53] [54] [55] [56] [57]
+<images/rmm-tree-kary-fwdsearch.png, id=989, 821.81314pt x 284.12434pt>
 File: images/rmm-tree-kary-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-fwdsearch.png>
 Package pdftex.def Info: images/rmm-tree-kary-fwdsearch.png  used on input line
- 366.
+ 313.
 (pdftex.def)             Requested size: 455.24411pt x 157.39606pt.
- [55 <./images/rmm-tree-kary-fwdsearch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
-[]\T1/ptm/b/n/12 Algoritmo 9: \T1/ptm/m/n/12 (+20) Ve-ri-fi-cando as cha-ves de
- um nó fo-lha atra-vés de
+ [58 <./images/rmm-tree-kary-fwdsearch.png>]
+Overfull \hbox (7.96255pt too wide) in paragraph at lines 327--328
+[]$\OML/ztmcm/m/it/12 excess\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 i\OT1/ztmcm/m
+/n/12 ) + \OML/ztmcm/m/it/12 d$ \T1/ptm/m/n/12 (-20) é al-can-çado quando $\OML
+/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [
+\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12
+ ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/
+12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/
+n/12 ]\OML/ztmcm/m/it/12 :m \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 d \OMS/ztm
+cm/m/n/12 ^^T \OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\
+OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 re
+g\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 +
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 2326) in paragraph at lines 428--428
-[]\T1/ptm/b/n/12 Algoritmo 10: \T1/ptm/m/n/12 (+20) Busca o ex-cesso re-la-tivo
- nos ir-mãos de $\OML/ztmcm/m/it/12 v$ \T1/ptm/m/n/12 (+20) atra-vés de
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/rmm-tree-kary-bwdsearch.png, id=777, 824.29097pt x 304.77292pt>
+<images/rmm-tree-kary-bwdsearch.png, id=1009, 824.29097pt x 304.77292pt>
 File: images/rmm-tree-kary-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-bwdsearch.png>
 Package pdftex.def Info: images/rmm-tree-kary-bwdsearch.png  used on input line
- 488.
+ 337.
 (pdftex.def)             Requested size: 455.24411pt x 168.32318pt.
-[56 <./images/rmm-tree-kary-bwdsearch.png>]
+[59 <./images/rmm-tree-kary-bwdsearch.png>]
 (./text/table-rmm-tree-karia-operations.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-)) [57] [58] [59] [60] [61] [62] [63]
+)) [60] [61] [62] [63]
 \openout2 = `text/resultados.aux'.
 
  (./text/resultados.tex [64
@@ -1660,58 +1641,36 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ]
 Cap\'{\i }tulo 4.
 
-Underfull \vbox (badness 1067) has occurred while \output is active []
+Underfull \vbox (badness 1383) has occurred while \output is active []
 
  [65]
-Overfull \hbox (17.2375pt too wide) in paragraph at lines 60--63
-\T1/ptm/m/n/12 (-20) clás-sico, e a rmM-tree multi-ária, am-bas dis-po-ní-veis 
-no re-po-si-tó-rio [][]github.com/DanyelleAngelo/TCC[][],
- []
-
-[66]
-Underfull \vbox (badness 1264) has occurred while \output is active []
-
- [67]
-[68] [69]
-<images/ctree_i1000000.png, id=1043, 844.8363pt x 483.4863pt>
-File: images/ctree_i1000000.png Graphic file (type png)
-<use images/ctree_i1000000.png>
-Package pdftex.def Info: images/ctree_i1000000.png  used on input line 138.
-(pdftex.def)             Requested size: 675.86996pt x 386.78955pt.
-<images/dna_i100000000.png, id=1044, 844.8363pt x 483.4863pt>
-File: images/dna_i100000000.png Graphic file (type png)
-<use images/dna_i100000000.png>
-Package pdftex.def Info: images/dna_i100000000.png  used on input line 145.
-(pdftex.def)             Requested size: 675.86996pt x 386.78955pt.
-<images/prot_i3000000.png, id=1045, 844.8363pt x 483.4863pt>
+[66] [67] [68] [69]
+<images/ctree_i3000000.png, id=1159, 716.1957pt x 562.5015pt>
+File: images/ctree_i3000000.png Graphic file (type png)
+<use images/ctree_i3000000.png>
+Package pdftex.def Info: images/ctree_i3000000.png  used on input line 99.
+(pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
+<images/dna_i3000000.png, id=1160, 722.4591pt x 562.5015pt>
+File: images/dna_i3000000.png Graphic file (type png)
+<use images/dna_i3000000.png>
+Package pdftex.def Info: images/dna_i3000000.png  used on input line 106.
+(pdftex.def)             Requested size: 577.96806pt x 450.0018pt.
+<images/prot_i3000000.png, id=1161, 716.1957pt x 562.5015pt>
 File: images/prot_i3000000.png Graphic file (type png)
 <use images/prot_i3000000.png>
-Package pdftex.def Info: images/prot_i3000000.png  used on input line 152.
-(pdftex.def)             Requested size: 675.86996pt x 386.78955pt.
-<images/wiki_i1000000.png, id=1046, 844.8363pt x 483.4863pt>
-File: images/wiki_i1000000.png Graphic file (type png)
-<use images/wiki_i1000000.png>
-Package pdftex.def Info: images/wiki_i1000000.png  used on input line 159.
-(pdftex.def)             Requested size: 675.86996pt x 386.78955pt.
- [70
-
- <./images/ctree_i1000000.png>]
-
-LaTeX Warning: Text page 71 contains only floats.
-
-[71 <./images/dna_i100000000.png>]
-
-LaTeX Warning: Text page 72 contains only floats.
-
-[72 <./images/prot_i3000000.png>]
-
-LaTeX Warning: Text page 73 contains only floats.
-
-[73 <./images/wiki_i1000000.png>])
+Package pdftex.def Info: images/prot_i3000000.png  used on input line 113.
+(pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
+<images/wiki_i3000000.png, id=1162, 716.1957pt x 561.5379pt>
+File: images/wiki_i3000000.png Graphic file (type png)
+<use images/wiki_i3000000.png>
+Package pdftex.def Info: images/wiki_i3000000.png  used on input line 120.
+(pdftex.def)             Requested size: 572.95734pt x 449.23093pt.
+) [70 <./images/ctree_i3000000.png>] [71 <./images/dna_i3000000.png>] [72 <./im
+ages/prot_i3000000.png>] [73 <./images/wiki_i3000000.png>]
 \openout2 = `text/conclusion.aux'.
 
- (./text/conclusion.tex [74
 
+(./text/conclusion.tex [74
 
 
 
@@ -1724,34 +1683,34 @@ Cap\'{\i }tulo 5.
 AED: lastpage setting LastPage
 [78]
 
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 109.
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 113.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
 (./ifbtcc.aux (./text/introduction.aux) (./text/background.aux)
 (./text/desenvolvimento.aux) (./text/resultados.aux) (./text/conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `ifbtcc.out' has not changed.
-(rerunfilecheck)             Checksum: F1E77FF17C1BE0DEC321CCFC92B5B174;2187.
+(rerunfilecheck)             Checksum: 8F9540145A8CE57F3301BE541B919EBB;2560.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 28898 strings out of 483122
- 510296 string characters out of 5964496
- 1122257 words of memory out of 5000000
- 42466 multiletter control sequences out of 15000+600000
- 627229 words of font info for 312 fonts, out of 8000000 for 9000
+ 28994 strings out of 483122
+ 511702 string characters out of 5964496
+ 936866 words of memory out of 5000000
+ 42526 multiletter control sequences out of 15000+600000
+ 624212 words of font info for 318 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 60i,22n,60p,876b,749s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,25n,60p,1567b,843s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/danyelle/.
 texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
@@ -1765,11 +1724,11 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on ifbtcc.pdf (81 pages, 2223923 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on ifbtcc.pdf (81 pages, 3484640 bytes).
 PDF statistics:
- 1274 PDF objects out of 1440 (max. 8388607)
- 1099 compressed objects within 11 object streams
- 477 named destinations out of 1000 (max. 500000)
- 46467 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1399 PDF objects out of 1440 (max. 8388607)
+ 1221 compressed objects within 13 object streams
+ 484 named destinations out of 1000 (max. 500000)
+ 44459 words of extra memory for PDF output out of 51595 (max. 10000000)
 

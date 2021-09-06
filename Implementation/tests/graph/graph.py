@@ -17,7 +17,6 @@ def graph(dataset,path,iterations):
     rects_4 = ax.bar(pos, data_4, width, label='4-ária')
     rects_8 = ax.bar(pos + width, data_8, width, label='8-ária')
     rects_16 = ax.bar(pos + 2*width, data_16, width, label='16-ária')
-
     ax.set_ylabel("Tempo médio de CPU em ns para %s chamadas" %'{0:,}'.format(iterations).replace(',','.'))
     ax.set_title("Range-min-Max tree - Tempo médio de operações em nanosegundos")
     ax.set_xticks(pos + width/2)

@@ -1,25 +1,11 @@
-\chapter{Considerações Finais}
+\chapter{Considerações Finais}\label{chp:conclusao}
 
-Com o surgimento de novos dispositivos e o aumento na produção de dados, temos um grande desafio a superar, frente ao gargalo de comunicação existente entre
-memória e processador. Soluções como hierarquia de memória objetivam diminuir esse gargalo, entretanto quando se trabalha com uma alta quantidade de dados,
-os mesmos tendem a ficar distribuídos entre os diferentes níveis de memória. Com isso o processador frequentemente
-precisa realizar buscas em memórias  nos níveis mais inferiores da hierarquia, o que acarreta em um acréscimo de tempo considerável no tempo de resposta, devido a baixa latência dessas memórias.
+Com o surgimento de novos dispositivos e o aumento na produção de dados, temos um grande desafio a superar, frente ao gargalo de comunicação existente entre memória e processador. Soluções como hierarquia de memória objetivam diminuir esse gargalo, entretanto quando se trabalha com uma alta quantidade de dados, os mesmos tendem a ficar distribuídos entre os diferentes níveis de memória. Com isso o processador frequentemente precisa realizar buscas em memórias  nos níveis mais inferiores da hierarquia, o que acarreta em um acréscimo de tempo considerável no tempo de resposta, devido a alta latência dessas memórias.
 
-As estruturas de dados sucintas, objetivam representar e operar sobre os dados usando um espaço reduzido, o que gera um aproveitamento melhor da hierarquia de memória.
-Assim um dos objetivos deste trabalho era compreender e enfatizar a importância do estudo dessas estruturas. Como objetivo central, tínhamos a construção de uma versão
-alternativa de uma estrutura sucinta denominada range min-Max tree,  proposta por \citeauthor{paper-fully-functinal-succint-trees}, essa estrutura permite a navegação de forma eficiente
-em árvore, através de valores de excesso máximos e mínimos em intervalos. Entretanto a mesma é construída na forma de árvore binária, uma estrutura que possuí baixo fator de ramificação,
-nosso objetivo portanto era aumentar o fator de ramificação dessa estrutura, visando  ter uma diminuição do número de faltas de cache, como visto em \citep{paper-making-btree-cache},
-o que reduziria significativamente o tempo gasto para realizar operações diversas. 
+As estruturas de dados sucintas, possibilitam a representação e operaração sobre os seus objetos, usando espaço e tempo reduzido. Assim um dos objetivos deste trabalho era compreender e enfatizar a importância do estudo dessas estruturas. Entretanto, ao operar na memória principal, temos o surgimento de um novo gargalo de desempenho, dessa vez entre cache e memória principal, como mostram \citet{paper-making-btree-cache}, faz-se necessário então, buscarmos maneiras de melhor aproveitar a estrutura da memória cache. Uma das maneiras de fazer isso é maximizando o uso de uma linha de cache, que para aplicações que usam árvores, pode ser feito através da maximização do fator de ramificação destas estruturas. 
 
-Construímos e analisamos, para tanto, uma versão da rmM-tree de \citeauthor{book-compact-data-structures}, e 3 versões de uma rmM-tree k-kária, estas três, compreendem uma rmM-tree 4-ária,
-8-ária, e uma rmM-tree 16-ária. De modo geral, os resultados obtidos a partir destas implementações não foram satisfatórios, em nossos testes observamos um desempenho médio 
-melhor em relação a rmM-tree k-ária, para esta estrutura, à medida que a ordem da árvore gerada aumenta, o tempo médio das operações é reduzido, mostrando o impacto que a ordem 
-da árvore tem no resultado final. Entretanto, o mesmo não pôde ser observado para a rmM-tree binária em comparação a multi-ária, isso se deve ao fato das técnicas de código 
-usadas para a implementação da rmM-tree
-binária serem superiores as técnicas usadas para a construção da rmM-tree k-ária.
+A rmM-tree é uma estrutura de dados sucinta, que permite a navegação de forma eficiente em árvore, através de valores de excesso máximos e mínimos em intervalos, porém a mesma é construída na forma de árvore binária, uma estrutura que possuí baixo fator de ramificação, e portanto baixo aproveitamento da linha de cache, nosso objetivo neste trabalho portanto era aumentar o fator de ramificação dessa estrutura, visando  uma diminuição do número de faltas de cache, como visto em \citep{paper-making-btree-cache}, o que reduziria significativamente o tempo gasto para realizar operações diversas. 
 
-Para trabalhos futuros temos como objetivo reduzir o tempo das operações, através da otimização da implementação da rmM-tree k-ária. Buscaremos também melhorar o escopo dos nossos testes afim de monitorar de 
-modo mais claro e eficaz o uso da cache, o que envolve ampliar o escopo das ferramentas usadas. Sugere-se também investigar o impacto dessa proposta em diferentes ambientes, visando
-entender o efeito dessa estrutura diante de diferentes configurações de hardware,
-por último temos como objetivo a implementação das demais operações de percurso em árvores suportadas pela Range min-max tree clássica e que ainda não foram implementadas em sua versão k-ária. 
+Implementamos e analisamos, para tanto, uma versão da rmM-tree de \citet{book-compact-data-structures}, e 3 versões de uma rmM-tree k-kária, compreendnedo uma rmM-tree 4-ária, 8-ária, e uma rmM-tree 16-ária. De modo geral, os resultados obtidos a partir destas implementações não foram satisfatórios. Comparando a rmM-tree binária, frente às diferentes versões da rmM-tree k-ária, a primeira teve melhor desempenho em todas as operações. Em relação à rmM-tree k-ária, não foi possível detectar um padrão de comportamento para os diferentes conjuntos de dados usados nos testes. 
+
+Para trabalhos futuros temos como objetivo reduzir o tempo das operações, através da otimização da implementação da rmM-tree k-ária. É necessário também melhorar o escopo dos nossos testes afim de monitorar de  modo mais claro e eficaz o uso da cache, o que envolve ampliar o escopo das ferramentas usadas. Sugere-se também investigar o impacto dessa proposta em diferentes ambientes, visando entender o efeito dessa estrutura diante de diferentes configurações de hardware. Por último temos como objetivo a implementação das demais operações de percurso em árvores suportadas pela range min-max tree clássica e que ainda não foram implementadas em sua versão k-ária. 

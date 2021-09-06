@@ -85,7 +85,11 @@
   \usepackage{mathtools}%para teto e chão
   \usepackage{pdflscape}
   \usepackage{url}
-  \usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+  \usepackage[linesnumbered,lined,algoruled,vlined,longend]{algorithm2e}
+  \usepackage{amssymb}% http://ctan.org/pkg/amssymb
+  \usepackage{pifont}% http://ctan.org/pkg/pifont
+  \newcommand{\cmark}{\ding{51}}%
+  \newcommand{\xmark}{\ding{55}}%
   %% Set the language used in your code in the block above
   
   \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
@@ -126,7 +130,7 @@
   
   \address{BRASÍLIA}
   
-  \universitypt{Instituto Federal de Educação, Ciência e Tecnologia de Brasília, \textit{campus} Taguatinga,}
+  \universitypt{Instituto Federal de Educação, Ciência e Tecnologia de Brasília}
   \universityen{Federal Institute of Brasilia}
   
   \campus{Campus Taguatinga}
@@ -134,11 +138,11 @@
   \majorfieldpt{Bacharelado em Ciência da Computação}
   \majorfielden{Computer Science}
   
-  \title{Otimização de árvores Range-min-max para consultas sobre árvores sucintas}
+  \title{Uma proposta de Range min-Max tree k-ária para consultas sobre árvores sucintas}
   
   \date{2021}
   
-  \author{Danyelle da Siliva Oliveira Angelo}
+  \author{Danyelle da Silva Oliveira Angelo}
   \adviser{Daniel Saad Nogueira Nunes}
   %\coadviser{Nome dompleto do co-orientador }
   
@@ -161,17 +165,17 @@
   
   \banca
   
-  \begin{dedicatory}
-  I dedicate this thesis to all my family, friends and professors who gave me the
-  necessary support to get here.
-  \end{dedicatory}
+  %\begin{dedicatory}
+  %I dedicate this thesis to all my family, friends and professors who gave me the
+  %necessary support to get here.
+  %\end{dedicatory}
   
-  \acknowledgements
-  \input{text/agradecimentos}
+  %\acknowledgements
+  %\input{text/agradecimentos}
   
-  \begin{epigraph}[]{Márcio de Deus}
-  When one finds a hard problem, the more complicated it is, the more one ought to work towards enlightening it's solution.
-  \end{epigraph}
+  % \begin{epigraph}[]{Márcio de Deus}
+  % When one finds a hard problem, the more complicated it is, the more one ought to work towards enlightening it's solution.
+  % \end{epigraph}
   
   \resumo
   {\parindent0pt

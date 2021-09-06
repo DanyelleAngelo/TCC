@@ -5,6 +5,10 @@
   EXPERMIMENTS, Austin, Texas, USA. \textbf{Proceedings{\ldots}} Society for
   Industrial and Applied Mathematics, 2010. p.84–97. (ALENEX '10).
 
+\bibitem[BADER~J.;~BELLER(2016)BADER~J.;~BELLER]{sdsl} BADER~J.;~BELLER, T. G.
+  S. P.~M\@. \textbf{Succinct Data Structure Library}. Online; acesso em 06 de
+  fev. 02 de 2021, \url{https://github.com/simongog/sdsl-lite}.
+
 \bibitem[CARVALHO(2002)CARVALHO]{paper-gap-between-processor-memory} CARVALHO,
   C\@. The gap between processor and memory speeds. In: IEEE INTERNATIONAL
   CONFERENCE ON CONTROL AND AUTOMATION. \textbf{Proceedings{\ldots}}
@@ -30,15 +34,30 @@
   [S.l.]: Domo, 2020.
 
 \bibitem[EFNUSHEVA~D.;~CHOLAKOSKA(2017)EFNUSHEVA~D.;~CHOLAKOSKA]{paper-processor-memory-bottleneck}
-  EFNUSHEVA~D.;~CHOLAKOSKA, A. e. T. A.~M\@. A survey of different approaches
-  for overcoming the processor-memory bottleneck. \textbf{Computer Science and
+  EFNUSHEVA~D.;~CHOLAKOSKA, A. T. A.~M\@. A survey of different approaches for
+  overcoming the processor-memory bottleneck. \textbf{Computer Science and
   Information Technology}, [S.l.], v.9, n.2, p.151--163, 2017.
+
+\bibitem[FUENTES~J. E~NAVARRO(2016)FUENTES~J. E~NAVARRO]{datasets-inf-udec}
+  FUENTES~J. E~NAVARRO, G\@. \textbf{Par{\^e}nteses balanceados}. Online;
+  acesso em 24 de ago. de 2021,
+  \url{http://www.inf.udec.cl/~jfuentess/datasets/parentheses.php}.
+
+\bibitem[GOG et~al.(2014)GOG; BELLER; MOFFAT; PETRI]{sdsl-article} GOG, S.
+  et~al\@. From Theory to Practice: plug and play with succinct data
+  structures. In: INTERNATIONAL SYMPOSIUM ON EXPERIMENTAL ALGORITHMS, (SEA
+  2014), 13. \textbf{Anais{\ldots}} [S.l.:~s.n.], 2014. p.326--337.
+
+\bibitem[GUSFIELD; PRESS; FUND(1997)GUSFIELD; PRESS; FUND]{book-gusfield}
+  GUSFIELD, D.; PRESS, C.~U.; FUND, J. D. . P. S. H.~L\@. \textbf{Algorithms on
+  Strings, Trees, and Sequences}: computer science and computational biology.
+  [S.l.]: Cambridge University Press, 1997. (EBL-Schweitzer).
 
 \bibitem[HANKINS~R. A. E~PATEL(2003)HANKINS~R. A.
   E~PATEL]{paper-effect-node-size-cache-b-trees} HANKINS~R. A. E~PATEL, J.~M\@.
-  Effect of Node Size on the Performance of Cache-Conscious B+-trees. In:
-  THEORETICAL COMPUTER SCIENCE. \textbf{Anais{\ldots}} ACM SIGMETRICS
-  international conference, 2003. v.29, p.475--476.
+  Effect of Node Size on the Performance of Cache-Conscious B+-trees. In: 13TH
+  . \textbf{Anais{\ldots}} ACM SIGMETRICS international conference, 2003. v.29,
+  p.475--476.
 
 \bibitem[HENNESSY~J. L. E~PATTERSON(2014)HENNESSY~J. L.
   E~PATTERSON]{book-computer-architecutre} HENNESSY~J. L. E~PATTERSON, D.~A\@.
@@ -57,9 +76,6 @@
   and planar graphs. In: ANNUAL SYMPOSIUM ON FOUNDATIONS OF COMPUTER SCIENCE,
   38. \textbf{Proceedings{\ldots}} Society for Industrial and Applied
   Mathematics, 1997. p.118--126.
-
-\bibitem[NAVARRO(????)NAVARRO]{datasets-inf-udec} NAVARRO, G\@.
-  \textbf{Par{\^e}nteses balanceados}.
 
 \bibitem[NAVARRO(2016)NAVARRO]{book-compact-data-structures} NAVARRO, G\@.
   \textbf{Compact data structures}:a practical approach. 1.ed. New York, NY,
@@ -83,5 +99,13 @@
   E~NAVARRO]{paper-fully-functinal-succint-trees} SADAKANE~K. E~NAVARRO, G\@.
   Fully-Functional Succinct Trees. In: ASSOCIATION FOR COMPUTING MACHINERY.
   \textbf{Anais{\ldots}} Society for Industrial and Applied Mathematics, 2010.
+
+\bibitem[SEIXAS(2010)SEIXAS]{arvore-dns} SEIXAS, P\@. UMA ANÁLISE DO PROTOCOLO
+  DNS E SUAS EXTENSÕES. \textbf{Cadernos de Educação, Tecnologia e
+  Sociedade}, [S.l.], v.1, 08~2010.
+
+\bibitem[TENENBAUM; LANGSAM; AUGENSTEIN(1995)TENENBAUM; LANGSAM;
+  AUGENSTEIN]{tenenbaum} TENENBAUM, A.; LANGSAM, Y.; AUGENSTEIN, M\@.
+  \textbf{Estruturas de dados usando C}. [S.l.]: Pearson Makron Books, 1995.
 
 \end{thebibliography}
