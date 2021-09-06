@@ -1,6 +1,6 @@
 all: wiki dna prot ctree clean
 
-wiki:2
+wiki:
 	python3 graph.py ../results/wiki 3000000
 
 dna:

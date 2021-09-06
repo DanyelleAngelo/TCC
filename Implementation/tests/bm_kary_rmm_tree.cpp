@@ -18,6 +18,7 @@ extern int_vector<1> v;
 extern int iterations;
 extern vector<long long int> args_par_close;
 extern vector<long long int> args_par_open;
+extern  vector<long long int> args_par_openII;
 extern vector<long long int> args_isLeaf;
 extern vector<long long int> args_ancestor;
 extern vector<long long int> args_rand_I;
@@ -55,8 +56,8 @@ static void generate_args_depth(benchmark::State& st){
 		else depth_fwd.push_back(0);
 	}
 
-	for(int i=0; i < args_rand_II.size();i++){
-		d = t->depth(args_rand_II[i]);
+	for(int i=0; i < args_excluding0.size();i++){
+		d = t->depth(args_excluding0[i]);
 		if(d-1>0)depth_bwd.push_back(rand()%(d-1));
 		else depth_bwd.push_back(0);
 	}
@@ -71,14 +72,14 @@ static void BM_FwdSearch_k(benchmark::State& st){
 }
 BENCHMARK(BM_FwdSearch_k);
 
-static void BM_BwdSearch_k(benchmark::State& st){
+static void BM_BwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_II.size();i++){
-			long long int a =t->bwdSearch(args_rand_II[i],0-depth_bwd[i]);
+		for(int i=0; i < args_excluding0.size();i++){
+			t->bwdSearch(args_excluding0[i],0-depth_bwd[i]);
 		}
 	}
 }
-BENCHMARK(BM_BwdSearch_k);
+BENCHMARK(BM_BwdSearch_bin);
 
 static void BM_FindClose_k(benchmark::State& st){
 	for(auto _ :st){
@@ -98,8 +99,9 @@ BENCHMARK(BM_FindOpen_k);
 
 static void BM_Enclose_k(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_I.size();i++)
-			t->enclose(args_rand_I[i]);
+		for(int i=0; i < args_par_open.size();i++){
+			t->enclose(args_par_open[i]);
+		}
 	}
 }
 BENCHMARK(BM_Enclose_k);
@@ -114,8 +116,8 @@ BENCHMARK(BM_IsAncestor_k);
 
 static void BM_Parent_k(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_excluding0.size();i++){
-			t->parent(args_excluding0[i]);
+		for(int i=0; i < args_par_openII.size();i++){
+			t->parent(args_par_openII[i]);
 		}
 	}
 }
@@ -199,8 +201,8 @@ BENCHMARK(BM_RightMostLeaf_k);
 static void BM_LevelAncestor_k(benchmark::State& st){
 	for(auto _ :st){
 		//lembrando que args_ancestor, tem o dobro de iterações que setamos
-		for(int i=0; i < args_rand_II.size();i+=2){
-			t->levelAncestor(args_rand_II[i],0-depth_bwd[i]);
+		for(int i=0; i < args_excluding0.size();i++){
+			t->levelAncestor(args_excluding0[i],depth_bwd[i]);
 		}
 	}
 }
@@ -208,8 +210,8 @@ BENCHMARK(BM_LevelAncestor_k);
 
 static void BM_PostRank_k(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
-			t->postRank(args_par_open[i]);
+		for(int i=0; i < args_par_close.size();i++)
+			t->postRank(args_par_close[i]);
 	}
 }
 BENCHMARK(BM_PostRank_k);

@@ -18,6 +18,7 @@ extern int_vector<1> v;
 extern int iterations;
 extern vector<long long int> args_par_close;
 extern vector<long long int> args_par_open;
+extern  vector<long long int> args_par_openII;
 extern vector<long long int> args_isLeaf;
 extern vector<long long int> args_ancestor;
 extern vector<long long int> args_rand_I;
@@ -42,8 +43,8 @@ static void generates_args_depth(benchmark::State& st){
 		if(eM-d>0)depth_fwd.push_back( rand()%(eM - d));
 		else depth_fwd.push_back(0);
 	}
-	for(int i=0;i < args_rand_II.size();i++){
-		d = t->depth(args_rand_II[i]);
+	for(int i=0;i < args_excluding0.size();i++){
+		d = t->depth(args_excluding0[i]);
 		if(d-1>0)depth_bwd.push_back(rand()% (d-1));
 		else depth_bwd.push_back(0);
 	}
@@ -52,24 +53,27 @@ BENCHMARK(generates_args_depth)->Iterations(1);
 
 static void BM_FwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_I.size();i++)
+		for(int i=0; i < args_rand_I.size();i++){
 			t->fwdSearch(args_rand_I[i],depth_fwd[i]);
+		}
 	}
 }
 BENCHMARK(BM_FwdSearch_bin);
 
 static void BM_BwdSearch_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_II.size();i++)
-			t->bwdSearch(args_rand_II[i],0-depth_bwd[i]);
+		for(int i=0; i < args_excluding0.size();i++){
+			t->bwdSearch(args_excluding0[i],0-depth_bwd[i]);
+		}
 	}
 }
 BENCHMARK(BM_BwdSearch_bin);
 
 static void BM_FindClose_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
+		for(int i=0; i < args_par_open.size();i++){
 			t->findClose(args_par_open[i]);
+		}
 	}
 }
 BENCHMARK(BM_FindClose_bin);
@@ -84,8 +88,9 @@ BENCHMARK(BM_FindOpen_bin);
 
 static void BM_Enclose_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_rand_I.size();i++)
-			t->enclose(args_rand_I[i]);
+		for(int i=0; i < args_par_open.size();i++){
+			t->enclose(args_par_open[i]);
+		}
 	}
 }
 BENCHMARK(BM_Enclose_bin);
@@ -100,8 +105,8 @@ BENCHMARK(BM_IsAncestor_bin);
 
 static void BM_Parent_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_excluding0.size();i++){
-			t->parent(args_excluding0[i]);
+		for(int i=0; i < args_par_openII.size();i++){
+			t->parent(args_par_openII[i]);
 		}
 	}
 }
@@ -185,8 +190,9 @@ static void BM_LevelAncestor_bin(benchmark::State& st){
 	int d;
 	for(auto _ :st){
 		//lembrando que args_ancestor, tem o dobro de iterações que setamos
-		for(int i=0; i < args_rand_II.size();i+=2){
-			t->levelAncestor(args_rand_II[i],0-depth_bwd[i]);
+		for(int i=0; i < args_excluding0.size();i++){
+			t->levelAncestor(args_excluding0[i],depth_bwd[i]);
+			
 		}
 	}
 }
@@ -194,8 +200,8 @@ BENCHMARK(BM_LevelAncestor_bin);
 
 static void BM_PostRank_bin(benchmark::State& st){
 	for(auto _ :st){
-		for(int i=0; i < args_par_open.size();i++)
-			t->postRank(args_par_open[i]);
+		for(int i=0; i < args_par_close.size();i++)
+			t->postRank(args_par_close[i]);
 	}
 }
 BENCHMARK(BM_PostRank_bin);
@@ -213,7 +219,7 @@ int main(int argc, char **argv){
 		cout << "Número de argumentos inválidos" << endl;
 		exit(EXIT_FAILURE);
 	}
-
+ 
 	iterations = atoi(argv[2]);
 	Initialize(argv[1]);
 

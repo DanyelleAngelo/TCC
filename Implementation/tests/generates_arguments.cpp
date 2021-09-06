@@ -13,6 +13,7 @@ int_vector<1> v;
 int iterations;
 vector<long long int> args_par_close;
 vector<long long int> args_par_open;
+vector<long long int> args_par_openII;
 vector<long long int> args_isLeaf;
 vector<long long int> args_ancestor;
 vector<long long int> args_rand_I;
@@ -31,6 +32,19 @@ void ArgumentsParOpen(){
 		}
 	}
 }
+
+void ArgumentsParOpenII(){
+	srand(v.size()/64);
+	int k,i=0;
+	while(i<iterations){
+		k = rand()%(v.size()-2);
+		if(v[k]==1){
+			args_par_openII.push_back(k);
+			i++;
+		}
+	}
+}
+
 
 void ArgumentsParClose(){
 	srand(v.size()/20);
@@ -100,6 +114,7 @@ void ArgumentsExcluding0(){
 	}
 }
 
+
 void ArgumentsSelect(){
 	int k,i=0;
 	while(i<iterations){
@@ -119,4 +134,5 @@ void Initialize(char *file){
 	ArgumentsIsAncestor();
 	ArgumentsExcluding0();
 	ArgumentsSelect();
+	ArgumentsParOpenII();
 }
