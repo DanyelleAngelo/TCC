@@ -20,7 +20,7 @@ def graph(dataset,path,iterations):
     ax.set_ylabel("Tempo médio de CPU em ns para %s chamadas" %'{0:,}'.format(iterations).replace(',','.'))
     ax.set_title("Range-min-Max tree - Tempo médio de operações em nanosegundos")
     ax.set_xticks(pos + width/2)
-    ax.set_xticklabels(operacoes,rotation=75,fontsize=8)
+    ax.set_xticklabels(operacoes,rotation=65,fontsize=8)
     ax.legend()
 
     ax.bar_label(rects_bin, padding=8,rotation=90,fontsize=8)

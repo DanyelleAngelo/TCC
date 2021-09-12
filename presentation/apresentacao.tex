@@ -1,0 +1,87 @@
+% Arquivo editável que gera o pdf
+% Copyright (C) 2018  Daniel Saad Nogueira Nunes (daniel.nunes@ifb.edu.br)
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+\documentclass[pt]{ifbclass/apresentacao-ifb}
+\usepackage{natbib} 
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{multirow}
+
+% Insira os dados aqui
+\author{Danyelle da Silva Oliveira Angelo}
+%\orientador{Daniel Saad Nogueira Nunes}
+%\orientador{Prof.\ Me.\ Daniel Saad Nogueira Nunes}
+\title{Uma proposta de Range min-Max tree k-ária para consultas sobre árvores sucintas}
+%\subtitle{Subtítulo}
+\institute{Instituto Federal de Brasília, Câmpus Taguatinga}
+\date{14 de setembro de 2021}
+
+
+
+\AtBeginSection[]
+{
+\begin{frame}<beamer>
+	\frametitle{Sumário}
+	\tableofcontents[currentsection,sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+\end{frame}
+}
+
+\AtBeginSubsection[]
+{
+	\begin{frame}<beamer>
+	\frametitle{Sumário}
+	\tableofcontents[sectionstyle=show/hide,currentsubsection]
+\end{frame}
+}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{}
+	\frametitle{Sumário}
+	\tableofcontents[sectionstyle=show/show]
+\end{frame}
+
+
+\include{text/introduction}
+\include{text/theoretical-reference}
+\include{text/proposal}
+\include{text/results}
+\include{text/objetivos}
+
+\begin{frame}[allowframebreaks]{Referências}
+    \bibliographystyle{plainnat}
+    \bibliography{bib/references}
+\end{frame}
+
+
+\begin{frame}{}
+    \centering
+  \textbf{Obrigada pela atenção!}
+  
+  \vspace{0.4cm}
+  
+  \rule[0.4cm]{6cm}{0.6pt}
+  
+  \textbf{Perguntas}
+\end{frame}
+\end{document}

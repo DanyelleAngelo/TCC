@@ -529,8 +529,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png
 INPUT /media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png
 INPUT /media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png
-INPUT /media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png
-INPUT /media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png
+INPUT /media/danyelle/Data/IFB/TCC/Texto/images/louds.png
+INPUT /media/danyelle/Data/IFB/TCC/Texto/images/louds.png
+INPUT /media/danyelle/Data/IFB/TCC/Texto/images/louds.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm

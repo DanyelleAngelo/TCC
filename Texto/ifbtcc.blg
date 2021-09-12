@@ -76,43 +76,43 @@ while executing---line 1346 of file ifbclass/libs/abnt.bst
 while executing---line 1346 of file ifbclass/libs/abnt.bst
 You've used 23 entries,
             2371 wiz_defined-function locations,
-            706 strings with 7764 characters,
-and the built_in function-call counts, 27735 in all, are:
-= -- 3380
+            701 strings with 7728 characters,
+and the built_in function-call counts, 27461 in all, are:
+= -- 3343
 > -- 143
 < -- 318
-+ -- 1695
-- -- 83
-* -- 1267
-:= -- 2558
-add.period$ -- 100
++ -- 1677
+- -- 74
+* -- 1246
+:= -- 2538
+add.period$ -- 98
 call.type$ -- 23
 change.case$ -- 196
 chr.to.int$ -- 118
 cite$ -- 23
-duplicate$ -- 3540
-empty$ -- 1039
+duplicate$ -- 3515
+empty$ -- 1033
 format.name$ -- 198
-if$ -- 6026
+if$ -- 5965
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
 newline$ -- 49
 num.names$ -- 115
-pop$ -- 532
+pop$ -- 537
 preamble$ -- 1
 purify$ -- 23
 quote$ -- 0
-skip$ -- 1628
+skip$ -- 1598
 stack$ -- 0
-substring$ -- 2037
-swap$ -- 2259
+substring$ -- 2009
+swap$ -- 2238
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 181
 warning$ -- 0
-while$ -- 178
+while$ -- 177
 width$ -- 0
 write$ -- 25
 (There were 33 error messages)

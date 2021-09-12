@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: apresentacao.aux
+A level-1 auxiliary file: text/introduction.aux
+A level-1 auxiliary file: text/theoretical-reference.aux
+A level-1 auxiliary file: text/proposal.aux
+A level-1 auxiliary file: text/results.aux
+A level-1 auxiliary file: text/objetivos.aux
+The style file: plainnat.bst
+Database file #1: bib/references.bib
+Warning--empty booktitle in paper-effect-node-size-cache-b-trees
+Warning--empty journal in fig-gap-processor-memory
+You've used 11 entries,
+            2773 wiz_defined-function locations,
+            661 strings with 6758 characters,
+and the built_in function-call counts, 4753 in all, are:
+= -- 433
+> -- 228
+< -- 13
++ -- 80
+- -- 69
+* -- 293
+:= -- 705
+add.period$ -- 38
+call.type$ -- 11
+change.case$ -- 56
+chr.to.int$ -- 11
+cite$ -- 24
+duplicate$ -- 267
+empty$ -- 408
+format.name$ -- 86
+if$ -- 1044
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 11
+newline$ -- 65
+num.names$ -- 44
+pop$ -- 140
+preamble$ -- 1
+purify$ -- 45
+quote$ -- 0
+skip$ -- 219
+stack$ -- 0
+substring$ -- 90
+swap$ -- 61
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 111
+warning$ -- 2
+while$ -- 38
+width$ -- 0
+write$ -- 154
+(There were 2 warnings)

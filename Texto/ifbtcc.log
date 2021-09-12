@@ -1,11 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  6 SEP 2021 13:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  12 SEP 2021 14:58
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**ifbtcc
-(./ifbtcc.tex
+**/media/danyelle/Data/IFB/TCC/Texto/ifbtcc.tex
+(/media/danyelle/Data/IFB/TCC/Texto/ifbtcc.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (./ifbclass/ifbclass.cls
+L3 programming layer <2020-02-14> (/media/danyelle/Data/IFB/TCC/Texto/ifbclass/ifbclass.cls
 
 LaTeX Warning: You have requested document class `ifbclass/ifbclass',
                but the document class provides `ifbclass'.
@@ -28,25 +29,21 @@ File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen135
-))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen136
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count176
@@ -86,19 +83,16 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks19
 \thm@bodyfont=\toks20
@@ -109,8 +103,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@postskip=\skip53
 \thm@headsep=\skip54
 \dth@everypar=\toks24
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count188
 \calc@Bcount=\count189
@@ -122,29 +115,22 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count190
 \calc@Cskip=\skip57
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks25
 \inpenc@posthook=\toks26
-)
-(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen146
 \ar@mcellbox=\box47
@@ -153,28 +139,22 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \extratabsurround=\skip58
 \backup@length=\skip59
 \ar@cellbox=\box48
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \everycr=\toks28
 \minrowclearance=\skip60
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -209,39 +189,30 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks29
-))
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
-(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count191
 \c@@ppsavesec=\count192
 \c@@ppsaveapp=\count193
-)
-(/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
 Package: acronym 2019/11/11 v1.42 Support for acronyms (Tobias Oetiker)
-
-(/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
-)
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \integerpart=\count194
 \decimalpart=\count195
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
 \AC@clearlist=\toks30
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
@@ -255,8 +226,7 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read2
 ) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
-s
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@headwidth=\skip61
 \f@nch@O@elh=\skip62
 \f@nch@O@erh=\skip63
@@ -266,17 +236,13 @@ s
 \f@nch@O@erf=\skip67
 \f@nch@O@olf=\skip68
 \f@nch@O@orf=\skip69
-)
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-)
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 ))
 \Gm@cnth=\count196
@@ -291,8 +257,7 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks35
-)
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box51
 \beforetitleunit=\skip70
@@ -303,16 +268,13 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidth=\dimen159
 \titlewidthlast=\dimen160
 \titlewidthfirst=\dimen161
-)
-(./ifbclass/libs/psboxit.sty
+) (/media/danyelle/Data/IFB/TCC/Texto/ifbclass/libs/psboxit.sty
 \gray@box=\box52
 \gray@space=\dimen162
-)
-(/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/quotchap/quotchap.sty
 Package: quotchap 2019/07/09 v1.2 Decorative Chapter Headings with Quotes
 \@quotebox=\box53
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
@@ -321,8 +283,7 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip72
 \enit@outerparindent=\dimen163
@@ -330,18 +291,15 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box54
 \enit@count@id=\count199
 \enitdp@description=\count266
-)
-(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip73
 \bibsep=\skip74
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count267
-)
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count268
 \lst@gtempboxa=\box55
 \lst@token=\toks38
@@ -354,61 +312,48 @@ Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 \lst@newlines=\count272
 \lst@lineno=\count273
 \lst@maxwidth=\dimen167
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 \c@lstnumber=\count274
 \lst@skipnumbers=\count275
 \lst@framebox=\box56
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
 \Gin@req@height=\dimen168
 \Gin@req@width=\dimen169
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/02/14 3.40 The Babel package
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2020/02/14 3.40 Babel switching mechanism
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+) (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count276
 \U@D=\dimen170
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count277
 )
 Package babel Info: \l@brazil = using hyphenrules for portuguese
 (babel)             (\language3) on input line 113.
 Package babel Info: Making " an active character on input line 145.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+) (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+) (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 ))
 \c@Def=\count278
@@ -418,11 +363,9 @@ Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 \c@Theo=\count282
 \c@Prop=\count283
 \c@Cor=\count284
-)
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -437,8 +380,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 \MT@toks=\toks39
 \MT@count=\count286
@@ -446,23 +388,18 @@ LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen171
 LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 \MT@listname@count=\count287
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
-
 LaTeX Info: Redefining \lsstyle on input line 914.
 LaTeX Info: Redefining \lslig on input line 914.
 \MT@outer@space=\skip75
 )
 Package microtype Info: Loading configuration file microtype.cfg.
-
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/natbib/bibentry.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip76
 \subfigcapskip=\skip77
@@ -481,23 +418,20 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip80
 \subfig@bottom=\skip81
-)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip82
 \multirow@cntb=\count292
 \multirow@dima=\skip83
 \bigstrutjot=\dimen174
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 \c@r@tfl@t=\count293
 \rotFPtop=\skip84
 \rotFPbot=\skip85
 \rot@float@box=\box57
 \rot@mess@toks=\toks40
-)
-(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen175
 \lightrulewidth=\dimen176
@@ -516,26 +450,20 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count296
 \@lastruleclass=\count297
 \@thisrulewidth=\dimen187
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
-
-(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
-
-(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )))
 \AM@pagewidth=\dimen188
 \AM@pageheight=\dimen189
-
-(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+ (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box58
@@ -544,11 +472,9 @@ File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks42
 \c@AM@survey=\count299
 \AM@templatesizebox=\box59
-)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
 \captionmargin=\dimen190
@@ -560,11 +486,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 \caption@hangindent=\dimen196
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
-p \sbox \@tempboxa {\small \bf #1\rm \enskip #2}\ifdim \wd \@tempboxa >\hsize {
-\small \bf #1\rm \enskip #2\par } \else \global \@minipagefalse \hb@xt@ \hsize 
-{\hfil \box \@tempboxa \hfil }\fi \vskip \belowcaptionskip  on input line 1082.
-
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionskip \sbox \@tempboxa {\small \bf #1\rm \enskip #2}\ifdim \wd \@tempboxa >\hsize {\small \bf #1\rm \enskip #2\par } \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa \hfil }\fi \vskip \belowcaptionskip  on input line 1082.
 )
 
 Package caption Warning: Unknown document class (or package),
@@ -576,16 +498,13 @@ See the caption package documentation for explanation.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
-) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count302
 \l__pdf_internal_box=\box60
-))
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-02-14 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count303
 \g__xparse_grabber_int=\count304
@@ -593,13 +512,10 @@ Package: xparse 2020-02-14 L3 Experimental document command parser
 \l__xparse_v_nesting_int=\count306
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
-
-(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+ (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
-))
-(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
-les
+)) (/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
 
 
 LaTeX Warning: Command \underbar  has changed.
@@ -609,37 +525,24 @@ LaTeX Warning: Command \underbar  has changed.
 LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks43
 \pgfutil@tempdima=\dimen197
 \pgfutil@tempdimb=\dimen198
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box61
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
 ))
 Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks44
 \pgfkeys@temptoks=\toks45
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks46
 ))
 \pgf@x=\dimen199
@@ -666,61 +569,28 @@ ex
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
-f
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
-tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfsyssoftpath@smallbuffer@items=\count312
 \pgfsyssoftpath@bigbuffer@items=\count313
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
-tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen265
 \pgfmath@count=\count314
 \pgfmath@box=\box62
 \pgfmath@toks=\toks50
 \pgfmath@stack@operand=\toks51
 \pgfmath@stack@operation=\toks52
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
-ric.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
-thmetics.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count315
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
-x
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@picminx=\dimen266
 \pgf@picmaxx=\dimen267
@@ -736,118 +606,76 @@ File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@yy=\dimen277
 \pgf@zx=\dimen278
 \pgf@zy=\dimen279
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
-code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@path@lastx=\dimen280
 \pgf@path@lasty=\dimen281
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
-.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@shorten@end@additional=\dimen282
 \pgf@shorten@start@additional=\dimen283
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
-x
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box63
 \pgf@hbox=\box64
 \pgf@layerbox@main=\box65
 \pgf@picture@serial@count=\count316
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
-ode.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgflinewidth=\dimen284
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
-s.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@pt@x=\dimen285
 \pgf@pt@y=\dimen286
 \pgf@pt@temp=\dimen287
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
-ex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
-.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
-x
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowsep=\dimen288
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen289
 \pgf@sys@shading@range@num=\count317
 \pgf@shadingcount=\count318
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
-tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfexternal@startupbox=\box66
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
-x
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
-ode.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
-tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfnodeparttextbox=\box67
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
-.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@nodesepstart=\dimen290
 \pgf@nodesepend=\dimen291
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
-.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen292
 \pgffor@skip=\dimen293
 \pgffor@stack=\toks53
 \pgffor@toks=\toks54
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
-.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@plot@mark@count=\count319
 \pgfplotmarksize=\dimen294
@@ -868,23 +696,18 @@ File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \tikznumberofchildren=\count321
 \tikznumberofcurrentchild=\count322
 \tikz@fig@count=\count323
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfmatrixcurrentrow=\count324
 \pgfmatrixcurrentcolumn=\count325
 \pgf@matrix@numberofcolumns=\count326
 )
 \tikz@expandcount=\count327
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarytopaths.code.tex
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+))) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
-
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
@@ -900,25 +723,20 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen307
 \l_MT_above_shortintertext_sep=\dimen308
 \l_MT_below_shortintertext_sep=\dimen309
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
-(./algorithm2e.sty
+) (/media/danyelle/Data/IFB/TCC/Texto/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count329
 \algocf@hangindent=\skip87
-
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count330
-)
-(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
 \skiptotal=\skip88
@@ -956,67 +774,49 @@ Package: relsize 2013/03/29 ver 4.1
 \c@algocf=\count333
 \algocf@algoframe=\box78
 \algocf@algobox=\box79
-)
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 \c@examplecounter=\count334
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
+ (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen316
 \Hy@linkcounter=\count335
 \Hy@pagecounter=\count336
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count337
@@ -1034,13 +834,10 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count339
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen317
-
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count340
 \Field@Width=\dimen318
@@ -1059,34 +856,23 @@ LaTeX Info: Redefining \pageref on input line 6504.
 \c@Hfootnote=\count343
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
 \Fld@listcount=\count344
 \c@bookmark@seq@number=\count345
-
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip106
-)
-(./ifbtcc.aux (./text/introduction.aux) (./text/background.aux)
-(./text/desenvolvimento.aux) (./text/resultados.aux
-
-LaTeX Warning: Label `tbl:dataset' multiply defined.
-
-) (./text/conclusion.aux))
+) (/media/danyelle/Data/IFB/TCC/Texto/ifbtcc.aux)
 \openout1 = `ifbtcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
@@ -1105,13 +891,10 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
 LaTeX Font Info:    ... okay on input line 153.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
 LaTeX Font Info:    ... okay on input line 153.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 15
-3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 153.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count346
 \scratchdimen=\dimen320
@@ -1126,12 +909,9 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \everyMPtoPDFconversion=\toks56
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1189,17 +969,13 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 Package hyperref Info: Link coloring ON on input line 153.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-
-(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count353
@@ -1207,18 +983,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 153.
 LaTeX Info: Redefining \pageref on input line 153.
 LaTeX Info: Redefining \nameref on input line 153.
-
-(./ifbtcc.out) (./ifbtcc.out)
 \@outlinefile=\write5
 \openout5 = `ifbtcc.out'.
 
-<ifbclass/images/ifblogo.png, id=159, 233.673pt x 284.7438pt>
+<ifbclass/images/ifblogo.png, id=7, 233.673pt x 284.7438pt>
 File: ifbclass/images/ifblogo.png Graphic file (type png)
 <use ifbclass/images/ifblogo.png>
 Package pdftex.def Info: ifbclass/images/ifblogo.png  used on input line 157.
 (pdftex.def)             Requested size: 116.83621pt x 142.37155pt.
-LaTeX Font Info:    Trying to load font information for T1+times on input line 
-157.
+LaTeX Font Info:    Trying to load font information for T1+times on input line 157.
 LaTeX Font Info:    No file T1times.fd. on input line 157.
 
 
@@ -1226,8 +999,7 @@ LaTeX Font Warning: Font shape `T1/times/m/n' undefined
 (Font)              using `T1/cmr/m/n' instead on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `times' (encoding: T1).
@@ -1241,12 +1013,10 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 <special> ! TeXDict begin /box{newpath 2 copy moveto 3 copy pop exch lineto...
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./ifbclass/images/ifblogo.
-png>] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </media/danyelle/Data/IFB/TCC/Texto/ifbclass/images/ifblogo.png>] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 159.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 159.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -1254,34 +1024,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 159.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 159.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 159.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 159.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 159.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 159.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-59.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 159.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -1321,15 +1081,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.166   \banca
                [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.166   \banca
@@ -1337,22 +1095,23 @@ l.166   \banca
 
 ] [3] [4
 
-] (./text/resumo.tex) [5] [6
+] (/media/danyelle/Data/IFB/TCC/Texto/text/resumo.tex) [5] [6
 
-] (./text/abstract.tex)
-[7] [8
+] (/media/danyelle/Data/IFB/TCC/Texto/text/abstract.tex) [7] [8
 
-] (./ifbtcc.toc [9])
+]
 \tf@toc=\write6
 \openout6 = `ifbtcc.toc'.
 
- [10]
+ [9]
 \openout2 = `text/introduction.aux'.
 
- (./text/introduction.tex
+ (/media/danyelle/Data/IFB/TCC/Texto/text/introduction.tex [10
+
+
+]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Trying to load font information for T1+pnc on input line 1.
-
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pnc.fd
 File: t1pnc.fd 2001/06/04 font definitions for T1/pnc.
 )
@@ -1360,22 +1119,67 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pnc' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
-.
 
+
+Package natbib Warning: Citation `relatorio-idc' on page 11 undefined on input line 4.
+
+
+Package natbib Warning: Citation `domo-study' on page 11 undefined on input line 6.
+
+
+Package natbib Warning: Citation `domo-study' on page 11 undefined on input line 6.
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
+
+Package natbib Warning: Citation `relatorio-cisco' on page 11 undefined on input line 17.
+
+
+Package natbib Warning: Citation `relatorio-idc' on page 11 undefined on input line 17.
+
+
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+
+
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+
+
+Package natbib Warning: Citation `paper-Processor-Memory-bottleneck-Problems-Solutions' on page 11 undefined on input line 20.
+
+
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[11
+[11]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 12 undefined on input line 22.
 
 
-]
+Package natbib Warning: Citation `book-compact-data-structures' on page 12 undefined on input line 22.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 12 undefined on input line 24.
+
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 12 undefined on input line 26.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 12 undefined on input line 28.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 12 undefined on input line 28.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 12 undefined on input line 28.
+
+
 Underfull \vbox (badness 1264) has occurred while \output is active []
 
 
@@ -1386,205 +1190,479 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [12]
-Underfull \vbox (badness 5681) has occurred while \output is active []
 
- [13])
-[14]
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 13 undefined on input line 35.
+
+
+Package natbib Warning: Citation `sdsl-article' on page 13 undefined on input line 35.
+
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 13 undefined on input line 40.
+
+
+LaTeX Warning: Reference `chp:desenvolvimento' on page 13 undefined on input line 40.
+
+
+LaTeX Warning: Reference `chp:resultados' on page 13 undefined on input line 40.
+
+
+LaTeX Warning: Reference `chp:conclusao' on page 13 undefined on input line 40.
+
+[13]) [14]
 \openout2 = `text/background.aux'.
 
- (./text/background.tex
+ (/media/danyelle/Data/IFB/TCC/Texto/text/background.tex
 Cap\'{\i }tulo 2.
-<images/gap-processor-memory.png, id=340, 513.92pt x 268.00125pt>
+
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 15 undefined on input line 8.
+
+
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 15 undefined on input line 8.
+
+
+LaTeX Warning: Reference `fig:processor-memory-performance-gap' on page 15 undefined on input line 8.
+
+<images/gap-processor-memory.png, id=95, 513.92pt x 268.00125pt>
 File: images/gap-processor-memory.png Graphic file (type png)
 <use images/gap-processor-memory.png>
-Package pdftex.def Info: images/gap-processor-memory.png  used on input line 12
-.
+Package pdftex.def Info: images/gap-processor-memory.png  used on input line 12.
 (pdftex.def)             Requested size: 359.74153pt x 187.59958pt.
 
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 15 undefined on input line 16.
+
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:hierarquia-de-memoria' on page 15 undefined on input line 18.
 
 [15
 
 
 
 ]
-<images/servidor.png, id=358, 1245.65375pt x 385.44pt>
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 20.
+
+
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 16 undefined on input line 20.
+
+
+Package natbib Warning: Citation `coira-feranando' on page 16 undefined on input line 20.
+
+<images/servidor.png, id=103, 1245.65375pt x 385.44pt>
 File: images/servidor.png Graphic file (type png)
 <use images/servidor.png>
 Package pdftex.def Info: images/servidor.png  used on input line 25.
 (pdftex.def)             Requested size: 455.24411pt x 140.8638pt.
-<images/mobile.png, id=359, 1123.19624pt x 367.3725pt>
+<images/mobile.png, id=104, 1123.19624pt x 367.3725pt>
 File: images/mobile.png Graphic file (type png)
 <use images/mobile.png>
 Package pdftex.def Info: images/mobile.png  used on input line 27.
 (pdftex.def)             Requested size: 455.24411pt x 148.89714pt.
- [16 <./images/gap-processor-memory.png>] [17 <./images/servidor.png> <./images
-/mobile.png>]
-<images/tree-dns.png, id=398, 312.11606pt x 234.8775pt>
+
+Package natbib Warning: Citation `book-computer-architecutre' on page 16 undefined on input line 28.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 31.
+
+
+Package natbib Warning: Citation `coira-feranando' on page 16 undefined on input line 31.
+
+[16 </media/danyelle/Data/IFB/TCC/Texto/images/gap-processor-memory.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 17 undefined on input line 35.
+
+
+Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 17 undefined on input line 35.
+
+
+Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 17 undefined on input line 38.
+
+
+Package natbib Warning: Citation `book-inteligencia-artificial' on page 17 undefined on input line 38.
+
+
+Package natbib Warning: Citation `arvore-dns' on page 17 undefined on input line 38.
+
+
+LaTeX Warning: Reference `fig:example-tree' on page 17 undefined on input line 38.
+
+[17 </media/danyelle/Data/IFB/TCC/Texto/images/servidor.png> </media/danyelle/Data/IFB/TCC/Texto/images/mobile.png>]
+<images/tree-dns.png, id=125, 312.11606pt x 234.8775pt>
 File: images/tree-dns.png Graphic file (type png)
 <use images/tree-dns.png>
 Package pdftex.def Info: images/tree-dns.png  used on input line 43.
 (pdftex.def)             Requested size: 249.69318pt x 187.90225pt.
-<images/decision-tree.png, id=399, 2268.475pt x 1264.725pt>
+<images/decision-tree.png, id=126, 2268.475pt x 1264.725pt>
 File: images/decision-tree.png Graphic file (type png)
 <use images/decision-tree.png>
 Package pdftex.def Info: images/decision-tree.png  used on input line 45.
 (pdftex.def)             Requested size: 455.24411pt x 253.78964pt.
- [18 <./images/tree-dns.png> <./images/decision-tree.png>]
-<images/access.png, id=418, 194.22563pt x 74.52844pt>
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 18 undefined on input line 49.
+
+[18 </media/danyelle/Data/IFB/TCC/Texto/images/tree-dns.png> </media/danyelle/Data/IFB/TCC/Texto/images/decision-tree.png>]
+
+LaTeX Warning: Reference `sec:sec-bitvector' on page 19 undefined on input line 51.
+
+
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 19 undefined on input line 51.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 19 undefined on input line 54.
+
+
+LaTeX Warning: Reference `fig:bitvector-operations' on page 19 undefined on input line 64.
+
+<images/access.png, id=136, 194.22563pt x 74.52844pt>
 File: images/access.png Graphic file (type png)
 <use images/access.png>
 Package pdftex.def Info: images/access.png  used on input line 68.
 (pdftex.def)             Requested size: 194.22514pt x 74.52824pt.
-<images/rank.png, id=419, 193.32225pt x 66.39806pt>
+<images/rank.png, id=137, 193.32225pt x 66.39806pt>
 File: images/rank.png Graphic file (type png)
 <use images/rank.png>
 Package pdftex.def Info: images/rank.png  used on input line 69.
 (pdftex.def)             Requested size: 193.32178pt x 66.39787pt.
-<images/select.png, id=420, 202.8077pt x 65.043pt>
+<images/select.png, id=138, 202.8077pt x 65.043pt>
 File: images/select.png Graphic file (type png)
 <use images/select.png>
 Package pdftex.def Info: images/select.png  used on input line 70.
 (pdftex.def)             Requested size: 202.80719pt x 65.04283pt.
-<images/arvore_geral.png, id=425, 820.16125pt x 412.1455pt>
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 19 undefined on input line 80.
+
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 19 undefined on input line 80.
+
+<images/arvore_geral.png, id=139, 820.16125pt x 412.1455pt>
 File: images/arvore_geral.png Graphic file (type png)
 <use images/arvore_geral.png>
 Package pdftex.def Info: images/arvore_geral.png  used on input line 81.
 (pdftex.def)             Requested size: 455.24411pt x 228.7686pt.
+[19]
 
-[19] [20 <./images/access.png> <./images/rank.png> <./images/select.png> <./ima
-ges/arvore_geral.png>]
+Package natbib Warning: Citation `tenenbaum' on page 20 undefined on input line 86.
+
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 20 undefined on input line 86.
+
+
+LaTeX Warning: Reference `fig:parenthesis-representation' on page 20 undefined on input line 86.
+
+[20 </media/danyelle/Data/IFB/TCC/Texto/images/access.png> </media/danyelle/Data/IFB/TCC/Texto/images/rank.png> </media/danyelle/Data/IFB/TCC/Texto/images/select.png> </media/danyelle/Data/IFB/TCC/Texto/images/arvore_geral.png>]
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 21 undefined on input line 93.
+
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 21 undefined on input line 96.
+
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 105.
 
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 21 undefined on input line 112.
+
 [21]
-<images/dfuds.png, id=468, 825.94286pt x 384.88937pt>
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 22 undefined on input line 116.
+
+
+LaTeX Warning: Reference `fig:dfuds-representation' on page 22 undefined on input line 116.
+
+<images/dfuds.png, id=169, 825.94286pt x 384.88937pt>
 File: images/dfuds.png Graphic file (type png)
 <use images/dfuds.png>
 Package pdftex.def Info: images/dfuds.png  used on input line 120.
 (pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
- [22 <./images/dfuds.png>]
-File: images/dfuds.png Graphic file (type png)
-<use images/dfuds.png>
-Package pdftex.def Info: images/dfuds.png  used on input line 138.
-(pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
- [23] [24] [25]
-<images/rmm-tree-bin.png, id=516, 825.94286pt x 597.98264pt>
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 22 undefined on input line 124.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 22 undefined on input line 126.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 22 undefined on input line 126.
+
+[22 </media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 130.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 130.
+
+<images/louds.png, id=178, 825.94286pt x 368.37051pt>
+File: images/louds.png Graphic file (type png)
+<use images/louds.png>
+Package pdftex.def Info: images/louds.png  used on input line 138.
+(pdftex.def)             Requested size: 455.24411pt x 203.03722pt.
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 143.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 143.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 145.
+
+[23 </media/danyelle/Data/IFB/TCC/Texto/images/louds.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 24 undefined on input line 153.
+
+
+LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 24 undefined on input line 153.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 24 undefined on input line 157.
+
+[24]
+
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 25 undefined on input line 193.
+
+[25]
+
+LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 26 undefined on input line 229.
+
+<images/rmm-tree-bin.png, id=198, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin.png Graphic file (type png)
 <use images/rmm-tree-bin.png>
 Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 233.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
- [26] [27 <./images/rmm-tree-bin.png>]
+
+LaTeX Warning: Reference `alg:build-bin-tree' on page 26 undefined on input line 238.
+
+
+Package natbib Warning: Citation `book-gusfield' on page 26 undefined on input line 238.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 239.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 241.
+
+[26]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 27 undefined on input line 251.
+
+
+LaTeX Warning: Reference `alg:folha-indice' on page 27 undefined on input line 253.
+
+
+LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 27 undefined on input line 256.
+
+[27 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 265--267
 
  []
 
-[28]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 34
-1.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+
+LaTeX Warning: Reference `ex-build-tree' on page 28 undefined on input line 281.
+
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 341.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [29pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.
-1.1}) has been already used, duplicate ignored
+
+
+LaTeX Warning: Reference `alg:folha-indice' on page 28 undefined on input line 341.
+
+
+LaTeX Warning: Reference `sec:sec-bitvector' on page 28 undefined on input line 346.
+
+
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 28 undefined on input line 346.
+
+[28]
+
+LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 29 undefined on input line 349.
+
+
+Package natbib Warning: Citation `paper-simple-and-efficient-fully-functional-succinct-trees' on page 29 undefined on input line 358.
+
+[29pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.2}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.3}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.4}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.5}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.6}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
-      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLin
-e.1.7}) has been already used, duplicate ignored
+l.360 
+      pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
+l.360 
       ] [30]
-<images/rmm-tree-bin-fwdsearch.png, id=602, 825.94286pt x 597.98264pt>
+
+LaTeX Warning: Reference `ex:bin-fwdSearch' on page 31 undefined on input line 382.
+
+
+LaTeX Warning: Reference `alg:fwdSearch-bin' on page 31 undefined on input line 382.
+
+
+LaTeX Warning: Reference `fig:bin-fwdSearch' on page 31 undefined on input line 390.
+
+<images/rmm-tree-bin-fwdsearch.png, id=264, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-fwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-fwdsearch.png  used on input line 
-394.
+Package pdftex.def Info: images/rmm-tree-bin-fwdsearch.png  used on input line 394.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31] [32 <./images/rmm-tree-bin-fwdsearch.png>] [33] [34]
-<images/rmm-tree-bin-bwdsearch.png, id=690, 825.94286pt x 597.98264pt>
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 31 undefined on input line 402.
+
+[31]
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 32 undefined on input line 486.
+
+
+LaTeX Warning: Reference `alg:folha-indice' on page 32 undefined on input line 486.
+
+
+LaTeX Warning: Reference `alg:folha-indice' on page 32 undefined on input line 486.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 32 undefined on input line 497.
+
+[32 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-fwdsearch.png>] [33] [34]
+
+LaTeX Warning: Reference `alg:bwdSearch-bin' on page 35 undefined on input line 506.
+
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 35 undefined on input line 506.
+
+
+LaTeX Warning: Reference `fig:bin-bwdSearch' on page 35 undefined on input line 513.
+
+<images/rmm-tree-bin-bwdsearch.png, id=343, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-bwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-bwdsearch.png  used on input line 
-517.
+Package pdftex.def Info: images/rmm-tree-bin-bwdsearch.png  used on input line 517.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35] [36 <./images/rmm-tree-bin-bwdsearch.png>]
-Underfull \vbox (badness 6188) has occurred while \output is active []
+[35]
 
- [37]
+LaTeX Warning: Reference `alg:fwdBlock' on page 36 undefined on input line 573.
+
+[36 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-bwdsearch.png>] [37]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 38 undefined on input line 589.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 38 undefined on input line 595.
+
 [38]
-<images/rmm-tree-bin-minexcess.png, id=747, 825.94286pt x 597.98264pt>
+<images/rmm-tree-bin-minexcess.png, id=397, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-minexcess.png Graphic file (type png)
 <use images/rmm-tree-bin-minexcess.png>
-Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 
-612.
+Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 612.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
- [39 <./images/rmm-tree-bin-minexcess.png>] [40] [41] [42] [43] [44]
-[45] (./text/table-rmmTree-classicOperations.tex)
-Underfull \vbox (badness 5847) has occurred while \output is active []
+ [39 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-minexcess.png>] [40] [41] [42] [43] [44] [45] (/media/danyelle/Data/IFB/TCC/Texto/text/table-rmmTree-classicOperations.tex)
 
- [46]
-[47]) [48]
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 46 undefined on input line 776.
+
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 46 undefined on input line 778.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 46 undefined on input line 778.
+
+[46]
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 780.
+
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 780.
+
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 796.
+
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 798.
+
+[47]
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 800.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 802.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 802.
+
+) [48]
 \openout2 = `text/desenvolvimento.aux'.
 
- (./text/desenvolvimento.tex
+ (/media/danyelle/Data/IFB/TCC/Texto/text/desenvolvimento.tex
 Cap\'{\i }tulo 3.
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 49 undefined on input line 3.
+
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 49 undefined on input line 7.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 49 undefined on input line 9.
+
 [49
 
 
 
-] [50]
-<images/rmm-tree-kary.png, id=839, 818.50937pt x 279.99463pt>
+]
+
+Package natbib Warning: Citation `book-computer-architecutre' on page 50 undefined on input line 35.
+
+[50]
+
+LaTeX Warning: Reference `ex-build-tree' on page 51 undefined on input line 57.
+
+
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 51 undefined on input line 57.
+
+<images/rmm-tree-kary.png, id=465, 818.50937pt x 279.99463pt>
 File: images/rmm-tree-kary.png Graphic file (type png)
 <use images/rmm-tree-kary.png>
 Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 65.
 (pdftex.def)             Requested size: 455.24411pt x 155.72783pt.
+
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 51 undefined on input line 69.
+
+
+LaTeX Warning: Reference `ex-build-tree' on page 51 undefined on input line 69.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
@@ -1594,141 +1672,248 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--74
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 81.
 
-[51 <./images/rmm-tree-kary.png>]
+[51 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary.png>]
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 91.
 
-[52] [53] [54] [55] [56] [57]
-<images/rmm-tree-kary-fwdsearch.png, id=989, 821.81314pt x 284.12434pt>
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 52 undefined on input line 105.
+
+
+LaTeX Warning: Reference `alg:build-kary-rmm-tree' on page 52 undefined on input line 105.
+
+
+LaTeX Warning: Reference `alg:folha-indice' on page 52 undefined on input line 157.
+
+[52]
+
+LaTeX Warning: Reference `alg:fwdRegistry' on page 53 undefined on input line 173.
+
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 53 undefined on input line 195.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 53 undefined on input line 200.
+
+[53] [54]
+
+LaTeX Warning: Reference `alg:fwdVerifySibling' on page 55 undefined on input line 206.
+
+
+LaTeX Warning: Reference `alg:fwdSearch' on page 55 undefined on input line 206.
+
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 55 undefined on input line 291.
+
+
+LaTeX Warning: Reference `ex:bin-fwdSearch' on page 55 undefined on input line 296.
+
+[55] [56] [57]
+<images/rmm-tree-kary-fwdsearch.png, id=604, 821.81314pt x 284.12434pt>
 File: images/rmm-tree-kary-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-fwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-kary-fwdsearch.png  used on input line
- 313.
+Package pdftex.def Info: images/rmm-tree-kary-fwdsearch.png  used on input line 313.
 (pdftex.def)             Requested size: 455.24411pt x 157.39606pt.
- [58 <./images/rmm-tree-kary-fwdsearch.png>]
+
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 58 undefined on input line 320.
+
+
+LaTeX Warning: Reference `alg:bwdRegistry' on page 58 undefined on input line 320.
+
+
+LaTeX Warning: Reference `alg:bwdVerifySibling' on page 58 undefined on input line 320.
+
+
+LaTeX Warning: Reference `alg:bwdSearch' on page 58 undefined on input line 320.
+
+
+LaTeX Warning: Reference `sc:bwdsearch' on page 58 undefined on input line 323.
+
+[58 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-fwdsearch.png>]
 Overfull \hbox (7.96255pt too wide) in paragraph at lines 327--328
-[]$\OML/ztmcm/m/it/12 excess\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 i\OT1/ztmcm/m
-/n/12 ) + \OML/ztmcm/m/it/12 d$ \T1/ptm/m/n/12 (-20) é al-can-çado quando $\OML
-/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [
-\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12
- ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/
-12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/
-n/12 ]\OML/ztmcm/m/it/12 :m \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 d \OMS/ztm
-cm/m/n/12 ^^T \OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\
-OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 re
-g\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 +
+[]$\OML/ztmcm/m/it/12 excess\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 i\OT1/ztmcm/m/n/12 ) + \OML/ztmcm/m/it/12 d$ \T1/ptm/m/n/12 (-20) é al-can-çado quando $\OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :m \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 d \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 +
  []
 
-<images/rmm-tree-kary-bwdsearch.png, id=1009, 824.29097pt x 304.77292pt>
+
+LaTeX Warning: Reference `ex:kary-bwd' on page 59 undefined on input line 330.
+
+
+LaTeX Warning: Reference `ex:bin-bwd' on page 59 undefined on input line 330.
+
+<images/rmm-tree-kary-bwdsearch.png, id=614, 824.29097pt x 304.77292pt>
 File: images/rmm-tree-kary-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-bwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-kary-bwdsearch.png  used on input line
- 337.
+Package pdftex.def Info: images/rmm-tree-kary-bwdsearch.png  used on input line 337.
 (pdftex.def)             Requested size: 455.24411pt x 168.32318pt.
-[59 <./images/rmm-tree-kary-bwdsearch.png>]
-(./text/table-rmm-tree-karia-operations.tex
+[59 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-bwdsearch.png>]
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 60 undefined on input line 372.
+
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 60 undefined on input line 458.
+
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 60 undefined on input line 464.
+
+
+LaTeX Warning: Reference `tbl:karyOperations-rmm-tree' on page 60 undefined on input line 466.
+
+(/media/danyelle/Data/IFB/TCC/Texto/text/table-rmm-tree-karia-operations.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )) [60] [61] [62] [63]
 \openout2 = `text/resultados.aux'.
 
- (./text/resultados.tex [64
+ (/media/danyelle/Data/IFB/TCC/Texto/text/resultados.tex [64
 
 
 
 ]
 Cap\'{\i }tulo 4.
 
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 65 undefined on input line 3.
+
+
+LaTeX Warning: Reference `sec:base-de-dados' on page 65 undefined on input line 4.
+
+
+LaTeX Warning: Reference `sec:configuracao' on page 65 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:experimentos' on page 65 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:resultados' on page 65 undefined on input line 6.
+
+
+Package natbib Warning: Citation `datasets-inf-udec' on page 65 undefined on input line 10.
+
+
+LaTeX Warning: Reference `tbl:dataset' on page 65 undefined on input line 11.
+
+
+Package natbib Warning: Citation `datasets-inf-udec' on page 65 undefined on input line 30.
+
+
 Underfull \vbox (badness 1383) has occurred while \output is active []
 
  [65]
-[66] [67] [68] [69]
-<images/ctree_i3000000.png, id=1159, 716.1957pt x 562.5015pt>
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 66 undefined on input line 51.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 51.
+
+
+LaTeX Warning: Reference `sec:benchmark' on page 66 undefined on input line 53.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 53.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 53.
+
+[66]
+
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 67 undefined on input line 55.
+
+
+Package natbib Warning: Citation `sdsl' on page 67 undefined on input line 60.
+
+[67] [68] [69]
+<images/ctree_i3000000.png, id=747, 716.1957pt x 562.5015pt>
 File: images/ctree_i3000000.png Graphic file (type png)
 <use images/ctree_i3000000.png>
 Package pdftex.def Info: images/ctree_i3000000.png  used on input line 99.
 (pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
-<images/dna_i3000000.png, id=1160, 722.4591pt x 562.5015pt>
+<images/dna_i3000000.png, id=748, 722.4591pt x 562.5015pt>
 File: images/dna_i3000000.png Graphic file (type png)
 <use images/dna_i3000000.png>
 Package pdftex.def Info: images/dna_i3000000.png  used on input line 106.
 (pdftex.def)             Requested size: 577.96806pt x 450.0018pt.
-<images/prot_i3000000.png, id=1161, 716.1957pt x 562.5015pt>
+<images/prot_i3000000.png, id=749, 716.1957pt x 562.5015pt>
 File: images/prot_i3000000.png Graphic file (type png)
 <use images/prot_i3000000.png>
 Package pdftex.def Info: images/prot_i3000000.png  used on input line 113.
 (pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
-<images/wiki_i3000000.png, id=1162, 716.1957pt x 561.5379pt>
+<images/wiki_i3000000.png, id=750, 716.1957pt x 561.5379pt>
 File: images/wiki_i3000000.png Graphic file (type png)
 <use images/wiki_i3000000.png>
 Package pdftex.def Info: images/wiki_i3000000.png  used on input line 120.
 (pdftex.def)             Requested size: 572.95734pt x 449.23093pt.
-) [70 <./images/ctree_i3000000.png>] [71 <./images/dna_i3000000.png>] [72 <./im
-ages/prot_i3000000.png>] [73 <./images/wiki_i3000000.png>]
+) [70 </media/danyelle/Data/IFB/TCC/Texto/images/ctree_i3000000.png>] [71 </media/danyelle/Data/IFB/TCC/Texto/images/dna_i3000000.png>] [72 </media/danyelle/Data/IFB/TCC/Texto/images/prot_i3000000.png>] [73 </media/danyelle/Data/IFB/TCC/Texto/images/wiki_i3000000.png>]
 \openout2 = `text/conclusion.aux'.
 
-
-(./text/conclusion.tex [74
+ (/media/danyelle/Data/IFB/TCC/Texto/text/conclusion.tex [74
 
 
 
 ]
 Cap\'{\i }tulo 5.
-) [75] [76] (./ifbtcc.bbl [77
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 75 undefined on input line 5.
 
 
-]) 
+Package natbib Warning: Citation `paper-making-btree-cache' on page 75 undefined on input line 7.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 75 undefined on input line 9.
+
+) [75] [76]
+No file ifbtcc.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+Package lastpage Warning: Rerun to get the references right on input line 207.
+
+
 AED: lastpage setting LastPage
-[78]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 113.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
-(./ifbtcc.aux (./text/introduction.aux) (./text/background.aux)
-(./text/desenvolvimento.aux) (./text/resultados.aux) (./text/conclusion.aux))
+(/media/danyelle/Data/IFB/TCC/Texto/ifbtcc.aux (/media/danyelle/Data/IFB/TCC/Texto/text/introduction.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/background.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/desenvolvimento.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/resultados.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/conclusion.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
-Package rerunfilecheck Info: File `ifbtcc.out' has not changed.
-(rerunfilecheck)             Checksum: 8F9540145A8CE57F3301BE541B919EBB;2560.
 
+
+Package rerunfilecheck Warning: File `ifbtcc.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ifbtcc.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  0B284D9E357AF90C4F90D866E80FF480;2508.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 28994 strings out of 483122
- 511702 string characters out of 5964496
- 936866 words of memory out of 5000000
- 42526 multiletter control sequences out of 15000+600000
- 624212 words of font info for 318 fonts, out of 8000000 for 9000
+ 28851 strings out of 483122
+ 509426 string characters out of 5964496
+ 928346 words of memory out of 5000000
+ 42416 multiletter control sequences out of 15000+600000
+ 624662 words of font info for 322 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 60i,25n,60p,1567b,843s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/danyelle/.
-texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrs
-bk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on ifbtcc.pdf (81 pages, 3484640 bytes).
+ 60i,25n,60p,1606b,845s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/danyelle/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on /media/danyelle/Data/IFB/TCC/Texto/ifbtcc.pdf (79 pages, 3596282 bytes).
 PDF statistics:
- 1399 PDF objects out of 1440 (max. 8388607)
- 1221 compressed objects within 13 object streams
- 484 named destinations out of 1000 (max. 500000)
- 44459 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 793 compressed objects within 8 object streams
+ 458 named destinations out of 1000 (max. 500000)
+ 44160 words of extra memory for PDF output out of 51595 (max. 10000000)
 
