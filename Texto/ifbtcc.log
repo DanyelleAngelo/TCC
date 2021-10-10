@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  12 SEP 2021 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  10 OCT 2021 00:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1095,18 +1095,27 @@ l.166   \banca
 
 ] [3] [4
 
-] (/media/danyelle/Data/IFB/TCC/Texto/text/resumo.tex) [5] [6
+]
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 
-] (/media/danyelle/Data/IFB/TCC/Texto/text/abstract.tex) [7] [8
+ []
+
+[5] [6
+
+] (/media/danyelle/Data/IFB/TCC/Texto/text/agradecimentos.tex) [7] [8
+
+] (/media/danyelle/Data/IFB/TCC/Texto/text/resumo.tex) [9] [10
+
+] (/media/danyelle/Data/IFB/TCC/Texto/text/abstract.tex) [11] [12
 
 ]
 \tf@toc=\write6
 \openout6 = `ifbtcc.toc'.
 
- [9]
+ [13]
 \openout2 = `text/introduction.aux'.
 
- (/media/danyelle/Data/IFB/TCC/Texto/text/introduction.tex [10
+ (/media/danyelle/Data/IFB/TCC/Texto/text/introduction.tex [14
 
 
 ]
@@ -1121,35 +1130,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-Package natbib Warning: Citation `relatorio-idc' on page 11 undefined on input line 4.
+Package natbib Warning: Citation `relatorio-idc' on page 15 undefined on input line 4.
 
 
-Package natbib Warning: Citation `domo-study' on page 11 undefined on input line 6.
+Package natbib Warning: Citation `domo-study' on page 15 undefined on input line 6.
 
 
-Package natbib Warning: Citation `domo-study' on page 11 undefined on input line 6.
+Package natbib Warning: Citation `domo-study' on page 15 undefined on input line 6.
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-Package natbib Warning: Citation `relatorio-cisco' on page 11 undefined on input line 17.
+Package natbib Warning: Citation `relatorio-cisco' on page 15 undefined on input line 17.
 
 
-Package natbib Warning: Citation `relatorio-idc' on page 11 undefined on input line 17.
+Package natbib Warning: Citation `relatorio-idc' on page 15 undefined on input line 17.
 
 
-Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 15 undefined on input line 20.
 
 
-Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 15 undefined on input line 20.
 
 
-Package natbib Warning: Citation `paper-Processor-Memory-bottleneck-Problems-Solutions' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `paper-Processor-Memory-bottleneck-Problems-Solutions' on page 15 undefined on input line 20.
 
 
-Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 15 undefined on input line 20.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1157,31 +1166,30 @@ Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[11]
+[15]
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 12 undefined on input line 22.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 12 undefined on input line 22.
+Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 22.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 12 undefined on input line 24.
+Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 22.
 
 
-Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 12 undefined on input line 26.
+Package natbib Warning: Citation `paper-making-btree-cache' on page 16 undefined on input line 24.
 
 
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 12 undefined on input line 28.
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 16 undefined on input line 26.
 
 
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 12 undefined on input line 28.
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 16 undefined on input line 28.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 12 undefined on input line 28.
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 16 undefined on input line 28.
 
 
-Underfull \vbox (badness 1264) has occurred while \output is active []
+Package natbib Warning: Citation `paper-making-btree-cache' on page 16 undefined on input line 28.
 
+
+Package natbib Warning: Citation `book-computer-architecutre' on page 16 undefined on input line 28.
 
 
 Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
@@ -1189,279 +1197,313 @@ Make it at least 15.73112pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[12]
+[16]
 
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 13 undefined on input line 35.
-
-
-Package natbib Warning: Citation `sdsl-article' on page 13 undefined on input line 35.
+LaTeX Warning: Reference `ch:fundamentacao' on page 17 undefined on input line 38.
 
 
-LaTeX Warning: Reference `ch:fundamentacao' on page 13 undefined on input line 40.
+LaTeX Warning: Reference `chp:desenvolvimento' on page 17 undefined on input line 38.
 
 
-LaTeX Warning: Reference `chp:desenvolvimento' on page 13 undefined on input line 40.
+LaTeX Warning: Reference `chp:resultados' on page 17 undefined on input line 38.
 
 
-LaTeX Warning: Reference `chp:resultados' on page 13 undefined on input line 40.
+LaTeX Warning: Reference `chp:conclusao' on page 17 undefined on input line 38.
 
-
-LaTeX Warning: Reference `chp:conclusao' on page 13 undefined on input line 40.
-
-[13]) [14]
+) [17]
 \openout2 = `text/background.aux'.
 
- (/media/danyelle/Data/IFB/TCC/Texto/text/background.tex
-Cap\'{\i }tulo 2.
-
-Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 15 undefined on input line 8.
-
-
-Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 15 undefined on input line 8.
-
-
-LaTeX Warning: Reference `fig:processor-memory-performance-gap' on page 15 undefined on input line 8.
-
-<images/gap-processor-memory.png, id=95, 513.92pt x 268.00125pt>
-File: images/gap-processor-memory.png Graphic file (type png)
-<use images/gap-processor-memory.png>
-Package pdftex.def Info: images/gap-processor-memory.png  used on input line 12.
-(pdftex.def)             Requested size: 359.74153pt x 187.59958pt.
-
-Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 15 undefined on input line 16.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:hierarquia-de-memoria' on page 15 undefined on input line 18.
-
-[15
+ (/media/danyelle/Data/IFB/TCC/Texto/text/background.tex [18
 
 
 
 ]
+Cap\'{\i }tulo 2.
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 20.
-
-
-Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 16 undefined on input line 20.
+Package natbib Warning: Citation `paper-processor-memory-bottleneck' on page 19 undefined on input line 8.
 
 
-Package natbib Warning: Citation `coira-feranando' on page 16 undefined on input line 20.
-
-<images/servidor.png, id=103, 1245.65375pt x 385.44pt>
-File: images/servidor.png Graphic file (type png)
-<use images/servidor.png>
-Package pdftex.def Info: images/servidor.png  used on input line 25.
-(pdftex.def)             Requested size: 455.24411pt x 140.8638pt.
-<images/mobile.png, id=104, 1123.19624pt x 367.3725pt>
-File: images/mobile.png Graphic file (type png)
-<use images/mobile.png>
-Package pdftex.def Info: images/mobile.png  used on input line 27.
-(pdftex.def)             Requested size: 455.24411pt x 148.89714pt.
-
-Package natbib Warning: Citation `book-computer-architecutre' on page 16 undefined on input line 28.
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 19 undefined on input line 8.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 16 undefined on input line 31.
+LaTeX Warning: Reference `fig:processor-memory-performance-gap' on page 19 undefined on input line 8.
 
 
-Package natbib Warning: Citation `coira-feranando' on page 16 undefined on input line 31.
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 19 undefined on input line 10.
 
-[16 </media/danyelle/Data/IFB/TCC/Texto/images/gap-processor-memory.png>]
+<images/gap-processor-memory.png, id=113, 642.4pt x 385.44pt>
+File: images/gap-processor-memory.png Graphic file (type png)
+<use images/gap-processor-memory.png>
+Package pdftex.def Info: images/gap-processor-memory.png  used on input line 15.
+(pdftex.def)             Requested size: 449.67694pt x 269.80615pt.
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 17 undefined on input line 35.
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 19 undefined on input line 16.
 
-
-Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 17 undefined on input line 35.
-
-
-Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 17 undefined on input line 38.
-
-
-Package natbib Warning: Citation `book-inteligencia-artificial' on page 17 undefined on input line 38.
-
-
-Package natbib Warning: Citation `arvore-dns' on page 17 undefined on input line 38.
-
-
-LaTeX Warning: Reference `fig:example-tree' on page 17 undefined on input line 38.
-
-[17 </media/danyelle/Data/IFB/TCC/Texto/images/servidor.png> </media/danyelle/Data/IFB/TCC/Texto/images/mobile.png>]
-<images/tree-dns.png, id=125, 312.11606pt x 234.8775pt>
-File: images/tree-dns.png Graphic file (type png)
-<use images/tree-dns.png>
-Package pdftex.def Info: images/tree-dns.png  used on input line 43.
-(pdftex.def)             Requested size: 249.69318pt x 187.90225pt.
-<images/decision-tree.png, id=126, 2268.475pt x 1264.725pt>
-File: images/decision-tree.png Graphic file (type png)
-<use images/decision-tree.png>
-Package pdftex.def Info: images/decision-tree.png  used on input line 45.
-(pdftex.def)             Requested size: 455.24411pt x 253.78964pt.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 18 undefined on input line 49.
-
-[18 </media/danyelle/Data/IFB/TCC/Texto/images/tree-dns.png> </media/danyelle/Data/IFB/TCC/Texto/images/decision-tree.png>]
-
-LaTeX Warning: Reference `sec:sec-bitvector' on page 19 undefined on input line 51.
-
-
-LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 19 undefined on input line 51.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 19 undefined on input line 54.
-
-
-LaTeX Warning: Reference `fig:bitvector-operations' on page 19 undefined on input line 64.
-
-<images/access.png, id=136, 194.22563pt x 74.52844pt>
-File: images/access.png Graphic file (type png)
-<use images/access.png>
-Package pdftex.def Info: images/access.png  used on input line 68.
-(pdftex.def)             Requested size: 194.22514pt x 74.52824pt.
-<images/rank.png, id=137, 193.32225pt x 66.39806pt>
-File: images/rank.png Graphic file (type png)
-<use images/rank.png>
-Package pdftex.def Info: images/rank.png  used on input line 69.
-(pdftex.def)             Requested size: 193.32178pt x 66.39787pt.
-<images/select.png, id=138, 202.8077pt x 65.043pt>
-File: images/select.png Graphic file (type png)
-<use images/select.png>
-Package pdftex.def Info: images/select.png  used on input line 70.
-(pdftex.def)             Requested size: 202.80719pt x 65.04283pt.
-
-Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 19 undefined on input line 80.
-
-
-Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 19 undefined on input line 80.
-
-<images/arvore_geral.png, id=139, 820.16125pt x 412.1455pt>
-File: images/arvore_geral.png Graphic file (type png)
-<use images/arvore_geral.png>
-Package pdftex.def Info: images/arvore_geral.png  used on input line 81.
-(pdftex.def)             Requested size: 455.24411pt x 228.7686pt.
 [19]
 
-Package natbib Warning: Citation `tenenbaum' on page 20 undefined on input line 86.
+LaTeX Warning: Reference `fig:hierarquia-de-memoria' on page 20 undefined on input line 20.
 
 
-Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 20 undefined on input line 86.
+Package natbib Warning: Citation `book-compact-data-structures' on page 20 undefined on input line 22.
 
 
-LaTeX Warning: Reference `fig:parenthesis-representation' on page 20 undefined on input line 86.
-
-[20 </media/danyelle/Data/IFB/TCC/Texto/images/access.png> </media/danyelle/Data/IFB/TCC/Texto/images/rank.png> </media/danyelle/Data/IFB/TCC/Texto/images/select.png> </media/danyelle/Data/IFB/TCC/Texto/images/arvore_geral.png>]
-
-Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 21 undefined on input line 93.
+Package natbib Warning: Citation `paper-gap-between-processor-memory' on page 20 undefined on input line 22.
 
 
-Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 21 undefined on input line 96.
+Package natbib Warning: Citation `coira-feranando' on page 20 undefined on input line 22.
+
+<images/hierarquia-memory-2.png, id=120, 754.9806pt x 486.618pt>
+File: images/hierarquia-memory-2.png Graphic file (type png)
+<use images/hierarquia-memory-2.png>
+Package pdftex.def Info: images/hierarquia-memory-2.png  used on input line 27.
+(pdftex.def)             Requested size: 475.6403pt x 306.57095pt.
+
+Package natbib Warning: Citation `memory-hierarchy' on page 20 undefined on input line 28.
+
+
+Overfull \hbox (20.3962pt too wide) in paragraph at lines 27--30
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 20 undefined on input line 32.
+
+
+Package natbib Warning: Citation `coira-feranando' on page 20 undefined on input line 32.
+
+[20 </media/danyelle/Data/IFB/TCC/Texto/images/gap-processor-memory.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 21 undefined on input line 36.
+
+
+Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 21 undefined on input line 36.
+
+
+Package natbib Warning: Citation `book-algoritmos-teoria-pratica' on page 21 undefined on input line 40.
+
+
+Package natbib Warning: Citation `book-inteligencia-artificial' on page 21 undefined on input line 40.
+
+
+Package natbib Warning: Citation `arvore-dns' on page 21 undefined on input line 41.
+
+<images/tree-dns.png, id=131, 312.11606pt x 234.8775pt>
+File: images/tree-dns.png Graphic file (type png)
+<use images/tree-dns.png>
+Package pdftex.def Info: images/tree-dns.png  used on input line 45.
+(pdftex.def)             Requested size: 249.69318pt x 187.90225pt.
+<images/decision-tree.png, id=132, 2268.475pt x 1264.725pt>
+File: images/decision-tree.png Graphic file (type png)
+<use images/decision-tree.png>
+Package pdftex.def Info: images/decision-tree.png  used on input line 47.
+(pdftex.def)             Requested size: 455.24411pt x 253.78964pt.
+
+LaTeX Warning: Reference `fig:example-tree' on page 21 undefined on input line 50.
+
+[21 </media/danyelle/Data/IFB/TCC/Texto/images/hierarquia-memory-2.png>] [22 </media/danyelle/Data/IFB/TCC/Texto/images/tree-dns.png> </media/danyelle/Data/IFB/TCC/Texto/images/decision-tree.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 52.
+
+
+LaTeX Warning: Reference `sec:sec-bitvector' on page 23 undefined on input line 54.
+
+
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 23 undefined on input line 54.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 54.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 57.
+
+
+LaTeX Warning: Reference `fig:bitvector-operations' on page 23 undefined on input line 67.
+
+<images/access.png, id=150, 194.22563pt x 74.52844pt>
+File: images/access.png Graphic file (type png)
+<use images/access.png>
+Package pdftex.def Info: images/access.png  used on input line 71.
+(pdftex.def)             Requested size: 194.22514pt x 74.52824pt.
+<images/rank.png, id=151, 193.32225pt x 66.39806pt>
+File: images/rank.png Graphic file (type png)
+<use images/rank.png>
+Package pdftex.def Info: images/rank.png  used on input line 72.
+(pdftex.def)             Requested size: 193.32178pt x 66.39787pt.
+<images/select.png, id=152, 202.8077pt x 65.043pt>
+File: images/select.png Graphic file (type png)
+<use images/select.png>
+Package pdftex.def Info: images/select.png  used on input line 73.
+(pdftex.def)             Requested size: 202.80719pt x 65.04283pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 23 undefined on input line 83.
+
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 23 undefined on input line 83.
+
+<images/arvore_geral.png, id=153, 820.16125pt x 412.1455pt>
+File: images/arvore_geral.png Graphic file (type png)
+<use images/arvore_geral.png>
+Package pdftex.def Info: images/arvore_geral.png  used on input line 84.
+(pdftex.def)             Requested size: 455.24411pt x 228.7686pt.
+[23]
+
+Package natbib Warning: Citation `tenenbaum' on page 24 undefined on input line 89.
+
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 24 undefined on input line 89.
+
+
+LaTeX Warning: Reference `fig:parenthesis-representation' on page 24 undefined on input line 89.
+
+[24 </media/danyelle/Data/IFB/TCC/Texto/images/access.png> </media/danyelle/Data/IFB/TCC/Texto/images/rank.png> </media/danyelle/Data/IFB/TCC/Texto/images/select.png> </media/danyelle/Data/IFB/TCC/Texto/images/arvore_geral.png>]
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 25 undefined on input line 96.
+
+
+Package natbib Warning: Citation `paper-succint-representation-of-balanced-parentheses' on page 25 undefined on input line 99.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 105.
+(amsmath)                trying to recover with `aligned' on input line 108.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 21 undefined on input line 112.
-
-[21]
-
-Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 22 undefined on input line 116.
+LaTeX Warning: Reference `fig:excess-in-tree' on page 25 undefined on input line 111.
 
 
-LaTeX Warning: Reference `fig:dfuds-representation' on page 22 undefined on input line 116.
-
-<images/dfuds.png, id=169, 825.94286pt x 384.88937pt>
-File: images/dfuds.png Graphic file (type png)
-<use images/dfuds.png>
-Package pdftex.def Info: images/dfuds.png  used on input line 120.
-(pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
-
-Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 22 undefined on input line 124.
+LaTeX Warning: Reference `fig:parenthesis-representation' on page 25 undefined on input line 111.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 22 undefined on input line 126.
+LaTeX Warning: Reference `fig:parenthesis-representation' on page 25 undefined on input line 115.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 22 undefined on input line 126.
+LaTeX Warning: Reference `fig:parenthesis-representation' on page 25 undefined on input line 115.
 
-[22 </media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png>]
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 130.
-
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 130.
-
-<images/louds.png, id=178, 825.94286pt x 368.37051pt>
-File: images/louds.png Graphic file (type png)
-<use images/louds.png>
-Package pdftex.def Info: images/louds.png  used on input line 138.
-(pdftex.def)             Requested size: 455.24411pt x 203.03722pt.
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 143.
-
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 23 undefined on input line 143.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 23 undefined on input line 145.
-
-[23 </media/danyelle/Data/IFB/TCC/Texto/images/louds.png>]
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 24 undefined on input line 153.
-
-
-LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 24 undefined on input line 153.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 24 undefined on input line 157.
-
-[24]
-
-LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 25 undefined on input line 193.
-
+<images/excess-in-tree.png, id=179, 711.1368pt x 71.03108pt>
+File: images/excess-in-tree.png Graphic file (type png)
+<use images/excess-in-tree.png>
+Package pdftex.def Info: images/excess-in-tree.png  used on input line 116.
+(pdftex.def)             Requested size: 455.24411pt x 45.47165pt.
 [25]
 
-LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 26 undefined on input line 229.
+Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 124.
 
-<images/rmm-tree-bin.png, id=198, 825.94286pt x 597.98264pt>
+
+Package natbib Warning: Citation `article-dfuds' on page 26 undefined on input line 127.
+
+
+LaTeX Warning: Reference `fig:dfuds-representation' on page 26 undefined on input line 128.
+
+<images/dfuds.png, id=184, 825.94286pt x 384.88937pt>
+File: images/dfuds.png Graphic file (type png)
+<use images/dfuds.png>
+Package pdftex.def Info: images/dfuds.png  used on input line 132.
+(pdftex.def)             Requested size: 455.24411pt x 212.14201pt.
+
+Package natbib Warning: Citation `paper-succint-trees-in-practice' on page 26 undefined on input line 136.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 138.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 138.
+
+<images/louds.png, id=185, 825.94286pt x 368.37051pt>
+File: images/louds.png Graphic file (type png)
+<use images/louds.png>
+Package pdftex.def Info: images/louds.png  used on input line 145.
+(pdftex.def)             Requested size: 455.24411pt x 203.03722pt.
+[26 </media/danyelle/Data/IFB/TCC/Texto/images/excess-in-tree.png>]
+
+Package natbib Warning: Citation `article-louds' on page 27 undefined on input line 148.
+
+
+Package natbib Warning: Citation `article-dfuds' on page 27 undefined on input line 148.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 27 undefined on input line 149.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 27 undefined on input line 149.
+
+[27 </media/danyelle/Data/IFB/TCC/Texto/images/dfuds.png> </media/danyelle/Data/IFB/TCC/Texto/images/louds.png>]
+
+LaTeX Warning: Reference `fig:louds-representation' on page 28 undefined on input line 151.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 28 undefined on input line 154.
+
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 28 undefined on input line 156.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 28 undefined on input line 158.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 28 undefined on input line 166.
+
+
+LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 28 undefined on input line 166.
+
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 28 undefined on input line 170.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 29 undefined on input line 206.
+
+[29]
+
+LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 30 undefined on input line 242.
+
+<images/rmm-tree-bin.png, id=214, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin.png Graphic file (type png)
 <use images/rmm-tree-bin.png>
-Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 233.
+Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 246.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
 
-LaTeX Warning: Reference `alg:build-bin-tree' on page 26 undefined on input line 238.
+LaTeX Warning: Reference `alg:build-bin-tree' on page 30 undefined on input line 251.
 
 
-Package natbib Warning: Citation `book-gusfield' on page 26 undefined on input line 238.
+Package natbib Warning: Citation `book-gusfield' on page 30 undefined on input line 251.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 239.
+Package natbib Warning: Citation `book-compact-data-structures' on page 30 undefined on input line 252.
+
+[30]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 31 undefined on input line 254.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 26 undefined on input line 241.
-
-[26]
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 27 undefined on input line 251.
+LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 31 undefined on input line 254.
 
 
-LaTeX Warning: Reference `alg:folha-indice' on page 27 undefined on input line 253.
+Underfull \vbox (badness 5147) has occurred while \output is active []
+
+ [31 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin.png>]
+
+Package natbib Warning: Citation `book-compact-data-structures' on page 32 undefined on input line 264.
 
 
-LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 27 undefined on input line 256.
+LaTeX Warning: Reference `alg:folha-indice' on page 32 undefined on input line 266.
 
-[27 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 265--267
+
+LaTeX Warning: Reference `fig:rmm-tree-binaria' on page 32 undefined on input line 269.
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
 
  []
 
 
-LaTeX Warning: Reference `ex-build-tree' on page 28 undefined on input line 281.
+LaTeX Warning: Reference `ex-build-tree' on page 33 undefined on input line 294.
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 341.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 354.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1471,404 +1513,436 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-LaTeX Warning: Reference `alg:folha-indice' on page 28 undefined on input line 341.
+LaTeX Warning: Reference `alg:folha-indice' on page 33 undefined on input line 354.
 
 
-LaTeX Warning: Reference `sec:sec-bitvector' on page 28 undefined on input line 346.
+LaTeX Warning: Reference `sec:sec-bitvector' on page 33 undefined on input line 359.
 
 
-LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 28 undefined on input line 346.
-
-[28]
-
-LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 29 undefined on input line 349.
+LaTeX Warning: Reference `sec:sec-parenthesis-balanceados' on page 33 undefined on input line 359.
 
 
-Package natbib Warning: Citation `paper-simple-and-efficient-fully-functional-succinct-trees' on page 29 undefined on input line 358.
+LaTeX Warning: Reference `tbl:classicOperations-rmm-tree' on page 33 undefined on input line 362.
 
-[29pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.1}) has been already used, duplicate ignored
+[33]
+
+Package natbib Warning: Citation `paper-simple-and-efficient-fully-functional-succinct-trees' on page 34 undefined on input line 371.
+
+
+LaTeX Warning: Reference `ex:bin-fwdSearch' on page 34 undefined on input line 395.
+
+
+LaTeX Warning: Reference `alg:fwdSearch-bin' on page 34 undefined on input line 395.
+
+[34pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
+l.399 
       pdfTeX warning (ext4): destination with the same identifier (name{AlgoLine.1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 
-      ] [30]
+l.399 
+      ] [35]
 
-LaTeX Warning: Reference `ex:bin-fwdSearch' on page 31 undefined on input line 382.
+LaTeX Warning: Reference `fig:bin-fwdSearch' on page 36 undefined on input line 403.
 
-
-LaTeX Warning: Reference `alg:fwdSearch-bin' on page 31 undefined on input line 382.
-
-
-LaTeX Warning: Reference `fig:bin-fwdSearch' on page 31 undefined on input line 390.
-
-<images/rmm-tree-bin-fwdsearch.png, id=264, 825.94286pt x 597.98264pt>
+<images/rmm-tree-bin-fwdsearch.png, id=286, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-fwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-fwdsearch.png  used on input line 394.
+Package pdftex.def Info: images/rmm-tree-bin-fwdsearch.png  used on input line 407.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package natbib Warning: Citation `book-compact-data-structures' on page 36 undefined on input line 415.
+
+[36 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-fwdsearch.png>]
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 37 undefined on input line 499.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 31 undefined on input line 402.
-
-[31]
-
-LaTeX Warning: Reference `alg:fwdBlock' on page 32 undefined on input line 486.
+LaTeX Warning: Reference `alg:folha-indice' on page 37 undefined on input line 499.
 
 
-LaTeX Warning: Reference `alg:folha-indice' on page 32 undefined on input line 486.
+LaTeX Warning: Reference `alg:folha-indice' on page 37 undefined on input line 499.
 
 
-LaTeX Warning: Reference `alg:folha-indice' on page 32 undefined on input line 486.
+Package natbib Warning: Citation `book-compact-data-structures' on page 37 undefined on input line 510.
+
+[37] [38] [39]
+
+LaTeX Warning: Reference `alg:bwdSearch-bin' on page 40 undefined on input line 519.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 32 undefined on input line 497.
-
-[32 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-fwdsearch.png>] [33] [34]
-
-LaTeX Warning: Reference `alg:bwdSearch-bin' on page 35 undefined on input line 506.
+LaTeX Warning: Reference `alg:fwdBlock' on page 40 undefined on input line 519.
 
 
-LaTeX Warning: Reference `alg:fwdBlock' on page 35 undefined on input line 506.
+LaTeX Warning: Reference `fig:bin-bwdSearch' on page 40 undefined on input line 526.
 
-
-LaTeX Warning: Reference `fig:bin-bwdSearch' on page 35 undefined on input line 513.
-
-<images/rmm-tree-bin-bwdsearch.png, id=343, 825.94286pt x 597.98264pt>
+<images/rmm-tree-bin-bwdsearch.png, id=363, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-bin-bwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-bwdsearch.png  used on input line 517.
+Package pdftex.def Info: images/rmm-tree-bin-bwdsearch.png  used on input line 530.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35]
+[40]
 
-LaTeX Warning: Reference `alg:fwdBlock' on page 36 undefined on input line 573.
+LaTeX Warning: Reference `alg:fwdBlock' on page 41 undefined on input line 586.
 
-[36 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-bwdsearch.png>] [37]
+[41 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-bwdsearch.png>] [42]
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 38 undefined on input line 589.
+Package natbib Warning: Citation `book-compact-data-structures' on page 43 undefined on input line 602.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 38 undefined on input line 595.
+Package natbib Warning: Citation `book-compact-data-structures' on page 43 undefined on input line 608.
 
-[38]
-<images/rmm-tree-bin-minexcess.png, id=397, 825.94286pt x 597.98264pt>
+[43]
+<images/rmm-tree-bin-minexcess.png, id=418, 825.94286pt x 597.98264pt>
 File: images/rmm-tree-bin-minexcess.png Graphic file (type png)
 <use images/rmm-tree-bin-minexcess.png>
-Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 612.
+Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 625.
 (pdftex.def)             Requested size: 455.24411pt x 329.59404pt.
- [39 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-minexcess.png>] [40] [41] [42] [43] [44] [45] (/media/danyelle/Data/IFB/TCC/Texto/text/table-rmmTree-classicOperations.tex)
+ [44 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-bin-minexcess.png>] [45] [46] [47] [48] [49] [50] (/media/danyelle/Data/IFB/TCC/Texto/text/table-rmmTree-classicOperations.tex)
 
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 46 undefined on input line 776.
-
-
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 46 undefined on input line 778.
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 51 undefined on input line 788.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 46 undefined on input line 778.
-
-[46]
-
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 780.
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 51 undefined on input line 790.
 
 
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 780.
+Package natbib Warning: Citation `paper-making-btree-cache' on page 51 undefined on input line 790.
+
+[51]
+
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 52 undefined on input line 792.
 
 
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 796.
+Package natbib Warning: Citation `paper-making-btree-cache' on page 52 undefined on input line 792.
 
 
-Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 47 undefined on input line 798.
-
-[47]
-
-Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 800.
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 52 undefined on input line 792.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 802.
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 52 undefined on input line 808.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 48 undefined on input line 802.
+Package natbib Warning: Citation `paper-effect-node-size-cache-b-trees' on page 52 undefined on input line 810.
 
-) [48]
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 52 undefined on input line 812.
+
+[52]
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 53 undefined on input line 814.
+
+
+Package natbib Warning: Citation `paper-making-btree-cache' on page 53 undefined on input line 814.
+
+) [53]
 \openout2 = `text/desenvolvimento.aux'.
 
- (/media/danyelle/Data/IFB/TCC/Texto/text/desenvolvimento.tex
-Cap\'{\i }tulo 3.
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 49 undefined on input line 3.
-
-
-LaTeX Warning: Reference `ch:fundamentacao' on page 49 undefined on input line 7.
-
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 49 undefined on input line 9.
-
-[49
+ (/media/danyelle/Data/IFB/TCC/Texto/text/desenvolvimento.tex [54
 
 
 
 ]
+Cap\'{\i }tulo 3.
 
-Package natbib Warning: Citation `book-computer-architecutre' on page 50 undefined on input line 35.
-
-[50]
-
-LaTeX Warning: Reference `ex-build-tree' on page 51 undefined on input line 57.
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 55 undefined on input line 3.
 
 
-LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 51 undefined on input line 57.
-
-<images/rmm-tree-kary.png, id=465, 818.50937pt x 279.99463pt>
-File: images/rmm-tree-kary.png Graphic file (type png)
-<use images/rmm-tree-kary.png>
-Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 65.
-(pdftex.def)             Requested size: 455.24411pt x 155.72783pt.
-
-LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 51 undefined on input line 69.
+LaTeX Warning: Reference `ch:fundamentacao' on page 55 undefined on input line 7.
 
 
-LaTeX Warning: Reference `ex-build-tree' on page 51 undefined on input line 69.
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 55 undefined on input line 9.
+
+[55]
+
+Package natbib Warning: Citation `book-computer-architecutre' on page 56 undefined on input line 35.
+
+[56]
+
+LaTeX Warning: Reference `ex-build-tree' on page 57 undefined on input line 57.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--74
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 57 undefined on input line 57.
+
+
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 57 undefined on input line 62.
+
+
+LaTeX Warning: Reference `ex-build-tree' on page 57 undefined on input line 62.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
 
  []
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 81.
+(amsmath)                trying to recover with `aligned' on input line 74.
 
-[51 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary.png>]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 91.
+(amsmath)                trying to recover with `aligned' on input line 84.
+
+[57]
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 58 undefined on input line 98.
 
 
-LaTeX Warning: Reference `ch:fundamentacao' on page 52 undefined on input line 105.
+LaTeX Warning: Reference `fig:rmm-tree-k' on page 58 undefined on input line 98.
+
+<images/rmm-tree-kary.png, id=498, 818.50937pt x 279.99463pt>
+File: images/rmm-tree-kary.png Graphic file (type png)
+<use images/rmm-tree-kary.png>
+Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 105.
+(pdftex.def)             Requested size: 455.24411pt x 155.72783pt.
+
+LaTeX Warning: Reference `alg:folha-indice' on page 58 undefined on input line 160.
 
 
-LaTeX Warning: Reference `alg:build-kary-rmm-tree' on page 52 undefined on input line 105.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `alg:folha-indice' on page 52 undefined on input line 157.
+LaTeX Warning: Reference `alg:build-kary-rmm-tree' on page 58 undefined on input line 164.
 
-[52]
+[58 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `alg:fwdRegistry' on page 53 undefined on input line 173.
+ [59]
 
-
-LaTeX Warning: Reference `alg:fwdBlock' on page 53 undefined on input line 195.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 53 undefined on input line 200.
-
-[53] [54]
-
-LaTeX Warning: Reference `alg:fwdVerifySibling' on page 55 undefined on input line 206.
+LaTeX Warning: Reference `alg:fwdRegistry' on page 60 undefined on input line 177.
 
 
-LaTeX Warning: Reference `alg:fwdSearch' on page 55 undefined on input line 206.
+Package natbib Warning: Citation `book-compact-data-structures' on page 60 undefined on input line 179.
+
+[60]
+
+LaTeX Warning: Reference `alg:fwdVerifySibling' on page 61 undefined on input line 185.
 
 
-LaTeX Warning: Reference `alg:fwdBlock' on page 55 undefined on input line 291.
+LaTeX Warning: Reference `alg:fwdSearch' on page 61 undefined on input line 185.
 
 
-LaTeX Warning: Reference `ex:bin-fwdSearch' on page 55 undefined on input line 296.
+LaTeX Warning: Reference `ex:bin-fwdSearch' on page 61 undefined on input line 189.
 
-[55] [56] [57]
-<images/rmm-tree-kary-fwdsearch.png, id=604, 821.81314pt x 284.12434pt>
+
+LaTeX Warning: Reference `sec:fwdsearch-bin' on page 61 undefined on input line 189.
+
+<images/rmm-tree-kary-fwdsearch.png, id=552, 821.81314pt x 284.12434pt>
 File: images/rmm-tree-kary-fwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-fwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-kary-fwdsearch.png  used on input line 313.
+Package pdftex.def Info: images/rmm-tree-kary-fwdsearch.png  used on input line 201.
 (pdftex.def)             Requested size: 455.24411pt x 157.39606pt.
+[61 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-fwdsearch.png>]
+
+LaTeX Warning: Reference `alg:fwdBlock' on page 62 undefined on input line 229.
 
 
-LaTeX Warning: Reference `ch:fundamentacao' on page 58 undefined on input line 320.
+LaTeX Warning: Reference `alg:fwdBlock' on page 62 undefined on input line 314.
+
+[62] [63] [64]
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 65 undefined on input line 321.
 
 
-LaTeX Warning: Reference `alg:bwdRegistry' on page 58 undefined on input line 320.
+LaTeX Warning: Reference `alg:bwdRegistry' on page 65 undefined on input line 321.
 
 
-LaTeX Warning: Reference `alg:bwdVerifySibling' on page 58 undefined on input line 320.
+LaTeX Warning: Reference `alg:bwdVerifySibling' on page 65 undefined on input line 321.
 
 
-LaTeX Warning: Reference `alg:bwdSearch' on page 58 undefined on input line 320.
+LaTeX Warning: Reference `alg:bwdSearch' on page 65 undefined on input line 321.
 
 
-LaTeX Warning: Reference `sc:bwdsearch' on page 58 undefined on input line 323.
+LaTeX Warning: Reference `sc:bwdsearch' on page 65 undefined on input line 324.
 
-[58 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-fwdsearch.png>]
-Overfull \hbox (7.96255pt too wide) in paragraph at lines 327--328
+
+Overfull \hbox (7.96255pt too wide) in paragraph at lines 328--329
 []$\OML/ztmcm/m/it/12 excess\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 i\OT1/ztmcm/m/n/12 ) + \OML/ztmcm/m/it/12 d$ \T1/ptm/m/n/12 (-20) é al-can-çado quando $\OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 + \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :m \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 d \OMS/ztmcm/m/n/12 ^^T \OML/ztmcm/m/it/12 dr \OMS/ztmcm/m/n/12 ^^@ \OML/ztmcm/m/it/12 R\OT1/ztmcm/m/n/12 [\OML/ztmcm/m/it/12 v\OT1/ztmcm/m/n/12 ][\OML/ztmcm/m/it/12 reg\OT1/ztmcm/m/n/12 ]\OML/ztmcm/m/it/12 :e \OT1/ztmcm/m/n/12 +
  []
 
 
-LaTeX Warning: Reference `ex:kary-bwd' on page 59 undefined on input line 330.
+LaTeX Warning: Reference `ex:kary-bwd' on page 65 undefined on input line 331.
 
 
-LaTeX Warning: Reference `ex:bin-bwd' on page 59 undefined on input line 330.
+LaTeX Warning: Reference `ex:bin-bwd' on page 65 undefined on input line 331.
 
-<images/rmm-tree-kary-bwdsearch.png, id=614, 824.29097pt x 304.77292pt>
+<images/rmm-tree-kary-bwdsearch.png, id=641, 824.29097pt x 304.77292pt>
 File: images/rmm-tree-kary-bwdsearch.png Graphic file (type png)
 <use images/rmm-tree-kary-bwdsearch.png>
-Package pdftex.def Info: images/rmm-tree-kary-bwdsearch.png  used on input line 337.
+Package pdftex.def Info: images/rmm-tree-kary-bwdsearch.png  used on input line 338.
 (pdftex.def)             Requested size: 455.24411pt x 168.32318pt.
-[59 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-bwdsearch.png>]
+[65 </media/danyelle/Data/IFB/TCC/Texto/images/rmm-tree-kary-bwdsearch.png>]
 
-LaTeX Warning: Reference `alg:fwdBlock' on page 60 undefined on input line 372.
-
-
-LaTeX Warning: Reference `alg:fwdBlock' on page 60 undefined on input line 458.
+LaTeX Warning: Reference `alg:fwdBlock' on page 66 undefined on input line 373.
 
 
-LaTeX Warning: Reference `ch:fundamentacao' on page 60 undefined on input line 464.
+LaTeX Warning: Reference `alg:fwdBlock' on page 66 undefined on input line 459.
+
+[66] [67] [68]
+
+LaTeX Warning: Reference `ch:fundamentacao' on page 69 undefined on input line 465.
 
 
-LaTeX Warning: Reference `tbl:karyOperations-rmm-tree' on page 60 undefined on input line 466.
+LaTeX Warning: Reference `tbl:karyOperations-rmm-tree' on page 69 undefined on input line 467.
 
 (/media/danyelle/Data/IFB/TCC/Texto/text/table-rmm-tree-karia-operations.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-)) [60] [61] [62] [63]
+)) [69] [70]
 \openout2 = `text/resultados.aux'.
 
- (/media/danyelle/Data/IFB/TCC/Texto/text/resultados.tex [64
+ (/media/danyelle/Data/IFB/TCC/Texto/text/resultados.tex
+Cap\'{\i }tulo 4.
+
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 71 undefined on input line 3.
+
+
+LaTeX Warning: Reference `sec:base-de-dados' on page 71 undefined on input line 4.
+
+
+LaTeX Warning: Reference `sec:configuracao' on page 71 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:experimentos' on page 71 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:resultados' on page 71 undefined on input line 5.
+
+
+Package natbib Warning: Citation `datasets-inf-udec' on page 71 undefined on input line 9.
+
+
+LaTeX Warning: Reference `tbl:dataset' on page 71 undefined on input line 10.
+
+
+Package natbib Warning: Citation `datasets-inf-udec' on page 71 undefined on input line 29.
+
+
+Package natbib Warning: Citation `datasets-inf-udec' on page 71 undefined on input line 29.
+
+
+Underfull \vbox (badness 3679) has occurred while \output is active []
+
+ [71
 
 
 
 ]
-Cap\'{\i }tulo 4.
 
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 65 undefined on input line 3.
-
-
-LaTeX Warning: Reference `sec:base-de-dados' on page 65 undefined on input line 4.
+Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 72 undefined on input line 50.
 
 
-LaTeX Warning: Reference `sec:configuracao' on page 65 undefined on input line 5.
+Package natbib Warning: Citation `book-compact-data-structures' on page 72 undefined on input line 50.
 
 
-LaTeX Warning: Reference `sec:experimentos' on page 65 undefined on input line 5.
+LaTeX Warning: Reference `sec:benchmark' on page 72 undefined on input line 52.
 
 
-LaTeX Warning: Reference `sec:resultados' on page 65 undefined on input line 6.
+Package natbib Warning: Citation `book-compact-data-structures' on page 72 undefined on input line 52.
 
 
-Package natbib Warning: Citation `datasets-inf-udec' on page 65 undefined on input line 10.
+Package natbib Warning: Citation `book-compact-data-structures' on page 72 undefined on input line 52.
+
+[72]
+
+LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 73 undefined on input line 54.
 
 
-LaTeX Warning: Reference `tbl:dataset' on page 65 undefined on input line 11.
+Package natbib Warning: Citation `sdsl' on page 73 undefined on input line 59.
 
 
-Package natbib Warning: Citation `datasets-inf-udec' on page 65 undefined on input line 30.
+LaTeX Warning: Reference `subsec:decision' on page 73 undefined on input line 66.
+
+[73]
+
+LaTeX Warning: Reference `fig:cstree' on page 74 undefined on input line 73.
 
 
-Underfull \vbox (badness 1383) has occurred while \output is active []
-
- [65]
-
-Package natbib Warning: Citation `paper-fully-functinal-succint-trees' on page 66 undefined on input line 51.
+LaTeX Warning: Reference `fig:dna' on page 74 undefined on input line 73.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 51.
+LaTeX Warning: Reference `fig:prot' on page 74 undefined on input line 73.
 
 
-LaTeX Warning: Reference `sec:benchmark' on page 66 undefined on input line 53.
+LaTeX Warning: Reference `fig:wiki' on page 74 undefined on input line 73.
 
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 53.
-
-
-Package natbib Warning: Citation `book-compact-data-structures' on page 66 undefined on input line 53.
-
-[66]
-
-LaTeX Warning: Reference `sec:sec-classic-rmm-tree' on page 67 undefined on input line 55.
-
-
-Package natbib Warning: Citation `sdsl' on page 67 undefined on input line 60.
-
-[67] [68] [69]
-<images/ctree_i3000000.png, id=747, 716.1957pt x 562.5015pt>
+[74] [75]
+<images/ctree_i3000000.png, id=774, 716.1957pt x 562.5015pt>
 File: images/ctree_i3000000.png Graphic file (type png)
 <use images/ctree_i3000000.png>
-Package pdftex.def Info: images/ctree_i3000000.png  used on input line 99.
+Package pdftex.def Info: images/ctree_i3000000.png  used on input line 102.
 (pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
-<images/dna_i3000000.png, id=748, 722.4591pt x 562.5015pt>
+<images/dna_i3000000.png, id=775, 722.4591pt x 562.5015pt>
 File: images/dna_i3000000.png Graphic file (type png)
 <use images/dna_i3000000.png>
-Package pdftex.def Info: images/dna_i3000000.png  used on input line 106.
+Package pdftex.def Info: images/dna_i3000000.png  used on input line 110.
 (pdftex.def)             Requested size: 577.96806pt x 450.0018pt.
-<images/prot_i3000000.png, id=749, 716.1957pt x 562.5015pt>
+<images/prot_i3000000.png, id=776, 716.1957pt x 562.5015pt>
 File: images/prot_i3000000.png Graphic file (type png)
 <use images/prot_i3000000.png>
-Package pdftex.def Info: images/prot_i3000000.png  used on input line 113.
+Package pdftex.def Info: images/prot_i3000000.png  used on input line 118.
 (pdftex.def)             Requested size: 572.95734pt x 450.0018pt.
-<images/wiki_i3000000.png, id=750, 716.1957pt x 561.5379pt>
+<images/wiki_i3000000.png, id=777, 716.1957pt x 561.5379pt>
 File: images/wiki_i3000000.png Graphic file (type png)
 <use images/wiki_i3000000.png>
-Package pdftex.def Info: images/wiki_i3000000.png  used on input line 120.
+Package pdftex.def Info: images/wiki_i3000000.png  used on input line 126.
 (pdftex.def)             Requested size: 572.95734pt x 449.23093pt.
-) [70 </media/danyelle/Data/IFB/TCC/Texto/images/ctree_i3000000.png>] [71 </media/danyelle/Data/IFB/TCC/Texto/images/dna_i3000000.png>] [72 </media/danyelle/Data/IFB/TCC/Texto/images/prot_i3000000.png>] [73 </media/danyelle/Data/IFB/TCC/Texto/images/wiki_i3000000.png>]
+) [76 </media/danyelle/Data/IFB/TCC/Texto/images/ctree_i3000000.png>] [77 </media/danyelle/Data/IFB/TCC/Texto/images/dna_i3000000.png>] [78 </media/danyelle/Data/IFB/TCC/Texto/images/prot_i3000000.png>] [79 </media/danyelle/Data/IFB/TCC/Texto/images/wiki_i3000000.png>]
 \openout2 = `text/conclusion.aux'.
 
- (/media/danyelle/Data/IFB/TCC/Texto/text/conclusion.tex [74
+ (/media/danyelle/Data/IFB/TCC/Texto/text/conclusion.tex [80
 
 
 
 ]
 Cap\'{\i }tulo 5.
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 75 undefined on input line 5.
+Package natbib Warning: Citation `paper-making-btree-cache' on page 81 undefined on input line 5.
 
 
-Package natbib Warning: Citation `paper-making-btree-cache' on page 75 undefined on input line 7.
+Package natbib Warning: Citation `paper-making-btree-cache' on page 81 undefined on input line 7.
 
 
-Package natbib Warning: Citation `book-compact-data-structures' on page 75 undefined on input line 9.
+Package natbib Warning: Citation `book-compact-data-structures' on page 81 undefined on input line 9.
 
-) [75] [76]
+) [81] [82]
 No file ifbtcc.bbl.
 
 Package natbib Warning: There were undefined citations.
 
 
-Package lastpage Warning: Rerun to get the references right on input line 207.
+Package lastpage Warning: Rerun to get the references right on input line 206.
 
 
 AED: lastpage setting LastPage
@@ -1876,11 +1950,11 @@ AED: lastpage setting LastPage
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 113.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
 (/media/danyelle/Data/IFB/TCC/Texto/ifbtcc.aux (/media/danyelle/Data/IFB/TCC/Texto/text/introduction.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/background.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/desenvolvimento.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/resultados.aux) (/media/danyelle/Data/IFB/TCC/Texto/text/conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
 
 
 Package rerunfilecheck Warning: File `ifbtcc.out' has changed.
@@ -1889,7 +1963,7 @@ Package rerunfilecheck Warning: File `ifbtcc.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `ifbtcc.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0B284D9E357AF90C4F90D866E80FF480;2508.
+(rerunfilecheck)             After:  545934B1A1A93D578F14948D5CB47B6F;2411.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1899,21 +1973,21 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
  ) 
 Here is how much of TeX's memory you used:
- 28851 strings out of 483122
- 509426 string characters out of 5964496
- 928346 words of memory out of 5000000
- 42416 multiletter control sequences out of 15000+600000
- 624662 words of font info for 322 fonts, out of 8000000 for 9000
+ 28850 strings out of 483122
+ 509715 string characters out of 5964496
+ 916396 words of memory out of 5000000
+ 42432 multiletter control sequences out of 15000+600000
+ 622796 words of font info for 305 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 60i,25n,60p,1606b,845s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,24n,60p,1470b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/danyelle/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on /media/danyelle/Data/IFB/TCC/Texto/ifbtcc.pdf (79 pages, 3596282 bytes).
+Output written on /media/danyelle/Data/IFB/TCC/Texto/ifbtcc.pdf (85 pages, 3296889 bytes).
 PDF statistics:
- 964 PDF objects out of 1000 (max. 8388607)
- 793 compressed objects within 8 object streams
- 458 named destinations out of 1000 (max. 500000)
+ 993 PDF objects out of 1000 (max. 8388607)
+ 813 compressed objects within 9 object streams
+ 463 named destinations out of 1000 (max. 500000)
  44160 words of extra memory for PDF output out of 51595 (max. 10000000)
 

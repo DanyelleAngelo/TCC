@@ -1,6 +1,7 @@
 \babel@toc {brazil}{}
 \beamer@sectionintoc {1}{Introdução}{3}{0}{1}
-\beamer@sectionintoc {2}{Fundamentação teórica}{12}{0}{2}
-\beamer@sectionintoc {3}{Proposta}{45}{0}{3}
-\beamer@sectionintoc {4}{Resultados}{58}{0}{4}
-\beamer@sectionintoc {5}{Trabalhos futuros}{67}{0}{5}
+\beamer@sectionintoc {2}{Fundamentação teórica}{10}{0}{2}
+\beamer@sectionintoc {3}{Proposta}{37}{0}{3}
+\beamer@sectionintoc {4}{Resultados}{50}{0}{4}
+\beamer@sectionintoc {5}{Trabalhos futuros}{59}{0}{5}
+\beamer@sectionintoc {6}{Considerações finais}{61}{0}{6}

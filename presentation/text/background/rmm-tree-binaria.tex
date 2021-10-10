@@ -1,8 +1,8 @@
 \begin{frame}{range min-Max tree (rmM-tree)}
     \begin{itemize}
-        \item Construção bottom-up;
         \item Árvore binária completa, baseada em intervalos de tamanho $b$;
         \item Cada nó cobre valores de excessos dentro de um intervalo;
+        \item Construção bottom-up;
         \item Complexidade de espaço igual à $n + O(\frac{n}{b} \log n)$ bits;
         \item Operações realizadas em tempo $O(\log n)$.
     \end{itemize}
@@ -82,15 +82,22 @@
 
 
 \begin{frame}{rmM-tree: operações}
-    Problema: Dado um nó codificado em $i=1$, encontrar o nó codificado em $j>i$, mais à esquerda de $i$.
+    Problema 1: Dado um nó codificado em $i=1$, encontrar o nó codificado em $j>i$, mais à esquerda de $i$.
+
 
     Solução: 
     $$nextSibling(i) = findClose(i) +1$$ 
+
+
     $$findClose(i) = fwdSearch(i,-1)$$ 
  \end{frame}
 
+ \begin{frame}{rmM-tree: operações}
+    $$fwdSearch(i,d) = min\{ j > i | excess(j) = excess(i) + d \}$$ 
+ \end{frame}
+
  \begin{frame}{rmM-tree: $nextSibling$}
-    Problema: Computar $nextSibling(1)$.
+    Problema 1: Computar $nextSibling(1)$.
      \begin{figure}[h!]
          \centering
          \includegraphics[scale=0.27]{images/rmm-tree-bin-fwdSearch.png}\\
@@ -99,15 +106,19 @@
  \end{frame}
 
  \begin{frame}{rmM-tree: $nextSibling$}
-    Problema: Dado um nó codificado em $i=1$, encontrar o nó codificado em $j>i$, mais à esquerda de $i$.
+    Problema 1: Dado um nó codificado em $i=1$, encontrar o nó codificado em $j>i$, mais à esquerda de $i$.
 
-    Solução: 
+
+    Solução : 
     $$findClose(1) = fwdSearch(1,-1) = 20 $$ 
+
+
+
     $$nextSibling(1) = fwdSearch(1,-1) + 1 = 21 $$ 
  \end{frame}
 
  \begin{frame}{rmM-tree: $nextSibling$}
-    Solução:  $nextSibling(1)$.
+    Problema 1:  $nextSibling(1)$.
      \begin{figure}[h!]
          \centering
          \includegraphics[scale=0.40]{images/nextSibling-res.png}\\
@@ -115,87 +126,91 @@
      \end{figure} 
  \end{frame}
 
-\begin{frame}{rmM-tree: operações}
-    Problema: Verificar o ancestral comum mais baixo dos nós codificados em $i=5$ e $j=17$.
-     \begin{figure}[h!]
-         \centering
-         \includegraphics[scale=0.7]{images/bp-sequence.png}\\
-         \caption{Sequência de parênteses balanceados, representando uma árvore $T$}
-     \end{figure} 
- 
- \end{frame}
-
- \begin{frame}{rmM-tree: $lca$}
-    Problema: Verificar o ancestral comum mais baixo dos nós codificados em $i=5$ e $j=17$.
-
-    Solução: 
-    $$lca(i,j) = 
-    \begin{cases}
-          i,  \mbox{se } isAncestor(i,j); \\
-         j, \mbox{se } isAncestor(j,i); \\
-         parent(rmq(i ,j)+1)
-    \end{cases}
-    $$ 
- \end{frame}
-
- \begin{frame}{rmM-tree: $lca$}
-    Problema: Verificar o ancestral comum (mais baixo) dos nós codificados em $i=5$ e $j=17$.
-
-
-    Solução:\\
-    \begin{itemize}
-        \item \textit{isAncestor(,i,j)} verifica se o nó codificado em $i$ é ancestral do nó $j$;
-        \item O mesmo vale para \textit{isAncestor(j,i)};
-        \item Usar o terceiro caso.
-    \end{itemize}
- \end{frame}
-
-
- \begin{frame}{rmM-tree: $lca$}
-    Problema: Computar $lca(5,17)$.
-
-
-    Solução: $ parent(rmq(i ,j)+1)$\\
-    \begin{itemize}
-        \item $rmq(i,j) = fwdSearch(i-1, minExcess(i,j))$;
-        \item $parent(rmq(i,j)+1) = bwdSearch(rmq(i,j)+1, 0) + 1$.
-    \end{itemize}
- \end{frame}
-
-
-\begin{frame}{rmM-tree: $lca$}
-    Problema: Computar $lca(5,17)$.
-     \begin{figure}[h!]
-         \centering
-         \includegraphics[scale=0.27]{images/rmm-tree-bin-minexcess.png}\\
-         \caption{Simulação de $minExcess(5,17)=-1$}
-     \end{figure} 
- \end{frame}
-
-
 % \begin{frame}{rmM-tree: operações}
-%     Problema: Computar $lca(5,17)$.
+%     Problema 2: Verificar o ancestral comum mais baixo dos nós codificados em $i=5$ e $j=17$.
 %      \begin{figure}[h!]
 %          \centering
-%          \includegraphics[scale=0.27]{images/rmm-tree-bin-fwd-lca.png}\\
-%          \caption{Simulação de $fwdSearch(4,-1)=11$}
+%          \includegraphics[scale=0.7]{images/bp-sequence.png}\\
+%          \caption{Sequência de parênteses balanceados, representando uma árvore $T$}
+%      \end{figure} 
+ 
+%  \end{frame}
+
+%  \begin{frame}{rmM-tree: $lca$}
+%     Problema 2: Verificar o ancestral comum mais baixo dos nós codificados em $i=5$ e $j=17$.
+
+%     Solução: 
+%     $$lca(i,j) = 
+%     \begin{cases}
+%           i,  \mbox{se } isAncestor(i,j); \\
+%          j, \mbox{se } isAncestor(j,i); \\
+%          parent(rmq(i ,j)+1)
+%     \end{cases}
+%     $$ 
+%  \end{frame}
+
+%  \begin{frame}{rmM-tree: $lca$}
+%     Problema 2: Verificar o ancestral comum (mais baixo) dos nós codificados em $i=5$ e $j=17$.
+
+
+%     Solução:\\
+%     \begin{itemize}
+%         \item \textit{isAncestor(i,j)} verifica se o nó codificado em $i$ é ancestral do nó $j$;
+%         \item O mesmo vale para \textit{isAncestor(j,i)};
+%         \item Usar o terceiro caso.
+%     \end{itemize}
+%  \end{frame}
+
+
+%  \begin{frame}{rmM-tree: $lca$}
+%     Problema 2: Computar $lca(5,17)$.
+
+
+%     Solução: $ parent(rmq(i ,j)+1)$
+    
+
+%     \begin{itemize}
+%         \item $rmq(i,j) = fwdSearch(i-1, minExcess(i,j))$
+   
+
+%         \item $parent(rmq(i,j) + 1) = bwdSearch(rmq(i,j) + 1 , -2) + 1$.
+%     \end{itemize}
+%  \end{frame}
+
+
+% \begin{frame}{rmM-tree: $lca$}
+%     Problema 2: Computar $lca(5,17)$.
+%      \begin{figure}[h!]
+%          \centering
+%          \includegraphics[scale=0.27]{images/rmm-tree-bin-minexcess.png}\\
+%          \caption{Simulação de $minExcess(5,17)=-1$}
 %      \end{figure} 
 %  \end{frame}
 
- \begin{frame}{rmM-tree: $lca$}
-    Solução: Computar $lca(5,17)$.
-     \begin{figure}[h!]
-         \centering
-         \includegraphics[scale=0.8]{images/lca-resposta.png}\\
-         \caption{Nós acessados durante a operação $lca(5,17)$}
-     \end{figure} 
- \end{frame}
 
- \begin{frame}{rmM-tree: $lca$}
-    Solução: Computar $lca(5,17)$.
-     \begin{figure}[h!]
-         \centering
-         \includegraphics[scale=0.40]{images/lca-res.png}\\
-         \caption{Árvore de entrada}
-     \end{figure} 
- \end{frame}
+% % \begin{frame}{rmM-tree: operações}
+% %     Problema: Computar $lca(5,17)$.
+% %      \begin{figure}[h!]
+% %          \centering
+% %          \includegraphics[scale=0.27]{images/rmm-tree-bin-fwd-lca.png}\\
+% %          \caption{Simulação de $fwdSearch(4,-1)=11$}
+% %      \end{figure} 
+% %  \end{frame}
+
+%  \begin{frame}{rmM-tree: $lca$}
+%     Solução: Computar $lca(5,17) =  parent(rmq(5 ,17)+1)$.
+%      \begin{figure}[h!]
+%          \centering
+%          \includegraphics[scale=0.8]{images/lca-resposta.png}\\
+%          \caption{Nós acessados durante a operação $lca(5,17)$}
+%      \end{figure} 
+%  \end{frame}
+
+%  \begin{frame}{rmM-tree: $lca$}
+%     Problema 2: Computar $lca(5,17) $.
+%      \begin{figure}[h!]
+%          \centering
+%          \includegraphics[scale=0.40]{images/lca-res.png}\\
+%          \caption{Árvore de entrada}
+%      \end{figure} 
+%  \end{frame}

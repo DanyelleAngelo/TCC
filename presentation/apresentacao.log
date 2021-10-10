@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  12 SEP 2021 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.15)  14 SEP 2021 13:14
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/media/danyelle/Data/IFB/TCC/presentation/apresentacao.tex
-(/media/danyelle/Data/IFB/TCC/presentation/apresentacao.tex
+**apresentacao
+(./apresentacao.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (/media/danyelle/Data/IFB/TCC/presentation/ifbclass/apresentacao-ifb.cls
+L3 programming layer <2020-02-14> (./ifbclass/apresentacao-ifb.cls
 
 LaTeX Warning: You have requested document class `ifbclass/apresentacao-ifb',
                but the document class provides `apresentacao-ifb'.
@@ -14,23 +13,27 @@ LaTeX Warning: You have requested document class `ifbclass/apresentacao-ifb',
 Document Class: apresentacao-ifb 2017/03/25 Classe para apresentações no IFB
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2019/09/29 v3.57 A class for typesetting presentations
-(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count167
 )
 \beamer@tempbox=\box45
 \beamer@tempcount=\count168
 \c@beamerpauses=\count169
- (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
 \beamer@slideinframe=\count170
 \beamer@minimum=\count171
 \beamer@decode@box=\box46
 )
 \beamer@commentbox=\box47
 \beamer@modecount=\count172
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 ))
 \headdp=\dimen134
@@ -75,15 +78,19 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \beamer@coveringdepth=\count189
 \beamer@sectionadjust=\count190
 \beamer@tocsectionnumber=\count191
- (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
 \beamer@paperwidth=\skip48
 \beamer@paperheight=\skip49
- (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count192
@@ -98,39 +105,57 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks15
-) (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen158
 \Gin@req@width=\dimen159
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks16
 \pgfutil@tempdima=\dimen160
 \pgfutil@tempdimb=\dimen161
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box54
- (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks17
 \pgfkeys@temptoks=\toks18
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
 \pgfkeys@tmptoks=\toks19
 ))
 \pgf@x=\dimen162
@@ -157,19 +182,27 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-pdftex.def
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
-))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfsyssoftpath@smallbuffer@items=\count266
 \pgfsyssoftpath@bigbuffer@items=\count267
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -182,18 +215,44 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen172
 \pgfmath@count=\count268
 \pgfmath@box=\box55
 \pgfmath@toks=\toks23
 \pgfmath@stack@operand=\toks24
 \pgfmath@stack@operation=\toks25
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count269
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@picminx=\dimen173
 \pgf@picmaxx=\dimen174
@@ -209,97 +268,141 @@ File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@yy=\dimen184
 \pgf@zx=\dimen185
 \pgf@zy=\dimen186
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@path@lastx=\dimen187
 \pgf@path@lasty=\dimen188
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@shorten@end@additional=\dimen189
 \pgf@shorten@start@additional=\dimen190
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box56
 \pgf@hbox=\box57
 \pgf@layerbox@main=\box58
 \pgf@picture@serial@count=\count270
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgflinewidth=\dimen191
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@pt@x=\dimen192
 \pgf@pt@y=\dimen193
 \pgf@pt@temp=\dimen194
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
 File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowsep=\dimen195
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen196
 \pgf@sys@shading@range@num=\count271
 \pgf@shadingcount=\count272
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfexternal@startupbox=\box59
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
 File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
 File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
 \XC@nummixins=\count273
 \XC@countmixins=\count274
-) (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
- (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen197
 \Hy@linkcounter=\count275
 \Hy@pagecounter=\count276
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count277
@@ -315,16 +418,20 @@ Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
 Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count279
- (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen198
- (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count280
 \Field@Width=\dimen199
@@ -347,20 +454,29 @@ Package hyperref Message: Stopped early.
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
- (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
 \Fld@listcount=\count282
 \c@bookmark@seq@number=\count283
- (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
-)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasefont.sty (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasefont.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks26
 \symAMSa=\mathgroup4
@@ -368,19 +484,27 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
-)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
 \beamer@argscount=\count284
 \beamer@lastskipcover=\skip50
 \beamer@trivlistdepth=\count285
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasesection.sty
 \c@lecture=\count286
 \c@part=\count287
 \c@section=\count288
 \c@subsection=\count289
 \c@subsubsection=\count290
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
 \beamer@framebox=\box60
 \beamer@frametitlebox=\box61
 \beamer@zoombox=\box62
@@ -395,21 +519,30 @@ Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 \beamer@envbody=\toks27
 \framewidth=\dimen258
 \c@framenumber=\count294
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
 \beamer@verbatimfileout=\write4
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
 \beamer@splitbox=\box63
 \beamer@autobreakcount=\count295
 \beamer@autobreaklastheight=\dimen259
 \beamer@frametitletoks=\toks28
 \beamer@framesubtitletoks=\toks29
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
 \beamer@footins=\box64
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecolor.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
 \beamer@frameboxcopy=\box65
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
 \beamer@sbttoks=\toks30
- (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
 \bmb@box=\box66
 \bmb@colorbox=\box67
 \bmb@boxshadow=\box68
@@ -421,7 +554,9 @@ Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 \bmb@prevheight=\dimen263
 )
 \beamer@blockheadheight=\dimen264
-)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks31
 )
@@ -429,23 +564,29 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \c@table=\count297
 \abovecaptionskip=\skip55
 \belowcaptionskip=\skip56
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
 \beamer@section@min@dim=\dimen265
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks32
 \ex@=\dimen266
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen267
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count298
@@ -485,7 +626,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks37
 \thm@bodyfont=\toks38
@@ -498,16 +640,25 @@ Package: amsthm 2017/10/31 v2.20.4
 \dth@everypar=\toks42
 )
 \c@theorem=\count310
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen275
 \beamer@dimb=\dimen276
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks43
 \inpenc@posthook=\toks44
-) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen277
 \ar@mcellbox=\box73
@@ -519,17 +670,22 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 )
 \everycr=\toks46
 \minrowclearance=\skip65
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/02/14 3.40 The Babel package
- (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2020/02/14 3.40 Babel switching mechanism
-) (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
- (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count311
 \U@D=\dimen279
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 LaTeX Info: Redefining \textlatin on input line 2319.
 \bbl@dirlevel=\count312
@@ -537,19 +693,23 @@ LaTeX Info: Redefining \textlatin on input line 2319.
 Package babel Info: \l@brazil = using hyphenrules for portuguese
 (babel)             (\language3) on input line 113.
 Package babel Info: Making " an active character on input line 145.
-)) (/media/danyelle/Data/IFB/TCC/presentation/algorithm2e.sty
+))
+(./algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count313
  (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip66
- (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count314
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-) (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
 \skiptotal=\skip67
@@ -587,68 +747,102 @@ Package: relsize 2013/03/29 ver 4.1
 \c@algocf=\count317
 \algocf@algoframe=\box81
 \algocf@algobox=\box82
-) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip85
 \bibsep=\skip86
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count318
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty) (/media/danyelle/Data/IFB/TCC/presentation/beamerthemeTorino.sty (/media/danyelle/Data/IFB/TCC/presentation/beamerinnerthemefancy.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty)
+(./beamerthemeTorino.sty (./beamerinnerthemefancy.sty
 \beamer@fancy@lineup=\skip87
 \beamer@fancy@linemid=\skip88
 \beamer@fancy@linebottom=\skip89
 \beamer@fancy@normalmargin=\skip90
-) (/media/danyelle/Data/IFB/TCC/presentation/beamerouterthemedecolines.sty
+)
+(./beamerouterthemedecolines.sty
 \headerheight=\skip91
 \beamer@decolines@lineup=\skip92
 \beamer@decolines@linemid=\skip93
 \beamer@decolines@linebottom=\skip94
 \beamer@decolines@watermarkheightbottom=\skip95
 \beamer@decolines@watermarkheightupperorig=\skip96
-) (/media/danyelle/Data/IFB/TCC/presentation/beamercolorthemechameleon.sty))
+) (./beamercolorthemechameleon.sty))
 \c@dfn=\count319
 \c@teo=\count320
 \c@cor=\count321
 \c@lema=\count322
 \c@nota=\count323
-) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count324
+\l__pdf_internal_box=\box83
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count325
+\g__xparse_grabber_int=\count326
+\l__xparse_m_args_int=\count327
+\l__xparse_v_nesting_int=\count328
+)
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-)) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/babelbib/babelbib.sty
+Package: babelbib 2019/03/11 v1.32 babelbib: multilingual bibliographies (HH)
+\c@btxromaniannumeral=\count329
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip97
-\multirow@cntb=\count324
+\multirow@cntb=\count330
 \multirow@dima=\skip98
 \bigstrutjot=\dimen286
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count325
-\l__pdf_internal_box=\box83
-) (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.aux (/media/danyelle/Data/IFB/TCC/presentation/text/introduction.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/theoretical-reference.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/proposal.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/results.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/objetivos.aux))
+)
+(./apresentacao.aux (./text/introduction.aux) (./text/theoretical-reference.aux
+) (./text/proposal.aux) (./text/results.aux) (./text/objetivos.aux)
+(./text/conclusion.aux))
 \openout1 = `apresentacao.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -686,58 +880,89 @@ LaTeX Font Info:    ... okay on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
+\scratchcounter=\count331
 \scratchdimen=\dimen287
 \scratchbox=\box84
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\nofMPsegments=\count332
+\nofMParguments=\count333
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count329
+\MPscratchCnt=\count334
 \MPscratchDim=\dimen288
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) ABD: EveryShipout initializing macros
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box85
-Package hyperref Info: Link coloring OFF on input line 56.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring OFF on input line 58.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
- (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count332
+\c@section@level=\count337
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
- (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.out) (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.out)
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
+
+(./apresentacao.out) (./apresentacao.out)
 \@outlinefile=\write5
 \openout5 = `apresentacao.out'.
 
- (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
+-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
-) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dic
+tionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
-) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-environment-dict
+ionary-English.dict
 Dictionary: translator-environment-dictionary, Language: English 
-) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-months-dictionar
+y-English.dict
 Dictionary: translator-months-dictionary, Language: English 
-) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-numbers-dictiona
+ry-English.dict
 Dictionary: translator-numbers-dictionary, Language: English 
-) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
+ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.nav)
-<ifbclass/images/if-logo.png, id=43, 575.14874pt x 769.87625pt>
+)
+babelbib: Set bibliography fall-back language to brazil
+(/usr/share/texlive/texmf-dist/tex/latex/babelbib/portuguese.bdf
+File: portuguese.bdf 2019/03/11 v1.32 babelbib: multilingual bibliographies (HH
+)
+
+babelbib extension \btxifchangecaseoff added to \extrasbrazil
+)
+babelbib: Load BibTeX extensions \bibsbrazil for brazil
+babelbib: Set language for keywords in the bibliography fixed to brazil
+babelbib: Set language for keywords in the bibliography fixed to brazil
+(./apresentacao.nav)
+<ifbclass/images/if-logo.png, id=48, 575.14874pt x 769.87625pt>
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 57.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 59.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -746,10 +971,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </media/danyelle/Data/IFB/TCC/presentation/ifbclass/images/if-logo.png>] (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ <./ifbclass/images/if-logo.png>] (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 62.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 64.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -761,7 +986,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 ]
 \openout2 = `text/introduction.aux'.
 
- (/media/danyelle/Data/IFB/TCC/presentation/text/introduction.tex (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ (./text/introduction.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
@@ -775,7 +1000,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 
 ]
-<images/data-never-sleeps.jpg, id=97, 240.9pt x 234.1548pt>
+<images/data-never-sleeps.jpg, id=107, 240.9pt x 234.1548pt>
 File: images/data-never-sleeps.jpg Graphic file (type jpg)
 <use images/data-never-sleeps.jpg>
 Package pdftex.def Info: images/data-never-sleeps.jpg  used on input line 12.
@@ -795,8 +1020,8 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [4
 
- </media/danyelle/Data/IFB/TCC/presentation/images/data-never-sleeps.jpg>]
-<images/relatorio-cisco.png, id=111, 1320.935pt x 634.37pt>
+ <./images/data-never-sleeps.jpg>]
+<images/relatorio-cisco.png, id=122, 1320.935pt x 634.37pt>
 File: images/relatorio-cisco.png Graphic file (type png)
 <use images/relatorio-cisco.png>
 Package pdftex.def Info: images/relatorio-cisco.png  used on input line 22.
@@ -812,8 +1037,8 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [5
 
- </media/danyelle/Data/IFB/TCC/presentation/images/relatorio-cisco.png>]
-<images/relatorio-idc.png, id=125, 1346.02875pt x 439.6425pt>
+ <./images/relatorio-cisco.png>]
+<images/relatorio-idc.png, id=137, 1346.02875pt x 439.6425pt>
 File: images/relatorio-idc.png Graphic file (type png)
 <use images/relatorio-idc.png>
 Package pdftex.def Info: images/relatorio-idc.png  used on input line 33.
@@ -829,19 +1054,20 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [6
 
- </media/danyelle/Data/IFB/TCC/presentation/images/relatorio-idc.png>]
-<images/gap-processor-memory.png, id=139, 642.4pt x 385.44pt>
+ <./images/relatorio-idc.png>]
+<images/gap-processor-memory.png, id=152, 642.4pt x 385.44pt>
 File: images/gap-processor-memory.png Graphic file (type png)
 <use images/gap-processor-memory.png>
-Package pdftex.def Info: images/gap-processor-memory.png  used on input line 43.
+Package pdftex.def Info: images/gap-processor-memory.png  used on input line 44
+.
 (pdftex.def)             Requested size: 269.80615pt x 161.8837pt.
 
-Overfull \vbox (9.47676pt too high) detected at line 43
+Overfull \vbox (9.47676pt too high) detected at line 44
  []
 
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 43.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 44.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -850,19 +1076,16 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [7
 
- </media/danyelle/Data/IFB/TCC/presentation/images/gap-processor-memory.png>]
-<images/hierarquia-memory-2.png, id=154, 850.17625pt x 514.92375pt>
+ <./images/gap-processor-memory.png>]
+<images/hierarquia-memory-2.png, id=169, 754.9806pt x 486.618pt>
 File: images/hierarquia-memory-2.png Graphic file (type png)
 <use images/hierarquia-memory-2.png>
-Package pdftex.def Info: images/hierarquia-memory-2.png  used on input line 53.
-(pdftex.def)             Requested size: 255.05484pt x 154.4783pt.
+Package pdftex.def Info: images/hierarquia-memory-2.png  used on input line 54.
 
-Overfull \vbox (2.07137pt too high) detected at line 53
- []
-
+(pdftex.def)             Requested size: 226.49593pt x 145.98653pt.
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 53.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 54.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -871,15 +1094,22 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [8
 
- </media/danyelle/Data/IFB/TCC/presentation/images/hierarquia-memory-2.png>]
-<images/hierarquia-memory.png, id=169, 1245.65375pt x 385.44pt>
-File: images/hierarquia-memory.png Graphic file (type png)
-<use images/hierarquia-memory.png>
-Package pdftex.def Info: images/hierarquia-memory.png  used on input line 62.
-(pdftex.def)             Requested size: 320.4937pt x 99.17104pt.
+ <./images/hierarquia-memory-2.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 62.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 66.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -888,42 +1118,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [9
 
- </media/danyelle/Data/IFB/TCC/presentation/images/hierarquia-memory.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 73.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[10
-
-]
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 81.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[11
-
 ])
 \openout2 = `text/theoretical-reference.aux'.
 
- (/media/danyelle/Data/IFB/TCC/presentation/text/theoretical-reference.tex (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ (./text/theoretical-reference.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
@@ -933,7 +1131,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[12
+[10
 
 
 
@@ -947,10 +1145,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[13
+[11
 
-] (/media/danyelle/Data/IFB/TCC/presentation/text/background/bitvectors.tex
-<images/bitvector.png, id=236, 420.6114pt x 85.2786pt>
+] (./text/background/bitvectors.tex
+<images/bitvector.png, id=227, 420.6114pt x 85.2786pt>
 File: images/bitvector.png Graphic file (type png)
 <use images/bitvector.png>
 Package pdftex.def Info: images/bitvector.png  used on input line 15.
@@ -964,10 +1162,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[14
+[12
 
- </media/danyelle/Data/IFB/TCC/presentation/images/bitvector.png>]
-<images/access-res.png, id=252, 421.0932pt x 68.4156pt>
+ <./images/bitvector.png>]
+<images/access-res.png, id=244, 421.0932pt x 68.4156pt>
 File: images/access-res.png Graphic file (type png)
 <use images/access-res.png>
 Package pdftex.def Info: images/access-res.png  used on input line 23.
@@ -981,9 +1179,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[15
+[13
 
- </media/danyelle/Data/IFB/TCC/presentation/images/access-res.png>]
+ <./images/access-res.png>]
 File: images/bitvector.png Graphic file (type png)
 <use images/bitvector.png>
 Package pdftex.def Info: images/bitvector.png  used on input line 40.
@@ -997,10 +1195,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[16
+[14
 
 ]
-<images/rank-res.png, id=279, 419.166pt x 73.2336pt>
+<images/rank-res.png, id=274, 419.166pt x 73.2336pt>
 File: images/rank-res.png Graphic file (type png)
 <use images/rank-res.png>
 Package pdftex.def Info: images/rank-res.png  used on input line 48.
@@ -1014,9 +1212,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[17
+[15
 
- </media/danyelle/Data/IFB/TCC/presentation/images/rank-res.png>]
+ <./images/rank-res.png>]
 File: images/bitvector.png Graphic file (type png)
 <use images/bitvector.png>
 Package pdftex.def Info: images/bitvector.png  used on input line 64.
@@ -1030,10 +1228,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[18
+[16
 
 ]
-<images/select-res.png, id=305, 419.6478pt x 54.4434pt>
+<images/select-res.png, id=302, 419.6478pt x 54.4434pt>
 File: images/select-res.png Graphic file (type png)
 <use images/select-res.png>
 Package pdftex.def Info: images/select-res.png  used on input line 72.
@@ -1047,9 +1245,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[19
+[17
 
- </media/danyelle/Data/IFB/TCC/presentation/images/select-res.png>]) (/media/danyelle/Data/IFB/TCC/presentation/text/background/arvores-sucintas.tex
+ <./images/select-res.png>]) (./text/background/arvores-sucintas.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 7.
@@ -1059,10 +1257,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[20
+[18
 
-] (/media/danyelle/Data/IFB/TCC/presentation/text/background/bp.tex
-<images/arvore_geral.png, id=330, 820.16125pt x 412.1455pt>
+] (./text/background/bp.tex
+<images/arvore_geral.png, id=328, 820.16125pt x 412.1455pt>
 File: images/arvore_geral.png Graphic file (type png)
 <use images/arvore_geral.png>
 Package pdftex.def Info: images/arvore_geral.png  used on input line 8.
@@ -1076,9 +1274,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[21
+[19
 
- </media/danyelle/Data/IFB/TCC/presentation/images/arvore_geral.png>]
+ <./images/arvore_geral.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 22.
@@ -1088,7 +1286,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[22
+[20
 
 ]
 File: images/bitvector.png Graphic file (type png)
@@ -1104,10 +1302,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[23
+[21
 
-]) (/media/danyelle/Data/IFB/TCC/presentation/text/background/dfuds.tex
-<images/dfuds.png, id=367, 825.94286pt x 384.88937pt>
+]) (./text/background/dfuds.tex
+<images/dfuds.png, id=369, 825.94286pt x 384.88937pt>
 File: images/dfuds.png Graphic file (type png)
 <use images/dfuds.png>
 Package pdftex.def Info: images/dfuds.png  used on input line 7.
@@ -1121,10 +1319,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[24
+[22
 
- </media/danyelle/Data/IFB/TCC/presentation/images/dfuds.png>]) (/media/danyelle/Data/IFB/TCC/presentation/text/background/louds.tex
-<images/louds.png, id=380, 825.94286pt x 368.37051pt>
+ <./images/dfuds.png>]) (./text/background/louds.tex
+<images/louds.png, id=383, 825.94286pt x 368.37051pt>
 File: images/louds.png Graphic file (type png)
 <use images/louds.png>
 Package pdftex.def Info: images/louds.png  used on input line 7.
@@ -1138,9 +1336,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[25
+[23
 
- </media/danyelle/Data/IFB/TCC/presentation/images/louds.png>])) (/media/danyelle/Data/IFB/TCC/presentation/text/background/rmm-tree-binaria.tex
+ <./images/louds.png>])) (./text/background/rmm-tree-binaria.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 9.
@@ -1150,10 +1348,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[26
+[24
 
 ]
-<images/rmm-tree-bin.png, id=405, 825.94286pt x 536.86285pt>
+<images/rmm-tree-bin.png, id=410, 825.94286pt x 536.86285pt>
 File: images/rmm-tree-bin.png Graphic file (type png)
 <use images/rmm-tree-bin.png>
 Package pdftex.def Info: images/rmm-tree-bin.png  used on input line 17.
@@ -1167,9 +1365,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[27
+[25
 
- </media/danyelle/Data/IFB/TCC/presentation/images/rmm-tree-bin.png>]
+ <./images/rmm-tree-bin.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 33.
@@ -1179,10 +1377,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[28
+[26
 
 ]
-<images/internal-nodo.png, id=430, 130.49898pt x 265.12766pt>
+<images/internal-nodo.png, id=437, 130.49898pt x 265.12766pt>
 File: images/internal-nodo.png Graphic file (type png)
 <use images/internal-nodo.png>
 Package pdftex.def Info: images/internal-nodo.png  used on input line 50.
@@ -1201,9 +1399,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[29
+[27
 
- </media/danyelle/Data/IFB/TCC/presentation/images/internal-nodo.png>]
+ <./images/internal-nodo.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 66.
@@ -1213,7 +1411,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[30
+[28
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1225,12 +1423,46 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[31
+[29
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 90.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 93.
+(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
+
+Overfull \hbox (365.61201pt too wide) has occurred while \output is active
+[][] []
+ []
+
+[30
+
+]
+File: ifbclass/images/if-logo.png Graphic file (type png)
+<use ifbclass/images/if-logo.png>
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 97.
+(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
+
+Overfull \hbox (365.61201pt too wide) has occurred while \output is active
+[][] []
+ []
+
+[31
+
+]
+<images/rmm-tree-bin-fwdSearch.png, id=500, 825.94286pt x 597.98264pt>
+File: images/rmm-tree-bin-fwdSearch.png Graphic file (type png)
+<use images/rmm-tree-bin-fwdSearch.png>
+Package pdftex.def Info: images/rmm-tree-bin-fwdSearch.png  used on input line 
+106.
+(pdftex.def)             Requested size: 223.00755pt x 161.45746pt.
+
+Overfull \vbox (14.63802pt too high) detected at line 106
+ []
+
+File: ifbclass/images/if-logo.png Graphic file (type png)
+<use ifbclass/images/if-logo.png>
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 106.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -1239,19 +1471,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [32
 
-]
-<images/rmm-tree-bin-fwdSearch.png, id=477, 825.94286pt x 597.98264pt>
-File: images/rmm-tree-bin-fwdSearch.png Graphic file (type png)
-<use images/rmm-tree-bin-fwdSearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-fwdSearch.png  used on input line 99.
-(pdftex.def)             Requested size: 223.00755pt x 161.45746pt.
-
-Overfull \vbox (14.63802pt too high) detected at line 99
- []
-
+ <./images/rmm-tree-bin-fwdSearch.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 99.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 118.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -1260,10 +1483,24 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [33
 
- </media/danyelle/Data/IFB/TCC/presentation/images/rmm-tree-bin-fwdSearch.png>]
+]
+<images/nextSibling-res.png, id=528, 825.94286pt x 394.80069pt>
+File: images/nextSibling-res.png Graphic file (type png)
+<use images/nextSibling-res.png>
+Package pdftex.def Info: images/nextSibling-res.png  used on input line 127.
+(pdftex.def)             Requested size: 330.37129pt x 157.91747pt.
+
+Overfull \hbox (9.8776pt too wide) in paragraph at lines 127--127
+ [] 
+ []
+
+
+Overfull \vbox (21.40498pt too high) detected at line 127
+ []
+
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 107.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 127.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
@@ -1272,155 +1509,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 
 [34
 
-]
-<images/nextSibling-res.png, id=502, 825.94286pt x 394.80069pt>
-File: images/nextSibling-res.png Graphic file (type png)
-<use images/nextSibling-res.png>
-Package pdftex.def Info: images/nextSibling-res.png  used on input line 116.
-(pdftex.def)             Requested size: 330.37129pt x 157.91747pt.
-
-Overfull \hbox (9.8776pt too wide) in paragraph at lines 116--116
- [] 
- []
-
-
-Overfull \vbox (21.40498pt too high) detected at line 116
- []
-
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 116.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[35
-
- </media/danyelle/Data/IFB/TCC/presentation/images/nextSibling-res.png>]
-<images/bp-sequence.png, id=515, 421.0932pt x 40.953pt>
-File: images/bp-sequence.png Graphic file (type png)
-<use images/bp-sequence.png>
-Package pdftex.def Info: images/bp-sequence.png  used on input line 126.
-(pdftex.def)             Requested size: 294.76321pt x 28.66689pt.
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 126.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[36
-
- </media/danyelle/Data/IFB/TCC/presentation/images/bp-sequence.png>]
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 139.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[37
-
-]
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 151.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[38
-
-]
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 163.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[39
-
-]
-<images/rmm-tree-bin-minexcess.png, id=564, 820.9872pt x 550.90388pt>
-File: images/rmm-tree-bin-minexcess.png Graphic file (type png)
-<use images/rmm-tree-bin-minexcess.png>
-Package pdftex.def Info: images/rmm-tree-bin-minexcess.png  used on input line 173.
-(pdftex.def)             Requested size: 221.66951pt x 148.74603pt.
-
-Overfull \vbox (1.92659pt too high) detected at line 173
- []
-
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 173.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[40
-
- </media/danyelle/Data/IFB/TCC/presentation/images/rmm-tree-bin-minexcess.png>]
-<images/lca-resposta.png, id=577, 421.0932pt x 26.9808pt>
-File: images/lca-resposta.png Graphic file (type png)
-<use images/lca-resposta.png>
-Package pdftex.def Info: images/lca-resposta.png  used on input line 192.
-(pdftex.def)             Requested size: 336.87502pt x 21.58466pt.
-
-Overfull \hbox (16.38132pt too wide) in paragraph at lines 192--192
- [] 
- []
-
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 192.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[41
-
- </media/danyelle/Data/IFB/TCC/presentation/images/lca-resposta.png>]
-<images/lca-res.png, id=590, 825.94286pt x 393.97475pt>
-File: images/lca-res.png Graphic file (type png)
-<use images/lca-res.png>
-Package pdftex.def Info: images/lca-res.png  used on input line 201.
-(pdftex.def)             Requested size: 330.37129pt x 157.5871pt.
-
-Overfull \hbox (9.8776pt too wide) in paragraph at lines 201--201
- [] 
- []
-
-
-Overfull \vbox (21.07462pt too high) detected at line 201
- []
-
-File: ifbclass/images/if-logo.png Graphic file (type png)
-<use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 201.
-(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
-
-Overfull \hbox (365.61201pt too wide) has occurred while \output is active
-[][] []
- []
-
-[42
-
- </media/danyelle/Data/IFB/TCC/presentation/images/lca-res.png>]) (/media/danyelle/Data/IFB/TCC/presentation/text/background/cache.tex
+ <./images/nextSibling-res.png>]) (./text/background/cache.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 7.
@@ -1430,7 +1519,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[43
+[35
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1442,12 +1531,12 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[44
+[36
 
 ]))
 \openout2 = `text/proposal.aux'.
 
- (/media/danyelle/Data/IFB/TCC/presentation/text/proposal.tex (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ (./text/proposal.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
@@ -1457,7 +1546,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[45
+[37
 
 
 
@@ -1471,7 +1560,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[46
+[38
 
 ]
 File: images/arvore_geral.png Graphic file (type png)
@@ -1487,10 +1576,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[47
+[39
 
 ]
-<images/rmm-tree-kary.png, id=667, 818.50937pt x 279.99463pt>
+<images/rmm-tree-kary.png, id=611, 818.50937pt x 279.99463pt>
 File: images/rmm-tree-kary.png Graphic file (type png)
 <use images/rmm-tree-kary.png>
 Package pdftex.def Info: images/rmm-tree-kary.png  used on input line 29.
@@ -1509,10 +1598,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[48
+[40
 
- </media/danyelle/Data/IFB/TCC/presentation/images/rmm-tree-kary.png>]
-<images/k-internal-nodes.png, id=680, 113.7048pt x 134.904pt>
+ <./images/rmm-tree-kary.png>]
+<images/k-internal-nodes.png, id=625, 113.7048pt x 134.904pt>
 File: images/k-internal-nodes.png Graphic file (type png)
 <use images/k-internal-nodes.png>
 Package pdftex.def Info: images/k-internal-nodes.png  used on input line 50.
@@ -1536,9 +1625,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[49
+[41
 
- </media/danyelle/Data/IFB/TCC/presentation/images/k-internal-nodes.png>]
+ <./images/k-internal-nodes.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 72.
@@ -1548,7 +1637,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[50
+[42
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1560,7 +1649,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[51
+[43
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1572,7 +1661,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[52
+[44
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1584,10 +1673,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[53
+[45
 
 ]
-<images/rmm-tree-kary-fwd.png, id=739, 421.0932pt x 142.6128pt>
+<images/rmm-tree-kary-fwd.png, id=690, 421.0932pt x 142.6128pt>
 File: images/rmm-tree-kary-fwd.png Graphic file (type png)
 <use images/rmm-tree-kary-fwd.png>
 Package pdftex.def Info: images/rmm-tree-kary-fwd.png  used on input line 135.
@@ -1606,17 +1695,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[54
+[46
 
- </media/danyelle/Data/IFB/TCC/presentation/images/rmm-tree-kary-fwd.png>]
-File: images/rmm-tree-bin-fwdSearch.png Graphic file (type png)
-<use images/rmm-tree-bin-fwdSearch.png>
-Package pdftex.def Info: images/rmm-tree-bin-fwdSearch.png  used on input line 144.
-(pdftex.def)             Requested size: 223.00755pt x 161.45746pt.
-
-Overfull \vbox (14.63802pt too high) detected at line 144
- []
-
+ <./images/rmm-tree-kary-fwd.png>]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 144.
@@ -1626,9 +1707,22 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[55
+[47
 
 ]
+File: images/nextSibling-res.png Graphic file (type png)
+<use images/nextSibling-res.png>
+Package pdftex.def Info: images/nextSibling-res.png  used on input line 153.
+(pdftex.def)             Requested size: 330.37129pt x 157.91747pt.
+
+Overfull \hbox (9.8776pt too wide) in paragraph at lines 153--153
+ [] 
+ []
+
+
+Overfull \vbox (21.40498pt too high) detected at line 153
+ []
+
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 153.
@@ -1638,20 +1732,16 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[56
+[48
 
 ]
-File: images/nextSibling-res.png Graphic file (type png)
-<use images/nextSibling-res.png>
-Package pdftex.def Info: images/nextSibling-res.png  used on input line 162.
-(pdftex.def)             Requested size: 330.37129pt x 157.91747pt.
+File: images/rmm-tree-bin-fwdSearch.png Graphic file (type png)
+<use images/rmm-tree-bin-fwdSearch.png>
+Package pdftex.def Info: images/rmm-tree-bin-fwdSearch.png  used on input line 
+162.
+(pdftex.def)             Requested size: 223.00755pt x 161.45746pt.
 
-Overfull \hbox (9.8776pt too wide) in paragraph at lines 162--162
- [] 
- []
-
-
-Overfull \vbox (21.40498pt too high) detected at line 162
+Overfull \vbox (14.63802pt too high) detected at line 162
  []
 
 File: ifbclass/images/if-logo.png Graphic file (type png)
@@ -1663,12 +1753,12 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[57
+[49
 
 ])
 \openout2 = `text/results.aux'.
 
- (/media/danyelle/Data/IFB/TCC/presentation/text/results.tex (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ (./text/results.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
@@ -1678,11 +1768,11 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[58
+[50
 
 
 
-] (/media/danyelle/Data/IFB/TCC/presentation/text/results/config.tex
+] (./text/results/config.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 13.
@@ -1692,9 +1782,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[59
+[51
 
-]) (/media/danyelle/Data/IFB/TCC/presentation/text/results/dataset.tex
+]) (./text/results/dataset.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 17.
@@ -1704,9 +1794,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[60
+[52
 
-]) (/media/danyelle/Data/IFB/TCC/presentation/text/results/tests.tex
+]) (./text/results/tests.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 7.
@@ -1716,10 +1806,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[61
+[53
 
 ]
-<images/unit_tests.png, id=836, 1579.9025pt x 352.31625pt>
+<images/unit_tests.png, id=794, 1579.9025pt x 352.31625pt>
 File: images/unit_tests.png Graphic file (type png)
 <use images/unit_tests.png>
 Package pdftex.def Info: images/unit_tests.png  used on input line 18.
@@ -1738,10 +1828,10 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[62
+[54
 
- </media/danyelle/Data/IFB/TCC/presentation/images/unit_tests.png>]
-<images/benchmar.png, id=848, 611.28375pt x 391.4625pt>
+ <./images/unit_tests.png>]
+<images/benchmar.png, id=807, 611.28375pt x 391.4625pt>
 File: images/benchmar.png Graphic file (type png)
 <use images/benchmar.png>
 Package pdftex.def Info: images/benchmar.png  used on input line 27.
@@ -1755,9 +1845,9 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[63
+[55
 
- </media/danyelle/Data/IFB/TCC/presentation/images/benchmar.png>]) (/media/danyelle/Data/IFB/TCC/presentation/text/results/results.tex
+ <./images/benchmar.png>]) (./text/results/results.tex
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 27.
@@ -1767,45 +1857,45 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[64
+[56
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 54.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 51.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[65
+[57
 
 ]
-<images/ctree_i3000000.png, id=882, 716.1957pt x 562.5015pt>
+<images/ctree_i3000000.png, id=845, 844.8363pt x 483.4863pt>
 File: images/ctree_i3000000.png Graphic file (type png)
 <use images/ctree_i3000000.png>
-Package pdftex.def Info: images/ctree_i3000000.png  used on input line 62.
-(pdftex.def)             Requested size: 250.67224pt x 196.87846pt.
+Package pdftex.def Info: images/ctree_i3000000.png  used on input line 59.
+(pdftex.def)             Requested size: 295.69713pt x 169.22273pt.
 
-Overfull \vbox (44.12152pt too high) detected at line 62
+Overfull \vbox (16.46579pt too high) detected at line 59
  []
 
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 62.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 59.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[66
+[58
 
- </media/danyelle/Data/IFB/TCC/presentation/images/ctree_i3000000.png>]))
+ <./images/ctree_i3000000.png>]))
 \openout2 = `text/objetivos.aux'.
 
- (/media/danyelle/Data/IFB/TCC/presentation/text/objetivos.tex (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.toc)
+ (./text/objetivos.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
 Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
@@ -1815,7 +1905,7 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[67
+[59
 
 
 
@@ -1829,58 +1919,74 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[68
+[60
 
-]) (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.bbl)
+])
+\openout2 = `text/conclusion.aux'.
+
+ (./text/conclusion.tex (./apresentacao.toc)
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 74.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[69
+[61
+
 
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 74.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 8.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[70
+[62
+
+]) (./apresentacao.bbl)
+File: ifbclass/images/if-logo.png Graphic file (type png)
+<use ifbclass/images/if-logo.png>
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 77.
+(pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
+
+Overfull \hbox (365.61201pt too wide) has occurred while \output is active
+[][] []
+ []
+
+[63
 
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 74.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 77.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[71
+[64
 
 
 ]
 File: ifbclass/images/if-logo.png Graphic file (type png)
 <use ifbclass/images/if-logo.png>
-Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 86.
+Package pdftex.def Info: ifbclass/images/if-logo.png  used on input line 89.
 (pdftex.def)             Requested size: 19.91684pt x 26.65472pt.
 
 Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 [][] []
  []
 
-[72
+[65
 
 ]
 \tf@nav=\write6
@@ -1892,27 +1998,43 @@ Overfull \hbox (365.61201pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `apresentacao.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
- (/media/danyelle/Data/IFB/TCC/presentation/apresentacao.aux (/media/danyelle/Data/IFB/TCC/presentation/text/introduction.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/theoretical-reference.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/proposal.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/results.aux) (/media/danyelle/Data/IFB/TCC/presentation/text/objetivos.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+ (./apresentacao.aux (./text/introduction.aux)
+(./text/theoretical-reference.aux) (./text/proposal.aux) (./text/results.aux)
+(./text/objetivos.aux) (./text/conclusion.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
 Package rerunfilecheck Info: File `apresentacao.out' has not changed.
-(rerunfilecheck)             Checksum: 2B648DA26783EF5FBF452A3C60F8BA96;305.
+(rerunfilecheck)             Checksum: 26332E5D0012D28CE3E598267A4493EC;366.
  ) 
 Here is how much of TeX's memory you used:
- 20653 strings out of 483122
- 388113 string characters out of 5964496
- 658889 words of memory out of 5000000
- 34895 multiletter control sequences out of 15000+600000
+ 21447 strings out of 483122
+ 403256 string characters out of 5964496
+ 829531 words of memory out of 5000000
+ 35683 multiletter control sequences out of 15000+600000
  544217 words of font info for 69 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 61i,15n,63p,841b,678s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on /media/danyelle/Data/IFB/TCC/presentation/apresentacao.pdf (72 pages, 3519098 bytes).
+ 61i,15n,63p,795b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
+bx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on apresentacao.pdf (65 pages, 2688183 bytes).
 PDF statistics:
- 1060 PDF objects out of 1200 (max. 8388607)
- 897 compressed objects within 9 object streams
- 163 named destinations out of 1000 (max. 500000)
- 243 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1038 PDF objects out of 1200 (max. 8388607)
+ 890 compressed objects within 9 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

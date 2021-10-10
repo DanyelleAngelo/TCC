@@ -306,117 +306,6 @@ FUNCTION {add.to.list}
 %	 um string representando a lista (pode ser vazio, para criar uma lista)
 %	 o nome a ser adicionado
 %==============================================================================
-FUNCTION {add.to.namelist}
-{
-	swap$
-	duplicate$ empty$
-		'skip$
-		{"; " *}
-	if$
-	swap$ *
-}
-
-%==============================================================================
-% Formata uma lista de nomes.
-%
-% Parm:
-%	 os nomes a serem formatados
-%==============================================================================
-FUNCTION {format.names}
-{
-	duplicate$ num.names$ 'n :=
-	#1 'i :=
-	"" 'names :=
-
-	{i n #1 + <}
-	{
-		duplicate$ duplicate$ i "{ll}{~jj}" format.name$
-		duplicate$ "others" =
-		n #3 >
-		i #2 =
-		and
-		or
-		{
-			pop$ pop$ names " et~al." *
-			n 'i :=
-		}{
-			"u" change.case$ swap$
-			i "{, f.}{~vv}" format.name$ *
-			names swap$ add.to.namelist
-		} if$ 'names :=
-		#1 i + 'i :=
-	} while$
-	pop$
-	names
-	duplicate$ #-1 #1 substring$ "." = {
-		#-2 global.max$ substring$
-		"\@." *
-	}
-		'skip$
-	if$
-}
-
-%==============================================================================
-% Formata uma lista de sobrenomes.
-%
-% Parm:
-%	 os nomes a serem formatados
-%==============================================================================
-FUNCTION {format.family.names}
-{
-	duplicate$ num.names$ 'n :=
-	#1 'i :=
-	"" 'names :=
-
-	{i n #1 + <}
-	{
-		duplicate$ i "{ll}{~jj}" format.name$
-		duplicate$ "others" =
-		n #3 >
-		i #2 =
-		and
-		or
-		{
-			pop$ names " et~al." *
-			n 'i :=
-		}{
-			"u" change.case$
-			names swap$ add.to.namelist
-		} if$ 'names :=
-		#1 i + 'i :=
-	} while$
-	pop$
-	names
-}
-
-%==============================================================================
-% Formata uma lista de sobrenomes com todos os autores.
-%
-% Parm:
-%	 os nomes a serem formatados
-%==============================================================================
-FUNCTION {format.family.names.all}
-{
-	duplicate$ num.names$ 'n :=
-	#1 'i :=
-	"" 'names :=
-
-	{i n #1 + <}
-	{
-		duplicate$ i "{ll}{~jj}" format.name$
-		duplicate$ "others" =
-		{
-			pop$ names " et~al." *
-			n 'i :=
-		}{
-			"u" change.case$
-			names swap$ add.to.namelist
-		} if$ 'names :=
-		#1 i + 'i :=
-	} while$
-	pop$
-	names
-}
 
 %==============================================================================
 % Formata um titulo (pode ser `title' ou `booktitle')
@@ -1330,6 +1219,9 @@ FUNCTION {end.bib}
 	"\end{thebibliography}" write$ newline$
 }
 
+FUNCTION {bbl.and}
+{"e"}
+
 %==============================================================================
 % main()
 %==============================================================================
@@ -1345,3 +1237,4 @@ SORT
 EXECUTE {begin.bib}
 ITERATE {call.type$}
 EXECUTE {end.bib}
+

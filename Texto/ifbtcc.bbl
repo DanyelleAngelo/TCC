@@ -1,110 +1,126 @@
 \begin{thebibliography}{\hspace{\parindent}}
 
-\bibitem[ARROYUELO(2010)ARROYUELO]{paper-succint-trees-in-practice} ARROYUELO,
-  D.~t\@. Succinct Trees in Practice. In: MEETING ON ALGORITHM ENGINEERING {\&}
-  EXPERMIMENTS, Austin, Texas, USA. \textbf{Proceedings{\ldots}} Society for
-  Industrial and Applied Mathematics, 2010. p.84–97. (ALENEX '10).
+\bibitem[Arroyuelo, D. \textit{et. al.}(2010)Arroyuelo, D. \textit{et.
+  al.}]{paper-succint-trees-in-practice} Arroyuelo, D. \textit{et. al.}
+  Succinct Trees in Practice. In: MEETING ON ALGORITHM ENGINEERING {\&}
+  EXPERMIMENTS, USA. \textbf{Proceedings{\ldots}} Society for Industrial and
+  Applied Mathematics, 2010. p.84–97. (ALENEX '10).
 
-\bibitem[BADER~J.;~BELLER(2016)BADER~J.;~BELLER]{sdsl} BADER~J.;~BELLER, T. G.
-  S. P.~M\@. \textbf{Succinct Data Structure Library}. Online; acesso em 06 de
-  fev. 02 de 2021, \url{https://github.com/simongog/sdsl-lite}.
+\bibitem[Bader, J.; Beller, T.; Gog, S.; Petri, M.(2016)Bader, J.; Beller, T.;
+  Gog, S.; Petri, M.]{sdsl} Bader, J.; Beller, T.; Gog, S.; Petri, M.
+  \textbf{Succinct Data Structure Library}. Online; acesso em 06 de fev. 02 de
+  2021, \url{https://github.com/simongog/sdsl-lite}.
 
-\bibitem[CARVALHO(2002)CARVALHO]{paper-gap-between-processor-memory} CARVALHO,
-  C\@. The gap between processor and memory speeds. In: IEEE INTERNATIONAL
-  CONFERENCE ON CONTROL AND AUTOMATION. \textbf{Proceedings{\ldots}}
-  [S.l.:~s.n.], 2002.
+\bibitem[Benoit, D. \textit{et. al.}(2005)Benoit, D. \textit{et.
+  al.}]{article-dfuds} Benoit, D. \textit{et. al.} Representing Trees of Higher
+  Degree. \textbf{Algorithmica}, New York, USA, v.43, p.275--292, dec.~2005.
 
-\bibitem[CISCO(2020)CISCO]{relatorio-cisco} CISCO. \textbf{Cisco Annual
-  Internet Report (2018–2023)}. [S.l.]: Cisco, 2020.
+\bibitem[Carvalho, C.(2002)Carvalho, C.]{paper-gap-between-processor-memory}
+  Carvalho, C. The gap between processor and memory speeds. In: IEEE
+  INTERNATIONAL CONFERENCE ON CONTROL AND AUTOMATION.
+  \textbf{Proceedings{\ldots}} Internal Conference on Computer Architecture,
+  2002.
 
-\bibitem[COIRA(2017)COIRA]{coira-feranando} COIRA, F.~S\@. Compact data
-  structures for large and complex datasets. In:  OF . \textbf{Anais{\ldots}}
-  [S.l.:~s.n.], 2017.
+\bibitem[Cisco(2020)Cisco]{relatorio-cisco} Cisco. Annual Internet Report
+  (2018–2023). \textbf{Cisco}, San Jose, CA, USA, 2020. Online; acesso em 20
+  de març. de 2021.
 
-\bibitem[CORDOVA~J. E~NAVARRO(2016)CORDOVA~J.
-  E~NAVARRO]{paper-simple-and-efficient-fully-functional-succinct-trees}
-  CORDOVA~J. E~NAVARRO, G\@. Simple and Efficient Fully-Functional Succinct
-  Trees. In:  \textbf{Anais{\ldots}} Theoretical Computer Science, 2016.
+\bibitem[Coira, F. S.(2017)Coira, F. S.]{coira-feranando} Coira, F. S. Compact
+  data structures for large and complex datasets. \textbf{Universidade de
+  Corunha}, Corunha, ES, 2017.
 
-\bibitem[CORMEN(2012)CORMEN]{book-algoritmos-teoria-pratica} CORMEN, T. H.~t\@.
+\bibitem[Cordova, J. e Navarro, G.(2016)Cordova, J. e Navarro,
+  G.]{paper-simple-and-efficient-fully-functional-succinct-trees} Cordova, J. e
+  Navarro, G. Simple and efficient fully-functional succinct trees.
+  \textbf{Theoretical Computer Science}, Elsevier, v.656, p.135--145, 2016.
+  Stringology: In Celebration of Bill Smyth’s 80th Birthday.
+
+\bibitem[Cormen, T. H. \textit{et. al.}(2012)Cormen, T. H. \textit{et.
+  al.}]{book-algoritmos-teoria-pratica} Cormen, T. H. \textit{et. al.}
   \textbf{Algoritmos}. 3.ed. Rio de Janeiro, RJ, Brasil: Elsevier, 2012.
 
-\bibitem[DOMO(2020)DOMO]{domo-study} DOMO. \textbf{Data Never Sleeps 8.0}.
-  [S.l.]: Domo, 2020.
+\bibitem[Dive into Systems, LLC(2021)Dive into Systems, LLC]{memory-hierarchy}
+  Dive into Systems, LLC. \textbf{The Memory Hierarchy}. Online; acesso em 13
+  de set. de 2021,
+  \url{https://diveintosystems.org/book/C11-MemHierarchy/mem_hierarchy.html}.
 
-\bibitem[EFNUSHEVA~D.;~CHOLAKOSKA(2017)EFNUSHEVA~D.;~CHOLAKOSKA]{paper-processor-memory-bottleneck}
-  EFNUSHEVA~D.;~CHOLAKOSKA, A. T. A.~M\@. A survey of different approaches for
+\bibitem[Domo(2020)Domo]{domo-study} Domo. \textbf{Data Never Sleeps 8.0}.
+  Online; acesso em 20 de març. de 2021,
+  \url{https://www.domo.com/learn/infographic/data-never-sleeps-8}.
+
+\bibitem[Efnusheva, D.; Cholakoska, A. e Tentov, A. M.(2017)Efnusheva, D.;
+  Cholakoska, A. e Tentov, A. M.]{paper-processor-memory-bottleneck} Efnusheva,
+  D.; Cholakoska, A. e Tentov, A. M. A survey of different approaches for
   overcoming the processor-memory bottleneck. \textbf{Computer Science and
-  Information Technology}, [S.l.], v.9, n.2, p.151--163, 2017.
+  Information Technology}, Chhattisgarh, IN, v.9, n.2, p.151--163, 2017.
 
-\bibitem[FUENTES~J. E~NAVARRO(2016)FUENTES~J. E~NAVARRO]{datasets-inf-udec}
-  FUENTES~J. E~NAVARRO, G\@. \textbf{Par{\^e}nteses balanceados}. Online;
-  acesso em 24 de ago. de 2021,
+\bibitem[Fuentes, J. e Navarro, G.(2016)Fuentes, J. e Navarro,
+  G.]{datasets-inf-udec} Fuentes, J. e Navarro, G. \textbf{Par{\^e}nteses
+  balanceados}. Online; acesso em 24 de ago. de 2021,
   \url{http://www.inf.udec.cl/~jfuentess/datasets/parentheses.php}.
 
-\bibitem[GOG et~al.(2014)GOG; BELLER; MOFFAT; PETRI]{sdsl-article} GOG, S.
-  et~al\@. From Theory to Practice: plug and play with succinct data
-  structures. In: INTERNATIONAL SYMPOSIUM ON EXPERIMENTAL ALGORITHMS, (SEA
-  2014), 13. \textbf{Anais{\ldots}} [S.l.:~s.n.], 2014. p.326--337.
+\bibitem[Gusfield, D.(1997)Gusfield, D.]{book-gusfield} Gusfield, D.
+  \textbf{Algorithms on Strings, Trees, and Sequences}: computer science and
+  computational biology. [S.l.]: Cambridge University Press, 1997.
+  (EBL-Schweitzer).
 
-\bibitem[GUSFIELD; PRESS; FUND(1997)GUSFIELD; PRESS; FUND]{book-gusfield}
-  GUSFIELD, D.; PRESS, C.~U.; FUND, J. D. . P. S. H.~L\@. \textbf{Algorithms on
-  Strings, Trees, and Sequences}: computer science and computational biology.
-  [S.l.]: Cambridge University Press, 1997. (EBL-Schweitzer).
+\bibitem[Hankins, R. A. e Patel, J. M.(2003)Hankins, R. A. e Patel, J.
+  M.]{paper-effect-node-size-cache-b-trees} Hankins, R. A. e Patel, J. M.
+  Effect of node size on the performance of cache-conscious B+-trees. In:
+  SIGMETRICS. \textbf{Anais{\ldots}} ACM, 2003. p.283--294.
 
-\bibitem[HANKINS~R. A. E~PATEL(2003)HANKINS~R. A.
-  E~PATEL]{paper-effect-node-size-cache-b-trees} HANKINS~R. A. E~PATEL, J.~M\@.
-  Effect of Node Size on the Performance of Cache-Conscious B+-trees. In: 13TH
-  . \textbf{Anais{\ldots}} ACM SIGMETRICS international conference, 2003. v.29,
-  p.475--476.
-
-\bibitem[HENNESSY~J. L. E~PATTERSON(2014)HENNESSY~J. L.
-  E~PATTERSON]{book-computer-architecutre} HENNESSY~J. L. E~PATTERSON, D.~A\@.
+\bibitem[Hennessy, J. L. e Patterson, D. A.(2014)Hennessy, J. L. e Patterson,
+  D. A.]{book-computer-architecutre} Hennessy, J. L. e Patterson, D. A.
   \textbf{Arquitetura de Computadores}: uma abordagem quantitativa. Quinta.ed.
   Rio de Janeiro, RJ, BR: Elsevier, 2014.
 
-\bibitem[MAHAPATRA~N. R. E~VENKATRAO(1999)MAHAPATRA~N. R.
-  E~VENKATRAO]{paper-Processor-Memory-bottleneck-Problems-Solutions}
-  MAHAPATRA~N. R. E~VENKATRAO, B\@. The Processor-Memory Bottleneck: problems
-  and solutions. \textbf{XRDS}, New York, NY, USA, v.5, n.3es, p.2–es,
-  Apr.~1999.
+\bibitem[Jacobson, G.(1989)Jacobson, G.]{article-louds} Jacobson, G.
+  Space-efficient static trees and graphs. In: ANNUAL SYMPOSIUM ON FOUNDATIONS
+  OF COMPUTER SCIENCE, 30. \textbf{Anais{\ldots}} [S.l.:~s.n.], 1989.
+  p.549--554.
 
-\bibitem[MUNRO~J. I. E~RAMAN(1997)MUNRO~J. I.
-  E~RAMAN]{paper-succint-representation-of-balanced-parentheses} MUNRO~J. I.
-  E~RAMAN, V\@. Succinct representation of balanced parentheses, static trees
-  and planar graphs. In: ANNUAL SYMPOSIUM ON FOUNDATIONS OF COMPUTER SCIENCE,
-  38. \textbf{Proceedings{\ldots}} Society for Industrial and Applied
-  Mathematics, 1997. p.118--126.
+\bibitem[Mahapatra, N. R. e Venkatrao, B.(1999)Mahapatra, N. R. e Venkatrao,
+  B.]{paper-Processor-Memory-bottleneck-Problems-Solutions} Mahapatra, N. R. e
+  Venkatrao, B. The Processor-Memory Bottleneck: problems and solutions.
+  \textbf{XRDS}, New York, USA, v.5, p.2–es, Apr.~1999.
 
-\bibitem[NAVARRO(2016)NAVARRO]{book-compact-data-structures} NAVARRO, G\@.
-  \textbf{Compact data structures}:a practical approach. 1.ed. New York, NY,
+\bibitem[Munro, J. I. e Raman, V.(2002)Munro, J. I. e Raman,
+  V.]{paper-succint-representation-of-balanced-parentheses} Munro, J. I. e
+  Raman, V. Succinct Representation of Balanced Parentheses and Static Trees.
+  \textbf{Theoretical Computer Science}, USA, v.31, n.3, 2002.
+
+\bibitem[Navarro, G.(2016)Navarro, G.]{book-compact-data-structures} Navarro,
+  G. \textbf{Compact data structures}:a practical approach. 1.ed. New York, NY,
   USA: Sheridan Books, Inc, 2016.
 
-\bibitem[RAO~J. E~ROSS(2000)RAO~J. E~ROSS]{paper-making-btree-cache} RAO~J.
-  E~ROSS, K.~A\@. Making B+- Trees Cache Conscious in Main Memory. In: SOCIETY
-  FOR INDUSTRIAL AND APPLIED MATHEMATICS, New York, NY, USA.
-  \textbf{Anais{\ldots}} Association for Computing Machinery, 2000.
+\bibitem[Rao, J. e Ross, K. A.(2000)Rao, J. e Ross, K.
+  A.]{paper-making-btree-cache} Rao, J. e Ross, K. A. Making B+-Trees Cache
+  Conscious in Main Memory. In: SIGMOD CONFERENCE, teste.
+  \textbf{Anais{\ldots}} ACM, 2000. p.475--486. SIGMOD Record 29(2), June 2000.
 
-\bibitem[REINSEL~D. E~GANTZ(2018)REINSEL~D. E~GANTZ]{relatorio-idc} REINSEL~D.
-  E~GANTZ, J. e. R.~J\@. \textbf{The Digitization of the World, From Edge to
-  Core}. [S.l.]: International Data Corporation (IDC), 2018.
+\bibitem[Reinsel, D. e Gantz, J. e Rydning, J.(2018)Reinsel, D. e Gantz, J. e
+  Rydning, J.]{relatorio-idc} Reinsel, D. e Gantz, J. e Rydning, J. The
+  Digitization of the World, From Edge to Core. \textbf{International Data
+  Corporation (IDC)}, Needham, MA , USA, 1~2018.
 
-\bibitem[RUSSELL~S. E~NORVIG(2013)RUSSELL~S.
-  E~NORVIG]{book-inteligencia-artificial} RUSSELL~S. E~NORVIG, P\@.
+\bibitem[Russell, S. e Norvig, P.(2013)Russell, S. e Norvig,
+  P.]{book-inteligencia-artificial} Russell, S. e Norvig, P.
   \textbf{Inteligência Artificial}. 3.ed. Rio de Janeiro, RJ, Brasil:
   Elsevier, 2013.
 
-\bibitem[SADAKANE~K. E~NAVARRO(2010)SADAKANE~K.
-  E~NAVARRO]{paper-fully-functinal-succint-trees} SADAKANE~K. E~NAVARRO, G\@.
-  Fully-Functional Succinct Trees. In: ASSOCIATION FOR COMPUTING MACHINERY.
-  \textbf{Anais{\ldots}} Society for Industrial and Applied Mathematics, 2010.
+\bibitem[Sadakane, K. e Navarro, G.(2010)Sadakane, K. e Navarro,
+  G.]{paper-fully-functinal-succint-trees} Sadakane, K. e Navarro, G.
+  Fully-Functional Succinct Trees. In: TWENTY-FIRST ANNUAL {ACM-SIAM} SYMPOSIUM
+  ON DISCRETE ALGORITHMS, Austin, Texas, USA. \textbf{Proceedings{\ldots}}
+  SIAM, 2010. p.134--149.
 
-\bibitem[SEIXAS(2010)SEIXAS]{arvore-dns} SEIXAS, P\@. UMA ANÁLISE DO PROTOCOLO
-  DNS E SUAS EXTENSÕES. \textbf{Cadernos de Educação, Tecnologia e
-  Sociedade}, [S.l.], v.1, 08~2010.
+\bibitem[Seixas, P.(2010)Seixas, P.]{arvore-dns} Seixas, P. Uma análise do
+  protocolo de DNS e suas extensões. \textbf{Cadernos de Educação,
+  Tecnologia e Sociedade}, Goianésia, GO, Brasil, v.1, 08~2010.
 
-\bibitem[TENENBAUM; LANGSAM; AUGENSTEIN(1995)TENENBAUM; LANGSAM;
-  AUGENSTEIN]{tenenbaum} TENENBAUM, A.; LANGSAM, Y.; AUGENSTEIN, M\@.
-  \textbf{Estruturas de dados usando C}. [S.l.]: Pearson Makron Books, 1995.
+\bibitem[Tenenbaum, A.M.; Langsam, Y. e Augenstein, M.J.(1995)Tenenbaum, A.M.;
+  Langsam, Y. e Augenstein, M.J.]{tenenbaum} Tenenbaum, A.M.; Langsam, Y. e
+  Augenstein, M.J. \textbf{Estruturas de dados usando C}. 1.ed. São Paulo, SP,
+  Brasil: Pearson Makron Books, 1995.
 
 \end{thebibliography}

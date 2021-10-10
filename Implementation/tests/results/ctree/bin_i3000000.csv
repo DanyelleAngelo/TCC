@@ -24,8 +24,6 @@ name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,l
 "BM_LastChild_bin",1,1.18576e+09,1.18567e+09,ns,,,,,
 "BM_LevelNext_bin",1,1.10047e+09,1.10044e+09,ns,,,,,
 "BM_LevelPrev_bin",1,1.44276e+09,1.44272e+09,ns,,,,,
-"BM_LevelLeftMost_bin",60929,11493.2,11493.2,ns,,,,,
-"BM_LevelRightMost_bin",17803,38412.5,38411.7,ns,,,,,
 "BM_RightMostLeaf_bin",1,1.95693e+09,1.95685e+09,ns,,,,,
 "BM_LevelAncestor_bin",1,2.649e+09,2.64879e+09,ns,,,,,
 "BM_PostRank_bin",1,5.33805e+08,5.33788e+08,ns,,,,,

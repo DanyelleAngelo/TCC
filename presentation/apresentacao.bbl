@@ -1,20 +1,22 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Carvalho(2002)]{paper-gap-between-processor-memory}
-C.~Carvalho.
-\newblock The gap between processor and memory speeds.
-\newblock In \emph{Proc. of IEEE International Conference on Control and
-  Automation}, 2002.
-
 \bibitem[Cisco(2020)]{report-cisco}
 Cisco.
 \newblock Cisco annual internet report (2018–2023).
 \newblock \emph{Cisco}, 2020.
+
+\bibitem[Dive~into Systems(2021)]{memory-hierarchy}
+LLC Dive~into Systems.
+\newblock The memory hierarchy.
+\newblock
+  \url{https://diveintosystems.org/book/C11-MemHierarchy/mem_hierarchy.html},
+  2021.
+\newblock Online; acesso em 13 de set. de 2021.
 
 \bibitem[Domo(2020)]{data-never-sleeps}
 Domo.
@@ -35,11 +37,6 @@ J.~M. Hankins, R. A. e~Patel.
 \newblock Effect of node size on the performance of cache-conscious b+-trees.
 \newblock volume~29, pages 475--476. ACM SIGMETRICS international conference,
   2003.
-
-\bibitem[Hennessy and Patterson(2012)]{book-computer-architecutre}
-J.~L. Hennessy and D.~A. Patterson.
-\newblock \emph{Computer Architecture: A Quantitative Approach}.
-\newblock Elsevier, Waltham, MA, USA, fifth edition, 2012.
 
 \bibitem[Navarro(2016)]{book-compact-data-structures}
 G.~Navarro.
@@ -64,12 +61,5 @@ Jun Rao and Kenneth~A. Ross.
 D.~Reinsel, J.~Gantz, and J.~Rydning.
 \newblock The digitization of the world, from edge to core.
 \newblock \emph{International Data Corporation (IDC)}, 1 2018.
-
-\bibitem[Sadakane and Navarro(2010)]{paper-fully-functinal-succint-trees}
-K.~Sadakane and G.~Navarro.
-\newblock Fully-functional succinct trees.
-\newblock In \emph{Proceedings of the Twenty-First Annual ACM-SIAM Symposium on
-  Discrete Algorithms}, page 134–149, USA, 2010. Society for Industrial and
-  Applied Mathematics.
 
 \end{thebibliography}

@@ -7,112 +7,52 @@ A level-1 auxiliary file: text/desenvolvimento.aux
 A level-1 auxiliary file: text/resultados.aux
 A level-1 auxiliary file: text/conclusion.aux
 The style file: ifbclass/libs/abnt.bst
+format.names is an unknown function---line 413 of file ifbclass/libs/abnt.bst
+format.names is an unknown function---line 421 of file ifbclass/libs/abnt.bst
+format.family.names is an unknown function---line 1103 of file ifbclass/libs/abnt.bst
+format.family.names is an unknown function---line 1106 of file ifbclass/libs/abnt.bst
+format.family.names.all is an unknown function---line 1145 of file ifbclass/libs/abnt.bst
+format.family.names.all is an unknown function---line 1148 of file ifbclass/libs/abnt.bst
 Database file #1: bib/references.bib
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1338 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1338 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1338 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1338 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1342 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1343 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "BADER, J.; BELLER, T.; GOG, S.; PETRI, M." for entry sdsl
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-`booktitle' is a missing field, not a string, for entry coira-feranando
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-`booktitle' is a missing field, not a string, for entry paper-simple-and-efficient-fully-functional-succinct-trees
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Efnusheva, D.; Cholakoska, A.; Tentov, A. M." for entry paper-processor-memory-bottleneck
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-`booktitle' is a missing field, not a string, for entry paper-effect-node-size-cache-b-trees
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-`booktitle' is a missing field, not a string, for entry paper-making-btree-cache
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-Too many commas in name 1 of "Reinsel, D. e Gantz, J. e Rydning, J." for entry relatorio-idc
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-`booktitle' is a missing field, not a string, for entry paper-fully-functinal-succint-trees
-while executing---line 1346 of file ifbclass/libs/abnt.bst
-You've used 23 entries,
-            2371 wiz_defined-function locations,
-            701 strings with 7728 characters,
-and the built_in function-call counts, 27461 in all, are:
-= -- 3343
-> -- 143
-< -- 318
-+ -- 1677
-- -- 74
-* -- 1246
-:= -- 2538
-add.period$ -- 98
-call.type$ -- 23
-change.case$ -- 196
-chr.to.int$ -- 118
-cite$ -- 23
-duplicate$ -- 3515
-empty$ -- 1033
-format.name$ -- 198
-if$ -- 5965
+You've used 25 entries,
+            2121 wiz_defined-function locations,
+            715 strings with 8160 characters,
+and the built_in function-call counts, 22066 in all, are:
+= -- 2911
+> -- 55
+< -- 55
++ -- 1227
+- -- 94
+* -- 922
+:= -- 1693
+add.period$ -- 104
+call.type$ -- 25
+change.case$ -- 56
+chr.to.int$ -- 110
+cite$ -- 25
+duplicate$ -- 2864
+empty$ -- 944
+format.name$ -- 0
+if$ -- 5435
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 49
-num.names$ -- 115
-pop$ -- 537
+newline$ -- 53
+num.names$ -- 0
+pop$ -- 296
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 25
 quote$ -- 0
-skip$ -- 1598
+skip$ -- 1482
 stack$ -- 0
-substring$ -- 2009
-swap$ -- 2238
+substring$ -- 1713
+swap$ -- 1719
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 181
+type$ -- 173
 warning$ -- 0
-while$ -- 177
+while$ -- 57
 width$ -- 0
-write$ -- 25
-(There were 33 error messages)
+write$ -- 27
+(There were 6 error messages)

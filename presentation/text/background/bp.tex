@@ -11,18 +11,18 @@
     \textbf{Representação de árvores sucintas via parênteses balanceados}
         \begin{itemize}
             \item Sequência de $2n$ parênteses balanceados;
-            \item Complexidade de espaço $2n + o(n)$ bits;
+            \item Complexidade de espaço $2n$ bits;
             \item Através de estruturas auxiliares suporta:
             \begin{itemize}
-                \item findclose(B,i);
-                \item findopen(B,i);
-                \item excess(B,i);
+                \item findclose(BP,i);
+                \item findopen(BP,i);
+                \item excess(BP,i);
             \end{itemize}
         \end{itemize}
     \end{frame}
     
     \begin{frame}{Representações sucintas de árvores}
-    Exemplo: \textit{excess(B,6) = -1}
+    Exemplo: \textit{excess(BP,6) = -1}
         \begin{figure}[h!]
             \centering
             

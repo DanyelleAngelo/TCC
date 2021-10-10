@@ -51,10 +51,10 @@
     Sequência de $n$ elementos sobre o alfabeto $\Sigma = \{0,1\}$, no qual podem ser realizadas as seguintes operações \citep{book-compact-data-structures}:
         \vspace{0.5cm}
         \begin{itemize} 
-              \item $select_v(BV,i)$: dado $v \in \{0,1\}$ e $i \geq 0$, retorna a posição do i-ésimo bit $v$ em $BV[0,n-1]$.
+              \item $select_v(BV,i)$: dado $v \in \{0,1\}$ e $i \geq 1$, retorna a posição do i-ésimo bit $v$ em $BV[0,n-1]$.
               \vspace{0.5cm}
             
-                Exemplo: $select_1(BV,7)$
+                Exemplo: $select_1(BV,8)$
             
                 \begin{figure}[h!]
                     \centering
@@ -64,7 +64,7 @@
     \end{frame}
     
     \begin{frame}{Vetores de bits - select}
-        Exemplo: $select_1(BV,7)=12$
+        Exemplo: $select_1(BV,8)=12$
         \begin{figure}[h!]
             \centering
             \includegraphics[scale=0.7]{images/select-res.png}

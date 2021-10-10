@@ -6,49 +6,50 @@ A level-1 auxiliary file: text/theoretical-reference.aux
 A level-1 auxiliary file: text/proposal.aux
 A level-1 auxiliary file: text/results.aux
 A level-1 auxiliary file: text/objetivos.aux
+A level-1 auxiliary file: text/conclusion.aux
 The style file: plainnat.bst
 Database file #1: bib/references.bib
 Warning--empty booktitle in paper-effect-node-size-cache-b-trees
 Warning--empty journal in fig-gap-processor-memory
-You've used 11 entries,
+You've used 9 entries,
             2773 wiz_defined-function locations,
-            661 strings with 6758 characters,
-and the built_in function-call counts, 4753 in all, are:
-= -- 433
-> -- 228
-< -- 13
-+ -- 80
-- -- 69
-* -- 293
-:= -- 705
-add.period$ -- 38
-call.type$ -- 11
-change.case$ -- 56
-chr.to.int$ -- 11
-cite$ -- 24
-duplicate$ -- 267
-empty$ -- 408
-format.name$ -- 86
-if$ -- 1044
+            648 strings with 6415 characters,
+and the built_in function-call counts, 3753 in all, are:
+= -- 338
+> -- 186
+< -- 10
++ -- 66
+- -- 57
+* -- 235
+:= -- 570
+add.period$ -- 32
+call.type$ -- 9
+change.case$ -- 46
+chr.to.int$ -- 9
+cite$ -- 20
+duplicate$ -- 197
+empty$ -- 320
+format.name$ -- 68
+if$ -- 810
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 65
-num.names$ -- 44
-pop$ -- 140
+missing$ -- 7
+newline$ -- 56
+num.names$ -- 36
+pop$ -- 115
 preamble$ -- 1
-purify$ -- 45
+purify$ -- 37
 quote$ -- 0
-skip$ -- 219
+skip$ -- 162
 stack$ -- 0
-substring$ -- 90
-swap$ -- 61
-text.length$ -- 4
+substring$ -- 68
+swap$ -- 39
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 111
+type$ -- 94
 warning$ -- 2
-while$ -- 38
+while$ -- 31
 width$ -- 0
-write$ -- 154
+write$ -- 127
 (There were 2 warnings)
