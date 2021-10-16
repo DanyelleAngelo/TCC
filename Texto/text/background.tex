@@ -20,7 +20,7 @@ Apesar das melhorias feitas ao longo dos anos por estas indústrias, a disparida
 Nas arquiteturas computacionais modernas essa hierarquia é formada por: registradores, cache, memória primária e memória secundária. A \figref{fig:hierarquia-de-memoria}  demonstra uma hierarquia de memória, é possível observar que, à medida que nos afastamos do topo da pirâmide, o tempo necessário para concluir uma solicitação do processador à memória (latência) e a capacidade de armazenamento também aumenta.
 
 Devido  a alta latência que as memórias mais distantes do processador possuem, torna-se ideal trabalhar nos níveis superiores da hierarquia de memória para obter um desempenho efetivo das operações sobre um conjunto de dados  \citep{book-compact-data-structures}. A grande problemática é que, conforme disposto por \cite{paper-gap-between-processor-memory}, as memórias com latência menor possuem capacidade de armazenamento também menor, tornando praticamente inviável manipular grandes conjuntos de dados nestes níveis, o que é cada vez mais necessário nos dias atuais, devido ao aumento crescente na produção e consumo de dados. Uma possível solução para tanto é operar sobre os dados em sua forma compactada, e conforme cita também \cite{coira-feranando}, a melhor maneira de fazer isso é através do uso das estruturas de dados sucintas.
-%TODO: melhor pelo paragŕafo abaixo
+
 \begin{figure}[!ht]
     \centering
     \caption{Hierarquia de memória}
@@ -51,7 +51,7 @@ Outra aplicação das árvores no mundo real, se dá através do mapeamento de \
 
 Mesmo estruturas eficientes como as árvores podem se tornar inviáveis para determinadas aplicações. A forma como estas são construídas afim de operar sobre os objetos podem muitas vezes ocupar um espaço ainda maior do que os dados ocupariam originalmente. Para reconhecer este problema \citet{book-compact-data-structures}, traz como exemplo uma comparação do espaço ocupado pelo genoma humano armazenado sem estruturas adicionais, e o espaço ocupado pelo mesmo usando uma árvore de sufixos que viabiliza operações de montagem de genomas. Com  3,3 bilhões de nucleotídeos, se usarmos 2 bits para armazenar cada base nitrogenada necessitaremos de aproximadamente 825 megabytes, assim podemos reter o DNA por completo em qualquer memória principal. No entanto, usando a árvore de sufixos, cada nucleotídeo precisará de 10 bytes para ser representado, o que nos leva a uma estrutura que ocupa um espaço igual a 33 gigabytes, o que torna inviável o processamento do genoma em memória principal em computadores comuns utilizando esta estrutura de de dados. %Fazendo com que seja necessário armazenar parte do mesmo em memórias como o disco, o que como já vimos acarreta em um alto custo computacional.
 
-É nesse ponto que entram as estruturas de dados sucintas. Como já vimos, estas são capazes de armazenar tanto as informações, como as estruturas de dados que atuam sobre elas usando um espaço reduzido. No caso das árvores que é o objeto do nosso estudo, a sua representação clássica com ponteiros  ocupa  $O(n \log n)$ bits\footnote{Neste trabalho, quando não indicado, estaremos trabalhando com o logarítmo na base 2.}, enquanto existem representações sucintas, abordadas nas Seções \ref{sec:sec-bitvector} e \ref{sec:sec-parenthesis-balanceados}, que ocupam cerca de $2n+o(n)$ bits, conforme mostra \cite{book-compact-data-structures}.
+É nesse ponto que entram as estruturas de dados sucintas. Como já vimos, estas são capazes de armazenar tanto as informações, como as estruturas de dados que atuam sobre elas usando um espaço reduzido. No caso das árvores que é o objeto do nosso estudo, a sua representação clássica com ponteiros  ocupa  $O(n \log n)$ bits\footnote{Neste trabalho, quando não indicado, estaremos trabalhando com o logarítmo na base 2.}, enquanto existem representações sucintas, abordadas nas Seções \ref{sec:sec-bitvector} e \ref{sec:sec-parenthesis-balanceados}, que ocupam cerca de $2n+o(n)$ bits, conforme disposto em \cite{book-compact-data-structures}.
 
 \section{Vetores de Bits}\label{sec:sec-bitvector}
 Um vetor de bits $BV[0,n-1]$  é uma sequência sobre o alfabeto $\Sigma = \{0,1\}$. É possível executar as seguintes operações sobre os vetores de bits \citep{book-compact-data-structures}:
@@ -77,7 +77,7 @@ A \figref{fig:bitvector-operations} traz exemplos das operações listadas acima
 \section{Representação de árvores sucintas}
 Existem diversas formas de representar  uma árvore de maneira sucinta, abaixo listamos algumas destas.
 
-\subsection{Parênteses Balanceado (BP)}\label{sec:sec-parenthesis-balanceados}
+\subsection{Parênteses Balanceados (BP)}\label{sec:sec-parenthesis-balanceados}
 \begin{figure}[!ht]
 \centering
   \caption[Representação de árvores com parênteses balanceados]{Representação de uma árvore $T$, usando parênteses balanceados: fazendo um percurso pré-ordem em $T$ escrevemos um parênteses de abertura quando um nó é visitado pela primeira vez, e um de fechamento no percurso de volta após atravessar  sua subárvore \citep{paper-succint-representation-of-balanced-parentheses}}
@@ -89,16 +89,18 @@ Uma sequência de parênteses balanceados (BP) consiste em uma string de tamanho
 Para representar uma árvore ordinária\footnote{Em uma árvore ordinária, cada nó pode ter um número árbitrário de filhos, e as subárvores de cada nó formam um conjunto ordenado de nós \citep{tenenbaum}} $T$ usando essa estrutura, tomamos um vetor de bits de tamanho igual a $2n$ ($BP[0,2n-1])$, em que $n$ é o número de nós da árvore. Realizamos então um percurso sobre $T$ em pré-ordem, e sempre que um nó for alcançado pela primeira vez, um parênteses de abertura (podendo ser representado pelo bit $1$) é inserido em $BP$, ao término da exploração das subárvores deste nó, um parênteses de fechamento (bit $0$) é adicionado em $BP$ \citep{paper-succint-trees-in-practice}.  Na figura \figref{fig:parenthesis-representation} pode-se observar uma árvore com 26 nós e sua representação equivalente em parênteses balanceados.
 %Para representar uma árvore ordinal $T$ usando essa estrutura tomamos um vetor de tamanho igual à $2n$ ($BP[0,2n-1])$ onde $n$ é o número de nós da árvore. O nó $v$ (codificado em $BP[i]$) da árvore $T$ é representado por um parênteses de abertura e um de fechamento em $BP$, os elementos contidos no intervalo aberto desses parênteses codificam as subárvores de $v$ em ordem de igual maneira. Na figura \figref{fig:parenthesis-representation} vemos um árvore com 14 nós e sua representação equivalente em parênteses balanceados.
 
-Usando a representação de parênteses balanceados, podemos fornecer suporte às operações descritas a seguir para diversas estruturas de dados sucintas:
+Usando a representação de parênteses balanceados junto à  estruturas de dados auxiliares, podemos fornecer suporte a diversas operações sobre árvores, tais como: \textit{findClose, findOpen} e \textit{excess}. Além dessas três operações, \citet{paper-succint-representation-of-balanced-parentheses} em seu trabalho, traz suporte as operações  \textit{enclose} e \textit{double\_enclose} sobre árvores representadas por intermédio de parênteses balanceados. Estas cinco operações são descritas a seguir:
+
 \begin{itemize}
     \item $findClose(BP,i)$: retorna a posição $j$ do parênteses de fechamento, correspondente ao i-ésimo parênteses de abertura;
     \item $findOpen(BP, i)$: retorna a posição $j$ do parênteses de abertura, correspondente ao i-ésimo parênteses de fechamento;
-    \item $excess(BP, i)$: retorna a "diferença entre o número de parênteses abertos e fechados até a posição $i$".  \cite[tradução nossa]{paper-succint-representation-of-balanced-parentheses}
+    \item $excess(BP, i)$: retorna a "diferença entre o número de parênteses abertos e fechados até a posição $i$"  \cite[tradução nossa]{paper-succint-representation-of-balanced-parentheses};
+    \item $enclose(BP,i)$: retorna o pai de um nó codificado em $i$;
+    \item $double\_enclose(BP,i)$: por sua vez retorna o ancestral comum mais baixo dos nós $i$ e $j$ (operação $lca$).
 \end{itemize}
+%\citet{paper-succint-representation-of-balanced-parentheses} propuseram uma solução em árvores binárias usando a representação de parênteses balanceados, nesta proposta,  além das operações já citadas, os autores viabilizaram suporte a operação de $enclose(i)$, que retorna o pai de um nó codificado em $i$,  e a operação $double\_enclose(i,j)$ (que equivale à operação $lca$ em árvores) que por sua vez retorna o ancestral comum mais baixo dos nós $i$ e $j$. 
 
-\citet{paper-succint-representation-of-balanced-parentheses} propuseram uma solução em árvores binárias usando a representação de parênteses balanceados, nesta proposta,  além das operações já citadas, os autores viabilizaram suporte a operação de $enclose(i)$, que retorna o pai de um nó codificado em $i$,  e a operação $double\_enclose(i,j)$ (que equivale à operação $lca$ em árvores) que por sua vez retorna o ancestral comum mais baixo dos nós $i$ e $j$. 
-
-Com base na operação  $rank$, da estrutura de vetores bits, podemos viabilizar a operação de $excess$ facilmente, como mostrado abaixo.
+Com base na operação  $rank$, da estrutura de vetores bits, podemos viabilizar a operação de $excess$ facilmente, como mostrado abaixo:
 
 \begin{eqnarray*}
     \begin{split}
@@ -145,7 +147,7 @@ Como um nó nessa representação é codificado através do parênteses de abert
       \includegraphics[width=\columnwidth]{images/louds.png}
       \label{fig:louds-representation}
 \end{figure}
-Na representação \textit{Level-order Unary Degree Sequence} \citep{article-louds,article-dfuds}, pecorremos os nós da árvore por meio de um percurso em largura, adicionando assim como em \textit{DFUDS}, $i$ (novamente com $i$ representando o grau do nó) parênteses de abertura ao visitarmos um nó pela primeira vez, seguido de um parênteses de fechamento.
+Na representação \textit{Level-order Unary Degree Sequence} \citep{article-louds,article-dfuds} pecorremos os nós da árvore por meio de um percurso em largura, adicionando assim como em \textit{DFUDS}, $i$ (novamente com $i$ representando o grau do nó) parênteses de abertura ao visitarmos um nó pela primeira vez, seguido de um parênteses de fechamento.
  Devido ao percurso utilizado para codificar a árvore nesta representação, as subárvores de um nó não são mapeadas de forma contígua no vetor que a representa, inviabilizando operações básicas como o cálculo do tamanho da subárvore de um nó \citep{book-compact-data-structures,paper-fully-functinal-succint-trees}.
 
 A \figref{fig:louds-representation} mostra uma representação em \textit{LOUDS} para a árvore $T$, usada como exemplo na representação de \textit{parênteses balanceados} e em \textit{DFUDS}.
@@ -153,7 +155,7 @@ A \figref{fig:louds-representation} mostra uma representação em \textit{LOUDS}
 \section{Range min-Max Tree (rmM-tree)}\label{sec:sec-classic-rmm-tree}
 Proposta por \citet{paper-fully-functinal-succint-trees}, estudada por diversos outros autores, a range min-Max tree, é uma estrutura baseada em valores de excessos máximos e mínimos dentro de um intervalo. 
 
-A rmM-tree possibilita operações de percurso e busca por intermédio da representação em parênteses balanceados de uma árvore, e valores de excesso. O uso da estrutura de parênteses balanceados implica na redução de um grande número de operações relevantes consideradas na literatura a poucas operações primitivas, podendo estas serem realizadas em tempo constante para árvores suficientemente pequenas \citep{paper-fully-functinal-succint-trees}.
+A rmM-tree viabiliza a realização de operações de percurso e busca (além das definidas na Seção~\ref{sec:sec-parenthesis-balanceados}) sobre árvores codificadas por meio de sequências de parênteses balanceados. O uso da estrutura de parênteses balanceados implica na redução de um grande número de operações relevantes consideradas na literatura a poucas operações primitivas, podendo estas serem realizadas em tempo constante para árvores suficientemente pequenas \citep{paper-fully-functinal-succint-trees}.
 
 Neste trabalho usaremos a abordagem mostrada por \citet{book-compact-data-structures} em seu livro, para a construção da rmM-tree binária. Como explica o autor, a range min-Max tree é construída na forma de uma árvore binária completa --o que nos permite a utilização de vetores, omitindo o uso de ponteiros explícitos -- sendo que cada um de seus nós armazena os valores de excesso calculados dentro de um intervalo do vetor que representa a árvore de entrada. 
 
@@ -164,7 +166,7 @@ Como cada nó folha de uma rmM-tree está associado a um único intervalo, o tam
 Esses intervalos são obtidos da seguinte maneira: dado um vetor de entrada $BP$, de  tamanho igual a $n$, sendo $BP$ usado para a codificação via parênteses balanceados de uma árvore $T$ com tamanho igual a $n/2$, é definido um tamanho de intervalo $b$ (chamado também de tamanho de bloco), divide-se então $n$ por $b$, obtendo assim a quantidade de folhas da rmM-tree.
 
 Considerando que a altura de uma árvore binária é dada por $\lceil \log n \rceil$ e que o vetor de entrada $BP$ ocupa $n$ bits, temos assim que a rmM-tree utiliza um espaço próximo a $n + O(\frac{n}{b} \log n)$ bits. Tomando $b = \log^2 n$, temos uma complexidade de espaço a $n + O(n/\log n)$. Em relação ao tempo gasto por cada operação sobre a rmM-tree,  \citet{book-compact-data-structures} mostra que na prática todas essas operações podem ser realizadas em tempo $O(\log n)$ - ou ainda em tempo $O(\log \log n)$ em uma versão mais refinada da estrutura - a lista completa dessas operações é apresentada na \tabref{tbl:classicOperations-rmm-tree} deste capítulo.
-%TODO: b é fixado em log^2n, o que nos dá $n + O(\frac{n}{\log n}$ bits$
+
 
 \subsection{Registros}
 Os valores de excesso definidos em cada nó da rmM-tree são essenciais para a realização de operações de consulta de maneira eficiente, são neles em que essa estrutura se baseia.  Em seu livro, \citet{book-compact-data-structures}, define 4 valores de excesso que viabilizam essas operações. Mostraremos as definições de cada um destes a seguir. 
@@ -251,6 +253,7 @@ Suponha que um nó $v$ cubra um intervalo $[s,e]$ do vetor de entrada $BP$ defin
 O processo de construção da rmM-tree é mostrado com mais detalhes no Algoritmo~\ref{alg:build-bin-tree}. Neste algoritmo, fazemos o uso de uma tabela $C$, esta tabela pré-computa todas as possibilidades de valores de registro para um intervalo de tamanho $w$, sendo $b \mbox{ mod } w = 0$. "Essa técnica de pré-computar todos os valores possíveis de determinados padrões de bits é conhecida como \textit{truque dos quatro russos}" \citep[tradução nossa]{book-gusfield}.
 O uso dessa tabela $C$ não é obrigatório para a construção da rmM-tree, entretanto, a mesma possibilita a otimização do tempo de construção e operações sobre a rmM-tree, como disposto em \citet{book-compact-data-structures}.
 
+
 Conforme expõe \citet{book-compact-data-structures}, a tabela $C$ é construída em tempo $O(\sqrt{n} \log n)$ e ocupa $O(\sqrt{n} w)$ bits de espaço. Esse processo de construção é feito do seguinte modo: após definir uma constante $w$, criamos uma tabela $C[0, 2^w-1]$,  onde cada entrada da tabela armazena os registros de excesso definidos anteriormente, cada elemento $C[x]$ é calculado com base nos $w$ bits  que formam $x$. Para melhor elucidar estre processo, o exemplo abaixo mostra a computação de uma entrada específica da tabela $C$. O Exemplo 3 traz a aplicação da tabela $C$ em um nó da rmM-tree da \figref{fig:rmm-tree-binaria}.
 \begin{example}
     Suponha $w=4$ e $x=3$, temos assim que:
@@ -264,6 +267,7 @@ Conforme expõe \citet{book-compact-data-structures}, a tabela $C$ é construíd
 Fazer a pré-computação dessa tabela elimina a necessidade de computar iterativamente os valores de excesso mínimo e máximo, a cada inspeção de bits. Assim, no momento da construção dos nós da rmM-tree, ou durante a inspeção dos mesmos, basta ler os $w$ bits que queremos inspecionar, e então realizar uma consulta na tabela $C$ pelo elemento $x$ que mapeia os bits lidos. Conforme mostra \citet{book-compact-data-structures} uma consulta na tabela $C$ leva tempo constante, já a construção dos nós folhas usando essa técnica leva tempo $O(\frac{n}{\log n})$. Outra operação que atua junto à tabela $C$ é a função \textit{bitsread}, ela recebe como parâmetro um índice $i$, e então lê a palavra formada em $BP$, a partir de $i$, seguido pelos $w-1$ bits após $i$, usando como critério de leitura o bit mais significativo (\textit{Most Significant Bit (MSB)}), após esse processo o valor obtido por \textit{bitsread} é usado para consultar a tabela $C$, em busca dos valores de registro correspondentes aos bits analisados. 
 
 Além da tabela $C$ e da função \textit{bitsRead}, em nossa implementação usamos outras duas funções que nos auxiliam no  percurso em árvore, denominadas \textit{leafInTree} e \textit{numLeaf}, a primeira retorna o índice de um nó na rmM-tree correspondente ao número de uma folha,  a segunda por sua vez retorna o número de uma folha correspondente à um nó da rmM-tree (veja Algoritmo~\ref{alg:folha-indice}). Essas operações são úteis para iniciar (ou finalizar) o percurso na rmM-tree com base em um intervalo específico.
+
 
 \begin{example}
     Tome como base agora, a nossa rmM-tree de exemplo, assuma $w=4$. Para melhor exemplificação, vamos alterar um pouco a estrutura da nossa árvore, assuma um tamanho de bloco  $b=8$, para este exemplo. Suponha que queremos construir a folha de número $0$ (como aumentamos a cobertura do nosso bloco, a folha $0$, neste exemplo, corresponde à união dos nós $15$ e $16$ da árvore mostrada na \figref{fig:rmm-tree-binaria}), que neste exemplo corresponde ao nó $7$. O intervalo coberto por essa folha vai de $0$ à $7$, assim precisaríamos ler os $8$ bits que compõem esse intervalo. 
@@ -294,7 +298,9 @@ Além da tabela $C$ e da função \textit{bitsRead}, em nossa implementação us
     Ao observar o nó $7$ do exemplo~\ref{ex-build-tree}, é possível notar, que de fato, os valores obtidos nestes exemplo correspondem ao nó citado.
 \end{example}
 
-\begin{algorithm}[htp]
+\newpage
+
+\begin{algorithm}[h!]
     \SetAlgoLined\DontPrintSemicolon
     \SetKwFunction{algo}{algo}\SetKwFunction{proc}{proc}
     \SetKwProg{myproc}{Proc}{}{}
@@ -314,11 +320,11 @@ Além da tabela $C$ e da função \textit{bitsRead}, em nossa implementação us
         \If{$l < (2r - 2^h)$}{\Return{$2^h - 1 + l$}}
         \Else{\Return{$2^h - 1 - r + l$}}
     }
-    \caption{Conversão entre número de folha e índice de folha na rmM-tree.}
+    \caption{Conversão entre números de folhas e índice das folhas da rmM-tree.}
     \label{alg:folha-indice}
 \end{algorithm}
 
-\begin{algorithm}[htp]
+\begin{algorithm}[h!]
     \SetKwFunction{algo}{algo}
     \SetKwProg{myalg}{Algoritmo}{}{}
     \myalg{buildingTree(BP, C, b, w, r, nNodes)}{
@@ -355,6 +361,10 @@ Além da tabela $C$ e da função \textit{bitsRead}, em nossa implementação us
     \label{alg:build-bin-tree}
 \end{algorithm}
 
+
+\newpage
+
+
 \subsection{Operações}
 As operações sobre a range min-Max tree são realizadas através de cálculos usando os valores de excesso definidos na seção anterior.  Parte dessas já foram descritas nas Seções \ref{sec:sec-bitvector} e \ref{sec:sec-parenthesis-balanceados}, como as operações  \textit{enclose, findClose  e  findOpen}, nesta seção veremos como computá-las usando os nós da rmM-tree.
 Além das operações citadas, existem outras importantes operações suportadas pela range min-Max tree, detalhamos algumas logo abaixo. 
@@ -367,7 +377,6 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
     
     Como veremos mais tarde, dessa operação deriva-se diversas outras, tais como \textit{findClose, lca (ancestral comum mais baixo)} e outras operações de percurso em árvore.
 
-%alterar estilo do modo matemático: colocar mathrm, textsc
     \citet{paper-simple-and-efficient-fully-functional-succinct-trees} descrevem o funcionamento dessa operação da seguinte maneira: dado um excesso desejado $d$, e um índice $i$, a partir do qual a busca dever ser feita, examinamos a folha $k$ (com $k= \floor{(i+1)/b}$), cujo o intervalo de cobertura engloba o índice $i+1$.
     Caso não encontremos $d$ dentro desse intervalo, usamos os nós da rmM-tree para encontrar o bloco a qual $d$ pertence. Avançamos na rmM-tree pelo pai do nó folha analisado, verificando a cada iteração, se o valor do excesso buscado está compreendido no intervalo dos valores de excesso do nó à direita do atual. Ao encontramos o nó que contém o valor de excesso buscado, encerramos o processo de subida na árvore, e iniciamos o processo de descida na rmM-tree até que cheguemos à um nó folha. Durante o percurso de descida, avançamos pelo filho à esquerda do nó corrente sempre que $d$ estiver incluso nos intervalos de contenção do mesmo, e pelo nó à direita caso contrário. Ao chegarmos em um nó folha da árvore, interrompemos a inspeção dos nós da rmM-tree e iniciamos um escaneamento dos bits que compõem o intervalo dessa folha.
 
@@ -422,7 +431,7 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
     \begin{algorithm}[htp]
         \SetKwFunction{algo}{algo}
         \SetKwProg{myalg}{Algoritmo}{}{}
-        \myalg{fwdBlock(i,d\&dr)}{
+        \myalg{fwdBlock(i,d, \&dr)}{
             \Input{Índice a partir do qual começamos a busca, excesso buscado, excesso computado até o momento.}
             \Output{Posição $j$ onde ocorre a resposta, ou $BP.size()$ caso a resposta não exista.}
             \vspace{.3cm}
@@ -451,7 +460,7 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
             }
             \Return{$BP.size()$}
         }
-        \caption{Busca pelo excesso relativo $d$ em um nó folha.}
+        \caption{Busca pelo excesso relativo $d$ em um intervalo de tamanho $b$.}
         \label{alg:fwdBlock}
     \end{algorithm}
 
@@ -466,7 +475,7 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
         $j \leftarrow fwdBlock(i,d,\&dr)$ \tcp{Algoritmo~\ref{alg:fwdBlock}}
         
         \If{$dr = d $}{\Return{$j$}}
-        $l \leftarrow \floor{(i+1)/b}$\\
+        $l \leftarrow \floor{(i+1)/b}$\tcp{l-ésima folha}
         $v \leftarrow leafInTree(l)$\tcp{Algoritmo~\ref{alg:folha-indice}}
 
         \While{$(v+1)\&(v+2)$ \textbf{and} $dr + R[v+1].m \leq d \leq dr + R[v+1].M$}{
@@ -481,7 +490,8 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
         $v \leftarrow v +1 $\\
 
         \While{$v < numberLeaves -1 $}{
-            $v_l \leftarrow (2 \cdot v)+1; v_r \leftarrow v_l + 1$\\
+            $v_l \leftarrow (2 \cdot v)+1$\\
+            $v_r \leftarrow v_l + 1$\\
             \If{$dr + R[v_l].m \leq d \leq dr + R[v_l].M$}{
                 $v \leftarrow v_l $
             }
@@ -496,10 +506,11 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
         \lIf{$dr = d$ }{\Return{$j$}}
         \lElse{\Return{$BP.size()$}}
         }
-        \caption{Busca por um excesso relativo $d$, para um $j>i$}
+        \caption{Busca pela posição onde ocorre um excesso relativo $d$, para um $j>i$}
         \label{alg:fwdSearch-bin}
     \end{algorithm}
 
+\newpage
 
     \subsection{BwdSearch}\label{sc:bwdsearch}
     Essa operação é bastante similar à \textit{fwdSearch}, portanto não entraremos em tantos detalhes. Além disso, mais à frente fornecemos um exemplo que esclarece o processo para esse tipo de busca. 
@@ -515,9 +526,56 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
         \item Queremos encontrar um índice $j$ tal que o excesso relativo computado $(dr)$, no intervalo $[i,j]$, seja igual ao excesso buscado, $d$. Mas como $j < i $ e portanto $dr = d = -excess(j+1,i)$, devemos adicionar $1$ unidade à $dr$ ao inspecionarmos um bit codificado como $0$, e diminuir $dr$ em $1$ unidade caso contrário;
         \item  Os valores de excesso são computados a partir de um processo de inspeção de bits da esquerda para a direita. A operação \textit{bwdSearch}, realiza a pesquisa por excesso da direita para a esquerda, isso implica que o excesso buscado $d$, é encontrado em um nó somente quando a asserção $dr - R[v].e + R[v].m \leq d \leq dr - R[v].e + R[v].M$ for válida.
     \end{itemize}
-
+  
     Ademais, como estamos fazendo uma busca por uma posição $j<i$, mais à direita possível, durante o percurso de descida na rmM-tree inspecionamos primeiramente o filho à direita de um nó em busca da resposta, caso não encontremos esta, avançamos no percurso através do filho esquerdo. O Algoritmo~\ref*{alg:bwdSearch-bin} detalha mais sobre esse processo, este algoritmo invoca um método denominado \textit{bwdBlock}, este por usa vez é completamente análogo  ao Algoritmo~\ref{alg:fwdBlock} (a única ressalva é em relação à assimetria discutida acima), portanto não fornecemos aqui o pseudo-código de \textit{bwdBlock}.
 
+  \begin{algorithm}[htp]
+        \SetKwFunction{algo}{algo}
+        \SetKwProg{myalg}{Algoritmo}{}{}
+        \myalg{bwdSearch(i,d)}{
+        \Input{Índice $i$ a partir do qual a busca deve ser feita, excesso relativo $d$ desejado}
+        \Output{Posição $j$ onde ocorre o $d$, ou $-1$ caso a resposta não seja encontrada}
+        \vspace{.3cm}
+        $dr \leftarrow 0$\\
+        $j \leftarrow bwdBlock(i,d,\&dr)$ \tcp{Análogo ao Algoritmo~\ref{alg:fwdBlock}}
+        
+        \If{$dr = d $}{\Return{$j$}}
+        $l \leftarrow \floor{i/b}$\tcp{l-ésima folha}
+        $v \leftarrow leafInTree(l)$\tcp{Algoritmo~\ref{alg:folha-indice}}
+
+        \While{$(v+1)\& v$ \textbf{and} $dr - R[v-1].e + R[v-1].m \leq d \leq dr - R[v-1].e + R[v-1].M$}{
+            \If{$v$ mod $2 = 0$}{
+                $dr \leftarrow dr - R[v-1].e$
+            }
+            $v \leftarrow \floor{(v-1)/2}$
+        }
+
+        \If{$(v+1)\&v = 0$}{\Return{$-1$}}
+
+        $v \leftarrow v - 1 $\\
+
+        \While{$v < numberLeaves -1 $}{
+            $v_l \leftarrow (2 \cdot v)+1$\\
+            $v_r \leftarrow v_l + 1$\\
+            \If{$dr - R[v_r].e + R[v_r].m \leq d \leq dr - R[v_r].e + R[v_r].M$}{
+                $v \leftarrow v_r$
+            }
+            \Else{
+                $dr \leftarrow dr - R[v_r].e$\\
+                $v \leftarrow v_l$
+            }
+        }
+
+        $l \leftarrow numLeaf(v)$\\
+        $j \leftarrow bwdBlock(((l+1)\cdot b)-1,d, \&dr)$\\
+        \If{$dr = d$ }{\Return{$j$}}
+        \Else{\Return{$-1$}}
+        }
+        \caption{Busca por um excesso relativo $d$, para um $j<i$. }
+        \label{alg:bwdSearch-bin}
+    \end{algorithm}
+    
+    \newpage
     O exemplo a seguir, ilustra o processo de busca pelo índice que codifica um nó, cujo parênteses de fechamento é armazenado em $BP[i]$.
     \begin{example}\label{ex:bin-bwd}
         Dado um índice $i$ em $BP$, igual a $50$, encontre o índice $j<i$, mais à direita possível, tal que $excess(j) - excess(i) = 0$
@@ -542,50 +600,8 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
         Continuamos o processo de descida na árvore através do nó $11$, analisamos primeiro o filho direito de $11$ e verificamos que $d$ está contido nos intervalos de excesso deste nó, assim, avançamos para o nó $24$. Como chegamos à um nó folha, interrompemos a busca através dos nós da rmM-tree, e iniciamos uma busca no vetor $BP$. Ao analisarmos o índice $j=39$, $dr$ passa a valer $0$, e portanto a busca pelo excesso $d$ através de \textit{bwdSearch} é concluída, retornando $j=39$. 
     \end{example}
 
-    \begin{algorithm}[htp]
-        \SetKwFunction{algo}{algo}
-        \SetKwProg{myalg}{Algoritmo}{}{}
-        \myalg{bwdSearch(i,d)}{
-        \Input{Índice $i$ a partir do qual a busca deve ser feita, excesso relativo $d$ desejado}
-        \Output{Posição $j$ onde ocorre o $d$, ou $-1$ caso a resposta não seja encontrada}
-        \vspace{.3cm}
-        $dr \leftarrow 0$\\
-        $j \leftarrow bwdBlock(i,d,\&dr)$ \tcp{Análogo ao Algoritmo~\ref{alg:fwdBlock}}
-        
-        \If{$dr = d $}{\Return{$j$}}
-        $l \leftarrow \floor{i/b}$\\
-        $v \leftarrow leafInTree(l)$\\
 
-        \While{$(v+1)\& v$ \textbf{and} $dr - R[v-1].e + R[v-1].m \leq d \leq dr - R[v-1].e + R[v-1].M$}{
-            \If{$v$ mod $2 = 0$}{
-                $dr \leftarrow dr - R[v-1].e$
-            }
-            $v \leftarrow \floor{(v-1)/2}$
-        }
 
-        \If{$(v+1)\&v = 0$}{\Return{$-1$}}
-
-        $v \leftarrow v - 1 $\\
-
-        \While{$v < numberLeaves -1 $}{
-            $v_l \leftarrow (2 \cdot v)+1; v_r \leftarrow v_l + 1$\\
-            \If{$dr - R[v_r].e + R[v_r].m \leq d \leq dr - R[v_r].e + R[v_r].M$}{
-                $v \leftarrow v_r$
-            }
-            \Else{
-                $dr \leftarrow dr - R[v_r].e$\\
-                $v \leftarrow v_l$
-            }
-        }
-
-        $l \leftarrow numLeaf(v)$\\
-        $j \leftarrow bwdBlock(((l+1)\cdot b)-1,d, \&dr)$\\
-        \If{$dr = d$ }{\Return{$j$}}
-        \Else{\Return{$-1$}}
-        }
-        \caption{Busca por um excesso relativo $d$, para um $j<i$. }
-        \label{alg:bwdSearch-bin}
-    \end{algorithm}
 
     \subsection{MinExcess}
     Esta é outra importante operação suportada pela rmM-tree. A partir dela podemos obter informações importantes sobre o nosso conjunto de dados, como o menor ancestral comum entre dois nós.
@@ -776,12 +792,11 @@ A Tabela~\ref{tbl:classicOperations-rmm-tree} mostra a lista completa das opera�
             $$postSelect(i) = findOpen(select_0(i))$$
         \end{itemize} 
 
-%a tabela~\ref{tbl:classicOperations-rmm-tree}  mostra as operações suportadas por essa estrutura.
 \input{text/table-rmmTree-classicOperations}
 
 
 
-\section{Estruturas de dados Cache-sensitive}
+\section{Estruturas de dados Cache-sensitive}\label{sec:cache-sensitive}
 %A redução do preço e o aumento da capacidade da memória principal possibilitam que grandes conjuntos de dados residam na memória principal \citet{paper-effect-node-size-cache-b-trees},
 %onde o tempo para acessar um dado é menor. 
 

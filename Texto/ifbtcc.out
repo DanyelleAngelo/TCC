@@ -5,7 +5,7 @@
 \BOOKMARK [1][-]{section.2.2}{\301rvores Sucintas}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.3}{Vetores de Bits}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.4}{Representa\347\343o de \341rvores sucintas}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.4.1}{Par\352nteses Balanceado \(BP\)}{section.2.4}% 8
+\BOOKMARK [2][-]{subsection.2.4.1}{Par\352nteses Balanceados \(BP\)}{section.2.4}% 8
 \BOOKMARK [2][-]{subsection.2.4.2}{Depth-First Unary Degree Sequence \(DFUDS\)}{section.2.4}% 9
 \BOOKMARK [2][-]{subsection.2.4.3}{Level-order Unary Degree Sequence \(LOUDS\)}{section.2.4}% 10
 \BOOKMARK [1][-]{section.2.5}{Range min-Max Tree \(rmM-tree\)}{chapter.2}% 11
@@ -33,3 +33,4 @@
 \BOOKMARK [2][-]{subsection.4.3.3}{Testes de Desempenho}{section.4.3}% 33
 \BOOKMARK [1][-]{section.4.4}{Resultados}{chapter.4}% 34
 \BOOKMARK [0][-]{chapter.5}{Considera\347\365es Finais}{}% 35
+\BOOKMARK [0][-]{chapter*.40}{Refer\352ncias}{}% 36

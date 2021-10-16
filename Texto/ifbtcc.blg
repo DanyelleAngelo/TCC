@@ -6,53 +6,46 @@ A level-1 auxiliary file: text/background.aux
 A level-1 auxiliary file: text/desenvolvimento.aux
 A level-1 auxiliary file: text/resultados.aux
 A level-1 auxiliary file: text/conclusion.aux
-The style file: ifbclass/libs/abnt.bst
-format.names is an unknown function---line 413 of file ifbclass/libs/abnt.bst
-format.names is an unknown function---line 421 of file ifbclass/libs/abnt.bst
-format.family.names is an unknown function---line 1103 of file ifbclass/libs/abnt.bst
-format.family.names is an unknown function---line 1106 of file ifbclass/libs/abnt.bst
-format.family.names.all is an unknown function---line 1145 of file ifbclass/libs/abnt.bst
-format.family.names.all is an unknown function---line 1148 of file ifbclass/libs/abnt.bst
+The style file: ifbclass/libs/apalike.bst
 Database file #1: bib/references.bib
 You've used 25 entries,
-            2121 wiz_defined-function locations,
-            715 strings with 8160 characters,
-and the built_in function-call counts, 22066 in all, are:
-= -- 2911
-> -- 55
-< -- 55
-+ -- 1227
-- -- 94
-* -- 922
-:= -- 1693
-add.period$ -- 104
+            1935 wiz_defined-function locations,
+            636 strings with 8115 characters,
+and the built_in function-call counts, 9611 in all, are:
+= -- 958
+> -- 355
+< -- 24
++ -- 123
+- -- 113
+* -- 714
+:= -- 1662
+add.period$ -- 87
 call.type$ -- 25
-change.case$ -- 56
-chr.to.int$ -- 110
+change.case$ -- 178
+chr.to.int$ -- 25
 cite$ -- 25
-duplicate$ -- 2864
-empty$ -- 944
-format.name$ -- 0
-if$ -- 5435
-int.to.chr$ -- 0
+duplicate$ -- 421
+empty$ -- 680
+format.name$ -- 156
+if$ -- 1956
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 53
-num.names$ -- 0
-pop$ -- 296
+missing$ -- 28
+newline$ -- 134
+num.names$ -- 81
+pop$ -- 163
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 179
 quote$ -- 0
-skip$ -- 1482
+skip$ -- 332
 stack$ -- 0
-substring$ -- 1713
-swap$ -- 1719
-text.length$ -- 0
+substring$ -- 549
+swap$ -- 82
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 173
+type$ -- 138
 warning$ -- 0
-while$ -- 57
+while$ -- 69
 width$ -- 0
-write$ -- 27
-(There were 6 error messages)
+write$ -- 346

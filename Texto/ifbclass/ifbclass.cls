@@ -101,7 +101,6 @@
 \RequirePackage[nottoc, notlof, notlot]{tocbibind}
 \RequirePackage{indentfirst}
 \RequirePackage{enumitem}
-\RequirePackage{natbib}
 \RequirePackage{lastpage}
 \RequirePackage{listings}
 
@@ -492,7 +491,7 @@ requirements for the degree of \@degree\ in \@majorfielden.
 \newenvironment{references}
 {
 	\backmatter
-	\bibliographystyle{ifbclass/libs/abnt}
+	\bibliographystyle{ifbclass/libs/apalike}
 	\setlength{\bibhang}{0pt}
 	\singlespacing % Change to singlespacing for the references
 	\begingroup

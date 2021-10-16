@@ -1,36 +1,37 @@
 \babel@toc {portuguese}{}
-\contentsline {chapter}{\numberline {1}Introdução}{15}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Estrutura do documento}{17}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Referencial teórico}{19}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Avanços tecnológicos e estrutura de dados sucintas}{19}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Árvores Sucintas}{21}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Vetores de Bits}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Representação de árvores sucintas}{23}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Parênteses Balanceado (BP)}{24}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Depth-First Unary Degree Sequence (DFUDS)}{26}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Level-order Unary Degree Sequence (LOUDS)}{27}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Range min-Max Tree (rmM-tree)}{28}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Registros}{29}{subsection.2.5.1}%
+\contentsline {chapter}{\numberline {1}Introdução}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Estrutura do documento}{15}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Referencial teórico}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Avanços tecnológicos e estrutura de dados sucintas}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Árvores Sucintas}{19}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Vetores de Bits}{21}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Representação de árvores sucintas}{21}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Parênteses Balanceados (BP)}{22}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Depth-First Unary Degree Sequence (DFUDS)}{24}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Level-order Unary Degree Sequence (LOUDS)}{25}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Range min-Max Tree (rmM-tree)}{26}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Registros}{27}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Operações}{33}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}FwdSearch}{33}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}BwdSearch}{37}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.3}FwdSearch}{34}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}BwdSearch}{38}{subsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.5.5}MinExcess}{41}{subsection.2.5.5}%
-\contentsline {subsection}{\numberline {2.5.6}MinCount e MinSelectExcess}{45}{subsection.2.5.6}%
-\contentsline {subsection}{\numberline {2.5.7}Derivadas}{46}{subsection.2.5.7}%
-\contentsline {section}{\numberline {2.6}Estruturas de dados Cache-sensitive}{51}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Range min-Max tree k-ária}{55}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Visão Geral}{55}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Registros}{56}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Operações}{60}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}FwdSearch}{60}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}BwdSearch}{65}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Derivadas}{69}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Resultados Experimentais}{71}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Base de dados}{71}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Configuração}{72}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Experimentos}{72}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Decisões de projeto}{72}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Testes unitários}{73}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Testes de Desempenho}{73}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Resultados}{74}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Considerações Finais}{81}{chapter.5}%
+\contentsline {subsection}{\numberline {2.5.6}MinCount e MinSelectExcess}{44}{subsection.2.5.6}%
+\contentsline {subsection}{\numberline {2.5.7}Derivadas}{44}{subsection.2.5.7}%
+\contentsline {section}{\numberline {2.6}Estruturas de dados Cache-sensitive}{49}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Range min-Max tree k-ária}{53}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Visão Geral}{53}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Registros}{54}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Operações}{58}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}FwdSearch}{58}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}BwdSearch}{63}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Derivadas}{67}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Resultados Experimentais}{69}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Base de dados}{69}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Configuração}{70}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Experimentos}{70}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Decisões de projeto}{70}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Testes unitários}{71}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Testes de Desempenho}{71}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Resultados}{72}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Considerações Finais}{79}{chapter.5}%
+\contentsline {chapter}{Referências}{81}{chapter*.40}%

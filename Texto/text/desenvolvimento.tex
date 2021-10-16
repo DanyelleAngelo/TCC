@@ -4,7 +4,7 @@ Este capítulo refere-se ao objetivo central deste trabalho, apresentando a prop
 Destaca-se também que os exemplos usados como base neste capítulo, são os mesmos exemplos usado no capítulo de apresentação da rmM-tree clássica, afim de facilitar a compreensão e comparação das duas propostas.
 
 \section{Visão Geral}
-Para este trabalho buscamos unir algumas características das árvores B com a range min-Max tree. Com até $k$ filhos, as árvores B possuem altura igual à $\log_k n$, e alto fator de ramificação, essas características combinadas a range min-Max tree, que é uma estrutura compacta, e portanto cabe na memória principal, possibilitará um uso otimizado de cache, como discutido no Capítulo~\ref{ch:fundamentacao}.
+Para este trabalho buscamos unir algumas características das árvores B com a range min-Max tree. Com até $k$ filhos, as árvores B possuem altura igual à $\log_k n$, e alto fator de ramificação, essas características combinadas a range min-Max tree, que é uma estrutura compacta, e portanto cabe na memória principal, possibilitará um uso efetivo do príncipio de localidade espacial, como discutido na Seção~\ref{sec:cache-sensitive}.
 
 Dado uma representação em parênteses balanceados de uma árvore $T$, é escolhido um tamanho de bloco $b$. Esse tamanho de bloco, assim como na estrutura clássica define o tamanho de cobertura de cada intervalo compreendido por um registro.  Na proposta original \citet{paper-fully-functinal-succint-trees}, cada nó da range min-Max tree é responsável pela cobertura de um único intervalo, nesta adaptação propõe-se o agrupamento múltiplo de intervalos em nós.
 
@@ -21,7 +21,7 @@ Tomemos como exemplo um tamanho de bloco $b = 32$, suponha um vetor que codifica
 \begin{table}[h!]
     \centering
     \caption[Diferentes range min-Max tree sobree um conjunto de dados]{Altua e número de nós folhas para uma rmM-tree binária e k-ária}
-    \label{tbl:dataset}
+    \label{tbl:size}
       \resizebox{\columnwidth}{!}{
           \begin{tabular}{|l|l|l|l|l|}
           \hline
@@ -114,16 +114,19 @@ O processo de construção da rmM-tree k-ária é similar ao processo de constru
             \Input{Vetor de bits, tabela de excessos C, aridade da árvore, tamanho de bloco e de subbloco, número de folhas e quantidade de nós.}
     
             \tcp{Construção dos nós folhas}
-            $numReg \leftarrow 0$\\
+            $numReg \leftarrow 0$\tcp{Número de registros computados}
             \For{$l \leftarrow 0$ \textbf{to} $r -1$}{
                 $v \leftarrow leafInTree(l)$\tcp{Análogo ao Algoritmo~\ref{alg:folha-indice}}
-                $reg \leftarrow 0$\\
+                $reg \leftarrow 0$\tcp{i-ésimo registro de um nó}
                 \While{$R[v].nReg < k$ \textbf{and} $numReg < \ceil{BP.size()/b}$}{
                     $(R[v][reg], R[v][reg].M, R[v][reg].m, R[v][reg].n) \gets(0,-w,w,0)$\\
                     \For{$p \leftarrow (numReg\cdot (b/w))+1$ \textbf{to} $((numReg+1)\cdot b)/w$}{
                         $x \leftarrow bistread((p-1)\cdot w)$\\
-                        \lIf{$R[v][reg].e + C[x].M > R[v][reg].M$}{$R[v][reg].M \leftarrow R[v][reg].e + C[x].M $}
-                        \lIf{$R[v][reg].e + C[x].m < R[v][reg].m$}{$R[v][reg].m \leftarrow R[v][reg].e + C[x].m $}
+                        \If{$R[v][reg].e + C[x].M > R[v][reg].M$}{$R[v][reg].M \leftarrow R[v][reg].e + C[x].M $}
+                        \If{$R[v][reg].e + C[x].m < R[v][reg].m$}{
+                        $R[v][reg].m \leftarrow R[v][reg].e + C[x].m $\\
+                        $R[v][reg].n \leftarrow C[x].n$
+                        }
                         \ElseIf{$R[v][reg].e + C[x].m = R[v][reg].m$}{$R[v][reg].n \leftarrow R[v][reg].n + C[x].n$}
                         $R[v][reg].e \leftarrow R[v][reg].e + C[x].e$
                     }
@@ -136,12 +139,14 @@ O processo de construção da rmM-tree k-ária é similar ao processo de constru
             \tcp{Construção dos nós internos e raíz}
             \For{$v \leftarrow nNodes - r - 1 $ \textbf{to} $0$}{
                 \For{$reg \leftarrow 0$ \textbf{to} $k-1$ \textbf{and} $(v\cdot k)+reg+1$ \textbf{to} $nNodes-1$}{
-                    $child \leftarrow (k\cdot v)+1+reg$\\
+                    $child \leftarrow (k\cdot v)+1+reg$\tcp{j-ésimo filho de $v$}
                     $R[v][reg].e  \leftarrow R[child][0].e$\\
                     $R[v][reg].m \leftarrow R[child][0].m$\\
                     $R[v][reg].M \leftarrow R[child][0].M$\\
                     $R[v][reg].n \leftarrow R[child][0].n)$\\
     
+    
+                    \tcp{Pecorre cada registro de filho (\textit{child}) de $v$}
                     \For{$i \leftarrow 1$ \textbf{to} $R[child].nReg-1$}{
                         $R[v][reg].M = max(R[child][i-1].M,R[v][i-1].e + R[child][i].M) $\\
                         $R[v][reg].m = min(R[child][i-1].m,R[v][i-1].e + R[child][i].m) $\\
@@ -226,7 +231,7 @@ Antes de verificarmos os irmãos do nó $v$, inspecionamos os registros restante
             }
             \Return{$BP.size()$}
     }
-    \caption{Verificando os registros de um nó folha.}
+    \caption{Busca pelo excesso $d$ entre os registros de uma folha.}
     \label{alg:fwdRegistry}
     \end{algorithm}
     
@@ -258,7 +263,7 @@ Antes de verificarmos os irmãos do nó $v$, inspecionamos os registros restante
             }
             \Return{$BP.size()$ }
         }
-        \caption{Busca o excesso relativo nos irmãos à direita de $v$.}
+        \caption{Analisa os registros dos írmãos de $v$ em busca do excesso $d$.}
         \label{alg:fwdVerifySibling}
     \end{algorithm}
 
@@ -270,8 +275,8 @@ Antes de verificarmos os irmãos do nó $v$, inspecionamos os registros restante
         \Output{Posição $j$ onde ocorre o excesso $d$ ou $BP.size()$ caso $d$ não exista no intervalo definido.}
         \vspace{.3cm}
         $dr \leftarrow 0$\\
-        $l \leftarrow \floor{(i+1)/(b\cdot k)}$\\
-        $v \leftarrow leafInTree(l)$\\
+        $l \leftarrow \floor{(i+1)/(b\cdot k)}$\tcp{l-ésima folha}
+        $v \leftarrow leafInTree(l)$\tcp{Número do registro inicial}
         $reg \leftarrow \floor{( (i+1) - (l\cdot b\cdot k))/b}$\\
         $j \leftarrow fwdBlock(i,d,dr)$\tcp{Algoritmo~\ref{alg:fwdBlock}}
 
@@ -311,7 +316,7 @@ Antes de verificarmos os irmãos do nó $v$, inspecionamos os registros restante
         \lIf{$dr = d$}{ \Return{$j$}}
         \Return{$BP.size()$}
     }
-    \caption{Busca por um excesso relativo $d$, para um $j>i$}
+    \caption{Busca pela posição $j>i$ onde ocorre o excesso relativo $d$.}
     \label{alg:fwdSearch}
     \end{algorithm}
 
@@ -320,7 +325,7 @@ Antes de verificarmos os irmãos do nó $v$, inspecionamos os registros restante
 \subsection{BwdSearch}\label{sec:bwdSearch}
 Como dito anteriormente, o processo para calcular bwdSearch é completamente análogo à fwdSearch, devendo termos cuidado apenas com as questões relacionadas à simetria dos dados abordadas no Capítulo~\ref{ch:fundamentacao}. Tendo isso em mente podemos construir uma função que verifica se o excesso buscado está entre os registros das folhas analisadas, assim como uma segunda função que inspeciona os registros dos $p$ irmãos de um nó $v$. Os Algoritmos \ref{alg:bwdRegistry}, \ref{alg:bwdVerifySibling} e \ref{alg:bwdSearch} mostram o pseudocódigo para as adaptações da estrutura k-ária.
 
-%TODO colocar referência interna
+
 Apenas para recapitularmos, temos as seguintes observações em relação à assimetria dos dados em  bwdSearch\footnote{Para mais detalhes, verifique a Seção~\ref{sc:bwdsearch}}:
 \begin{itemize}
     \item A posição $i$ é incluída na contagem de excessos;
@@ -370,7 +375,7 @@ O Exemplo~\ref{ex:kary-bwd}  demonstra como podemos realizar a busca por um par�
     }
     \Return{$-1$ }
     }
-\caption{Verificando os registros de um nó folha.}
+\caption{Busca pelo excesso $d$ entre os registros de uma folha.}
 \label{alg:bwdRegistry}
 \end{algorithm}
 
@@ -401,7 +406,7 @@ O Exemplo~\ref{ex:kary-bwd}  demonstra como podemos realizar a busca por um par�
     }
     \Return{$-1$}
     }
-    \caption{Busca o excesso relativo nos irmãos à esquerda de $v$.}
+    \caption{Analisa os registros dos írmãos de $v$ em busca do excesso $d$.}
     \label{alg:bwdVerifySibling}
 \end{algorithm}
 
@@ -413,9 +418,9 @@ O Exemplo~\ref{ex:kary-bwd}  demonstra como podemos realizar a busca por um par�
     \Output{Posição $j$ onde ocorre o excesso $d$ ou $-1$ caso $d$ não exista no intervalo definido.}
     \vspace{.3cm}
         $dr \leftarrow 0$\\
-        $l \leftarrow \floor{i/(b\cdot k)}$\\
+        $l \leftarrow \floor{i/(b\cdot k)}$\tcp{l-ésima folha}
         $v \leftarrow leafInTree(l)$\\
-        $reg \leftarrow \floor{((i+1) - (l\cdot b\cdot k))/b}$\\
+        $reg \leftarrow \floor{((i+1) - (l\cdot b\cdot k))/b}$\tcp{Número do registro inicial}
         $j \leftarrow bwdBlock(i,d,\&dr)$\tcp{Análogo ao algoritmo~\ref{alg:fwdBlock}}
         \If{$dr = d $}{\Return{$j$}}
 
@@ -456,7 +461,7 @@ O Exemplo~\ref{ex:kary-bwd}  demonstra como podemos realizar a busca por um par�
             \Return{$-1$}
         }
     }
-    \caption{Busca por excesso no intervalo $[i+1,BP.size()-1]$.}
+    \caption{Busca pela posição $j>i$ onde ocorre o excesso relativo $d$.}
     \label{alg:bwdSearch}
     \end{algorithm}
 
@@ -467,9 +472,3 @@ O Exemplo~\ref{ex:kary-bwd}  demonstra como podemos realizar a busca por um par�
      A Tabela~\ref{tbl:karyOperations-rmm-tree} traz um comparativo das operações suportadas pela rmM-tree k-ária e binária. Para a rmM-tree k-ária oferecemos suporte à um número menor de operações. Isso se deve ao fato de que não implementamos as operações de \textit{minExcess, maxExcess, minCount} e \textit{minSelectExcess} que são base de muitas outras, destaca-se porém, que o processo de adaptação destas operações é similar ao que já foi exposto até aqui.
 
      \input{text/table-rmm-tree-karia-operations.tex}
-
-
-
-
-%base de dados, configuração, experimentos, resultados
-%figura, resultado destacado.
