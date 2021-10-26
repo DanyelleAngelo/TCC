@@ -24,7 +24,7 @@ void generateArguments(vector<int> &vArgs){
 
     for(int i=0; i < iterations;){
         k = rand()%(size-2);
-        if(tBin->bv[k]){
+        if(tBin->bv[k]==1){
             vArgs.push_back(k);
             i++;
         }
