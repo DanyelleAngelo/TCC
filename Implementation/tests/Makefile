@@ -14,11 +14,11 @@ execTestsComparison: binary_compareWithSdsl kary_compareWithSdsl
 #--------- comparando as estruturas criadas com a sdsl---------
 binary_compareWithSdsl:
 	g++ dataset_bin.cpp -o dataset_b lib_test_rmm_classic.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	./dataset_b wiki.par 25000
+	./dataset_b ../dataset/wiki.par 25000
 
 kary_compareWithSdsl:
 	g++ -o dataset_k  dataset_k.cpp  lib_test_rmm_optimized_v0.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	./dataset_k wiki.par 5000000 16
+	./dataset_k ../dataset/wiki.par 5000000 16
 #	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
@@ -29,43 +29,43 @@ testBenchmark:
 
 #---------testes mais complexos de benchmark---------
 binary_wiki:
-	./bm_binary_rmm_tree wiki.par 3000000 --benchmark_out=results/wiki/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/wiki.par 3000000 --benchmark_out=results/wiki/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_wiki:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree wiki.par 3000000 $$order --benchmark_out=results/wiki/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/wiki.par 3000000 $$order --benchmark_out=results/wiki/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_ctree:
-	./bm_binary_rmm_tree ctree.par 3000000  --benchmark_out=results/ctree/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/ctree.par 3000000  --benchmark_out=results/ctree/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_ctree:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree ctree.par 3000000 $$order --benchmark_out=results/ctree/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/ctree.par 3000000 $$order --benchmark_out=results/ctree/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_prot:
-	./bm_binary_rmm_tree prot.par 3000000  --benchmark_out=results/prot/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../daset/prot.par 3000000  --benchmark_out=results/prot/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_prot:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree prot.par 3000000 $$order --benchmark_out=results/prot/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/prot.par 3000000 $$order --benchmark_out=results/prot/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_dna:
-	./bm_binary_rmm_tree dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_dna:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_osm:
-	./bm_binary_rmm_tree osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_osm:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree osm.par 3000000 $$order --benchmark_out=results/osm/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/osm.par 3000000 $$order --benchmark_out=results/osm/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 
