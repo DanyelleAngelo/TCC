@@ -11,7 +11,7 @@
 using namespace std;
 using namespace sdsl;
 
-int iterations = 20000;
+int iterations = 10000;
 int sizeBlock=32;
 int w=16;
 int size =0;
@@ -33,9 +33,9 @@ void generateArguments(vector<int> &vArgs){
 
 void findClose_binary_rmMTree(vector<int> vArgs){
     int j;
-    for(int i=0;i<iterations;i++){
+	for(int i=0;i<iterations;i++){
         j = tBin->findClose(vArgs[i]);
-    }
+	}
 }
 
 void findClose_kary_rmMTree(vector<int> vArgs){
@@ -48,7 +48,7 @@ void findClose_kary_rmMTree(vector<int> vArgs){
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
-    parentheses_to_bits("../dataset/dna.par", v);
+    parentheses_to_bits("../dataset/prot.par", v);
     size = v.size();
 
     /*building binary rmM-tree*/
@@ -69,7 +69,6 @@ int main(){
     findClose_binary_rmMTree(vArgs);
 
     cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
-   
     findClose_kary_rmMTree(vArgs);
 	ProfilerStop();
     return 0;
