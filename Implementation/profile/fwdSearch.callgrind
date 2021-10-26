@@ -1,2 +1,91 @@
 events: Hits
 
+fl=??
+fn=(1) fwdSearch_binary_rmMTree
+cfl=??
+cfn=(2) calc
+calls=39 0
+0 39
+
+fl=??
+fn=(3) std::ostream::put
+cfl=??
+cfn=(4) _IO_file_overflow
+calls=1 0
+0 1
+
+fl=??
+fn=(5) main
+cfl=??
+cfn=(1)
+calls=40 0
+0 40
+
+fl=??
+fn=(2)
+0 39
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(6) fwdSearch_kary_rmMTree
+calls=22 0
+0 22
+
+fl=??
+fn=(4)
+cfl=??
+cfn=(7) _IO_do_write
+calls=1 0
+0 1
+
+fl=??
+fn=(8) __write
+0 1
+
+fl=??
+fn=(9) __libc_start_main
+cfl=??
+cfn=(5)
+calls=62 0
+0 62
+
+fl=??
+fn=(10) calc2
+0 22
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(11) std::endl
+calls=1 0
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(10)
+calls=22 0
+0 22
+
+fl=??
+fn=(12) _IO_file_write
+cfl=??
+cfn=(8)
+calls=1 0
+0 1
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(12)
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(3)
+calls=1 0
+0 1
+
