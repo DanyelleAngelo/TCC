@@ -11,7 +11,7 @@
 using namespace std;
 using namespace sdsl;
 
-int iterations = 400;
+int iterations = 100000000;
 int sizeBlock=32;
 int w=16;
 int size =0;
@@ -47,20 +47,16 @@ void fwdSearch_binary_rmMTree(vector<int> vArgs, vector<int> d){
     int j;
     for(int i=0;i<iterations;i++){
         j = tBin->fwdSearch(vArgs[i],d[i]);
-        cout << "fwdSearch(" << vArgs[i] << ") com profundidade d=" << d[i] << " eh " << j <<endl;
     }
-
-    int h= calc(0);
+    //int h= calc(0);
 }
 
 void fwdSearch_kary_rmMTree(vector<int> vArgs, vector<int> d){
     int j;
     for(int i=0;i<iterations;i++){
         j = tKary->fwdSearch(vArgs[i],d[i]);
-        cout << "fwdSearch(" << vArgs[i] << ") com profundidade d=" << d[i] << " eh " << j <<endl;
     }
-
-    int h= calc2(0);
+    //int h= calc2(0);
 }
 
 int main(){
@@ -85,10 +81,9 @@ int main(){
     cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura binária."<<endl;
     ProfilerStart("fwdSearch_binary.prof");
     fwdSearch_binary_rmMTree(vArgs,d);
-	ProfilerStop(); 
 
     cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura k-ária."<<endl;
-    ProfilerStart("fwdSearch_kary.prof");
+   
     fwdSearch_kary_rmMTree(vArgs,d);
 	ProfilerStop();
     return 0;
