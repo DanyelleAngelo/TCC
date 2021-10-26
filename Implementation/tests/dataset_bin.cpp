@@ -13,7 +13,7 @@ int_vector<1> v;
     
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
-		RMMTree *t; 
+		RMMTree_Bin *t; 
         int sizeBlock=32;
         int w=16;
 
@@ -22,7 +22,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         vector<long long int> argsFindOpen;
 
 		void SetUp(){
-			t = new RMMTree(v,sizeBlock,w); 
+			t = new RMMTree_Bin(v,sizeBlock,w); 
 			bps = new bp_support_sada<>(&(t->bv));
 			t->buildingTree(); 
 			srand(t->size/sizeBlock);

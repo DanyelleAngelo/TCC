@@ -1,5 +1,5 @@
-#ifndef RMMTREEC_H
-#define RMMTREEC_H
+#ifndef RMMTREE_BIN_H
+#define RMMTREE_BIN_H
 
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bit_vectors.hpp>
@@ -10,7 +10,7 @@
 using namespace sdsl;
 using std::vector;
 
-static const unsigned char BitReverseTable256[] ={
+static const unsigned char BitReverseTable256_bin[] ={
         0x00, 0x80, 0x40, 0xC0, 0x20, 0xA0, 0x60, 0xE0, 0x10, 0x90, 0x50, 0xD0, 0x30, 0xB0, 0x70, 0xF0,
         0x08, 0x88, 0x48, 0xC8, 0x28, 0xA8, 0x68, 0xE8, 0x18, 0x98, 0x58, 0xD8, 0x38, 0xB8, 0x78, 0xF8,
         0x04, 0x84, 0x44, 0xC4, 0x24, 0xA4, 0x64, 0xE4, 0x14, 0x94, 0x54, 0xD4, 0x34, 0xB4, 0x74, 0xF4,
@@ -29,23 +29,23 @@ static const unsigned char BitReverseTable256[] ={
         0x0F, 0x8F, 0x4F, 0xCF, 0x2F, 0xAF, 0x6F, 0xEF, 0x1F, 0x9F, 0x5F, 0xDF, 0x3F, 0xBF, 0x7F, 0xFF
 };
 
-typedef struct Node{
+typedef struct Node_bin{
 	long int excess;
 	long int excessMax;
 	long int excessMin;
 	long int numberExcessMin;
-}Node;
+}Node_bin;
 
-class RMMTree{
+class RMMTree_Bin{
     public:
 		bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
 		long long int size;							// Tamanho da sequência de parênteses balanceados
-		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
+		vector<Node_bin> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
 
 		/*!
 		*	@brief Construtor
 		*/
-        RMMTree(int_vector<1> &bv, int sizeBlock, int w);
+        RMMTree_Bin(int_vector<1> &bv, int sizeBlock, int w);
 		
 		//métodos públicos
 
@@ -421,7 +421,7 @@ class RMMTree{
 		long int numberLeaves;					// Quantidade de folhas na rmM-tree
 		long int numberNodes;					// Número de nós da rmM-tree
 		int height;							// Altura da rmM-tree
-		vector<Node> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
+		vector<Node_bin> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 		
 		//métodos privados
 		/*!
@@ -454,7 +454,7 @@ class RMMTree{
 		*	@param vector: estrutura (árvore ou tabela) que terá seu nó impresso
 		*	@param i: índice do elemento da estrutura.
 		*/
-		void printNode(vector<Node> vector, long long int i);
+		void printNode(vector<Node_bin> vector, long long int i);
 		
 		/*!
 		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".

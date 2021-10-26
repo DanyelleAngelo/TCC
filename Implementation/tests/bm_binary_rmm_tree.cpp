@@ -8,7 +8,7 @@
 using namespace std;
 using namespace sdsl;
 
-RMMTree *t;
+RMMTree_Bin *t;
 int eM=0;
 
 vector<int> depth_fwd;
@@ -28,7 +28,7 @@ extern vector<long long int> args_select;
 
 static void buildTree_bin(benchmark::State& st){
 	for(auto _ :st){
-        t = new RMMTree(v,sizeBlock,w);	
+        t = new RMMTree_Bin(v,sizeBlock,w);	
 		t->buildingTree();
 	}
 	eM = t->tree[0].excessMax;

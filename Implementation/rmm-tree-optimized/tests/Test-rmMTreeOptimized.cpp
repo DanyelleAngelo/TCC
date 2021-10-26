@@ -17,7 +17,7 @@ using namespace std;
 
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
-        RMMTree *t;
+        RMMTree_Kary *t;
         size_t sizeBlock=32;
         size_t w=16;
         int order=4;
@@ -30,7 +30,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
         vector<int> argsRmqJ;
         
         void SetUp(){
-            t = new RMMTree(v,sizeBlock,w,order);
+            t = new RMMTree_Kary(v,sizeBlock,w,order);
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
 		    srand(t->size/2);

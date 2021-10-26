@@ -15,7 +15,7 @@ int order;
     
 class RMMTreeFixtureTest : public ::testing::Test{ 
 	public: 
-		RMMTree *t;
+		RMMTree_Kary *t;
         int sizeBlock=32;
         int w=16;
         bp_support_sada<> *bps; 
@@ -23,7 +23,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 		vector<int> argsFindClose;
 	
         void SetUp(){ 
-		    t = new RMMTree(v,sizeBlock,w,order); 
+		    t = new RMMTree_Kary(v,sizeBlock,w,order); 
 		    t->buildingTree();
  	    	bps = new bp_support_sada<>(&(t->bv)); 
 	    	srand(t->size/sizeBlock);

@@ -19,7 +19,7 @@ using namespace std;
 
 class RMMTreeFixtureTest : public ::testing::Test{
     public:
-        RMMTree *t;
+        RMMTree_Bin *t;
         int sizeBlock=32;
         int w=16;
         bp_support_sada<> *bps;
@@ -32,7 +32,7 @@ class RMMTreeFixtureTest : public ::testing::Test{
 
         RMMTreeFixtureTest(){}
         void SetUp(){
-            t = new RMMTree(v,sizeBlock,w);
+            t = new RMMTree_Bin(v,sizeBlock,w);
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
 		    srand(t->size/2);
@@ -528,6 +528,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.print_tree";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

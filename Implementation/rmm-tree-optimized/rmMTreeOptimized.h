@@ -1,5 +1,5 @@
-#ifndef RMMTREEO_H
-#define RMMTREEO_H
+#ifndef RMMTREE_KARY_H
+#define RMMTREE_KARY_H
 
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bit_vectors.hpp>
@@ -40,7 +40,7 @@ typedef struct Node{
     vector<Key> keys;
 }Node;
 
-class RMMTree{
+class RMMTree_Kary{
     public:
         bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
 		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
@@ -49,7 +49,7 @@ class RMMTree{
 		/*!
 		*	@brief Construtor
 		*/
-        RMMTree(int_vector<1> &bv, int sizeBlock,  int w, int order);
+        RMMTree_Kary(int_vector<1> &bv, int sizeBlock,  int w, int order);
 
         //métodos públicos 
 

@@ -88,10 +88,10 @@ rmmTreeOptimized_v1:
 	g++ -c ../rmm-tree-optimized/rmM_tree_optimized1_1.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g
 
 readBp: 
-	g++ -c read_bp/read_bp.cpp -I ~/include
+	g++ -c ../read_bp/read_bp.cpp -I ~/include
 
 testArguments:
-	g++ -c generates_arguments.cpp read_bp/read_bp.cpp -I ~/include
+	g++ -c generates_arguments.cpp ../read_bp/read_bp.cpp -I ~/include
 
 #---------gerando biblioteca para testes ---------
 libTestRmmTreeOptimized_v0: rmmTreeOptimized_v0 readBp testArguments
