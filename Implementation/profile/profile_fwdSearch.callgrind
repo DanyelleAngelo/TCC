@@ -1,0 +1,95 @@
+events: Hits
+
+fl=(1) /home/danyelleangelo/TCC/Implementation/profile/../rmm-tree-classic/rmM_tree_classic_v3.cpp
+fn=(1) RMMTree_Bin::fwdBlock
+233 1
+
+fl=(1)
+fn=(2) RMMTree_Bin::fwdSearch
+cfl=(1)
+cfn=(1)
+calls=1 233
+416 1
+
+fl=??
+fn=(3) RMMTree_Kary::fwdBlock
+cfl=??
+cfn=(4) RMMTree_Kary::bitsread
+calls=1 0
+0 1
+
+fl=??
+fn=(5) RMMTree_Kary::fwdVerifySibling
+0 3
+
+fl=??
+fn=(6) RMMTree_Kary::fwdKey
+cfl=??
+cfn=(3)
+calls=1 0
+0 1
+
+fl=??
+fn=(7) __libc_start_main
+cfl=??
+cfn=(8) main
+calls=6 0
+0 6
+
+fl=??
+fn=(9) RMMTree_Kary::fwdSearch
+cfl=??
+cfn=(5)
+calls=3 0
+0 3
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(10) fwdSearch_binary_rmMTree
+calls=1 0
+0 1
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(11) fwdSearch_kary_rmMTree
+calls=5 0
+0 5
+
+fl=??
+fn=(4)
+cfl=??
+cfn=(12) RMMTree_Kary::reverse_16
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(9)
+calls=5 0
+0 5
+
+fl=??
+fn=(10)
+cfl=(1)
+cfn=(2)
+calls=1 416
+0 1
+
+fl=??
+fn=(12)
+0 1
+
+fl=??
+fn=(9)
+0 1
+
+fl=??
+fn=(9)
+cfl=??
+cfn=(6)
+calls=1 0
+0 1
+

@@ -2,9 +2,9 @@ all: fwdSearch clean
 	
 fwdSearch: libRmmTreeKary libRmmTreeBin
 	g++  profile_fwdSearch.cpp -o profile_fwdSearch lib_rmm_bin.a lib_rmm_kary.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler
-	CPU_PROFILER=fwdSearch_binary.out ./profile_fwdSearch
-	google-pprof --callgrind ./profile_fwdSearch fwdSearch_binary.prof fwdSearch_kary.prof > fwdSearch.callgrind
-	kcachegrind fwdSearch.callgrind
+	CPU_PROFILER=profile_fwdSearch.out ./profile_fwdSearch
+	google-pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
+#	kcachegrind fwdSearch.callgrind
 
 #Bibliotecas
 readBp: 
