@@ -19,7 +19,7 @@ RMMTree_Bin *tBin;
 RMMTree_Kary *tKary;
 
 void generateArguments(vector<int> &vArgs){
-    srand(size/8);
+    srand(size/32);
 	int k;
 
     for(int i=0; i < iterations;){
