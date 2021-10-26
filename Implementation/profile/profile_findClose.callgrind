@@ -1,2 +1,66 @@
 events: Hits
 
+fl=(1) /home/danyelleangelo/include/sdsl/int_vector.hpp
+fn=(1) sdsl::int_vector::operator[]
+1362 1
+
+fl=??
+fn=(2) main
+cfl=??
+cfn=(3) findClose_kary_rmMTree
+calls=2 0
+0 2
+
+fl=??
+fn=(4) RMMTree_Kary::fwdBlock
+0 1
+
+fl=??
+fn=(5) RMMTree_Kary::findClose
+cfl=??
+cfn=(6) RMMTree_Kary::fwdSearch
+calls=2 0
+0 2
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(7) RMMTree_Kary::fwdKey
+calls=1 0
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(4)
+calls=1 0
+0 1
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(4)
+calls=1 0
+0 1
+
+fl=??
+fn=(8) __libc_start_main
+cfl=??
+cfn=(2)
+calls=2 0
+0 2
+
+fl=??
+fn=(4)
+cfl=(1)
+cfn=(1)
+calls=1 1362
+0 1
+
+fl=??
+fn=(3)
+cfl=??
+cfn=(5)
+calls=2 0
+0 2
+
