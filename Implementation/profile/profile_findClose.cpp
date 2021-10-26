@@ -18,34 +18,35 @@ int size =0;
 RMMTree_Bin *tBin;
 RMMTree_Kary *tKary;
 
-void generateArguments(vector<int> &vArgs, vector<int> &d){
+void generateArguments(vector<int> &vArgs){
     srand(size/8);
-	int k,depthI;
+	int k;
 
-    for(int i=0; i < iterations; i++){
+    for(int i=0; i < iterations;){
         k = rand()%(size-2);
-        vArgs.push_back(k);
-        depthI = tBin->depth(vArgs[i]);
-        d.push_back( (rand()%(tBin->tree[0].excessMax -1 - depthI)) - depthI);
+        if(tBin->bv[k]){
+            vArgs.push_back(k);
+            i++;
+        }
     }
 }
 
-void fwdSearch_binary_rmMTree(vector<int> vArgs, vector<int> d){
+void findClose_binary_rmMTree(vector<int> vArgs){
     int j;
     for(int i=0;i<iterations;i++){
-        j = tBin->fwdSearch(vArgs[i],d[i]);
+        j = tBin->findClose(vArgs[i]);
     }
 }
 
-void fwdSearch_kary_rmMTree(vector<int> vArgs, vector<int> d){
+void findClose_kary_rmMTree(vector<int> vArgs){
     int j;
     for(int i=0;i<iterations;i++){
-        j = tKary->fwdSearch(vArgs[i],d[i]);
+        j = tKary->findClose(vArgs[i]);
     }
 }
 
 int main(){
-    vector<int> vArgs, d;
+    vector<int> vArgs;
     int_vector<1> v;
     parentheses_to_bits("../dataset/dna.par", v);
     size = v.size();
@@ -60,16 +61,16 @@ int main(){
     tKary->buildingTree();
 
     /*create arguments*/
-    generateArguments(vArgs,d);
+    generateArguments(vArgs);
 
     /*Inicia o profile*/
-    cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura binária."<<endl;
-    ProfilerStart("profile_fwdSearch.prof");
-    fwdSearch_binary_rmMTree(vArgs,d);
+    cout<< "--------------------Iniciando o profile de findClose para a estrutura binária."<<endl;
+    ProfilerStart("profile_findClose.prof");
+    findClose_binary_rmMTree(vArgs);
 
-    cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura k-ária."<<endl;
+    cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
    
-    fwdSearch_kary_rmMTree(vArgs,d);
+    findClose_kary_rmMTree(vArgs);
 	ProfilerStop();
     return 0;
 }
