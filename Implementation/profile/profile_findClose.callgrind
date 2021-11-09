@@ -1,130 +1,106 @@
 events: Hits
 
 fl=(1) /home/danyelle/include/sdsl/int_vector.hpp
-fn=(1) sdsl::int_vector_reference::int_vector_reference
-785 1
+fn=(1) sdsl::int_vector_reference::operator
+805 2
 
 fl=(1)
 fn=(2) sdsl::int_vector::operator[]
-cfl=(1)
-cfn=(1)
-calls=1 785
-1362 1
-
-fl=(1)
-fn=(2)
-1363 1
+1359 1
 
 fl=(2) /media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
-fn=(3) RMMTree_Bin::fwdBlock
+fn=(3) RMMTree_Bin::findClose
 cfl=(1)
-cfn=(2)
-calls=1 1362
-251 1
+cfn=(4) sdsl::int_vector_reference::operator bool
+calls=2 805
+696 2
 
-fl=(2)
-fn=(3)
-cfl=(1)
-cfn=(2)
-calls=1 1363
-251 1
+fl=??
+fn=(5) RMMTree_Kary::fwdSearch
+cfl=??
+cfn=(6) RMMTree_Kary::fwdBlock
+calls=2 0
+0 2
 
-fl=(2)
-fn=(4) RMMTree_Bin::fwdSearch
+fl=??
+fn=(7) findClose_binary_rmMTree
 cfl=(2)
 cfn=(3)
-calls=1 251
-416 1
-
-fl=(2)
-fn=(4)
-cfl=(2)
-cfn=(3)
-calls=1 251
-445 1
-
-fl=(2)
-fn=(5) RMMTree_Bin::findClose
-cfl=(2)
-cfn=(4)
-calls=1 445
-696 1
-
-fl=(2)
-fn=(5)
-cfl=(2)
-cfn=(4)
-calls=1 416
-696 1
-
-fl=??
-fn=(6) __libc_start_main
-cfl=??
-cfn=(7) main
-calls=4 0
-0 4
-
-fl=??
-fn=(7)
-cfl=??
-cfn=(8) findClose_binary_rmMTree
-calls=2 0
-0 2
-
-fl=??
-fn=(9) RMMTree_Kary::fwdBlock
-0 1
-
-fl=??
-fn=(10) RMMTree_Kary::fwdSearch
-cfl=??
-cfn=(11) RMMTree_Kary::fwdKey
-calls=1 0
-0 1
-
-fl=??
-fn=(12) RMMTree_Kary::findClose
-cfl=??
-cfn=(10)
-calls=2 0
-0 2
-
-fl=??
-fn=(10)
-cfl=??
-cfn=(13) RMMTree_Kary::leafInTree
-calls=1 0
-0 1
-
-fl=??
-fn=(11)
-cfl=??
-cfn=(9)
-calls=1 0
-0 1
-
-fl=??
-fn=(7)
-cfl=??
-cfn=(14) findClose_kary_rmMTree
-calls=2 0
-0 2
-
-fl=??
-fn=(13)
-0 1
-
-fl=??
-fn=(8)
-cfl=(2)
-cfn=(5)
 calls=2 696
 0 2
 
 fl=??
-fn=(14)
+fn=(8) main
 cfl=??
-cfn=(12)
+cfn=(7)
 calls=2 0
 0 2
+
+fl=??
+fn=(6)
+0 1
+
+fl=??
+fn=(9) RMMTree_Kary::findClose
+cfl=??
+cfn=(5)
+calls=4 0
+0 4
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(10) RMMTree_Kary::fwdKey
+calls=2 0
+0 2
+
+fl=??
+fn=(11) RMMTree_Kary::bitsread
+0 1
+
+fl=??
+fn=(10)
+0 1
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(12) findClose_kary_rmMTree
+calls=4 0
+0 4
+
+fl=??
+fn=(6)
+cfl=(1)
+cfn=(2)
+calls=1 1359
+0 1
+
+fl=??
+fn=(12)
+cfl=??
+cfn=(9)
+calls=4 0
+0 4
+
+fl=??
+fn=(10)
+cfl=??
+cfn=(6)
+calls=1 0
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(11)
+calls=1 0
+0 1
+
+fl=??
+fn=(13) __libc_start_main
+cfl=??
+cfn=(8)
+calls=6 0
+0 6
 

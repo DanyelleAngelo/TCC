@@ -11,7 +11,7 @@
 using namespace std;
 using namespace sdsl;
 
-int iterations = 20000;
+int iterations = 100000;
 int sizeBlock=32;
 int w=16;
 int size =0;

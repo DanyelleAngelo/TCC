@@ -11,7 +11,7 @@
 using namespace std;
 using namespace sdsl;
 
-int iterations = 40000;
+int iterations = 100000;
 int sizeBlock=32;
 int w=16;
 int size =0;
@@ -48,8 +48,8 @@ void findClose_kary_rmMTree(vector<int> vArgs){
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
-    //parentheses_to_bits("../dataset/prot.par", v);
-    parentheses_to_bits("../dataset/data.txt", v);
+    parentheses_to_bits("../dataset/prot.par", v);
+    //parentheses_to_bits("../dataset/data.txt", v);
     size = v.size();
 
     /*building binary rmM-tree*/
