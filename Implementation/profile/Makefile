@@ -4,6 +4,11 @@ profile_bin: findClose_bin
 
 profile_kary: findClose_kary
 
+gitUpdate:
+	git add .
+	git commit
+	git push
+
 #Profiles da estrutura binária
 findClose_bin:
 	cd bin;\
