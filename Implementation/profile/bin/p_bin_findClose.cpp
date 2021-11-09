@@ -46,8 +46,8 @@ void findClose_binary_rmMTree(vector<int> vArgs){
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
-    //parentheses_to_bits("../dataset/prot.par", v);
-    parentheses_to_bits("../../dataset/data.txt", v);
+    parentheses_to_bits("../../dataset/prot.par", v);
+//    parentheses_to_bits("../../dataset/data.txt", v);
     size = v.size();
 
     /*building binary rmM-tree*/
@@ -62,7 +62,6 @@ int main(){
     cout<< "--------------------Iniciando o profile de findClose para a estrutura binária."<<endl;
     ProfilerStart("p_bin_findClose.prof");
     findClose_binary_rmMTree(vArgs);
-    calc2(5);
 	ProfilerStop();
     return 0;
 }

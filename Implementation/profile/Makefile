@@ -1,4 +1,4 @@
-all:  profile_kary
+all: profile_bin profile_kary
 
 profile_bin: findClose_bin
 
@@ -17,7 +17,6 @@ findClose_kary:
 	g++  p_kary_findClose.cpp -o p_kary_findClose  ../../libs/lib_rmm_kary.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2;\
 	CPU_PROFILER=p_kary_findClose.out ./p_kary_findClose;\
 	google-pprof --callgrind ./p_kary_findClose p_kary_findClose.prof  > p_kary_findClose.callgrind;\
-	kcachegrind p_kary_findClose.callgrind;
 
 #Profiles gerais, em um mesmo arquivo
 fwdSearch:

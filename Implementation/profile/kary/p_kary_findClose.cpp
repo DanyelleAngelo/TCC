@@ -46,8 +46,8 @@ void findClose_kary_rmMTree(vector<int> vArgs){
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
-    //parentheses_to_bits("../dataset/prot.par", v);
-    parentheses_to_bits("../../dataset/data.txt", v);
+    parentheses_to_bits("../../dataset/prot.par", v);
+    //parentheses_to_bits("../../dataset/data.txt", v);
     size = v.size();
     
     /*building k-ary rmM-tree*/
@@ -61,7 +61,6 @@ int main(){
     cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
     ProfilerStart("p_kary_findClose.prof");
     findClose_kary_rmMTree(vArgs);
-    calc2(5);
 	ProfilerStop();
     return 0;
 }
