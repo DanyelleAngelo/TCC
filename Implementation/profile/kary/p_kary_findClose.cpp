@@ -10,7 +10,7 @@
 using namespace std;
 using namespace sdsl;
 
-int iterations = 80000;
+int iterations = 100000;
 int sizeBlock=32;
 int w=16;
 int size =0;
