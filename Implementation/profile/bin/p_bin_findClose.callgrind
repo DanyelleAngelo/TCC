@@ -1,0 +1,59 @@
+events: Hits
+
+fl=(1) /home/danyelle/include/sdsl/int_vector.hpp
+fn=(1) sdsl::int_vector::size
+393 1
+
+fl=(1)
+fn=(2) sdsl::int_vector::operator[]
+cfl=(1)
+cfn=(1)
+calls=1 393
+1360 1
+
+fl=(2) /media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
+fn=(3) RMMTree_Bin::fwdBlock
+250 1
+
+fl=(2)
+fn=(4) RMMTree_Bin::fwdSearch
+cfl=(2)
+cfn=(3)
+calls=1 250
+416 1
+
+fl=(2)
+fn=(5) RMMTree_Bin::findClose
+cfl=(2)
+cfn=(4)
+calls=1 416
+696 1
+
+fl=(2)
+fn=(5)
+cfl=(1)
+cfn=(2)
+calls=1 1360
+696 1
+
+fl=??
+fn=(6) __libc_start_main
+cfl=??
+cfn=(7) main
+calls=2 0
+0 2
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(8) findClose_binary_rmMTree
+calls=2 0
+0 2
+
+fl=??
+fn=(8)
+cfl=(2)
+cfn=(5)
+calls=2 696
+0 2
+

@@ -1,6 +1,5 @@
-#include "../rmm-tree-classic/rmMTreeClassic.h"
-#include "../rmm-tree-optimized/rmMTreeOptimized.h"
-#include "../read_bp/read_bp.h"
+#include "../../rmm-tree-classic/rmMTreeClassic.h"
+#include "../../read_bp/read_bp.h"
 
 #include <iostream>
 #include <vector>
@@ -16,7 +15,13 @@ int sizeBlock=32;
 int w=16;
 int size =0;
 RMMTree_Bin *tBin;
-RMMTree_Kary *tKary;
+
+int calc2(int a){
+	for(int i=0; i < 100000000;i++){ 
+		a++;
+	}
+	return a;
+}
 
 void generateArguments(vector<int> &vArgs){
     srand(size/32);
@@ -38,39 +43,26 @@ void findClose_binary_rmMTree(vector<int> vArgs){
 	}
 }
 
-void findClose_kary_rmMTree(vector<int> vArgs){
-    int j;
-    for(int i=0;i<iterations;i++){
-        j = tKary->findClose(vArgs[i]);
-    }
-}
-
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
     //parentheses_to_bits("../dataset/prot.par", v);
-    parentheses_to_bits("../dataset/data.txt", v);
+    parentheses_to_bits("../../dataset/data.txt", v);
     size = v.size();
 
     /*building binary rmM-tree*/
     tBin = new RMMTree_Bin(v,sizeBlock,w);
     tBin->buildingTree();
     
-    
-    /*building k-ary rmM-tree*/
-    tKary = new RMMTree_Kary(v,sizeBlock,w,4);
-    tKary->buildingTree();
 
     /*create arguments*/
     generateArguments(vArgs);
 
     /*Inicia o profile*/
     cout<< "--------------------Iniciando o profile de findClose para a estrutura binária."<<endl;
-    ProfilerStart("profile_findClose.prof");
+    ProfilerStart("p_bin_findClose.prof");
     findClose_binary_rmMTree(vArgs);
-
-    cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
-    findClose_kary_rmMTree(vArgs);
+    calc2(5);
 	ProfilerStop();
     return 0;
 }

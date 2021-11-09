@@ -1,66 +1,130 @@
 events: Hits
 
-fl=(1) /home/danyelleangelo/TCC/Implementation/profile/../rmm-tree-classic/rmM_tree_classic_v3.cpp
-fn=(1) RMMTree_Bin::findClose
-cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(2) sdsl::int_vector_reference::operator bool
-calls=1 805
+fl=(1) /home/danyelle/include/sdsl/int_vector.hpp
+fn=(1) sdsl::int_vector_reference::int_vector_reference
+785 1
+
+fl=(1)
+fn=(2) sdsl::int_vector::operator[]
+cfl=(1)
+cfn=(1)
+calls=1 785
+1362 1
+
+fl=(1)
+fn=(2)
+1363 1
+
+fl=(2) /media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
+fn=(3) RMMTree_Bin::fwdBlock
+cfl=(1)
+cfn=(2)
+calls=1 1362
+251 1
+
+fl=(2)
+fn=(3)
+cfl=(1)
+cfn=(2)
+calls=1 1363
+251 1
+
+fl=(2)
+fn=(4) RMMTree_Bin::fwdSearch
+cfl=(2)
+cfn=(3)
+calls=1 251
+416 1
+
+fl=(2)
+fn=(4)
+cfl=(2)
+cfn=(3)
+calls=1 251
+445 1
+
+fl=(2)
+fn=(5) RMMTree_Bin::findClose
+cfl=(2)
+cfn=(4)
+calls=1 445
 696 1
 
 fl=(2)
-fn=(3) sdsl::int_vector_reference::operator
-805 1
+fn=(5)
+cfl=(2)
+cfn=(4)
+calls=1 416
+696 1
 
 fl=??
-fn=(4) findClose_binary_rmMTree
-cfl=(1)
-cfn=(1)
-calls=1 696
-0 1
-
-fl=??
-fn=(5) findClose_kary_rmMTree
+fn=(6) __libc_start_main
 cfl=??
-cfn=(6) RMMTree_Kary::findClose
-calls=1 0
-0 1
+cfn=(7) main
+calls=4 0
+0 4
 
 fl=??
-fn=(7) __libc_start_main
+fn=(7)
 cfl=??
-cfn=(8) main
+cfn=(8) findClose_binary_rmMTree
 calls=2 0
 0 2
 
 fl=??
-fn=(8)
+fn=(9) RMMTree_Kary::fwdBlock
+0 1
+
+fl=??
+fn=(10) RMMTree_Kary::fwdSearch
 cfl=??
-cfn=(4)
+cfn=(11) RMMTree_Kary::fwdKey
 calls=1 0
 0 1
 
 fl=??
-fn=(6)
-cfl=??
-cfn=(9) RMMTree_Kary::fwdSearch
-calls=1 0
-0 1
-
-fl=??
-fn=(10) RMMTree_Kary::numKey
-0 1
-
-fl=??
-fn=(9)
+fn=(12) RMMTree_Kary::findClose
 cfl=??
 cfn=(10)
+calls=2 0
+0 2
+
+fl=??
+fn=(10)
+cfl=??
+cfn=(13) RMMTree_Kary::leafInTree
 calls=1 0
 0 1
 
 fl=??
-fn=(8)
+fn=(11)
 cfl=??
-cfn=(5)
+cfn=(9)
 calls=1 0
 0 1
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(14) findClose_kary_rmMTree
+calls=2 0
+0 2
+
+fl=??
+fn=(13)
+0 1
+
+fl=??
+fn=(8)
+cfl=(2)
+cfn=(5)
+calls=2 696
+0 2
+
+fl=??
+fn=(14)
+cfl=??
+cfn=(12)
+calls=2 0
+0 2
 
