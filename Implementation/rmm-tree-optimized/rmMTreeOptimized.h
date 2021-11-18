@@ -55,7 +55,7 @@ class RMMTree_Kary{
 
 		unsigned long long cLog_m(unsigned long long  n,unsigned long long  m);
 		unsigned long long fLog_m(unsigned long long  n,unsigned long long  m);
-
+		long long int getNumberLeaves();
 		/*!
 		*	@brief ler os bits de idx até idx+8, e contabiliza o inteiro correspondente a esta sequência binária
 		*	@param idx: ponto de partida da leitura

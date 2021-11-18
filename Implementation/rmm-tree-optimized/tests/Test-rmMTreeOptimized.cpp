@@ -26,8 +26,13 @@ class RMMTreeFixtureTest : public ::testing::Test{
         int order=4;
         bp_support_sada<> *bps;
         int_vector<1> v;
+        vector<int> argsI;
+        vector<int> argsII;
+        vector<int> argsSelect;
         vector<int> argsFindClose;
         vector<int> argsFindOpen;
+        vector<int> argsDepth;
+        vector<int> argsDepthBwd;
         vector<int> argsRmqI;
         vector<int> argsRmqJ;
         
@@ -38,7 +43,10 @@ class RMMTreeFixtureTest : public ::testing::Test{
             bps = new bp_support_sada<>(&(t->bv));
             t->buildingTree();
             tBin->buildingTree();
-		    srand(t->size/2);
+            ArgumentsI();
+            ArgumentsII();
+		    srand(t->size/18);
+            ArgumentsSelect();
             ArgumentsFindClose();
             ArgumentsFindOpen();
             ArgumentsRmq();
@@ -48,10 +56,39 @@ class RMMTreeFixtureTest : public ::testing::Test{
             delete bps;
         }
 
+        void ArgumentsI(){
+        	int k,i=0;
+		    srand(t->size/38);
+            while(i<(t->size)/2){
+                k = rand()%(t->size-2);
+                argsI.push_back(k);
+                i++;
+            }
+        }
+        
+        void ArgumentsII(){
+        	int k,i=0;
+		    srand(t->size/200);
+            while(i<(t->size)/2){
+                k = rand()%(t->size-2);
+                argsII.push_back(k);
+                i++;
+            }
+        }
+
+        void ArgumentsSelect(){
+            int k,i=0;
+            while(i<(t->size)/2){
+                k = rand()%((v.size()/2)-1);
+                argsSelect.push_back(k);
+                i++;
+            }
+        }
+
         void ArgumentsFindClose(){
         	int k,i=0;
             while(i<(t->size)/2){
-                k = rand()%(t->size);
+                k = rand()%(t->size-1);
                 if(t->bv[k]==1){
                     argsFindClose.push_back(k);
                     i++;
@@ -61,10 +98,24 @@ class RMMTreeFixtureTest : public ::testing::Test{
 
         void ArgumentsFindOpen(){
         	int k,i=0;
+            int depth, close, excessMax;
             while(i<(t->size)/2){
-                k = rand()%(t->size);
+                k = rand()%(t->size-1);
                 if(t->bv[k]==0){
                     argsFindOpen.push_back(k);
+
+                    //para as funções que precisam do argumento de profundidade
+                    depth = tBin->depth(argsFindOpen[i]);
+                    close = tBin->findClose(argsFindOpen[i]);
+                    if(argsFindOpen[i]+1 <= close-1 ){
+                        excessMax = tBin->maxExcess(argsFindOpen[i]+1, close-1);
+                    }
+                    else{
+                        excessMax = depth;
+                    }
+                    argsDepthBwd.push_back((rand()% depth+depth) - depth);
+                    argsDepth.push_back( (rand()% excessMax+depth) - depth);
+
                     i++;
                 }
             }
@@ -161,19 +212,16 @@ TEST_F(RMMTreeFixtureTest, DISABLED_fwdsearch_i_answer_in_the_same_block){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_fwdSearch_general){
-    int index[] = {14,11,29};
-    int d[] = {-2,-4,-1};
-    
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->fwdSearch(index[i],d[i]),tBin->fwdSearch(index[i],d[i])) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << index[i];
+TEST_F(RMMTreeFixtureTest, fwdSearch_general){
+    int depth,excessMax,d=0;
+    for(int i=0;i<argsFindOpen.size();i++){
+        EXPECT_EQ(t->fwdSearch(argsFindOpen[i],argsDepth[i]),tBin->fwdSearch(argsFindOpen[i],argsDepth[i])) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << argsFindOpen[i];
     } 
 }
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_findClose){
-    int error[] = {4875,1499,4059,1500,1485,1499,4874,1492,4059,5100,1485,4874,4875,4060,4874};
-    for(int i=1;i<2;i++){
-        EXPECT_EQ(t->findClose(error[i]),tBin->findClose(error[i])) << "Resposta errada ao calcular o find_close de i=" << error[i];
+    for(int i=0;i<argsFindClose.size();i++){
+        EXPECT_EQ(t->findClose(argsFindClose[i]),tBin->findClose(argsFindClose[i])) << "Resposta errada ao calcular o find_close de i=" << argsFindClose[i];
     }
 }
 
@@ -186,26 +234,16 @@ TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_i_answer_in_the_same_block){
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_bwdSearch_general){ 
-    int index[] = {9,17,22,12,15,19,36,37,18};
-    int d[] = {-2,-1,-1,-4,0,2,0,3,-1};
-
-    for(int i=0;i<(int)(sizeof(index)/sizeof(index[0]));i++){
-        EXPECT_EQ(t->bwdSearch(index[i],d[i]),tBin->bwdSearch(index[i],d[i])) << "Resposta errada ao calcular um BwdSearch genérico, para i=" << index[i];
+TEST_F(RMMTreeFixtureTest, bwdSearch_general){ 
+    for(int i=0;i<(int)argsFindOpen.size();i++){
+       EXPECT_EQ(t->bwdSearch(argsFindOpen[i],argsDepthBwd[i]),tBin->bwdSearch(argsFindOpen[i],argsDepthBwd[i])) << "Resposta errada ao calcular um BwdSearch genérico, para i=" << argsFindOpen[i];
     } 
 }
 
-TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){ 
+TEST_F(RMMTreeFixtureTest, bwdSearch_findOpen){
     for(int i=0;i<argsFindOpen.size();i++){
         EXPECT_EQ(t->findOpen(argsFindOpen[i]),tBin->findOpen(argsFindOpen[i])) << "Resposta errada ao calcular o find_open de i=" << argsFindOpen[i];
     } 
-}
-
-TEST_F(RMMTreeFixtureTest, DISABLED_expected_response_to_rmq){ 
-    
-    for(int k=4;k<5;k++){
-        EXPECT_EQ(t->rmq(argsRmqI[k],argsRmqJ[k]),tBin->rmq(argsRmqI[k],argsRmqJ[k])) << "Resposta errada ao encontrar a posição do excecsso mínimo em [" << argsRmqI[k]<< "," << argsRmqJ[k] << "]";
-    }
 }
 
 TEST_F(RMMTreeFixtureTest, bwdSearch_enclose){
@@ -224,19 +262,15 @@ TEST_F(RMMTreeFixtureTest, check_if_i_is_a_leaf){
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_check_if_x_is_ancestor_of_y){ 
-    int x[] = {0,4,25}; 
-    int y[] = {1,6,6}; 
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->isAncestor(x[k],y[k]),tBin->isAncestor(x[k],y[k])) << "Resposta errada ao verificar se o nó x= " << x[k] << " é ancestral do nó y= " << y[k]; 
+TEST_F(RMMTreeFixtureTest, check_if_x_is_ancestor_of_y){ 
+    for(int i=0;i<argsI.size();i++){
+        EXPECT_EQ(t->isAncestor(argsI[i],argsII[i]),tBin->isAncestor(argsI[i],argsII[i])) << "Resposta errada ao verificar se o nó x= " << argsI[i] << " é ancestral do nó y= " << argsII[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_node_depth_x){ 
-    int index[] = {2,7,11,17,23,27,34}; 
-    for(int k=0;k<(int)(sizeof(index)/sizeof(index[0]));k++){
-        EXPECT_EQ(t->depth(index[k]),tBin->depth(index[k])) << "Resposta errada ao verificar a profunidade do nó codificado em [" << index[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, node_depth_x){ 
+    for(int i=0;i<(int)argsI.size();i++){
+        EXPECT_EQ(t->depth(argsI[i]),tBin->depth(argsI[i])) << "Resposta errada ao verificar a profunidade do nó codificado em [" << argsI[i] << " , close(i)]"; 
     }
 }
 
@@ -248,157 +282,115 @@ TEST_F(RMMTreeFixtureTest, returns_the_index_j_that_encodes_the_parent_of_node_x
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_rigth_sibling_of_x){ 
-    int x[] = {2,8,13,24,30};
-
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->nextSibling(x[k]),tBin->nextSibling(x[k])) << "Resposta errada ao buscar o irmão direito do nó codificado em bv[" << x[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, rigth_sibling_of_x){ 
+    for(int i=0;i<argsII.size();i++){
+        EXPECT_EQ(t->nextSibling(argsII[i]),tBin->nextSibling(argsII[i])) << "Resposta errada ao buscar o irmão direito do nó codificado em bv[" << argsII[i] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_left_sibling_of_x){ 
-    int x[] = {13,19,30,37}; 
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->prevSibling(x[k]),tBin->prevSibling(x[k])) << "Resposta errada ao buscar o irmão esquerdo do nó codificado em bv[" << x[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, left_sibling_of_x){ 
+    for(int i=0;i<argsI.size();i++){
+        EXPECT_EQ(t->prevSibling(argsI[i]),tBin->prevSibling(argsI[i])) << "Resposta errada ao buscar o irmão esquerdo do nó codificado em bv[" << argsI[i] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_return_lastChild_of_x){ 
-    int x[] = {1,7,10,8,23};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->lastChild(x[k]),tBin->lastChild(x[k])) << "Resposta errada ao buscar o último filho do nó codificado em bv[" << x[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, return_lastChild_of_x){ 
+   for(int i=0;i<argsII.size();i++){
+        EXPECT_EQ(t->lastChild(argsII[i]),tBin->lastChild(argsII[i])) << "Resposta errada ao buscar o último filho do nó codificado em bv[" << argsII[i] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_return_firstChild_of_x){ 
-    int x[] = {0,22,26,9,23};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->firstChild(x[k]),tBin->firstChild(x[k])) << "Resposta errada ao buscar o primeiro filho do nó codificado em bv[" << x[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, return_firstChild_of_x){
+    for(int i=0;i<argsI.size();i++){    
+        EXPECT_EQ(t->firstChild(argsI[i]),tBin->firstChild(argsI[i])) << "Resposta errada ao buscar o primeiro filho do nó codificado em bv[" << argsI[i] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_subtree_size){ 
-    int x[] = {1,2,7,8,9,22,27};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->subtreeSize(x[k]),tBin->subtreeSize(x[k])) << "Resposta errada ao calcular o tamannho da subarvore enraizada em bv[" << x[k] << " , close(i)]"; 
+TEST_F(RMMTreeFixtureTest, subtree_size){ 
+    for(int i=0;i<argsII.size();i++){   
+        EXPECT_EQ(t->subtreeSize(argsII[i]),tBin->subtreeSize(argsII[i])) << "Resposta errada ao calcular o tamannho da subarvore enraizada em bv[" << argsII[i] << " , close(i)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_ancestor_of_x_that_is_d_levels_above_x){ 
-    int x[] = {19,2,11,15,24,27,37};
-    int d[] = {2,2,4,4,2,3,1};  
-
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->levelAncestor(x[k],d[k]),tBin->levelAncestor(x[k],d[k])) << "Resposta errada ao calcular o ancestral de bv[" << x[k] << " , close(i)] que está " << d[k] << " níveis acima."; 
+TEST_F(RMMTreeFixtureTest,ancestor_of_x_that_is_d_levels_above_x){ 
+    for(int i=0;i < argsFindOpen.size() ;i++){
+        EXPECT_EQ(t->levelAncestor(argsFindOpen[i],argsDepthBwd[i]),tBin->levelAncestor(argsFindOpen[i],argsDepthBwd[i])) << "Resposta errada ao calcular o ancestral de bv[" << argsFindOpen[i] << " , close(i)] que está " << argsDepthBwd[i] << " níveis acima."; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_expected_level_next){ 
-    int x[] = {4,7,10,15};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->levelNext(x[k]),tBin->levelNext(x[k])) << "Resposta errada ao calcular o próximo nó a direita de  " << x[k]; 
+TEST_F(RMMTreeFixtureTest, expected_level_next){ 
+    for(int i=0;i<argsI.size();i++){ 
+        EXPECT_EQ(t->levelNext(argsI[i]),tBin->levelNext(argsI[i])) << "Resposta errada ao calcular o próximo nó a direita de  " << argsI[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_expected_level_prev){ 
-    int x[] = {22,8,7,30};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->levelPrev(x[k]),tBin->levelPrev(x[k])) << "Resposta errada ao calcular o próximo nó a direita de  " << x[k]; 
+TEST_F(RMMTreeFixtureTest, expected_level_prev){ 
+    for(int i=0;i<argsII.size();i++){ 
+        EXPECT_EQ(t->levelPrev(argsII[i]),tBin->levelPrev(argsII[i])) << "Resposta errada ao calcular o próximo nó a direita de  " << argsII[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_leftmost_node_with_depth_d){ 
-    int d[] = {1,3,4,5,6};
-    
-    for(int k=0;k<(int)(sizeof(d)/sizeof(d[0]));k++){
-        EXPECT_EQ(t->levelLeftMost(d[k]),tBin->levelLeftMost(d[k])) << "Resposta errada ao calcular o nó mais a esquerda com profundidade  " << d[k]; 
+TEST_F(RMMTreeFixtureTest, leftmost_node_with_depth_d){ 
+    for(int i=0;i<argsDepth.size();i++){ 
+        EXPECT_EQ(t->levelLeftMost(argsDepth[i]),tBin->levelLeftMost(argsDepth[i])) << "Resposta errada ao calcular o nó mais a esquerda com profundidade  " << argsDepth[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_rightmost_node_with_depth_d){ 
-    int d[] = {1};
-    
-    for(int k=0;k<(int)(sizeof(d)/sizeof(d[0]));k++){
-        EXPECT_EQ(t->levelRightMost(d[k]),tBin->levelRightMost(d[k])) << "Resposta errada ao calcular o nó mais a direita com profundidade  " << d[k]; 
+TEST_F(RMMTreeFixtureTest, rightmost_node_with_depth_d){ 
+    for(int i=0;i<argsDepth.size();i++){ 
+        EXPECT_EQ(t->levelRightMost(argsDepth[i]),tBin->levelRightMost(argsDepth[i])) << "Resposta errada ao calcular o nó mais a direita com profundidade  " << argsDepth[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_number_of_leaves_to_the_left_of_node_x){ 
-    int x[] = {0,8,22,24,27,32,37};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->leafRank(x[k]),tBin->leafRank(x[k])) << "Resposta errada ao computar o número de folhas a esquerda do nó codificado em B[" << x[k] << " , close(x)]"; 
+TEST_F(RMMTreeFixtureTest, number_of_leaves_to_the_left_of_node_x){ 
+    for(int i=0;i<argsI.size();i++){ 
+        EXPECT_EQ(t->leafRank(argsI[i]),tBin->leafRank(argsI[i])) << "Resposta errada ao computar o número de folhas a esquerda do nó codificado em B[" << argsI[i] << " , close(x)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_tth_leaf_index){ 
-    int x[] = {1,2,3,4,5,6,7,8,9,10,11};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->leafSelect(x[k]),tBin->leafSelect(x[k])) << "Resposta errada ao buscar o índice da " << x[k] << "-th folha"; 
+TEST_F(RMMTreeFixtureTest, tth_leaf_index){  
+    for(int i=1;i<t->getNumberLeaves();i++){ 
+        EXPECT_EQ(t->leafSelect(i),tBin->leafSelect(i)) << "Resposta errada ao buscar o índice da " << i << "-th folha"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_leftmost_leaf_of_x){ 
-    int x[] = {4,8,22,24,30,37,7,32,27};
-    int expected[] = {4,11,24,24,30,37,11,32,27};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->leftMostLeaf(x[k]),tBin->leftMostLeaf(x[k])) << "Resposta errada ao buscar a folha mais a esquerda de B[" << x[k] << ", close(x)]"; 
+TEST_F(RMMTreeFixtureTest, leftmost_leaf_of_x){ 
+    for(int i=0;i<argsI.size();i++){ 
+        EXPECT_EQ(t->leftMostLeaf(argsI[i]),tBin->leftMostLeaf(argsI[i])) << "Resposta errada ao buscar a folha mais a esquerda de B[" << argsI[i] << ", close(x)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_rightmost_leaf_of_x){ 
-    int x[] = {8,22,23,26};
-    int expected[] = {19,32,32,27};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->rightMostLeaf(x[k]),tBin->rightMostLeaf(x[k])) << "Resposta errada ao buscar a folha mais a direita de B[" << x[k] << ", close(x)]"; 
+TEST_F(RMMTreeFixtureTest,rightmost_leaf_of_x){ 
+    for(int i=0;i<argsI.size();i++){ 
+        EXPECT_EQ(t->rightMostLeaf(argsI[i]),tBin->rightMostLeaf(argsI[i])) << "Resposta errada ao buscar a folha mais a direita de B[" << argsI[i] << ", close(x)]"; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_pre_rank_x){ 
-    int x[] = {11,15};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->preRank(x[k]),tBin->preRank(x[k])) << "Resposta errada ao realizar o percurso pré-ordem de X= " << x[k]; 
+TEST_F(RMMTreeFixtureTest, pre_rank_x){ 
+    for(int i=0;i<argsFindClose.size();i++){ 
+        EXPECT_EQ(t->preRank(argsFindClose[i]),tBin->preRank(argsFindClose[i])) << "Resposta errada ao realizar o percurso pré-ordem de X= " << argsFindClose[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_post_rank_x){ 
-    int x[] = {11,16};
-    int expected[] = {3,5};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->postRank(x[k]),tBin->postRank(x[k])) << "Resposta errada ao calcular postrank de x=" << x[k]; 
+TEST_F(RMMTreeFixtureTest, post_rank_x){ 
+    for(int i=0;i<argsFindClose.size();i++){ 
+        EXPECT_EQ(t->postRank(argsFindClose[i]),tBin->postRank(argsFindClose[i])) << "Resposta errada ao calcular postrank de x=" << argsFindClose[i]; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_pre_select){ 
-    int x[] = {3,9};
-    int expected[] = {2,11};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->preSelect(x[k]),tBin->preSelect(x[k])) << "Resposta errada ao calcular a posição do " << x[k] << "-th parênteses de abertura."; 
+TEST_F(RMMTreeFixtureTest, pre_select){ 
+    for(int i=0;i<argsSelect.size();i++){ 
+        EXPECT_EQ(t->preSelect(argsSelect[i]),tBin->preSelect(argsSelect[i])) << "Resposta errada ao calcular a posição do " << argsSelect[i] << "-th parênteses de abertura."; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, DISABLED_post_select){ 
-    int x[] = {8,12,18};
-    
-    for(int k=0;k<(int)(sizeof(x)/sizeof(x[0]));k++){
-        EXPECT_EQ(t->postSelect(x[k]),tBin->postSelect(x[k])) << "Resposta errada ao calcular o parênteses de abertura correspondente ao  " << x[k] << "-th parênteses de fechamento."; 
+TEST_F(RMMTreeFixtureTest, post_select){ 
+    for(int i=0;i<argsSelect.size();i++){
+        EXPECT_EQ(t->postSelect(argsSelect[i]),tBin->postSelect(argsSelect[i])) << "Resposta errada ao calcular o parênteses de abertura correspondente ao  " << argsSelect[i] << "-th parênteses de fechamento."; 
     }
 }
 
-TEST_F(RMMTreeFixtureTest, print_tree){
+TEST_F(RMMTreeFixtureTest, DISABLED_print_tree){
     t->printInfoTree();
     t->printTree();
 }
@@ -406,6 +398,6 @@ TEST_F(RMMTreeFixtureTest, print_tree){
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
 
-    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.fwdSearch_findClose";
+    testing::GTEST_FLAG(filter) = "RMMTreeFixtureTest.*";
     return RUN_ALL_TESTS();
 }

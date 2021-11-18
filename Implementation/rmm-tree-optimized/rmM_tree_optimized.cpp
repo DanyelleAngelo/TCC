@@ -59,6 +59,10 @@ unsigned long long RMMTree_Kary::cLog_2(unsigned long long  n){
 	return  fLog_2(2*n -1);
 }
 
+long long int RMMTree_Kary::getNumberLeaves(){
+	return numberLeaves;
+}
+
 unsigned long long RMMTree_Kary::cLog_m(unsigned long long  n,unsigned long long  m){
 	return ceil((double)log2(n)/log2(m));
 }
@@ -228,14 +232,18 @@ void RMMTree_Kary::buildingInternalNodesRoot(){
 
 long long int RMMTree_Kary::fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr){
 	long long int j;
-	
+	//cout << "dr  = " << dr << "i = " << i <<endl;
 	for(;key < tree[v].nKeys;key++){
+	//	cout << " key = " << key <<endl;
 		if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
+	//		cout << "dr= " << dr << " dr + tree[v].keys[key].excessMin = " << dr + tree[v].keys[key].excessMin 
+	//		<< "dr +tree[v].keys[key].excessMax= " << dr +tree[v].keys[key].excessMax <<endl; 
 			j= fwdBlock(i,d,dr);
 			if(dr == d) return j;
 		}
 		dr +=  tree[v].keys[key].excess;
 		i = (order*k+key+1)*sizeBlock -1;//obtém o fim da chave atual, para começar a varrer próxima chave a partir do seu início
+		
 		if(dr==d)return i;
 
 	}
@@ -276,25 +284,23 @@ long long int RMMTree_Kary::fwdVerifySibling(long long int &v, int &dr, int d){
 	
 	//calcula parent a fim de verificar quantos írmãos de v existem a sua esquerda
 	long long int parent = (v-1)/order;
-	long long int child = v - (parent*order);//obtém o número de irmãos a direita de v
-	if(child==tree[parent].nKeys)return size;
-
+	long long int child = (parent*order+tree[parent].nKeys) -v;//obtém o número de irmãos a direita de v
+	
+	if(child==0)return size;
 	v++;
 	//pecorre os írmãos de v
-
-	for( ;child < tree[parent].nKeys && v<numberNodes;child++){
-		for(long long int key=0;key<tree[v].nKeys;key++){	
+	for( ;child >0 && v<numberNodes;child--){
+		for(long long int key=0;key<tree[v].nKeys;key++){
 			if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
-				if(v<numberNodes - numberLeaves)v = (v*order)+1+key;
+				if(v<numberNodes - numberLeaves){
+					v = (v*order)+1+key;
+					key =0;
+				}
 				return key;
 			}
 			dr +=  tree[v].keys[key].excess;
-			if(dr==d){
-				if(v<numberNodes - numberLeaves)v = (v*order)+key+2;
-				return key;
-			}
 		}
-		if(child+1 < tree[parent].nKeys)v++;
+		if(child-1 > 0)v++;
 	}
 	
 	return size;//a resposta não está nos irmãos de v
@@ -302,13 +308,14 @@ long long int RMMTree_Kary::fwdVerifySibling(long long int &v, int &dr, int d){
 
 long long int RMMTree_Kary::fwdSearch(long long int i, int d){
 	assert((i+1)>=0 && (i+1)< size);
-
+	
 	int dr=0;
 	long long int k = (i+1)/(sizeBlock*order);//calcula a k-th folha em que se encontra i+1
 	long long int v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha
 	int key = numKey(k,i+1); 
 	long long int j = fwdBlock(i,d,dr);
 	if(dr == d)return j;
+	
 	key++;
 	if(key < tree[v].nKeys){
 		j= fwdKey((order*k+key)*sizeBlock -1,v,key, k,d,dr);
@@ -316,16 +323,16 @@ long long int RMMTree_Kary::fwdSearch(long long int i, int d){
 	}
 
 	/* -----Subindo a RMM-tree ------*/
-	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size){
-		v = (v-1)/order;
+	while( v!=0 && (key=fwdVerifySibling(v,dr,d))==size ){
+		v = floor((v-1)/order);	
 	} 
-
+	
 	if(v==0 && key==size)return size;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
+	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
 		/*pecorre todas achavaes do nó pelo qual estamos descendo, para encontrar a chave em que ocorre
-		o excesso e descer pelo o seu nó.
-		*/
+		o excesso e descer pelo o seu nó.*/
 		for(key=0;key<tree[v].nKeys;key++){
 			if((dr+tree[v].keys[key].excessMin <=d)&& (dr + tree[v].keys[key].excessMax >=d) ){
 				v = (v*order)+1+key;
@@ -337,9 +344,9 @@ long long int RMMTree_Kary::fwdSearch(long long int i, int d){
 			}
 		}
 	}
- 
+	
 	k = numLeaf(v);
-	j = fwdKey((order*k+key)*sizeBlock -1,v,0, k,d,dr);
+	j = fwdKey((order*k+key)*sizeBlock -1,v,key, k,d,dr);
 	return (dr == d)? j : size;
 }
 
@@ -387,22 +394,20 @@ long long int RMMTree_Kary::bwdBlock(long long int i,int d, int &dr){
 long long int RMMTree_Kary::bwdVerifySibling(long long int &v, int &dr, int d){
 	
 	long long int parent = (v-1)/order;
-	long long int child = v - (parent*order)-1; // obtém o número de irmãos a esquerda de v
-	
+	long long int child = v - (parent*order+1); // obtém o número de irmãos a esquerda de v
 	if(child==0)return -1;
 	v--;
-	
 	for(; child >0 && v >0;child--){
 		for(long long int key =tree[v].nKeys-1; key>=0;key--){
 			if((dr - tree[v].keys[key].excess + tree[v].keys[key].excessMin <= d) && (d <= dr - tree[v].keys[key].excess + tree[v].keys[key].excessMax)){
-				if(v<numberNodes - numberLeaves)v = (v*order)+1+key;
+				if(v<numberNodes - numberLeaves){
+					v = (v*order)+1+key;
+					key = tree[v].nKeys -1;
+				}
 				return key;
 			}
+
 			dr-=tree[v].keys[key].excess;
-			if(dr == d){
-				if(v<numberNodes - numberLeaves)v = (v*order)+key;
-				return key; //a resposta esta na chave anterior
-			}
 		}
 		if(child-1 >0)v--;
 	}
@@ -420,19 +425,21 @@ long long int RMMTree_Kary::bwdSearch(long long int i,int d){
 	
 	long long int j = bwdBlock(i,d,dr);
 	if(dr==d) return j;
+	
 	key--;
 	if(key>=0){
 		j=bwdKey((order*k+key+1)*sizeBlock-1,v,key,k,d,dr);
 		if(dr==d) return j;
-
 	}
 
 	/* -----Subindo a RMM-tree ------*/
+	
 	while(v!=0 && (key=bwdVerifySibling(v,dr,d))==-1){
 		v = (v-1)/order;
 	}
 	
 	if(v==0 && key==-1)return -1;//varremos todas as chaves do nó 0, mas mesmo assim não encontramos o excesso.
+	
 	/* ----- Descendo a RMM-tree ------*/
 	while(v < numberNodes - numberLeaves){
 		for(key=tree[v].nKeys-1;key>=0;key--){
@@ -448,8 +455,7 @@ long long int RMMTree_Kary::bwdSearch(long long int i,int d){
 	}
 	
 	k = numLeaf(v);
-	if(dr == d)return (k*order*sizeBlock) + (key*sizeBlock) -1;
-
+	if(dr == d)return (k*order*sizeBlock) + ((key+1)*sizeBlock) -1;
 	j = bwdKey(k*(order*sizeBlock) + ((key+1)*sizeBlock) -1,v,key,k,d,dr);
 	return (dr==d)? j : -1;
 }
@@ -543,7 +549,7 @@ long long int RMMTree_Kary::levelNext(long long int x){
 
 long long int RMMTree_Kary::levelPrev(long long int x){
 	long long int i = bwdSearch(x,0);
-	if(i <0 || i==size-1)return 0;
+	if(i <0 || i==size-1)return -1;
 	return findOpen(i+1);
 }
 
@@ -589,10 +595,12 @@ long long int RMMTree_Kary::postRank(long long int x){
 }
 
 long long int RMMTree_Kary::preSelect(long long int t){
+	if(t==0 || t>size)return size;
 	return b_sel1(t);
 }
 
 long long int RMMTree_Kary::postSelect(long long int t){
+	if(t==0 || t>size)return size;
 	return findOpen(b_sel0(t));
 }
 
