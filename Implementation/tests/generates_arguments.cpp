@@ -1,7 +1,7 @@
 #include "gtest/gtest.h" 
 #include <iostream>
 #include <vector>
-#include "read_bp/read_bp.h" 
+#include "../read_bp/read_bp.h" 
 #include "generates_arguments.h"
 #include <sdsl/int_vector.hpp>
 #include <sdsl/bp_support_sada.hpp>
