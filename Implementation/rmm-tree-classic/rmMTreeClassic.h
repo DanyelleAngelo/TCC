@@ -67,7 +67,7 @@ class RMMTree_Bin{
 		*	@return teto do logarítmo na base 2 de n
 		*/
 		unsigned long long cLog_2(unsigned long long  n);
-		
+		long long int getNumberLeaves();
 		/*!
 		*	@brief verifica se a k-th folha está no último ou penúltimo nível da árvore e calcula sua posição.
 		*	A ordem das folhas aqui vai de 0 à numberLeaves-1.

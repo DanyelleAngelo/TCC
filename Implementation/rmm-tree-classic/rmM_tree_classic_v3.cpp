@@ -57,6 +57,10 @@ unsigned long long RMMTree_Bin::cLog_2(unsigned long long  n){
 	return  ceil(log2(n))/*fLog_2(2*n -1)*/;
 }
 
+long long int RMMTree_Bin::getNumberLeaves(){
+	return numberLeaves;
+}
+
 long long int RMMTree_Bin::min(long long int a , long long int b){
 	return (a < b )? a:b;
 }
@@ -414,7 +418,7 @@ long long int RMMTree_Bin::fwdSearch(long long int i,int d){
 	int dr=0;
 
 	j= fwdBlock(i,d,dr);
-        if(dr == d) return j;
+    if(dr == d) return j;
 
 	k = (i+1)/sizeBlock;//calcula a k-th folha em que se encontra i+1
 	v = leafInTree(k);//índice da RMM-tree onde ocorre a k-th folha]
@@ -441,7 +445,6 @@ long long int RMMTree_Bin::fwdSearch(long long int i,int d){
 	}
 
 	k = numLeaf(v);
-	
 	j = fwdBlock((k*sizeBlock)-1,d,dr);
 	
 	return (dr == d)? j : size;/*Varre o boclo da folha anterior*/
@@ -456,6 +459,7 @@ long long int RMMTree_Bin::bwdSearch(long long int i,int d){
 
 	j= bwdBlock(i,d,dr);
     if(dr == d) return j;
+
 	k = i/sizeBlock;
 	v = leafInTree(k);
 	
@@ -469,7 +473,7 @@ long long int RMMTree_Bin::bwdSearch(long long int i,int d){
 	}
 	
 	if( ((v+1)&v) ==0 )return -1;/*estamos nos nós mais a esquerda da árvore, e estes ainda não contém o excesso desejado*/
-	
+
 	v--;/*o excesso procurado está no nó à esquerda do último verificado*/
 	
 	/* ----- Descendo a RMM-tree ------*/
@@ -483,9 +487,7 @@ long long int RMMTree_Bin::bwdSearch(long long int i,int d){
 	}
 
 	k = numLeaf(v);
-	
 	if(dr == d)return ((k+1)*sizeBlock)-1;
-	
 	j=bwdBlock( ((k+1)*sizeBlock)-1,d,dr);/*Ao chamar bwdBlock a ideia é varrer do último bit da folha k até o seu primeiro bit.*/
 
 	return (dr==d)? j : -1;
@@ -846,9 +848,11 @@ long long int RMMTree_Bin::postRank(long long int x){
 }
 
 long long int RMMTree_Bin::preSelect(long long int t){
+	if(t==0 || t>size)return size;
 	return b_sel1(t);
 }
 
 long long int RMMTree_Bin::postSelect(long long int t){
+	if(t==0 || t>size)return size;
 	return findOpen(b_sel0(t));
 }
