@@ -59,3 +59,4 @@ libRmmTreeBin: rmmTreeBin readBp
 
 clean:
 	rm *.o
+	rm ../libs/*.o

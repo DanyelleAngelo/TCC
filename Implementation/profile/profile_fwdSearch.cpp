@@ -20,13 +20,26 @@ RMMTree_Kary *tKary;
 
 void generateArguments(vector<int> &vArgs, vector<int> &d){
     srand(size/8);
-	int k,depthI;
+	int k,depth, close;
 
-    for(int i=0; i < iterations; i++){
+    for(int i=0; i < iterations; ){
         k = rand()%(size-2);
-        vArgs.push_back(k);
-        depthI = tBin->depth(vArgs[i]);
-        d.push_back( (rand()%(tBin->tree[0].excessMax -1 - depthI)) - depthI);
+        if(tBin->bv[k]==1){
+            vArgs.push_back(k);
+
+            //computa a profundidade do nó k
+            depth = tBin->depth(k);
+            close = tBin->findClose(k);
+            if(k+1 <= close-1 ){
+                excessMax = tBin->maxExcess(k+1, close-1);
+            }
+            else{
+                excessMax = depth;
+            }
+
+            d.push_back( (rand()% excessMax+depth) - depth);
+            i++;
+        }
     }
 }
 
