@@ -1,28 +1,60 @@
 events: Hits
 
-fl=??
-fn=(1) RMMTree_Kary::fwdSearch
-0 1
-
-fl=??
-fn=(2) __libc_start_main
+fl=(1) /home/danyelleangelo/TCC/Implementation/rmm-tree-optimized/profile_findClose_v1.cpp
+fn=(1) findClose_kary_rmMTree
 cfl=??
-cfn=(3) main
+cfn=(2) RMMTree_Kary::findClose
 calls=3 0
-0 3
+42 3
+
+fl=(1)
+fn=(3) main
+cfl=(1)
+cfn=(1)
+calls=3 42
+63 3
 
 fl=??
-fn=(4) sdsl::int_vector::operator[]
+fn=(4) RMMTree_Kary::fwdBlock
 cfl=??
-cfn=(5) sdsl::int_vector_reference::int_vector_reference
+cfn=(5) f64xsubf128
 calls=1 0
 0 1
 
 fl=??
-fn=(6) findClose_kary_rmMTree
+fn=(4)
 cfl=??
-cfn=(7) RMMTree_Kary::findClose
-calls=3 0
+cfn=(6) sdsl::int_vector::operator[]
+calls=1 0
+0 1
+
+fl=??
+fn=(7) sdsl::int_vector::size
+0 1
+
+fl=??
+fn=(8) sdsl::int_vector_reference::operator
+0 1
+
+fl=??
+fn=(9) RMMTree_Kary::fwdSearch
+cfl=??
+cfn=(4)
+calls=2 0
+0 2
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(7)
+calls=1 0
+0 1
+
+fl=??
+fn=(10) __libc_start_main
+cfl=(1)
+cfn=(3)
+calls=3 63
 0 3
 
 fl=??
@@ -30,41 +62,16 @@ fn=(5)
 0 1
 
 fl=??
-fn=(1)
+fn=(2)
 cfl=??
-cfn=(8) RMMTree_Kary::fwdBlock
+cfn=(9)
 calls=2 0
 0 2
 
 fl=??
-fn=(4)
+fn=(2)
 cfl=??
-cfn=(9) sdsl::int_vector::size
+cfn=(11) sdsl::int_vector_reference::operator bool
 calls=1 0
 0 1
-
-fl=??
-fn=(9)
-0 1
-
-fl=??
-fn=(3)
-cfl=??
-cfn=(6)
-calls=3 0
-0 3
-
-fl=??
-fn=(7)
-cfl=??
-cfn=(1)
-calls=3 0
-0 3
-
-fl=??
-fn=(8)
-cfl=??
-cfn=(4)
-calls=2 0
-0 2
 
