@@ -43,7 +43,7 @@ typedef struct Node{
 class RMMTree_Kary{
     public:
         bit_vector bv;	// Vetor de bits que armazena a sequência de parênteses balanceados
-		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree
+		vector<Node> tree;					// Vetor do tipo Node, usado para armazenar a Range-min-max tree						
 		long long int size;							// Tamanho da sequência de parênteses balanceados.
 		
 		/*!
@@ -334,7 +334,73 @@ class RMMTree_Kary{
 		*/
 		void printInfoTree();
 
+	protected:
+		long long int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
+		long long int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
+		long long int numberLeaves;					// Quantidade de folhas na rmM-tree
+		long long int numberNodes;					// Número de nós da rmM-tree
+		long long int order;                          // Ordem da rmM-tree
+        long long int height;			// Altura da rmM-tree
 
+		/*!
+		*	@brief Pecorre as chaves da folha v em busca do excesso d.
+		*	@param i: Posição a partir da qual devo buscar o excesso.
+		*	@param k: folha em que se encontra o parênteses i 
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
+		*/
+		long long int fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr);
+
+		/*!
+		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
+		*	@param i: Posição a partir da qual devo buscar o excesso (i é adicionado de 1)
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
+		*/
+		long long int fwdBlock(long long int i,int d,int &dr);
+
+		/*!
+		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
+		*	verifica se os irmãos mais à esquerda de v, compreendem o excesso d nos seus intervalos de
+		*	máximo e mínimo.
+		*	@param v: nó da rmM-tree investigado na passagem pela árvore
+		*	@param dr: excesso relativo dr
+		*	@param d: excesso procurado
+		*	@return a chave que contém o excesso d desejado ou size caso a resposta não seja encontrada nos irmãos de v.
+		*/
+		long long int fwdVerifySibling(long long int &v, int &dr, int d);
+
+		/*!
+		*	@brief Pecorre as chaves da folha v em busca do excesso d.
+		*	@param i: Posição a partir da qual devo buscar o excesso.
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição em que ocorre o excesso d ou -1 caso o excesso não se encontre neste bloco.
+		*/
+		long long int bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr);
+
+		/*!
+		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
+		*	@param i: Posição a partir da qual devo iniciar a busca para trás do excesso
+		*	@param d: Excesso buscado
+		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
+		*	@return a posição (subtraída de 1) onde ocorre o excesso d ou ou -1 caso o excesso não se encontre neste bloco.
+		*/
+		long long int bwdBlock(long long int i,int d, int &dr);
+
+		/*!
+		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
+		*	verifica se os irmãos mais à direita de v, compreendem o excesso d nos seus intervalos de
+		*	máximo e mínimo.
+		*	@param v: nó da rmM-tree investigado na passagem pela árvore
+		*	@param dr: excesso relativo dr
+		*	@param d: excesso procurado
+		*	@return a chave que contém o excesso d desejado, e -1 caso a resposta não seja encontrada nos irmãos de v.
+		*/
+		long long int bwdVerifySibling(long long int &v, int &dr, int d);
+		
     private:
 		rank_support_v<1> b_rank1;			// Fornece suporte a operaçãop  rank, tendo como alvo bit 1
 		rank_support_v<0> b_rank0;			// Fornece suporte a operaçãop  rank, tendo como alvo bit 0
@@ -342,12 +408,6 @@ class RMMTree_Kary{
 		select_support_mcl<1> b_sel1;		// Fornece suporte a operaçãop  select, tendo como alvo bit 1
 		select_support_mcl<0> b_sel0;		// Fornece suporte a operaçãop  select, tendo como alvo bit 0
 		select_support_mcl<10,2> b_sel10;	// Fornece suporte a operaçãop  select, tendo como alvo a ocorrência do bit 1,seguido do bit 0
-		long long int sizeBlock;						// Tamanho do intervalocoberto por um nó folha
-		long long int w;								// Divisor de sizeBlock. usado para pecorrer os bits de bv, de w em w, e assim acelerar o processo
-		long long int numberLeaves;					// Quantidade de folhas na rmM-tree
-		long long int numberNodes;					// Número de nós da rmM-tree
-		long long int order;                          // Ordem da rmM-tree
-        long long int height;							// Altura da rmM-tree
 		vector<Key> tableC;				// Tabela de bits, com valores de excesso pré-computados,usados para acelar a construção da rmM-tree
 
         //métodos privados
@@ -387,83 +447,6 @@ class RMMTree_Kary{
 		*	@brief Constroí os nós internos e a raíz da RmM-tree
 		*/
 		void buildingInternalNodesRoot();
-
-		/*!
-		*	@brief Pecorre as chaves da folha v em busca do excesso d.
-		*	@param i: Posição a partir da qual devo buscar o excesso.
-		*	@param k: folha em que se encontra o parênteses i 
-		*	@param d: Excesso buscado
-		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
-		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
-		*/
-		long long int fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr);
-
-		/*!
-		*	@brief Pecorre para frente cada subbloco de tamanho "w" do bloco pertencente à "i".
-		*	@param i: Posição a partir da qual devo buscar o excesso (i é adicionado de 1)
-		*	@param d: Excesso buscado
-		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
-		*	@return a posição em que ocorre o excesso d ou bv.size() caso o excesso não se encontre neste bloco.
-		*/
-		long long int fwdBlock(long long int i,int d,int &dr);
-
-		/*!
-		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
-		*	verifica se os irmãos mais à esquerda de v, compreendem o excesso d nos seus intervalos de
-		*	máximo e mínimo.
-		*	@param v: nó da rmM-tree investigado na passagem pela árvore
-		*	@param dr: excesso relativo dr
-		*	@param d: excesso procurado
-		*	@return a chave que contém o excesso d desejado ou size caso a resposta não seja encontrada nos irmãos de v.
-		*/
-		long long int fwdVerifySibling(long long int &v, int &dr, int d);
-
-		/*!
-		*	@brief auxilia no processo de subida da árvore, verificando se o excesso procurado está nos intervalos do nó pai
-		*	@param v: nó da rmM-tree investigado na passagem pela árvore
-		*	@param dr: excesso relativo dr
-		*	@param d: excesso procurado
-		*	@return veradeiro caso a resposta seja encontrada no pai de v, e falso caso contrário.
-		*/
-		bool fwdVerifyParent(long long int &v, int &dr, int d);
-
-		/*!
-		*	@brief Pecorre as chaves da folha v em busca do excesso d.
-		*	@param i: Posição a partir da qual devo buscar o excesso.
-		*	@param d: Excesso buscado
-		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
-		*	@return a posição em que ocorre o excesso d ou -1 caso o excesso não se encontre neste bloco.
-		*/
-		long long int bwdKey(long long int i,long long int v,int key,long long int k,int d, int &dr);
-
-		/*!
-		*	@brief Pecorre para trás cada subbloco de tamanho "w" do bloco pertencente à "i".
-		*	@param i: Posição a partir da qual devo iniciar a busca para trás do excesso
-		*	@param d: Excesso buscado
-		*	@param dr: Excesso relativo (atualizado a cada posição que avançamos no bloco)
-		*	@return a posição (subtraída de 1) onde ocorre o excesso d ou ou -1 caso o excesso não se encontre neste bloco.
-		*/
-		long long int bwdBlock(long long int i,int d, int &dr);
-
-		/*!
-		*	@brief Calcula o pai do nó v, obtém o número de filhos deste nó, e a partir daí
-		*	verifica se os irmãos mais à direita de v, compreendem o excesso d nos seus intervalos de
-		*	máximo e mínimo.
-		*	@param v: nó da rmM-tree investigado na passagem pela árvore
-		*	@param dr: excesso relativo dr
-		*	@param d: excesso procurado
-		*	@return a chave que contém o excesso d desejado, e -1 caso a resposta não seja encontrada nos irmãos de v.
-		*/
-		long long int bwdVerifySibling(long long int &v, int &dr, int d);
-
-		/*!
-		*	@brief auxilia no processo de subida da árvore, verificando se o excesso procurado está nos intervalos do nó pai
-		*	@param v: nó da rmM-tree investigado na passagem pela árvore
-		*	@param dr: excesso relativo dr
-		*	@param d: excesso procurado
-		*	@return  verdadeiro caso a resposta seja encontrada no pai de v, e falso caso contrário.
-		*/
-		bool bwdVerifyParent(long long int &v, int &dr, int d);
 
 		/*!
 		*	@brief Procura pelo excesso mínimo ao longo das chaves do nó v.

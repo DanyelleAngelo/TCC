@@ -232,12 +232,8 @@ void RMMTree_Kary::buildingInternalNodesRoot(){
 
 long long int RMMTree_Kary::fwdKey(long long int i,long long int v,int key,long long int k,int d,int &dr){
 	long long int j;
-	//cout << "dr  = " << dr << "i = " << i <<endl;
 	for(;key < tree[v].nKeys;key++){
-	//	cout << " key = " << key <<endl;
 		if((dr + tree[v].keys[key].excessMin <= d) && (d<= dr +tree[v].keys[key].excessMax)){
-	//		cout << "dr= " << dr << " dr + tree[v].keys[key].excessMin = " << dr + tree[v].keys[key].excessMin 
-	//		<< "dr +tree[v].keys[key].excessMax= " << dr +tree[v].keys[key].excessMax <<endl; 
 			j= fwdBlock(i,d,dr);
 			if(dr == d) return j;
 		}

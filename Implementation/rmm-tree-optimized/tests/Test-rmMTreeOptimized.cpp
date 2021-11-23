@@ -213,7 +213,6 @@ TEST_F(RMMTreeFixtureTest, DISABLED_fwdsearch_i_answer_in_the_same_block){
 }
 
 TEST_F(RMMTreeFixtureTest, fwdSearch_general){
-    int depth,excessMax,d=0;
     for(int i=0;i<argsFindOpen.size();i++){
         EXPECT_EQ(t->fwdSearch(argsFindOpen[i],argsDepth[i]),tBin->fwdSearch(argsFindOpen[i],argsDepth[i])) << "Resposta errada ao calcular um FwdSearch genérico, para i=" << argsFindOpen[i];
     } 
