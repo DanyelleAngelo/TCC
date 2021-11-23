@@ -18,7 +18,7 @@ int w=16;
 int size =0;
 RMMTree_Bin *tBin;
 RMMTree_Kary *tKary;
-RMMTree_Kary_V1 *tKary;
+RMMTree_Kary_V1 *tKary_v1;
 
 void generateArguments(vector<int> &vArgs){
     srand(size/32);
@@ -64,8 +64,8 @@ int main(){
     tKary->buildingTree();
 
     /*building k-ary rmM-tree*/
-    tKary = new RMMTree_Kary_V1(v,sizeBlock,w,4);
-    tKary->buildingTree();
+    tKary_v1 = new RMMTree_Kary_V1(v,sizeBlock,w,4);
+    tKary_v1->buildingTree();
 
     /*create arguments*/
     generateArguments(vArgs);

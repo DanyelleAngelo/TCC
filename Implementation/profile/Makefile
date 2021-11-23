@@ -1,4 +1,4 @@
-all: generate_libs fwdSearch profile_bin profile_kary gitUpdate clean
+all: generate_libs fwdSearch findClose gitUpdate clean
 
 profile_bin: findClose_bin
 
@@ -6,7 +6,7 @@ profile_kary: findClose_kary0 findClose_kary1
 
 gitUpdate:
 	git add .
-	git commit
+	git commit -m "Atualizando profile"
 	git push
 
 #Profiles da estrutura binária
@@ -32,12 +32,12 @@ findClose_kary1:
 
 #Profiles gerais, em um mesmo arquivo
 fwdSearch:
-	g++  profile_fwdSearch.cpp -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
+	g++  profile_fwdSearch.cpp -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
 	CPU_PROFILER=profile_fwdSearch.out ./profile_fwdSearch
 	google-pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
 
 findClose:
-	g++  profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
+	g++  profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
 	CPU_PROFILER=profile_findClose.out ./profile_findClose
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrindfindClose_kary:
 
@@ -45,8 +45,8 @@ findClose:
 generate_libs:  readBp libRmmTreeKary0 libRmmTreeKary1 libRmmTreeBin
 
 readBp: 
-	cd ../../libs;\
-	g++ -c ../read_bp/read_bp.cpp -I ~/include 
+	cd ../libs;\
+	g++ -c ../read_bp/read_bp.cpp -I ~/include
 
 rmmTreeBin: 
 	cd ../libs;\

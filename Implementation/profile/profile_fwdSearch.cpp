@@ -1,5 +1,6 @@
 #include "../rmm-tree-classic/rmMTreeClassic.h"
 #include "../rmm-tree-optimized/rmMTreeOptimized.h"
+#include "../rmm-tree-optimized/v1.h"
 #include "../read_bp/read_bp.h"
 
 #include <iostream>
@@ -17,6 +18,7 @@ int w=16;
 int size =0;
 RMMTree_Bin *tBin;
 RMMTree_Kary *tKary;
+RMMTree_Kary_V1 *tKary_v1;
 
 void generateArguments(vector<int> &vArgs, vector<int> &d){
     srand(size/8);
@@ -67,10 +69,13 @@ int main(){
     tBin = new RMMTree_Bin(v,sizeBlock,w);
     tBin->buildingTree();
     
-    
     /*building k-ary rmM-tree*/
     tKary = new RMMTree_Kary(v,sizeBlock,w,4);
     tKary->buildingTree();
+
+    /*building k-ary rmM-tree*/
+    tKary_v1 = new RMMTree_Kary_V1(v,sizeBlock,w,4);
+    tKary_v1->buildingTree();
 
     /*create arguments*/
     generateArguments(vArgs,d);
