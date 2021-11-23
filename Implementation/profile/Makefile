@@ -39,7 +39,7 @@ fwdSearch:
 findClose:
 	g++  profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
 	CPU_PROFILER=profile_findClose.out ./profile_findClose
-	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrindfindClose_kary:
+	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
 
 #Bibliotecas
 generate_libs:  readBp libRmmTreeKary0 libRmmTreeKary1 libRmmTreeBin
