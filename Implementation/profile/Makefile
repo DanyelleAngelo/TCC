@@ -1,4 +1,4 @@
-all: generate_libs fwdSearch findClose gitUpdate clean
+all: generate_libs  findClose gitUpdate clean
 
 profile_bin: findClose_bin
 
@@ -6,7 +6,7 @@ profile_kary: findClose_kary0 findClose_kary1
 
 gitUpdate:
 	git add .
-	git commit -m "Atualizando profile"
+	git commit -m "Atualizando profile - findclose"
 	git push
 
 #Profiles da estrutura binária
