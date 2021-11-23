@@ -2,20 +2,20 @@ events: Hits
 
 fl=(1) /home/danyelleangelo/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
 fn=(1) RMMTree_Bin::fwdBlock
-cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(2) sdsl::int_vector::operator[]
-calls=1 1360
-238 1
+237 1
 
 fl=(1)
 fn=(1)
+cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
+cfn=(2) sdsl::int_vector::operator[]
+calls=1 1362
 255 1
 
 fl=(1)
 fn=(3) RMMTree_Bin::fwdSearch
 cfl=(1)
 cfn=(1)
-calls=1 238
+calls=1 237
 420 1
 
 fl=(1)
@@ -29,26 +29,26 @@ fl=(1)
 fn=(4) RMMTree_Bin::findClose
 cfl=(1)
 cfn=(3)
-calls=1 448
+calls=1 420
 698 1
 
 fl=(1)
 fn=(4)
 cfl=(1)
 cfn=(3)
-calls=1 420
+calls=1 448
 698 1
 
 fl=(2)
-fn=(5) sdsl::int_vector::size
-393 1
+fn=(5) sdsl::int_vector_reference::int_vector_reference
+784 1
 
 fl=(2)
 fn=(2)
 cfl=(2)
 cfn=(5)
-calls=1 393
-1360 1
+calls=1 784
+1362 1
 
 fl=??
 fn=(6) findClose_binary_rmMTree

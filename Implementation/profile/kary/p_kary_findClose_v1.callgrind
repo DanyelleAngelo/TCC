@@ -1,0 +1,70 @@
+events: Hits
+
+fl=??
+fn=(1) RMMTree_Kary::findClose
+cfl=??
+cfn=(2) RMMTree_Kary::fwdSearch
+calls=3 0
+0 3
+
+fl=??
+fn=(2)
+0 1
+
+fl=??
+fn=(2)
+cfl=??
+cfn=(3) RMMTree_Kary::fwdKey
+calls=1 0
+0 1
+
+fl=??
+fn=(4) findClose_kary_rmMTree
+cfl=??
+cfn=(1)
+calls=3 0
+0 3
+
+fl=??
+fn=(5) main
+cfl=??
+cfn=(4)
+calls=3 0
+0 3
+
+fl=??
+fn=(6) RMMTree_Kary::fwdBlock
+0 1
+
+fl=??
+fn=(7) __libc_start_main
+cfl=??
+cfn=(5)
+calls=3 0
+0 3
+
+fl=??
+fn=(3)
+cfl=??
+cfn=(6)
+calls=1 0
+0 1
+
+fl=??
+fn=(8) sdsl::int_vector_reference::operator
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(9) sdsl::int_vector_reference::operator bool
+calls=1 0
+0 1
+
+fl=??
+fn=(2)
+cfl=??
+cfn=(6)
+calls=1 0
+0 1
+

@@ -1,6 +1,5 @@
-#include "../rmm-tree-classic/rmMTreeClassic.h"
-#include "../rmm-tree-optimized/v1.h"
-#include "../read_bp/read_bp.h"
+#include "../../rmm-tree-optimized/v1.h"
+#include "../../read_bp/read_bp.h"
 
 #include <iostream>
 #include <vector>
@@ -15,8 +14,14 @@ int iterations = 100000;
 int sizeBlock=32;
 int w=16;
 int size =0;
-RMMTree_Bin *tBin;
 RMMTree_Kary_V1 *tKary;
+
+int calc2(int a){
+	for(int i=0; i < 100000000;i++){ 
+		a++;
+	}
+	return a;
+}
 
 void generateArguments(vector<int> &vArgs){
     srand(size/32);
@@ -24,18 +29,11 @@ void generateArguments(vector<int> &vArgs){
 
     for(int i=0; i < iterations;){
         k = rand()%(size-2);
-        if(tBin->bv[k]==1){
+        if(tKary->bv[k]==1){
             vArgs.push_back(k);
             i++;
         }
     }
-}
-
-void findClose_binary_rmMTree(vector<int> vArgs){
-    int j;
-	for(int i=0;i<iterations;i++){
-        j = tBin->findClose(vArgs[i]);
-	}
 }
 
 void findClose_kary_rmMTree(vector<int> vArgs){
@@ -48,14 +46,9 @@ void findClose_kary_rmMTree(vector<int> vArgs){
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
-    parentheses_to_bits("../dataset/prot.par", v);
-    //parentheses_to_bits("../dataset/data.txt", v);
+    parentheses_to_bits("../../dataset/prot.par", v);
+    //parentheses_to_bits("../../dataset/data.txt", v);
     size = v.size();
-
-    /*building binary rmM-tree*/
-    tBin = new RMMTree_Bin(v,sizeBlock,w);
-    tBin->buildingTree();
-    
     
     /*building k-ary rmM-tree*/
     tKary = new RMMTree_Kary_V1(v,sizeBlock,w,4);
@@ -65,11 +58,8 @@ int main(){
     generateArguments(vArgs);
 
     /*Inicia o profile*/
-    cout<< "--------------------Iniciando o profile de findClose para a estrutura binária."<<endl;
-    ProfilerStart("profile_findClose_v1.prof");
-    findClose_binary_rmMTree(vArgs);
-
     cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
+    ProfilerStart("p_kary_findClose_v1.prof");
     findClose_kary_rmMTree(vArgs);
 	ProfilerStop();
     return 0;

@@ -8,59 +8,66 @@ calls=1 0
 0 1
 
 fl=??
-fn=(3) main
-cfl=??
-cfn=(4) findClose_kary_rmMTree
-calls=3 0
-0 3
+fn=(3) sdsl::int_vector_reference::operator
+0 1
 
 fl=??
-fn=(5) RMMTree_Kary::findClose
+fn=(4) RMMTree_Kary::findClose
 cfl=??
-cfn=(1)
+cfn=(5) sdsl::int_vector::operator[]
 calls=1 0
 0 1
 
 fl=??
+fn=(6) __libc_start_main
+cfl=??
+cfn=(7) main
+calls=3 0
+0 3
+
+fl=??
+fn=(2)
+cfl=??
+cfn=(5)
+calls=1 0
+0 1
+
+fl=??
+fn=(8) findClose_kary_rmMTree
+cfl=??
+cfn=(4)
+calls=3 0
+0 3
+
+fl=??
 fn=(5)
 cfl=??
-cfn=(6) sdsl::int_vector_reference::operator bool
+cfn=(9) sdsl::int_vector::size
 calls=2 0
 0 2
 
 fl=??
 fn=(4)
 cfl=??
-cfn=(5)
+cfn=(1)
+calls=1 0
+0 1
+
+fl=??
+fn=(4)
+cfl=??
+cfn=(10) sdsl::int_vector_reference::operator bool
+calls=1 0
+0 1
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(8)
 calls=3 0
 0 3
-
-fl=??
-fn=(7) sdsl::int_vector_reference::operator
-0 2
-
-fl=??
-fn=(2)
-cfl=??
-cfn=(8) sdsl::int_vector::operator[]
-calls=1 0
-0 1
-
-fl=??
-fn=(8)
-cfl=??
-cfn=(9) sdsl::int_vector::size
-calls=1 0
-0 1
 
 fl=??
 fn=(9)
-0 1
-
-fl=??
-fn=(10) __libc_start_main
-cfl=??
-cfn=(3)
-calls=3 0
-0 3
+0 2
 
