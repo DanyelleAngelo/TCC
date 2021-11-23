@@ -11,11 +11,13 @@ gitUpdate:
 findClose_kary0:
 	g++  profile_findClose.cpp -o profile_findClose  ../libs/lib_rmm_kary.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
 	CPU_PROFILER=profile_findClose.out ./profile_findClose
+	CPUPROFILER_FREQUENCY=10000	
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
 
 findClose_kary1:
 	g++  profile_findClose_v1.cpp -o profile_findClose_v1  ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2
 	CPU_PROFILER=profile_findClose_v1.out ./profile_findClose_v1
+	CPUPROFILER_FREQUENCY=10000	
 	google-pprof --callgrind ./profile_findClose_v1 profile_findClose_v1.prof  > profile_findClose_v1.callgrind
 
 #Bibliotecas
