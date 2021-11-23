@@ -1,6 +1,6 @@
 CPP_FLAGS= -O2 -g -Wall
 
-all: generate_libs fwdSearch  gitUpdate clean
+all: generate_libs fwdSearch  update_path gitUpdate clean
 
 profile_bin: findClose_bin
 
@@ -8,20 +8,22 @@ profile_kary: findClose_kary0 findClose_kary1
 
 gitUpdate:
 	git add .
-	git commit -m "Atualizando profile - findclose"
+	git commit -m "Atualizando profile"
 	git push
 
 #Profiles gerais, em um mesmo arquivo
 fwdSearch:
 	g++  profile_fwdSearch.cpp $(CPP_FLAGS) -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler 
 	CPU_PROFILER=profile_fwdSearch.out ./profile_fwdSearch
-	CPUPROFILER_FREQUENCY=10000	
 	google-pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
 
 findClose:
 	g++  profile_findClose.cpp $(CPP_FLAGS) -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler
 	CPU_PROFILER=profile_findClose.out ./profile_findClose
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
+
+update_path:
+	sed -i 's| /home/danyelleangelo/TCC/Implementation/profile/|/media/danyelle/Data/IFB/TCC/Implementation/profile|g' profile_fwdSearch.callgrind
 
 #Bibliotecas
 generate_libs:  readBp libRmmTreeKary0 libRmmTreeKary1 libRmmTreeBin
