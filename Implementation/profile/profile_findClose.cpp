@@ -47,6 +47,13 @@ void findClose_kary_rmMTree(vector<int> vArgs){
     }
 }
 
+void findClose_kary_rmMTree_v1(vector<int> vArgs){
+    int j;
+    for(int i=0;i<iterations;i++){
+        j = tKary_v1->findClose(vArgs[i]);
+    }
+}
+
 int main(){
     vector<int> vArgs;
     int_vector<1> v;
@@ -77,6 +84,9 @@ int main(){
 
     cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária."<<endl;
     findClose_kary_rmMTree(vArgs);
+
+    cout<< "--------------------Iniciando o profile de findClose para a estrutura k-ária - versao 1."<<endl;
+    findClose_kary_rmMTree_v1(vArgs);
 	ProfilerStop();
     return 0;
 }
