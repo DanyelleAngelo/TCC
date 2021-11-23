@@ -34,6 +34,7 @@ findClose_kary1:
 fwdSearch:
 	g++  profile_fwdSearch.cpp -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2 -g
 	CPU_PROFILER=profile_fwdSearch.out ./profile_fwdSearch
+	CPUPROFILER_FREQUENCY=10000	
 	google-pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
 
 findClose:

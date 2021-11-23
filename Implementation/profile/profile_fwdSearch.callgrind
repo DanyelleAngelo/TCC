@@ -5,315 +5,333 @@ fn=(1) RMMTree_Bin::bitsread
 47 1
 
 fl=(1)
-fn=(2) RMMTree_Bin::fwdBlock
+fn=(2) RMMTree_Bin::numLeaf
+79 1
+
+fl=(1)
+fn=(3) RMMTree_Bin::fwdBlock
 cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(3) sdsl::int_vector::operator[]
+cfn=(4) sdsl::int_vector::operator[]
 calls=1 1360
 238 1
 
 fl=(1)
-fn=(2)
+fn=(3)
+cfl=(2)
+cfn=(5) sdsl::int_vector_reference::operator bool
+calls=1 805
+238 1
+
+fl=(1)
+fn=(3)
 cfl=(1)
 cfn=(1)
 calls=1 47
 244 1
 
 fl=(1)
-fn=(2)
-cfl=(2)
-cfn=(4) sdsl::int_vector_reference::operator bool
-calls=1 803
-255 1
+fn=(3)
+254 1
 
 fl=(1)
-fn=(2)
-256 1
-
-fl=(1)
-fn=(5) RMMTree_Bin::fwdSearch
+fn=(6) RMMTree_Bin::fwdSearch
 cfl=(1)
-cfn=(2)
-calls=1 238
+cfn=(3)
+calls=2 238
+420 2
+
+fl=(1)
+fn=(6)
+cfl=(1)
+cfn=(3)
+calls=1 244
 420 1
 
 fl=(1)
-fn=(5)
-427 4
+fn=(6)
+427 1
 
 fl=(1)
-fn=(5)
+fn=(6)
 438 2
 
 fl=(1)
-fn=(5)
+fn=(6)
 cfl=(1)
 cfn=(2)
-calls=1 244
-448 1
+calls=1 79
+447 1
 
 fl=(1)
-fn=(5)
+fn=(6)
 cfl=(1)
-cfn=(2)
-calls=1 255
-448 1
-
-fl=(1)
-fn=(5)
-cfl=(1)
-cfn=(2)
-calls=1 256
+cfn=(3)
+calls=1 254
 448 1
 
 fl=(3) /home/danyelleangelo/TCC/Implementation/profile/profile_fwdSearch.cpp
-fn=(6) fwdSearch_binary_rmMTree
+fn=(7) fwdSearch_binary_rmMTree
 cfl=(1)
-cfn=(5)
-calls=4 427
-51 4
-
-fl=(3)
-fn=(6)
-cfl=(1)
-cfn=(5)
-calls=3 448
+cfn=(6)
+calls=3 420
 51 3
 
 fl=(3)
-fn=(6)
+fn=(7)
 cfl=(1)
-cfn=(5)
+cfn=(6)
+calls=1 447
+51 1
+
+fl=(3)
+fn=(7)
+cfl=(1)
+cfn=(6)
+calls=1 448
+51 1
+
+fl=(3)
+fn=(7)
+cfl=(1)
+cfn=(6)
 calls=2 438
 51 2
 
 fl=(3)
-fn=(6)
-cfl=(1)
-cfn=(5)
-calls=1 420
+fn=(7)
 51 1
 
 fl=(3)
-fn=(7) fwdSearch_kary_rmMTree
-cfl=??
-cfn=(8) RMMTree_Kary::fwdSearch
-calls=16 0
-58 16
-
-fl=(3)
-fn=(9) fwdSearch_kary_rmMTree_v1
-cfl=??
-cfn=(10) RMMTree_Kary_V1::fwdSearch
-calls=14 0
-65 14
-
-fl=(3)
-fn=(11) main
-cfl=(3)
+fn=(7)
+cfl=(1)
 cfn=(6)
-calls=10 51
-93 10
+calls=1 427
+51 1
 
 fl=(3)
-fn=(11)
+fn=(8) fwdSearch_kary_rmMTree
+cfl=??
+cfn=(9) RMMTree_Kary::fwdSearch
+calls=17 0
+58 17
+
+fl=(3)
+fn=(10) fwdSearch_kary_rmMTree_v1
+cfl=??
+cfn=(11) RMMTree_Kary_V1::fwdSearch
+calls=15 0
+65 15
+
+fl=(3)
+fn=(12) main
 cfl=(3)
 cfn=(7)
-calls=16 58
-96 16
+calls=9 51
+93 9
 
 fl=(3)
-fn=(11)
-cfl=(3)
-cfn=(9)
-calls=14 65
-99 14
-
-fl=(2)
-fn=(12) sdsl::int_vector::size
-390 1
-
-fl=(2)
 fn=(12)
-393 1
+cfl=(3)
+cfn=(8)
+calls=17 58
+96 17
+
+fl=(3)
+fn=(12)
+cfl=(3)
+cfn=(10)
+calls=15 65
+99 15
 
 fl=(2)
-fn=(13) sdsl::int_vector_reference::int_vector_reference
+fn=(13) sdsl::int_vector::size
+393 3
+
+fl=(2)
+fn=(14) sdsl::int_vector_reference::int_vector_reference
 785 1
 
 fl=(2)
-fn=(14) sdsl::int_vector_reference::operator
-803 1
+fn=(15) sdsl::int_vector_reference::operator
+805 5
 
 fl=(2)
-fn=(14)
-805 2
-
-fl=(2)
-fn=(3)
-cfl=(2)
-cfn=(12)
-calls=1 393
-1360 1
-
-fl=(2)
-fn=(3)
-cfl=(2)
-cfn=(12)
-calls=1 390
-1360 1
-
-fl=(2)
-fn=(3)
+fn=(4)
 cfl=(2)
 cfn=(13)
+calls=3 393
+1360 3
+
+fl=(2)
+fn=(4)
+cfl=(2)
+cfn=(14)
 calls=1 785
 1362 1
 
 fl=??
-fn=(15) RMMTree_Kary::fwdKey
-0 5
-
-fl=??
-fn=(15)
-cfl=??
-cfn=(16) RMMTree_Kary::fwdBlock
-calls=1 0
+fn=(16) f64xsubf128
 0 1
 
 fl=??
-fn=(17) f64xsubf128
-0 1
-
-fl=??
-fn=(10)
-cfl=??
-cfn=(18) RMMTree_Kary_V1::fwdVerifyParent
-calls=6 0
-0 6
-
-fl=??
-fn=(16)
+fn=(17) RMMTree_Kary::fwdBlock
 cfl=(2)
-cfn=(3)
+cfn=(4)
 calls=1 1362
 0 1
 
 fl=??
-fn=(8)
-cfl=??
-cfn=(16)
-calls=3 0
-0 3
+fn=(18) __libc_start_main
+cfl=(3)
+cfn=(12)
+calls=9 93
+0 9
 
 fl=??
-fn=(16)
+fn=(18)
+cfl=(3)
+cfn=(12)
+calls=17 96
+0 17
+
+fl=??
+fn=(19) RMMTree_Kary::fwdKey
 cfl=??
 cfn=(17)
+calls=6 0
+0 6
+
+fl=??
+fn=(17)
+cfl=??
+cfn=(16)
 calls=1 0
 0 1
 
 fl=??
-fn=(16)
-cfl=(2)
-cfn=(4)
-calls=2 805
-0 2
-
-fl=??
-fn=(19) std::vector::operator[]
-0 1
-
-fl=??
-fn=(10)
-0 3
-
-fl=??
-fn=(20) RMMTree_Kary::fwdVerifySibling
-0 3
-
-fl=??
-fn=(21) __libc_start_main
-cfl=(3)
-cfn=(11)
-calls=10 93
-0 10
-
-fl=??
-fn=(16)
-0 2
-
-fl=??
-fn=(16)
-cfl=(2)
-cfn=(3)
-calls=1 1360
-0 1
-
-fl=??
-fn=(18)
-0 5
-
-fl=??
-fn=(10)
+fn=(17)
 cfl=??
-cfn=(15)
+cfn=(20) RMMTree_Kary::bitsread
 calls=2 0
 0 2
 
 fl=??
-fn=(8)
+fn=(11)
+0 1
+
+fl=??
+fn=(17)
+cfl=(2)
+cfn=(4)
+calls=2 1360
+0 2
+
+fl=??
+fn=(17)
 cfl=??
-cfn=(22) RMMTree_Kary::leafInTree
+cfn=(21) std::vector::operator[]
 calls=1 0
 0 1
 
 fl=??
-fn=(18)
+fn=(22) RMMTree_Kary_V1::fwdVerifyParent
+0 4
+
+fl=??
+fn=(21)
+0 2
+
+fl=??
+fn=(9)
+0 1
+
+fl=??
+fn=(9)
 cfl=??
 cfn=(19)
-calls=1 0
-0 1
-
-fl=??
-fn=(21)
-cfl=(3)
-cfn=(11)
-calls=16 96
-0 16
-
-fl=??
-fn=(21)
-cfl=(3)
-cfn=(11)
-calls=14 99
-0 14
-
-fl=??
-fn=(8)
-cfl=??
-cfn=(20)
-calls=3 0
-0 3
-
-fl=??
-fn=(8)
-cfl=??
-cfn=(15)
 calls=4 0
 0 4
 
 fl=??
-fn=(8)
-0 5
-
-fl=??
-fn=(22)
+fn=(11)
+cfl=??
+cfn=(21)
+calls=1 0
 0 1
 
 fl=??
-fn=(10)
+fn=(11)
 cfl=??
-cfn=(16)
-calls=3 0
+cfn=(19)
+calls=5 0
+0 5
+
+fl=??
+fn=(17)
+cfl=(2)
+cfn=(5)
+calls=4 805
+0 4
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(17)
+calls=4 0
+0 4
+
+fl=??
+fn=(9)
+cfl=??
+cfn=(23) RMMTree_Kary::fwdVerifySibling
+calls=7 0
+0 7
+
+fl=??
+fn=(17)
+0 4
+
+fl=??
+fn=(9)
+cfl=??
+cfn=(17)
+calls=5 0
+0 5
+
+fl=??
+fn=(24) RMMTree_Kary::reverse_16
+0 1
+
+fl=??
+fn=(20)
+0 1
+
+fl=??
+fn=(20)
+cfl=??
+cfn=(24)
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(22)
+calls=4 0
+0 4
+
+fl=??
+fn=(19)
 0 3
+
+fl=??
+fn=(23)
+0 7
+
+fl=??
+fn=(18)
+cfl=(3)
+cfn=(12)
+calls=15 99
+0 15
 
