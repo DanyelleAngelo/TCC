@@ -1,66 +1,59 @@
 events: Hits
 
-fl=(1) /home/danyelle/include/sdsl/int_vector.hpp
-fn=(1) sdsl::int_vector::size
-393 1
+fl=(1) /home/danyelleangelo/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
+fn=(1) RMMTree_Bin::bitsread
+47 1
 
 fl=(1)
-fn=(2) sdsl::int_vector::operator[]
+fn=(2) RMMTree_Bin::fwdBlock
 cfl=(1)
 cfn=(1)
-calls=1 393
-1360 1
+calls=1 47
+244 1
 
 fl=(1)
-fn=(2)
-1362 1
-
-fl=(2) /media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
-fn=(3) RMMTree_Bin::fwdBlock
+fn=(3) RMMTree_Bin::fwdSearch
 cfl=(1)
 cfn=(2)
-calls=1 1362
-234 1
+calls=1 244
+448 1
 
-fl=(2)
-fn=(3)
+fl=(1)
+fn=(4) RMMTree_Bin::findClose
+695 1
+
+fl=(1)
+fn=(4)
 cfl=(1)
-cfn=(2)
-calls=1 1360
-234 1
-
-fl=(2)
-fn=(4) RMMTree_Bin::fwdSearch
-cfl=(2)
 cfn=(3)
-calls=2 234
-416 2
+calls=1 448
+698 1
 
-fl=(2)
-fn=(5) RMMTree_Bin::findClose
-cfl=(2)
+fl=??
+fn=(5) findClose_binary_rmMTree
+cfl=(1)
 cfn=(4)
-calls=2 416
-696 2
+calls=1 698
+0 1
 
 fl=??
-fn=(6) findClose_binary_rmMTree
-cfl=(2)
-cfn=(5)
-calls=2 696
-0 2
+fn=(5)
+cfl=(1)
+cfn=(4)
+calls=1 695
+0 1
 
 fl=??
-fn=(7) __libc_start_main
+fn=(6) __libc_start_main
 cfl=??
-cfn=(8) main
+cfn=(7) main
 calls=2 0
 0 2
 
 fl=??
-fn=(8)
+fn=(7)
 cfl=??
-cfn=(6)
+cfn=(5)
 calls=2 0
 0 2
 

@@ -20,7 +20,7 @@ RMMTree_Kary *tKary;
 
 void generateArguments(vector<int> &vArgs, vector<int> &d){
     srand(size/8);
-	int k,depth, close;
+	int k,depth, close, excessMax;
 
     for(int i=0; i < iterations; ){
         k = rand()%(size-2);
