@@ -23,7 +23,7 @@ findClose:
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
 
 update_path:
-	sed -i 's| /home/danyelleangelo/TCC/Implementation/profile/|/media/danyelle/Data/IFB/TCC/Implementation/profile|g' profile_fwdSearch.callgrind
+	sed -i 's| /home/danyelleangelo/TCC/Implementation/|/media/danyelle/Data/IFB/TCC/Implementation/|g' profile_fwdSearch.callgrind
 
 #Bibliotecas
 generate_libs:  readBp libRmmTreeKary0 libRmmTreeKary1 libRmmTreeBin
