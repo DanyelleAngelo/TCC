@@ -1,4 +1,4 @@
-all: generate_libs fwdSearch profile_bin profile_kary
+all: generate_libs fwdSearch profile_bin profile_kary gitUpdate clean
 
 profile_bin: findClose_bin
 

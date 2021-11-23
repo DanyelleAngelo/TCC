@@ -1,77 +1,66 @@
 events: Hits
 
 fl=??
-fn=(1) RMMTree_Kary::findClose
+fn=(1) RMMTree_Kary::fwdSearch
 cfl=??
-cfn=(2) RMMTree_Kary::fwdSearch
+cfn=(2) RMMTree_Kary::fwdBlock
+calls=1 0
+0 1
+
+fl=??
+fn=(3) main
+cfl=??
+cfn=(4) findClose_kary_rmMTree
+calls=3 0
+0 3
+
+fl=??
+fn=(5) RMMTree_Kary::findClose
+cfl=??
+cfn=(1)
+calls=1 0
+0 1
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(6) sdsl::int_vector_reference::operator bool
 calls=2 0
 0 2
 
 fl=??
-fn=(3) RMMTree_Kary::fwdKey
-cfl=??
-cfn=(4) RMMTree_Kary::fwdBlock
-calls=1 0
-0 1
-
-fl=??
-fn=(5) sdsl::int_vector_reference::operator
-0 1
-
-fl=??
-fn=(6) RMMTree_Kary::reverse_16
-0 1
-
-fl=??
-fn=(2)
-cfl=??
-cfn=(3)
-calls=1 0
-0 1
-
-fl=??
-fn=(2)
-0 1
-
-fl=??
 fn=(4)
 cfl=??
-cfn=(7) RMMTree_Kary::bitsread
-calls=1 0
-0 1
-
-fl=??
-fn=(7)
-cfl=??
-cfn=(6)
-calls=1 0
-0 1
-
-fl=??
-fn=(8) __libc_start_main
-cfl=??
-cfn=(9) main
+cfn=(5)
 calls=3 0
 0 3
 
 fl=??
-fn=(10) findClose_kary_rmMTree
+fn=(7) sdsl::int_vector_reference::operator
+0 2
+
+fl=??
+fn=(2)
 cfl=??
-cfn=(1)
-calls=3 0
-0 3
+cfn=(8) sdsl::int_vector::operator[]
+calls=1 0
+0 1
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(9) sdsl::int_vector::size
+calls=1 0
+0 1
 
 fl=??
 fn=(9)
-cfl=??
-cfn=(10)
-calls=3 0
-0 3
+0 1
 
 fl=??
-fn=(1)
+fn=(10) __libc_start_main
 cfl=??
-cfn=(11) sdsl::int_vector_reference::operator bool
-calls=1 0
-0 1
+cfn=(3)
+calls=3 0
+0 3
 
