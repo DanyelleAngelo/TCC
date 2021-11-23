@@ -1,5 +1,7 @@
 all: generate_libs profile_bin gitUpdate clean
 
+profile_bin: findClose_bin
+
 gitUpdate:
 	git add .
 	git commit -m "Atualizando profile - estrutura binároa"
@@ -7,12 +9,12 @@ gitUpdate:
 
 #Profiles da estrutura binária
 findClose_bin:
-	g++  profile_findClose.cpp -o profile_findClose ../../libs/lib_rmm_bin.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2;\
+	g++  profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler -O2;\
 	CPU_PROFILER=profile_findClose.out ./profile_findClose;\
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
 
 #Bibliotecas
-generate_libs:  readBp llibRmmTreeBin
+generate_libs:  readBp libRmmTreeBin
 
 readBp: 
 	cd ../libs;\

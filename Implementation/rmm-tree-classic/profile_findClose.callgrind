@@ -1,0 +1,66 @@
+events: Hits
+
+fl=(1) /home/danyelleangelo/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
+fn=(1) RMMTree_Bin::fwdBlock
+cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
+cfn=(2) sdsl::int_vector::operator[]
+calls=1 1363
+238 1
+
+fl=(1)
+fn=(3) RMMTree_Bin::fwdSearch
+cfl=(1)
+cfn=(1)
+calls=1 238
+420 1
+
+fl=(1)
+fn=(3)
+cfl=(3) /usr/include/c++/9/bits/stl_vector.h
+cfn=(4) std::vector::operator[]
+calls=1 1040
+427 1
+
+fl=(1)
+fn=(5) RMMTree_Bin::findClose
+cfl=(1)
+cfn=(3)
+calls=1 427
+698 1
+
+fl=(1)
+fn=(5)
+cfl=(1)
+cfn=(3)
+calls=1 420
+698 1
+
+fl=(2)
+fn=(2)
+1363 1
+
+fl=(3)
+fn=(4)
+1040 1
+
+fl=??
+fn=(6) findClose_binary_rmMTree
+cfl=(1)
+cfn=(5)
+calls=2 698
+0 2
+
+fl=??
+fn=(7) __libc_start_main
+cfl=??
+cfn=(8) main
+calls=2 0
+0 2
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(6)
+calls=2 0
+0 2
+
