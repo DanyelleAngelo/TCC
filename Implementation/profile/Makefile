@@ -1,6 +1,6 @@
 CPP_FLAGS= -O2 -g -Wall
 
-all: fwdSearch  gitUpdate clean
+all: generate_libs fwdSearch  gitUpdate clean
 
 profile_bin: findClose_bin
 
