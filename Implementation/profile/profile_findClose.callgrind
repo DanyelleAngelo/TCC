@@ -12,10 +12,21 @@ calls=1 235
 420 1
 
 fl=(1)
+fn=(2)
+427 1
+
+fl=(1)
 fn=(3) RMMTree_Bin::findClose
+cfl=(1)
+cfn=(2)
+calls=1 427
+698 1
+
+fl=(1)
+fn=(3)
 cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(4) sdsl::int_vector::operator[]
-calls=1 1360
+cfn=(4) sdsl::int_vector_reference::operator bool
+calls=1 805
 698 1
 
 fl=(1)
@@ -26,22 +37,15 @@ calls=1 420
 698 1
 
 fl=(2)
-fn=(5) sdsl::int_vector::size
-393 2
-
-fl=(2)
-fn=(4)
-cfl=(2)
-cfn=(5)
-calls=2 393
-1360 2
+fn=(5) sdsl::int_vector_reference::operator
+805 3
 
 fl=??
-fn=(6) RMMTree_Kary::findClose
-cfl=(2)
-cfn=(4)
-calls=1 1360
-0 1
+fn=(6) findClose_binary_rmMTree
+cfl=(1)
+cfn=(3)
+calls=3 698
+0 3
 
 fl=??
 fn=(7) main
@@ -51,41 +55,84 @@ calls=4 0
 0 4
 
 fl=??
-fn=(6)
+fn=(9) findClose_kary_rmMTree_v1
 cfl=??
-cfn=(9) RMMTree_Kary::fwdSearch
-calls=3 0
-0 3
-
-fl=??
-fn=(8)
-cfl=??
-cfn=(6)
+cfn=(10) RMMTree_Kary::findClose
 calls=4 0
 0 4
 
 fl=??
-fn=(10) __libc_start_main
+fn=(11) RMMTree_Kary::fwdSearch
 cfl=??
-cfn=(7)
-calls=6 0
-0 6
-
-fl=??
-fn=(7)
-cfl=??
-cfn=(11) findClose_binary_rmMTree
+cfn=(12) RMMTree_Kary::fwdVerifySibling
 calls=2 0
 0 2
 
 fl=??
-fn=(11)
-cfl=(1)
-cfn=(3)
-calls=2 698
+fn=(7)
+cfl=??
+cfn=(6)
+calls=3 0
+0 3
+
+fl=??
+fn=(13) __libc_start_main
+cfl=??
+cfn=(7)
+calls=11 0
+0 11
+
+fl=??
+fn=(8)
+cfl=??
+cfn=(10)
+calls=4 0
+0 4
+
+fl=??
+fn=(14) f64xsubf128
+0 1
+
+fl=??
+fn=(15) RMMTree_Kary::fwdBlock
+cfl=??
+cfn=(14)
+calls=1 0
+0 1
+
+fl=??
+fn=(7)
+cfl=??
+cfn=(9)
+calls=4 0
+0 4
+
+fl=??
+fn=(10)
+cfl=(2)
+cfn=(4)
+calls=2 805
 0 2
 
 fl=??
-fn=(9)
+fn=(12)
+0 2
+
+fl=??
+fn=(10)
+cfl=??
+cfn=(11)
+calls=6 0
+0 6
+
+fl=??
+fn=(15)
 0 3
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(15)
+calls=4 0
+0 4
 
