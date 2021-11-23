@@ -2,60 +2,49 @@ events: Hits
 
 fl=(1) /home/danyelleangelo/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
 fn=(1) RMMTree_Bin::fwdBlock
-cfl=??
-cfn=(2) f64xsubf128
-calls=1 0
-234 1
-
-fl=(1)
-fn=(1)
 cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(3) sdsl::int_vector_reference::operator bool
-calls=2 805
-238 2
-
-fl=(1)
-fn=(1)
-244 1
+cfn=(2) sdsl::int_vector_reference::operator bool
+calls=1 805
+238 1
 
 fl=(1)
 fn=(1)
 cfl=(2)
-cfn=(4) sdsl::int_vector::operator[]
+cfn=(3) sdsl::int_vector::operator[]
+calls=1 1362
+238 1
+
+fl=(1)
+fn=(1)
+cfl=(2)
+cfn=(3)
 calls=1 1360
 255 1
 
 fl=(1)
-fn=(5) RMMTree_Bin::fwdSearch
-cfl=(1)
-cfn=(1)
-calls=1 234
-420 1
-
-fl=(1)
-fn=(5)
-cfl=(1)
-cfn=(1)
-calls=1 244
-420 1
-
-fl=(1)
-fn=(5)
+fn=(4) RMMTree_Bin::fwdSearch
 cfl=(1)
 cfn=(1)
 calls=2 238
 420 2
 
 fl=(1)
-fn=(5)
-427 3
+fn=(4)
+427 4
 
 fl=(1)
-fn=(5)
-439 1
+fn=(4)
+cfl=(3) /usr/include/c++/9/bits/stl_vector.h
+cfn=(5) std::vector::operator[]
+calls=1 1040
+438 1
 
 fl=(1)
-fn=(5)
+fn=(4)
+438 1
+
+fl=(1)
+fn=(4)
 cfl=(1)
 cfn=(1)
 calls=1 255
@@ -66,135 +55,153 @@ fn=(6) sdsl::int_vector::size
 393 2
 
 fl=(2)
-fn=(7) sdsl::int_vector_reference::operator
-805 5
+fn=(7) sdsl::int_vector_reference::int_vector_reference
+785 1
 
 fl=(2)
-fn=(4)
+fn=(8) sdsl::int_vector_reference::operator
+805 2
+
+fl=(2)
+fn=(3)
 cfl=(2)
 cfn=(6)
 calls=2 393
 1360 2
 
+fl=(2)
+fn=(3)
+cfl=(2)
+cfn=(7)
+calls=1 785
+1362 1
+
+fl=(3)
+fn=(5)
+1040 1
+
 fl=??
-fn=(8) fwdSearch_binary_rmMTree
+fn=(9) fwdSearch_binary_rmMTree
 cfl=(1)
-cfn=(5)
-calls=1 439
-0 1
+cfn=(4)
+calls=2 420
+0 2
 
 fl=??
-fn=(9) RMMTree_Kary::fwdBlock
-0 1
-
-fl=??
-fn=(10) RMMTree_Kary::fwdSearch
-cfl=??
-cfn=(11) RMMTree_Kary::leafInTree
-calls=1 0
-0 1
-
-fl=??
-fn=(8)
+fn=(9)
 cfl=(1)
-cfn=(5)
+cfn=(4)
 calls=1 448
 0 1
 
 fl=??
-fn=(8)
-cfl=(1)
-cfn=(5)
-calls=4 420
-0 4
+fn=(10) RMMTree_Kary::fwdBlock
+cfl=(2)
+cfn=(2)
+calls=1 805
+0 1
 
 fl=??
-fn=(10)
+fn=(11) main
 cfl=??
-cfn=(12) RMMTree_Kary::fwdVerifySibling
-calls=4 0
-0 4
-
-fl=??
-fn=(10)
-0 3
-
-fl=??
-fn=(13) fwdSearch_kary_rmMTree
-cfl=??
-cfn=(10)
-calls=16 0
-0 16
-
-fl=??
-fn=(14) main
-cfl=??
-cfn=(8)
+cfn=(9)
 calls=9 0
 0 9
 
 fl=??
-fn=(12)
+fn=(12) RMMTree_Kary::fwdKey
+cfl=??
+cfn=(10)
+calls=2 0
+0 2
+
+fl=??
+fn=(13) RMMTree_Kary::fwdSearch
+0 1
+
+fl=??
+fn=(9)
+cfl=(1)
+cfn=(4)
+calls=4 427
 0 4
 
 fl=??
-fn=(14)
+fn=(14) RMMTree_Kary::fwdVerifySibling
+0 10
+
+fl=??
+fn=(9)
+cfl=(1)
+cfn=(4)
+calls=2 438
+0 2
+
+fl=??
+fn=(10)
+0 1
+
+fl=??
+fn=(15) f64xsubf128
+0 1
+
+fl=??
+fn=(10)
+cfl=??
+cfn=(15)
+calls=1 0
+0 1
+
+fl=??
+fn=(11)
+cfl=??
+cfn=(16) fwdSearch_kary_rmMTree
+calls=16 0
+0 16
+
+fl=??
+fn=(17) __libc_start_main
+cfl=??
+cfn=(11)
+calls=25 0
+0 25
+
+fl=??
+fn=(13)
+cfl=??
+cfn=(12)
+calls=3 0
+0 3
+
+fl=??
+fn=(10)
+cfl=(2)
+cfn=(3)
+calls=1 1360
+0 1
+
+fl=??
+fn=(16)
 cfl=??
 cfn=(13)
 calls=16 0
 0 16
 
 fl=??
-fn=(15) RMMTree_Kary::fwdKey
-0 3
-
-fl=??
-fn=(10)
-cfl=??
-cfn=(15)
-calls=3 0
-0 3
-
-fl=??
-fn=(8)
-cfl=(1)
-cfn=(5)
-calls=3 427
-0 3
-
-fl=??
-fn=(9)
-cfl=(2)
-cfn=(3)
-calls=3 805
-0 3
-
-fl=??
-fn=(11)
-0 1
-
-fl=??
-fn=(2)
-0 1
-
-fl=??
-fn=(10)
-cfl=??
-cfn=(9)
-calls=5 0
-0 5
-
-fl=??
-fn=(9)
-cfl=(2)
-cfn=(4)
-calls=1 1360
-0 1
-
-fl=??
-fn=(16) __libc_start_main
+fn=(13)
 cfl=??
 cfn=(14)
-calls=25 0
-0 25
+calls=10 0
+0 10
+
+fl=??
+fn=(12)
+0 1
+
+fl=??
+fn=(13)
+cfl=??
+cfn=(10)
+calls=2 0
+0 2
 

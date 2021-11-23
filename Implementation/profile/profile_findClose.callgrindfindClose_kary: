@@ -1,88 +1,113 @@
 events: Hits
 
 fl=(1) /home/danyelleangelo/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
-fn=(1) RMMTree_Bin::fwdSearch
-450 1
+fn=(1) RMMTree_Bin::fwdBlock
+237 1
 
 fl=(1)
-fn=(2) RMMTree_Bin::findClose
+fn=(1)
+cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
+cfn=(2) sdsl::int_vector::operator[]
+calls=1 1363
+238 1
+
+fl=(1)
+fn=(3) RMMTree_Bin::fwdSearch
 cfl=(1)
 cfn=(1)
-calls=1 450
-698 1
+calls=1 238
+420 1
 
 fl=(1)
-fn=(2)
-cfl=(2) /home/danyelleangelo/include/sdsl/int_vector.hpp
-cfn=(3) sdsl::int_vector_reference::operator bool
-calls=1 805
-698 1
+fn=(3)
+cfl=(1)
+cfn=(1)
+calls=1 237
+420 1
+
+fl=(1)
+fn=(4) RMMTree_Bin::findClose
+cfl=(1)
+cfn=(3)
+calls=2 420
+698 2
 
 fl=(2)
-fn=(4) sdsl::int_vector_reference::operator
-805 2
+fn=(2)
+1359 1
+
+fl=(2)
+fn=(2)
+1363 1
 
 fl=??
-fn=(5) main
+fn=(5) RMMTree_Kary::fwdSearch
 cfl=??
-cfn=(6) findClose_kary_rmMTree
-calls=4 0
-0 4
-
-fl=??
-fn=(7) RMMTree_Kary::findClose
-cfl=(2)
-cfn=(3)
-calls=1 805
-0 1
-
-fl=??
-fn=(8) RMMTree_Kary::fwdBlock
-0 2
-
-fl=??
-fn=(9) RMMTree_Kary::fwdSearch
-cfl=??
-cfn=(8)
+cfn=(6) RMMTree_Kary::fwdBlock
 calls=2 0
 0 2
 
 fl=??
-fn=(6)
+fn=(7) main
 cfl=??
-cfn=(7)
+cfn=(8) findClose_kary_rmMTree
 calls=4 0
 0 4
 
 fl=??
-fn=(5)
+fn=(9) RMMTree_Kary::fwdVerifySibling
+0 2
+
+fl=??
+fn=(7)
 cfl=??
 cfn=(10) findClose_binary_rmMTree
 calls=2 0
 0 2
 
 fl=??
-fn=(10)
-cfl=(1)
-cfn=(2)
-calls=2 698
-0 2
+fn=(8)
+cfl=??
+cfn=(11) RMMTree_Kary::findClose
+calls=4 0
+0 4
 
 fl=??
-fn=(9)
+fn=(11)
+cfl=??
+cfn=(5)
+calls=4 0
+0 4
+
+fl=??
+fn=(6)
 0 1
 
 fl=??
-fn=(11) __libc_start_main
+fn=(6)
+cfl=(2)
+cfn=(2)
+calls=1 1359
+0 1
+
+fl=??
+fn=(12) __libc_start_main
 cfl=??
-cfn=(5)
+cfn=(7)
 calls=6 0
 0 6
 
 fl=??
-fn=(7)
+fn=(10)
+cfl=(1)
+cfn=(4)
+calls=2 698
+0 2
+
+fl=??
+fn=(5)
 cfl=??
 cfn=(9)
-calls=3 0
-0 3
+calls=2 0
+0 2
 
