@@ -20,7 +20,7 @@ binary_compareWithSdsl:
 
 kary_compareWithBin:
 	g++ -o dataset_k  dataset_k.cpp  ../libs/lib_rmm_kary.a ../libs/lib_rmm_bin.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	./dataset_k ../dataset/data.txt 100 4
+	./dataset_k ../dataset/wiki.par 10000 4
 #	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
