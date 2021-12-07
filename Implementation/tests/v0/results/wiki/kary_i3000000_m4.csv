@@ -1,0 +1,32 @@
+2021-12-07T10:34:14-03:00
+Running ./bm_kary_rmm_tree
+Run on (12 X 2600 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x6)
+  L1 Instruction 32 KiB (x6)
+  L2 Unified 256 KiB (x6)
+  L3 Unified 12288 KiB (x1)
+Load Average: 2.55, 2.16, 2.19
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"buildTree_k",1,5.83421e+09,5.83237e+09,ns,,,,,
+"BM_ComputaExcessMax_E/iterations:1",0,0,0,ns,,,,,
+"generate_args_depth/iterations:1",0,0,0,ns,,,,,
+"BM_FwdSearch_k",1,6.27824e+08,6.27632e+08,ns,,,,,
+"BM_BwdSearch_bin",1,7.50438e+08,7.50025e+08,ns,,,,,
+"BM_FindClose_k",2,4.88493e+08,4.88265e+08,ns,,,,,
+"BM_FindOpen_k",1,6.31374e+08,6.31047e+08,ns,,,,,
+"BM_Enclose_k",1,1.06361e+09,1.06309e+09,ns,,,,,
+"BM_IsAncestor_k",2,3.24881e+08,3.24839e+08,ns,,,,,
+"BM_Parent_k",1,1.07839e+09,1.07791e+09,ns,,,,,
+"BM_SubTreeSize_k",1,5.1967e+08,5.19353e+08,ns,,,,,
+"BM_NextSibling_k",2,3.67617e+08,3.67371e+08,ns,,,,,
+"BM_PrevSibling_k",2,3.76298e+08,3.76069e+08,ns,,,,,
+"BM_LastChild_k",2,3.80245e+08,3.80139e+08,ns,,,,,
+"BM_LevelNext_k",1,6.46605e+08,6.46324e+08,ns,,,,,
+"BM_LevelPrev_k",1,8.32065e+08,8.318e+08,ns,,,,,
+"BM_LevelLeftMost_k",788288,882.677,882.173,ns,,,,,
+"BM_LevelRightMost_k",610724,1140.43,1139.71,ns,,,,,
+"BM_RightMostLeaf_k",1,9.3535e+08,9.34969e+08,ns,,,,,
+"BM_LevelAncestor_k",2,3.63223e+08,3.63124e+08,ns,,,,,
+"BM_PostRank_k",3,2.62586e+08,2.62487e+08,ns,,,,,
+"BM_PostSelect_k",1,1.48493e+09,1.48435e+09,ns,,,,,

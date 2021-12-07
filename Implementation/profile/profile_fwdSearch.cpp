@@ -69,7 +69,8 @@ void fwdSearch_kary_rmMTree_v1(vector<int> vArgs, vector<int> d){
 int main(){
     vector<int> vArgs, d;
     int_vector<1> v;
-    parentheses_to_bits("../dataset/dna.par", v);
+    char *nameFile = (char*) "../dataset/dna.par";
+    parentheses_to_bits(nameFile, v);
     size = v.size();
 
     /*building binary rmM-tree*/
@@ -95,8 +96,8 @@ int main(){
     cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura k-ária."<<endl;
     fwdSearch_kary_rmMTree(vArgs,d);
 
-    cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura k-ária - v1."<<endl;
-    fwdSearch_kary_rmMTree_v1(vArgs,d);
+    // cout<< "--------------------Iniciando o profile de fwdSearch para a estrutura k-ária - v1."<<endl;
+    // fwdSearch_kary_rmMTree_v1(vArgs,d);
 	ProfilerStop();
     return 0;
 }

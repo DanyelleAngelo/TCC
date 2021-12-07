@@ -1,10 +1,9 @@
-CPP_FLAGS= -O2 -g -Wall
+CPP_FLAGS= -std=c++11  -Wall -O2 -g
+LIBS= -I ~/include -L  ~/lib -lsdsl 
+MACOS= "/Users/danyelleangelo/IFB/TCC/Implementation/"
+MINT= "/media/danyelle/Data/IFB/TCC/Implementation/"
 
-all: generate_libs fwdSearch  update_path gitUpdate clean
-
-profile_bin: findClose_bin
-
-profile_kary: findClose_kary0 findClose_kary1
+all: generate_libs fwdSearch clean
 
 gitUpdate:
 	git add .
@@ -13,12 +12,12 @@ gitUpdate:
 
 #Profiles gerais, em um mesmo arquivo
 fwdSearch:
-	g++  profile_fwdSearch.cpp $(CPP_FLAGS) -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler 
-	CPU_PROFILER=profile_fwdSearch.out ./profile_fwdSearch
-	google-pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
+	g++  $(CPP_FLAGS)  profile_fwdSearch.cpp -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a $(LIBS) -lprofiler 
+	CPU_PROFILE=profile_fwdSearch.out ./profile_fwdSearch
+	pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
 
 findClose:
-	g++  profile_findClose.cpp $(CPP_FLAGS) -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a -std=c++11 -I ~/include -Wall /usr/local/lib/libsdsl.a -lprofiler
+	g++  $(CPP_FLAGS) profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a $(LIBS) -lprofiler
 	CPU_PROFILER=profile_findClose.out ./profile_findClose
 	google-pprof --callgrind ./profile_findClose profile_findClose.prof  > profile_findClose.callgrind
 
@@ -30,19 +29,19 @@ generate_libs:  readBp libRmmTreeKary0 libRmmTreeKary1 libRmmTreeBin
 
 readBp: 
 	cd ../libs;\
-	g++ -c ../read_bp/read_bp.cpp $(CPP_FLAGS) -I ~/include
+	g++ $(CPP_FLAGS) -c ../read_bp/read_bp.cpp  $(LIBS)
 
 rmmTreeBin: 
 	cd ../libs;\
-	g++ -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp $(CPP_FLAGS) -I ~/include  /usr/local/lib/libsdsl.a -lpthread  
+	g++ $(CPP_FLAGS) -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp  $(LIBS)
 
 rmmTreeKary0: 
 	cd ../libs;\
-	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp $(CPP_FLAGS) -I ~/include  /usr/local/lib/libsdsl.a -lpthread  
+	g++  $(CPP_FLAGS) -c ../rmm-tree-optimized/rmM_tree_optimized.cpp $(LIBS)
 
 rmmTreeKary1: 
 	cd ../libs;\
-	g++ -c ../rmm-tree-optimized/v1.cpp $(CPP_FLAGS)  -I ~/include  /usr/local/lib/libsdsl.a -lpthread 
+	g++  $(CPP_FLAGS)  -c ../rmm-tree-optimized/v1.cpp $(LIBS)
 
 libRmmTreeKary0: rmmTreeKary0 readBp
 	cd ../libs;\
@@ -57,5 +56,5 @@ libRmmTreeBin: rmmTreeBin readBp
 	ar crv lib_rmm_bin.a rmM_tree_classic_v3.o read_bp.o
 
 clean:
-	rm *.o
 	rm -f ../libs/*.o
+	rm *.o

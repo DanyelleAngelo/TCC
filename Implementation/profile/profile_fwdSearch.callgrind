@@ -1,354 +1,179 @@
 events: Hits
 
-fl=(1)/media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-classic/rmM_tree_classic_v3.cpp
-fn=(1) RMMTree_Bin::fwdBlock
-234 1
-
-fl=(1)
-fn=(1)
-246 1
-
-fl=(1)
-fn=(2) RMMTree_Bin::fwdSearch
-cfl=(1)
-cfn=(1)
-calls=1 234
-420 1
-
-fl=(1)
-fn=(2)
-427 1
-
-fl=(1)
-fn=(2)
-438 2
-
-fl=(1)
-fn=(2)
-cfl=(1)
-cfn=(1)
-calls=1 246
-448 1
-
-fl=(2)/media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-optimized/rmM_tree_optimized.cpp
-fn=(3) RMMTree_Kary::bitsread[inline]
-46 1
-
-fl=(2)
-fn=(4) RMMTree_Kary::leafInTree
+fl=??
+fn=(1) ProfileHandler::SignalHandler
 cfl=??
-cfn=(5) f64xsubf128
+cfn=(2) 0x000000010dbf286d
 calls=1 0
-82 1
-
-fl=(2)
-fn=(6) RMMTree_Kary::fwdKey
-235 2
-
-fl=(2)
-fn=(6)
-236 5
-
-fl=(2)
-fn=(6)
-cfl=(2)
-cfn=(7) RMMTree_Kary::fwdBlock
-calls=1 263
-237 1
-
-fl=(2)
-fn=(7)
-252 1
-
-fl=(2)
-fn=(7)
-cfl=(2)
-cfn=(3)
-calls=1 46
-262 1
-
-fl=(2)
-fn=(7)
-263 1
-
-fl=(2)
-fn=(8) RMMTree_Kary::fwdVerifySibling
-283 1
-
-fl=(2)
-fn=(8)
-290 3
-
-fl=(2)
-fn=(8)
-291 1
-
-fl=(2)
-fn=(9) RMMTree_Kary::fwdSearch
-cfl=(2)
-cfn=(7)
-calls=1 252
-312 1
-
-fl=(2)
-fn=(9)
-316 1
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(8)
-calls=1 283
-322 1
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(8)
-calls=3 290
-322 3
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(8)
-calls=1 291
-322 1
-
-fl=(2)
-fn=(9)
-333 1
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(6)
-calls=1 237
-345 1
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(6)
-calls=1 236
-345 1
-
-fl=(2)
-fn=(9)
-cfl=(2)
-cfn=(6)
-calls=1 235
-345 1
-
-fl=(3)/media/danyelle/Data/IFB/TCC/Implementation/libs/../rmm-tree-optimized/v1.cpp
-fn=(10) RMMTree_Kary_V1::fwdVerifyParent
-24 1
-
-fl=(3)
-fn=(11) RMMTree_Kary_V1::fwdSearch
-35 1
-
-fl=(3)
-fn=(11)
-cfl=(2)
-cfn=(4)
-calls=1 82
-40 1
-
-fl=(3)
-fn=(11)
-cfl=(2)
-cfn=(7)
-calls=1 262
-43 1
-
-fl=(3)
-fn=(11)
-48 1
-
-fl=(3)
-fn=(11)
-cfl=(2)
-cfn=(6)
-calls=3 236
-50 3
-
-fl=(3)
-fn=(11)
-cfl=(3)
-cfn=(10)
-calls=1 24
-59 1
-
-fl=(3)
-fn=(11)
-cfl=(2)
-cfn=(6)
-calls=1 236
-81 1
-
-fl=(3)
-fn=(11)
-cfl=(2)
-cfn=(6)
-calls=1 235
-81 1
-
-fl=(4)/media/danyelle/Data/IFB/TCC/Implementation/profile/profile_fwdSearch.cpp
-fn=(12) fwdSearch_binary_rmMTree
-cfl=(1)
-cfn=(2)
-calls=1 427
-51 1
-
-fl=(4)
-fn=(12)
-cfl=(1)
-cfn=(2)
-calls=1 448
-51 1
-
-fl=(4)
-fn=(12)
-cfl=(1)
-cfn=(2)
-calls=1 420
-51 1
-
-fl=(4)
-fn=(12)
-cfl=(1)
-cfn=(2)
-calls=2 438
-51 2
-
-fl=(4)
-fn=(13) fwdSearch_kary_rmMTree
-cfl=(2)
-cfn=(9)
-calls=1 312
-58 1
-
-fl=(4)
-fn=(13)
-cfl=(2)
-cfn=(9)
-calls=1 333
-58 1
-
-fl=(4)
-fn=(13)
-cfl=(2)
-cfn=(9)
-calls=3 345
-58 3
-
-fl=(4)
-fn=(13)
-cfl=(2)
-cfn=(9)
-calls=1 316
-58 1
-
-fl=(4)
-fn=(13)
-cfl=(2)
-cfn=(9)
-calls=5 322
-58 5
-
-fl=(4)
-fn=(14) fwdSearch_kary_rmMTree_v1
-cfl=(3)
-cfn=(11)
-calls=1 48
-65 1
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=1 43
-65 1
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=2 81
-65 2
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=1 35
-65 1
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=1 40
-65 1
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=1 59
-65 1
-
-fl=(4)
-fn=(14)
-cfl=(3)
-cfn=(11)
-calls=3 50
-65 3
-
-fl=(4)
-fn=(15) main
-cfl=(4)
-cfn=(12)
-calls=5 51
-93 5
-
-fl=(4)
-fn=(15)
-cfl=(4)
-cfn=(13)
-calls=11 58
-96 11
-
-fl=(4)
-fn=(15)
-cfl=(4)
-cfn=(14)
-calls=10 65
-99 10
-
-fl=??
-fn=(16) __libc_start_main
-cfl=(4)
-cfn=(15)
-calls=9 99
-0 9
-
-fl=??
-fn=(5)
 0 1
 
 fl=??
-fn=(16)
-cfl=(4)
-cfn=(15)
-calls=11 96
-0 11
+fn=(3) 0xffffffffffffffff
+cfl=??
+cfn=(4) 0x000000010dbe0e6c
+calls=2 0
+0 2
 
 fl=??
-fn=(16)
-cfl=(4)
-cfn=(15)
-calls=5 93
-0 5
+fn=(5) unknown
+cfl=??
+cfn=(6) 0x000000010dbdc905
+calls=8 0
+0 8
+
+fl=??
+fn=(7) 0x000000010dbe0ed4
+0 1
+
+fl=??
+fn=(8) 0x000000010dbf2971
+0 1
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(9) 0x000000010dbf2901
+calls=1 0
+0 1
+
+fl=??
+fn=(3)
+cfl=??
+cfn=(10) 0x000000010dbe0ee1
+calls=1 0
+0 1
+
+fl=??
+fn=(11) 0x000000010dbf2fa4
+cfl=??
+cfn=(1)
+calls=2 0
+0 2
+
+fl=??
+fn=(12) 0x000000010dbf27d1
+0 1
+
+fl=??
+fn=(13) 0x000000010dbf2d09
+0 1
+
+fl=??
+fn=(14) 0x00007fb691e0407f
+cfl=??
+cfn=(13)
+calls=1 0
+0 1
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(15) 0x000000010dbf282d
+calls=1 0
+0 1
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(12)
+calls=1 0
+0 1
+
+fl=??
+fn=(16) 0x000000010dbf2d76
+0 1
+
+fl=??
+fn=(10)
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(11)
+calls=2 0
+0 2
+
+fl=??
+fn=(17) 0x000000010dbdc705
+cfl=??
+cfn=(3)
+calls=4 0
+0 4
+
+fl=??
+fn=(9)
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(14)
+calls=3 0
+0 3
+
+fl=??
+fn=(4)
+0 2
+
+fl=??
+fn=(18) 0x000000010dbf2be6
+0 1
+
+fl=??
+fn=(14)
+cfl=??
+cfn=(18)
+calls=1 0
+0 1
+
+fl=??
+fn=(2)
+0 1
+
+fl=??
+fn=(14)
+cfl=??
+cfn=(16)
+calls=1 0
+0 1
+
+fl=??
+fn=(3)
+cfl=??
+cfn=(7)
+calls=1 0
+0 1
+
+fl=??
+fn=(5)
+cfl=??
+cfn=(17)
+calls=4 0
+0 4
+
+fl=??
+fn=(15)
+0 1
+
+fl=??
+fn=(1)
+cfl=??
+cfn=(8)
+calls=1 0
+0 1
+
+fl=??
+fn=(6)
+cfl=??
+cfn=(19) 0x000000010dbf2baa
+calls=3 0
+0 3
+
+fl=??
+fn=(19)
+cfl=??
+cfn=(1)
+calls=3 0
+0 3
 

@@ -2,6 +2,8 @@ CPP_FLAGS= -std=c++11  -Wall -O2 -g -Wall
 LIBS= -I ~/include -L  ~/lib -lsdsl
 G_TEST =  -lgtest -lpthread
 BENCHMARK_LIBS= -isystem benchmark/include  -lbenchmark -lpthread
+DATASET=../dataset/
+ITERATIONS=3000000
 
 all: generateLibs execTestsBenchmark clean 
 
@@ -21,12 +23,12 @@ execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
 binary_compareWithSdsl:
 	g++ $(CPP_FLAGS) dataset_bin.cpp -o dataset_b ../libs/lib_rmm_bin.a  $(LIBS) $(G_TEST)
-	./dataset_b ../dataset/wiki.par 25000
+	./dataset_b $(DATASET)wiki.par 25000
 
 kary_compareWithBin:
 	g++ $(CPP_FLAGS) -o dataset_k  dataset_k.cpp  ../libs/lib_rmm_kary.a ../libs/lib_rmm_bin.a  $(LIBS)  $(G_TEST)
 	for order in 4 8 16  ; do\
-		./dataset_k ../dataset/wiki.par 1000 $$order ;\
+		./dataset_k $(DATASET)wiki.par 1000 $$order ;\
 	done
 	
 #	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
@@ -40,43 +42,43 @@ testBenchmark:
 
 #--------- Testes reais de benchmark ---------
 binary_wiki:
-	./bm_binary_rmm_tree ../dataset/wiki.par 3000000 --benchmark_out=results/wiki/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree $(DATASET)wiki.par $(ITERATIONS) --benchmark_out=results/wiki/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
 
 kary_wiki:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree ../dataset/wiki.par 3000000 $$order --benchmark_out=results/wiki/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree $(DATASET)wiki.par $(ITERATIONS) $$order --benchmark_out=results/wiki/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_ctree:
-	./bm_binary_rmm_tree ../dataset/ctree.par 3000000  --benchmark_out=results/ctree/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree $(DATASET)ctree.par $(ITERATIONS)  --benchmark_out=results/ctree/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
 
 kary_ctree:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree ../dataset/ctree.par 3000000 $$order --benchmark_out=results/ctree/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree $(DATASET)ctree.par $(ITERATIONS) $$order --benchmark_out=results/ctree/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_prot:
-	./bm_binary_rmm_tree ../daset/prot.par 3000000  --benchmark_out=results/prot/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree $(DATASET)prot.par $(ITERATIONS)  --benchmark_out=results/prot/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
 
 kary_prot:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree ../dataset/prot.par 3000000 $$order --benchmark_out=results/prot/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree $(DATASET)prot.par $(ITERATIONS) $$order --benchmark_out=results/prot/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_dna:
-	./bm_binary_rmm_tree ../dataset/dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree $(DATASET)dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_dna:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree ../dataset/dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree $(DATASET)dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_osm:
-	./bm_binary_rmm_tree ../dataset/osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree $(DATASET)osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_osm:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree ../dataset/osm.par 3000000 $$order --benchmark_out=results/osm/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree $(DATASET)osm.par $(ITERATIONS) $$order --benchmark_out=results/osm/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 

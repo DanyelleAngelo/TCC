@@ -1,5 +1,8 @@
+CPP_FLAGS= -std=c++11 -O2 -g -Wall
+LIBS= -I ~/include -L  ~/lib -lsdsl -ldivsufsort -ldivsufsort64
+
 all: 
-	g++ -o rmMTreeTeste ../rmM_tree_classic_v3.cpp Test-rmMtreeClassic.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lgtest -lpthread -Wall 
+	g++ ../rmM_tree_classic_v3.cpp Test-rmMtreeClassic.cpp $(CPP_FLAGS) -o rmMTreeTeste  $(LIBS) -lpthread
 	valgrind --leak-check=full -s ./rmMTreeTeste
 	
 clean:
