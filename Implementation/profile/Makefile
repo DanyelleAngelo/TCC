@@ -3,7 +3,7 @@ LIBS= -I ~/include -L  ~/lib -lsdsl
 MACOS= "/Users/danyelleangelo/IFB/TCC/Implementation/"
 MINT= "/media/danyelle/Data/IFB/TCC/Implementation/"
 
-all: generate_libs fwdSearch clean
+all: fwdSearch clean
 
 gitUpdate:
 	git add .
@@ -13,8 +13,8 @@ gitUpdate:
 #Profiles gerais, em um mesmo arquivo
 fwdSearch:
 	g++  $(CPP_FLAGS)  profile_fwdSearch.cpp -o profile_fwdSearch ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a $(LIBS) -lprofiler 
-	CPU_PROFILE=profile_fwdSearch.out ./profile_fwdSearch
-	pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
+#	CPU_PROFILE=profile_fwdSearch.out ./profile_fwdSearch
+#	pprof --callgrind ./profile_fwdSearch profile_fwdSearch.prof  > profile_fwdSearch.callgrind
 
 findClose:
 	g++  $(CPP_FLAGS) profile_findClose.cpp -o profile_findClose ../libs/lib_rmm_bin.a ../libs/lib_rmm_kary.a ../libs/lib_rmm_kary_v1.a $(LIBS) -lprofiler
