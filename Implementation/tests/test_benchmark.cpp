@@ -8,7 +8,7 @@
 using namespace std;
 using namespace sdsl;
 
-RMMTree *t;
+RMMTree_Kary *t;
 int eM=0;
 int order;
 
@@ -25,7 +25,7 @@ extern vector<long long int> args_select;
 
 static void BM_BuildTree_k(benchmark::State& st){
 	for(auto _ :st){
-        t = new RMMTree(v,sizeBlock,w,order);	
+        t = new RMMTree_Kary(v,sizeBlock,w,order);	
 		t->buildingTree();
 	}
 }
