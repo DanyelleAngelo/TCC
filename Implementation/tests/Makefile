@@ -8,11 +8,11 @@ execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary
 
 execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 
-perfs: perfKary perfBin
+perfs: perfKary
 
 perfKary:
 	g++ -o perf_kary perf_kary.cpp  ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	sudo perf stat -e cache-references,cache-misses ./perf_kary vector.par 10 4
+	sudo perf stat -e cache-references,cache-misses ./perf_kary vector.par 90 4
 	perf report -t perf.data
 
 perfBin:
