@@ -4,4 +4,4 @@ Artigos/
 Implementation/tests/benchmark/
 Texto/Makefile
 *.par
-Implementation/libs/*
+Implementation/libs/
