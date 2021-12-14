@@ -1,4 +1,4 @@
-all: generateLibs kary_compareWithBin clean 
+all: generateLibs perfs clean 
 
 #ações básicas
 gitUpdate:
@@ -12,6 +12,12 @@ execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary
 
 execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 
+perfs: perfKary
+
+perfKary:
+	g++ perf_kary.cpp -o perf_kary ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -pthread -O2
+	./perf_kary vector.par 10 4
+
 
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
 binary_compareWithSdsl:
@@ -20,13 +26,13 @@ binary_compareWithSdsl:
 
 kary_compareWithBin:
 	g++ -o dataset_k  dataset_k.cpp  ../libs/lib_rmm_kary.a ../libs/lib_rmm_bin.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	./dataset_k ../dataset/wiki.par 10000 4
+	./dataset_k ../dataset/wiki.par 20000 4
 #	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
 
 
 #--------- Teste simples de benchmark ---------
 testBenchmark:
-	g++ test_benchmark.cpp -o test_benchmark ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
+	g++ test_benchmark.cpp -o test_benchmark ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a ~/benchmark/build/src   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
 	valgrind --leak-check=full -s ./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
 
 
