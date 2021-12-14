@@ -12,11 +12,15 @@ execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary
 
 execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 
-perfs: perfKary
+perfs: perfKary perfBin
 
 perfKary:
 	g++ perf_kary.cpp -o perf_kary ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -pthread -O2
-	./perf_kary vector.par 10 4
+	perf record -e LLC-loads,LLC-load-misses ./perf_kary vector.par 10 4
+
+perfBin:
+	g++ perf_bin.cpp -o perf_bin ../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -pthread -O2
+	perf record -e LLC-loads,LLC-load-misses ./perf_bin vector.par 10
 
 
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
