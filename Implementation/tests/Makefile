@@ -1,19 +1,8 @@
-CPP_FLAGS= -std=c++11  -Wall -O2 -g -Wall
-LIBS= -I ~/include -L  ~/lib -lsdsl
-G_TEST =  -lgtest -lpthread
-BENCHMARK_LIBS= -isystem benchmark/include  -lbenchmark -lpthread
-DATASET=../dataset/
-ITERATIONS=3000000
+CPP_FLAGS=-std=c++11 -O2 -g -Wall
 
-all: generateLibs execTestsBenchmark clean 
+all: generateLibs perfs clean 
 
-#ações básicas
-gitUpdate:
-	git add .
-	git commit -m "Resultados obtidos das estruturas"
-	git push
-
-generateLibs:  readBp libRmmTreeKary libRmmTreeKary1 libRmmTreeBin
+generateLibs:  readBp libRmmTreeKary libRmmTreeBin
 
 execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary_ctree binary_ctree kary_prot binary_prot kary_dna binary_dna
 
@@ -22,112 +11,97 @@ execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 perfs: perfKary perfBin
 
 perfKary:
-	g++  $(CPP_FLAGS) perf_kary.cpp $(LIBS) -o perf_kary ../libs/lib_rmm_kary.a  
+	g++ -o perf_kary perf_kary.cpp  ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	perf record -e LLC-loads,LLC-load-misses ./perf_kary vector.par 10 4
 
 perfBin:
-	g++  $(CPP_FLAGS) perf_bin.cpp  $(LIBS) -o perf_bin ../libs/lib_rmm_bin.a  
+	g++ -o perf_bin perf_bin.cpp  ../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	perf record -e LLC-loads,LLC-load-misses ./perf_bin vector.par 10
 
 
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
 binary_compareWithSdsl:
-	g++ $(CPP_FLAGS) dataset_bin.cpp -o dataset_b ../libs/lib_rmm_bin.a  $(LIBS) $(G_TEST)
-	./dataset_b $(DATASET)wiki.par 25000
+	g++ dataset_bin.cpp -o dataset_b ../libs/lib_rmm_bin.a  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
+	./dataset_b ../dataset/wiki.par 25000
 
 kary_compareWithBin:
-	g++ $(CPP_FLAGS) -o dataset_k  dataset_k.cpp  ../libs/lib_rmm_kary.a ../libs/lib_rmm_bin.a  $(LIBS)  $(G_TEST)
-	for order in 4 8 16  ; do\
-		./dataset_k $(DATASET)wiki.par 1000 $$order ;\
-	done
-	
+	g++ -o dataset_k  dataset_k.cpp  ../libs/lib_rmm_kary.a ../libs/lib_rmm_bin.a  -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
+	./dataset_k ../dataset/wiki.par 10000 4
 #	valgrind --leak-check=full -s ./dataset_k wiki.par 30 16
-
 
 #--------- Teste simples de benchmark ---------
 testBenchmark:
-	g++ $(CPP_FLAGS) test_benchmark.cpp  $(LIBS) ../libs/lib_rmm_kary.a  $(BENCHMARK_LIBS) -o test_benchmark
-	./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
-
+	g++ test_benchmark.cpp -o test_benchmark ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a   -isystem benchmark/include   -Lbenchmark/build/src -lbenchmark -pthread -O2
+	valgrind --leak-check=full -s ./test_benchmark vector.par 10 4 --benchmark_out=test_benchmark_i10_m4.csv --time-unit=ms --benchmark_out_format=csv
 
 #--------- Testes reais de benchmark ---------
 binary_wiki:
-	./bm_binary_rmm_tree $(DATASET)wiki.par $(ITERATIONS) --benchmark_out=results/wiki/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/wiki.par 3000000 --benchmark_out=results/wiki/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_wiki:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree $(DATASET)wiki.par $(ITERATIONS) $$order --benchmark_out=results/wiki/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/wiki.par 3000000 $$order --benchmark_out=results/wiki/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_ctree:
-	./bm_binary_rmm_tree $(DATASET)ctree.par $(ITERATIONS)  --benchmark_out=results/ctree/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/ctree.par 3000000  --benchmark_out=results/ctree/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_ctree:
 	for order in 4 8 16  ; do\
-		./bm_kary_rmm_tree $(DATASET)ctree.par $(ITERATIONS) $$order --benchmark_out=results/ctree/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/ctree.par 3000000 $$order --benchmark_out=results/ctree/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
+
 binary_prot:
-	./bm_binary_rmm_tree $(DATASET)prot.par $(ITERATIONS)  --benchmark_out=results/prot/bin_i$(ITERATIONS).csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../daset/prot.par 3000000  --benchmark_out=results/prot/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+
 
 kary_prot:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree $(DATASET)prot.par $(ITERATIONS) $$order --benchmark_out=results/prot/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/prot.par 3000000 $$order --benchmark_out=results/prot/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_dna:
-	./bm_binary_rmm_tree $(DATASET)dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/dna.par 3000000  --benchmark_out=results/dna/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_dna:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree $(DATASET)dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/dna.par 3000000 $$order --benchmark_out=results/dna/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
 
 binary_osm:
-	./bm_binary_rmm_tree $(DATASET)osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
+	./bm_binary_rmm_tree ../dataset/osm.par 3000000  --benchmark_out=results/osm/bin_i3000000.csv --time-unit=ms --benchmark_out_format=csv
 
 kary_osm:
 	for order in 4 8 16 ; do\
-		./bm_kary_rmm_tree $(DATASET)osm.par $(ITERATIONS) $$order --benchmark_out=results/osm/kary_i$(ITERATIONS)_m$$order.csv  --benchmark_out_format=csv ; \
+		./bm_kary_rmm_tree ../dataset/osm.par 3000000 $$order --benchmark_out=results/osm/kary_i3000000_m$$order.csv  --benchmark_out_format=csv ; \
 	done
-
-
 
 #------- Iniciando a construção das bibliotecas -------- 
 
 #---------compila os arquivos de testes de benchmark com as suas devidas bibliotecas---------
 bm_binary_rmmTree:
-	g++ $(CPP_FLAGS) bm_binary_rmm_tree.cpp $(LIBS) ../libs/lib_rmm_bin.a  $(BENCHMARK_LIBS) -o bm_binary_rmm_tree 
+	g++ bm_binary_rmm_tree.cpp -o bm_binary_rmm_tree  ../libs/lib_rmm_bin.a  -std=c++11  -I ~/include /usr/local/lib/libsdsl.a -isystem benchmark/include    -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
 bm_kary_rmmTree:
-	g++ $(CPP_FLAGS) bm_kary_rmm_tree.cpp $(LIBS)  ../libs/lib_rmm_kary.a  $(BENCHMARK_LIBS) -o bm_kary_rmm_tree 
-
+	g++ bm_kary_rmm_tree.cpp -o bm_kary_rmm_tree ../libs/lib_rmm_kary.a -std=c++11    -I ~/include /usr/local/lib/libsdsl.a  -isystem benchmark/include   -Lbenchmark/build/src  -lbenchmark -pthread  -O2
 
 #Arquivos objetos
 readBp: 
 	cd ../libs;\
-	g++ $(CPP_FLAGS)  -c ../read_bp/read_bp.cpp  ../tests/generates_arguments.cpp $(LIBS)
+	g++ -c ../read_bp/read_bp.cpp  ../tests/generates_arguments.cpp -I ~/include 
 
 rmmTreeBin: 
 	cd ../libs;\
-	g++ $(CPP_FLAGS)  -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp  $(LIBS) 
-
+	g++ -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g 
 rmmTreeKary: 
 	cd ../libs;\
-	g++ $(CPP_FLAGS)  -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  $(LIBS)
-
-rmmTreeKary1: 
-	cd ../libs;\
-	g++ $(CPP_FLAGS)  -c ../rmm-tree-optimized/v1.cpp  $(LIBS)
+	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall 
 
 #libs
 libRmmTreeKary: rmmTreeKary readBp
 	cd ../libs;\
 	ar crv lib_rmm_kary.a rmM_tree_optimized.o read_bp.o  generates_arguments.o
-
-libRmmTreeKary1: rmmTreeKary1 readBp
-	cd ../libs;\
-	ar crv lib_rmm_kary1.a v1.o read_bp.o  generates_arguments.o
 
 libRmmTreeBin: rmmTreeBin readBp
 	cd ../libs;\

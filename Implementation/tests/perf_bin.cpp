@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sdsl;
 
-RMMTree *t;
+RMMTree_Bin *t;
 int eM=0;
 int order;
 
@@ -24,7 +24,7 @@ extern vector<long long int> args_select;
 
 void buildTree_k(){
     cout << "Building Tree\n";	
-	t = new RMMTree(v,sizeBlock,w);	
+	t = new RMMTree_Bin(v,sizeBlock,w);	
 	t->buildingTree();
 	
 }

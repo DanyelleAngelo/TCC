@@ -1,32 +1,19 @@
-2021-12-07T09:50:25-03:00
+2021-12-14T16:15:50-03:00
 Running ./test_benchmark
-Run on (12 X 2600 MHz CPU s)
+Run on (56 X 3200 MHz CPU s)
 CPU Caches:
-  L1 Data 32 KiB (x6)
-  L1 Instruction 32 KiB (x6)
-  L2 Unified 256 KiB (x6)
-  L3 Unified 12288 KiB (x1)
-Load Average: 2.44, 2.20, 2.13
+  L1 Data 32 KiB (x28)
+  L1 Instruction 32 KiB (x28)
+  L2 Unified 1024 KiB (x28)
+  L3 Unified 19712 KiB (x2)
+Load Average: 0.08, 0.10, 0.17
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
-"BM_BuildTree_k",196,3.52587e+06,3.52492e+06,ns,,,,,
+"BM_BuildTree_k",1,7.30861e+08,7.30772e+08,ns,,,,,
 "BM_ComputaExcessMax_E/iterations:1",0,0,0,ns,,,,,
-"BM_FindClose_k",1076840,646.965,646.161,ns,,,,,
-"BM_FindOpen_k",826407,865.758,862.968,ns,,,,,
-"BM_Enclose_k",713296,1013.15,1011.08,ns,,,,,
-"BM_IsLeaf_k",6807948,103.729,103.662,ns,,,,,
-"BM_IsAncestor_k",2572650,268.4,267.426,ns,,,,,
-"BM_Depth_k",5608076,122.329,121.951,ns,,,,,
-"BM_Parent_k",805839,819.125,817.181,ns,,,,,
-"BM_NextSibling_k",1426220,490.67,490.278,ns,,,,,
-"BM_PrevSibling_k",1136474,577.986,577.67,ns,,,,,
-"BM_LastChild_k",714811,966.243,965.892,ns,,,,,
-"BM_FirstChild_k",7308568,93.9791,93.9378,ns,,,,,
-"BM_SubTreeSize_k",971736,723.5,723.328,ns,,,,,
-"BM_LevelAncestor_k",1513213,458.867,458.614,ns,,,,,
-"BM_LevelNext_k",714636,963.311,962.754,ns,,,,,
-"BM_LevelPrev_k",490522,1404.96,1404.41,ns,,,,,
-"BM_LevelLeftMost_k",442976,1566.69,1565.87,ns,,,,,
-"BM_LevelRightMost_k",287992,2425.72,2424.85,ns,,,,,
-"BM_RightMostLeaf_k",907982,761.647,761.307,ns,,,,,
-"BM_PostRank_k",926723,749.472,749.159,ns,,,,,
-"BM_PostSelect_k",424518,1597.57,1596.97,ns,,,,,
+"BM_FindClose_k",24988,27793.2,27790.7,ns,,,,,
+"BM_FindOpen_k",13578,52043.1,52038.7,ns,,,,,
+"BM_Enclose_k",13177,54309.7,54304.9,ns,,,,,
+"BM_IsLeaf_k",74681,9439.2,9438.56,ns,,,,,
+"BM_IsAncestor_k",50315,13892.2,13890.9,ns,,,,,
+"BM_Depth_k",106283,6607.1,6606.7,ns,,,,,
