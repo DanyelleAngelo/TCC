@@ -12,11 +12,11 @@ perfs: perfKary perfBin
 
 perfKary:
 	g++ -o perf_kary perf_kary.cpp  ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	perf record -e LLC-loads,LLC-load-misses ./perf_kary vector.par 10 4
+	sudo perf record ./perf_kary vector.par 10 4
 
 perfBin:
 	g++ -o perf_bin perf_bin.cpp  ../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	perf record -e LLC-loads,LLC-load-misses ./perf_bin vector.par 10
+	sudo perf record -e LLC-loads,LLC-load-misses ./perf_bin vector.par 10
 
 
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
