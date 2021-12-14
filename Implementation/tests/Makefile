@@ -8,7 +8,7 @@ execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary
 
 execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 
-perfs: perfKary
+perfs: perfKary perfBin
 
 perfKary:
 	g++ -o perf_kary perf_kary.cpp  ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
