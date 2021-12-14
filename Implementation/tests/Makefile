@@ -1,6 +1,6 @@
 CPP_FLAGS=-std=c++11 -O2 -g -Wall
 
-all: generateLibs perfs clean 
+all:  perfs clean 
 
 generateLibs:  readBp libRmmTreeKary libRmmTreeBin
 
@@ -8,15 +8,16 @@ execTestsBenchmark: bm_kary_rmmTree bm_binary_rmmTree kary_wiki binary_wiki kary
 
 execTestsComparison: binary_compareWithSdsl kary_compareWithBin
 
-perfs: perfKary perfBin
+perfs: perfKary
 
 perfKary:
 	g++ -o perf_kary perf_kary.cpp  ../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	sudo perf record ./perf_kary vector.par 10 4
+	sudo perf stat -e cache-references,cache-misses ./perf_kary vector.par 10 4
+	perf report -t perf.data
 
 perfBin:
 	g++ -o perf_bin perf_bin.cpp  ../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	sudo perf record -e LLC-loads,LLC-load-misses ./perf_bin vector.par 10
+	sudo perf stat -e cache-references,cache-misses ./perf_bin vector.par 10
 
 
 #--------- Responsável pela execução dos testes de comparação com os conjuntos de dados reais---------
