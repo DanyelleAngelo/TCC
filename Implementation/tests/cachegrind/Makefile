@@ -12,35 +12,31 @@ generateLibs:  readBp libRmmTreeKary libRmmTreeBin
 
 wiki:
 	g++ -o rmm rmm.cpp  ../../libs/lib_rmm_kary.a ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --tool = cachegrind ./rmm ../../dataset/wiki.par $(ITERATIONS)
-	cp cachegrind.out.pid cachegrind_wiki_rmm_kary_and_bin.out.pid
+	valgrind --tool=cachegrind ./rmm ../../dataset/wiki.par $(ITERATIONS)
 
 prot:
 	g++ -o rmm rmm.cpp  ../../libs/lib_rmm_kary.a ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --tool = cachegrind ./rmm ../../dataset/prot.par $(ITERATIONS)
-	cp cachegrind.out.pid cachegrind_prot_rmm_kary_and_bin.out.pid
+	valgrind --tool=cachegrind ./rmm ../../dataset/prot.par $(ITERATIONS)
 
 dna:
 	g++ -o rmm rmm.cpp  ../../libs/lib_rmm_kary.a ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --tool = cachegrind ./rmm ../../dataset/dna.par $(ITERATIONS)
-	cp cachegrind.out.pid cachegrind_dna_rmm_kary_and_bin.out.pid
+	valgrind --tool=cachegrind ./rmm ../../dataset/dna.par $(ITERATIONS)
 
 ctree:
 	g++ -o rmm rmm.cpp  ../../libs/lib_rmm_kary.a ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
-	valgrind --tool = cachegrind ./rmm ../../dataset/ctree.par $(ITERATIONS)
-	cp cachegrind.out.pid cachegrind_ctree_rmm_kary_and_bin.out.pid
+	valgrind --tool=cachegrind ./rmm ../../dataset/ctree.par $(ITERATIONS)
 
 #Arquivos objetos
 readBp: 
 	cd ../../libs;\
-	g++ -c ../../read_bp/read_bp.cpp  ../../tests/generates_arguments.cpp -I ~/include 
+	g++ -c ../read_bp/read_bp.cpp  ../tests/generates_arguments.cpp -I ~/include 
 
 rmmTreeBin: 
 	cd ../../libs;\
-	g++ -c ../../rmm-tree-classic/rmM_tree_classic_v3.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g 
+	g++ -c ../rmm-tree-classic/rmM_tree_classic_v3.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall -g 
 rmmTreeKary: 
 	cd ../../libs;\
-	g++ -c ../../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall 
+	g++ -c ../rmm-tree-optimized/rmM_tree_optimized.cpp  -I ~/include  /usr/local/lib/libsdsl.a -lpthread -Wall 
 
 #libs
 libRmmTreeKary: rmmTreeKary readBp
