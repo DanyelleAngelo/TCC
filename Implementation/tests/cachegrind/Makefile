@@ -19,57 +19,41 @@ kary_wiki:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/wiki.par $(ITERATIONS) $$order ; \
-		cp cachegrind.o* wiki_kary_$(order).out ; \
-		rm cachegrind.* ; \
 	done
 	
 bin_wiki:
 	g++ -o bin bin.cpp  ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --tool=cachegrind ./bin ../../dataset/wiki.par $(ITERATIONS)
-	cp cachegrind.out.* wiki_bin.out
-	rm cachegrind.out.*
 
 kary_dna:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/dna.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* dna_kary_$(order).out ; \
-		rm cachegrind.out.* ; \
 	done
 	
 bin_dna:
 	g++ -o bin bin.cpp  ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --tool=cachegrind ./bin ../../dataset/dna.par $(ITERATIONS)
-	cp cachegrind.out.* dna_bin.out
-	rm cachegrind.out.*
 
 kary_prot:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/prot.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* prot_kary_$(order).out ; \
-		rm cachegrind.out.* ; \
 	done
 	
 bin_prot:
 	g++ -o bin bin.cpp  ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --tool=cachegrind ./bin ../../dataset/prot.par $(ITERATIONS)
-	cp cachegrind.out.* prot_bin.out
-	rm cachegrind.out.*
 
 kary_ctree:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/ctree.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* ctree_kary_$(order).out ; \
-		rm cachegrind.out.* ; \
 	done
 	
 bin_ctree:
 	g++ -o bin bin.cpp  ../../libs/lib_rmm_bin.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	valgrind --tool=cachegrind ./bin ../../dataset/ctree.par $(ITERATIONS)
-	cp cachegrind.out.* ctree_bin.out
-	rm cachegrind.out.*
 
 #Arquivos objetos
 readBp: 
