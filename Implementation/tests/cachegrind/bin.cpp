@@ -173,7 +173,7 @@ int main(int argc, char **argv){
 	}
 
 	iterations = atoi(argv[2]);
-	order = atoi(argv[3]);	
+//	order = atoi(argv[3]);	
 	Initialize(argv[1]);
 
 	buildTree_k();

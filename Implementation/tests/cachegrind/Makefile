@@ -1,7 +1,7 @@
 CPP_FLAGS=-std=c++11 -O2 -g -Wall
 ITERATIONS=35000
 
-all: generateLibs wiki gitUpdate dna gitUpdate prot gitUpdate ctree gitUpdate clean 
+all:  wiki gitUpdate dna gitUpdate prot gitUpdate ctree gitUpdate clean 
 
 gitUpdate:
 	git add .
@@ -10,7 +10,7 @@ gitUpdate:
 
 generateLibs:  readBp libRmmTreeKary libRmmTreeBin
 
-wiki: kary_wiki bin_wiki
+wiki:kary_wiki bin_wiki
 dna: kary_dna bin_dna
 prot: kary_prot bin_prot
 ctree: kary_ctree bin_ctree
@@ -19,8 +19,8 @@ kary_wiki:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/wiki.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* wiki_kary_$$order.out ; \
-		rm cachegrind.out.* ; \
+		cp cachegrind.o* wiki_kary_$(order).out ; \
+		rm cachegrind.* ; \
 	done
 	
 bin_wiki:
@@ -33,7 +33,7 @@ kary_dna:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/dna.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* dna_kary_$$order.out ; \
+		cp cachegrind.out.* dna_kary_$(order).out ; \
 		rm cachegrind.out.* ; \
 	done
 	
@@ -47,7 +47,7 @@ kary_prot:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/prot.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* prot_kary_$$order.out ; \
+		cp cachegrind.out.* prot_kary_$(order).out ; \
 		rm cachegrind.out.* ; \
 	done
 	
@@ -61,7 +61,7 @@ kary_ctree:
 	g++ -o kary kary.cpp  ../../libs/lib_rmm_kary.a -std=c++11  -I ~/include  /usr/local/lib/libsdsl.a  -lgtest -lpthread -Wall -g
 	for order in 4 8 16  ; do\
 		valgrind --tool=cachegrind ./kary ../../dataset/ctree.par $(ITERATIONS) $$order ; \
-		cp cachegrind.out.* ctree_kary_$$order.out ; \
+		cp cachegrind.out.* ctree_kary_$(order).out ; \
 		rm cachegrind.out.* ; \
 	done
 	
